@@ -1,23 +1,50 @@
 <nav class="navbar navbar-expand-lg navbar-dark navbar-brand-center bg-primary">
-  <a class="navbar-brand" href="#">Menu A Jour</a>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav ml-auto pr-0">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="<%= root_path %>">Accueil<!--<span class="sr-only">(current)</span>--></a>
       </li>
+      <li>
+        <a class="nav-link" href="#">Catalogue</a>
+      </li>
+    </ul>
+  </div>
+  <a class="navbar-brand mx-5" href="<%= root_path %>">Menu A Jour</a>
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="#">Contact</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
-      </li>
+      <li class="nav-item bg-primary">
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+          <% if user_signed_in? %>
+          <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= current_user.email %></button>
+
+            <div class="dropdown-menu bg-primary" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 38px, 0px); top: 0px; left: 0px; will-change: transform;"> 
+              <a class="dropdown-item" href="/mon-profil">Mon profil</a>
+              <a class="dropdown-item" href="#">Mes plats</a>
+              <% unless current_user.is_subscriber %>
+              <a class="dropdown-item" href="#">S'abonner</a>
+              <% end %>
+              <a class="dropdown-item" href="<%=destroy_user_session_path %>" data-method= "delete">Déconnexion</a>
+            </div>
+          </div>
+          <% else %>
+          <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Connexion</button>
+
+            <div class="dropdown-menu bg-primary" aria-labelledby="btnGroupDrop1" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 38px, 0px); top: 0px; left: 0px; will-change: transform;">
+              <a class="dropdown-item" href="<%=new_user_registration_path%>">S'enregistrer</a>
+              <a class="dropdown-item" href="<%= new_user_session_path %>">Se connecter</a>
+            </div>
+          </div>
+          <% end %>
     </ul>
   </div>
 </nav>
