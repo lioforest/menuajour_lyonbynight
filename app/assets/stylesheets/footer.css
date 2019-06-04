@@ -1,0 +1,21 @@
+footer
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer ul
+{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+footer ul li a
+{
+    color: var(--title);
+    margin: auto 5px;
+}
