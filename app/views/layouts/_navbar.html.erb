@@ -6,8 +6,8 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <button type="button" class="navbar-toggler collapsed" data-toggle="collapse"
         data-target="#navbar__collapse" aria-expanded="false"> <span class="sr-only">Menu</span>#x2630;</button>
-          <div class="collapse navbar-collapse" id="navbar__collapse">
-            <ul class="nav navbar-nav ml-auto pr-0">
+          <div class="collapse navbar-collapse" id="navbar__collapse1">
+            <ul class="nav navbar-nav ml-auto mr-0 pr-0">
                 <li class="nav-item active">
                   <a class="nav-link" href="<%= root_path %>">Accueil<span class="sr-only">(current)</span></a>
                 </li>
@@ -17,7 +17,7 @@
             </ul>
         </div>
         <a class="navbar-brand mx-5" href="<%= root_path %>">Menu A Jour</a>
-        <div class="collapse navbar-collapse" id="navbar__collapse">
+        <div class="collapse navbar-collapse" id="navbar__collapse2">
             <ul class="nav navbar-nav ml-auto">
                 <!-- General links -->
               <li class="nav-item">
@@ -25,7 +25,7 @@
               </li>
               <% if user_signed_in? %>
               <li class="dropdown nav-item"> <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button"
-                  aria-haspopup="true" aria-expanded="false"><%= current_user.email %><i class="icon ion-chevron-down"></i></a>
+                  aria-haspopup="true" aria-expanded="false"><%= current_user.email %></a>
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="/mon-profil">Mon profil</a></li>
                     <li><a class="dropdown-item" href="#">Mes plats</a></li>
@@ -40,7 +40,6 @@
                   <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button"
                   aria-haspopup="true" aria-expanded="false">
                       Connexion
-                      <i class="icon ion-chevron-down"></i>
                   </a>
                   <ul class="dropdown-menu">
                     <li>
