@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark navbar-brand-center bg-primary">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark navbar-brand-center bg-primary">
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -7,7 +7,7 @@
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav ml-auto pr-0">
       <li class="nav-item active">
-        <a class="nav-link" href="<%= root_path %>">Accueil<!--<span class="sr-only">(current)</span>--></a>
+        <a class="nav-link" href="<%= root_path %>">Accueil<span class="sr-only">(current)</span></a>
       </li>
       <li>
         <a class="nav-link" href="#">Catalogue</a>
@@ -47,4 +47,59 @@
           <% end %>
     </ul>
   </div>
-</nav>
+</nav>-->
+
+<!--  NAVBAR
+    ================================================== -->
+
+    <!-- navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar__collapse" aria-expanded="false">
+            <span class="sr-only">Menu</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index_default.html">Groggery</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar__collapse">
+          <ul class="nav navbar-nav navbar-right">
+
+            <!-- General links -->
+            <li class="dropdown active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <i class="icon ion-chevron-down"></i></a>
+              <ul class="dropdown-menu">
+                <li class="active"><a href="index_default.html">Home Image</a></li>
+                <li><a href="index_imageParallax.html">Home Parallax</a></li>
+                <li><a href="index_slider.html">Home Slider</a></li>
+                <li><a href="index_video.html">Home Video</a></li>
+              </ul>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <i class="icon ion-chevron-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="menu_image.html">Image Menu</a></li>
+                <li><a href="menu_text.html">Text Menu</a></li>
+              </ul>
+            </li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog <i class="icon ion-chevron-down"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="blog.html">Blog Page</a></li>
+                <li><a href="blog_post.html">Blog Post Page</a></li>
+              </ul>
+            </li>
+            <li><a href="reservation.html">Reservation</a></li>
+            <li><a href="contacts.html">Contacts</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
