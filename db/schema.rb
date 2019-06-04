@@ -26,16 +26,20 @@ ActiveRecord::Schema.define(version: 2019_06_04_063611) do
 
   create_table "menu_categories", force: :cascade do |t|
     t.string "name"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_menu_categories_on_user_id"
   end
 
   create_table "menu_items", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.decimal "price"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_menu_items_on_user_id"
   end
 
   create_table "menu_models", force: :cascade do |t|

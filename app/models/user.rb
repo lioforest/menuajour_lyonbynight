@@ -5,4 +5,6 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :validatable
 
   has_many :menu_models
+  has_many :menu_items
+  has_many :menu_categories
 end
