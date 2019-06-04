@@ -20,6 +20,28 @@ class ApplicationController < ActionController::Base
         link: "http://www.instagram.com/#"
       }
     ]
-  end
 
+    @supports = [
+      {
+        route: "/about.html",
+        text: "A propos de nous"
+      },
+      {
+        route: "#",
+        text: "Nous contacter"
+      },
+      {
+        route: "#",
+        text: "Tarifs"
+      },
+      {
+        route: "#",
+        text: "CGU"
+      },
+      {
+        route: "#",
+        text: "Mentions Légales"
+      }
+    ]
+  end
 end
