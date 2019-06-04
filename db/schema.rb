@@ -10,10 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_03_133918) do
+ActiveRecord::Schema.define(version: 2019_06_04_063611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "item_category_links", force: :cascade do |t|
+    t.bigint "menu_item_id"
+    t.bigint "menu_category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["menu_category_id"], name: "index_item_category_links_on_menu_category_id"
+    t.index ["menu_item_id"], name: "index_item_category_links_on_menu_item_id"
+  end
+
+  create_table "menu_categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "menu_items", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "menu_models", force: :cascade do |t|
+    t.string "name"
+    t.string "title"
+    t.string "subtitle"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_menu_models_on_user_id"
+  end
+
+  create_table "model_category_links", force: :cascade do |t|
+    t.bigint "menu_category_id"
+    t.bigint "menu_model_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["menu_category_id"], name: "index_model_category_links_on_menu_category_id"
+    t.index ["menu_model_id"], name: "index_model_category_links_on_menu_model_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
