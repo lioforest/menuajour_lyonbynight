@@ -14,3 +14,10 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require assets/plugins/jquery/jquery-1.12.4.min
+//= require assets/bootstrap/js/bootstrap.min
+//= require assets/plugins/lightbox/dist/js/lightbox.min
+//= require assets/plugins/isotope/isotope.pkgd.min
+//= require assets/plugins/imagesloaded/imagesloaded.pkgd.min
+//= assets/js/custom
+//= assets/js/google_maps
