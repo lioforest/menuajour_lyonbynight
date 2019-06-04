@@ -12,7 +12,6 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
 //= require_tree .
 //= require assets/plugins/lightbox/dist/js/lightbox.min
 //= require assets/plugins/isotope/isotope.pkgd.min
