@@ -1,8 +1,8 @@
 class StaticController <ApplicationController
   def index
-    @index = true
+    @title = "Accueil"
   end
-  def about
 
+  def about
   end
 end
