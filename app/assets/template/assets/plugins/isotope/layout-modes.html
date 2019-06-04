@@ -1,0 +1,530 @@
+<!doctype html>
+<html class="export" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="filter &amp; sort magical layouts">
+
+  <title>Isotope &#xB7; Layout modes</title>
+
+    <!-- Isotope does not require any CSS files -->
+    <link rel="stylesheet" href="css/isotope-docs.css" media="screen">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@metafizzyco">
+  <meta name="twitter:url" content="http://isotope.metafizzy.co/layout-modes.html">
+  <meta name="twitter:title" content="Isotope Layout modes">
+  <meta name="twitter:description" content="filter &amp; sort magical layouts">
+
+</head>
+<body class="page--layout-modes" data-page="layout-modes">
+
+  <div class="nav">
+    <h1 class="nav__title"><a href=".">Isotope</a></h1>
+  
+    <ol class="site-nav">
+      <li class="site-nav__item site-nav__item--filtering">
+        <a class="site-nav__item__link" href="filtering.html">Filtering</a></li>
+      <li class="site-nav__item site-nav__item--sorting">
+        <a class="site-nav__item__link" href="sorting.html">Sorting</a></li>
+      <li class="site-nav__item site-nav__item--layout ">
+        <a class="site-nav__item__link" href="layout.html">Layout</a>
+      </li>
+      <li class="site-nav__item site-nav__item--layout-modes sub-nav-parent">
+        <a class="site-nav__item__link" href="layout-modes.html">Layout modes</a>
+        <ul class="sub-nav">
+            <li class="sub-nav__item sub-nav__item--masonry">
+              <a class="sub-nav__item__link" href="layout-modes/masonry.html">masonry</a></li>
+            <li class="sub-nav__item sub-nav__item--fitrows">
+              <a class="sub-nav__item__link" href="layout-modes/fitrows.html">fitRows</a></li>
+            <li class="sub-nav__item sub-nav__item--vertical">
+              <a class="sub-nav__item__link" href="layout-modes/vertical.html">vertical</a></li>
+            <li class="sub-nav__item sub-nav__item--packery">
+              <a class="sub-nav__item__link" href="layout-modes/packery.html">packery</a></li>
+            <li class="sub-nav__item sub-nav__item--cellsbyrow">
+              <a class="sub-nav__item__link" href="layout-modes/cellsbyrow.html">cellsByRow</a></li>
+            <li class="sub-nav__item sub-nav__item--masonryhorizontal">
+              <a class="sub-nav__item__link" href="layout-modes/masonryhorizontal.html">masonryHorizontal</a></li>
+            <li class="sub-nav__item sub-nav__item--fitcolumns">
+              <a class="sub-nav__item__link" href="layout-modes/fitcolumns.html">fitColumns</a></li>
+            <li class="sub-nav__item sub-nav__item--cellsbycolumn">
+              <a class="sub-nav__item__link" href="layout-modes/cellsbycolumn.html">cellsByColumn</a></li>
+            <li class="sub-nav__item sub-nav__item--horiz">
+              <a class="sub-nav__item__link" href="layout-modes/horiz.html">horiz</a></li>
+        </ul>
+      </li>
+      <li class="site-nav__item site-nav__item--options">
+        <a class="site-nav__item__link" href="options.html">Options</a></li>
+      <li class="site-nav__item site-nav__item--methods">
+        <a class="site-nav__item__link" href="methods.html">Methods</a></li>
+      <li class="site-nav__item site-nav__item--events">
+        <a class="site-nav__item__link" href="events.html">Events</a></li>
+      <li class="site-nav__item site-nav__item--extras">
+        <a class="site-nav__item__link" href="extras.html">Extras</a></li>
+      <li class="site-nav__item site-nav__item--license">
+        <a class="site-nav__item__link" href="license.html">License</a></li>
+      <li class="site-nav__item site-nav__item--faq">
+        <a class="site-nav__item__link" href="faq.html">FAQ</a></li>
+    </ol>
+  
+    <ul class="page-nav" data-js-module="page-nav">
+<li class="page-nav__item page-nav__item--h2"><a href="#layout-mode-options">Layout mode options</a></li>
+<li class="page-nav__item page-nav__item--h2"><a href="#horizontal-layouts">Horizontal layouts</a></li>
+<li class="page-nav__item page-nav__item--h2"><a href="#included-layout-modes">Included layout modes</a></li>
+<li class="page-nav__item page-nav__item--h2"><a href="#layout-modes">Layout modes</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#masonry">masonry</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#fitrows">fitRows</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#vertical">vertical</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#packery">packery</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#cellsbyrow">cellsByRow</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#masonryhorizontal">masonryHorizontal</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#fitcolumns">fitColumns</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#cellsbycolumn">cellsByColumn</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#horiz">horiz</a></li>
+</ul>
+  </div>
+
+
+  <div id="content" class="main">
+    <div class="primary-content">
+        <h1>Layout modes</h1>
+
+
+<p>Isotope can position items with different layout modes. Set and change the layout mode with the <code>layoutMode</code> option.</p>
+
+<div class="big-demo go-wide" data-js-module="layout-modes-demo">
+
+  <div class="button-group js-radio-button-group">
+    <button class="button is-checked" data-layout-mode="masonry" checked="checked">masonry</button>
+    <button class="button" data-layout-mode="fitRows">fitRows</button>
+    <button class="button" data-layout-mode="cellsByRow">cellsByRow</button>
+    <button class="button" data-layout-mode="vertical">vertical</button>
+    <button class="button" data-layout-mode="packery">packery</button>
+    <button class="button" data-layout-mode="masonryHorizontal" data-is-horizontal="true">masonryHorizontal</button>
+    <button class="button" data-layout-mode="fitColumns" data-is-horizontal="true">fitColumns</button>
+    <button class="button" data-layout-mode="cellsByColumn" data-is-horizontal="true">cellsByColumn</button>
+    <button class="button" data-layout-mode="horiz" data-is-horizontal="true">horiz</button>
+  </div>
+
+  <pre class="code-display"><code>$grid.isotope({...})</code></pre>
+
+  <div class="grid">
+    <div class="grid-splash-item grid-splash-item--width2">1</div>
+    <div class="grid-splash-item grid-splash-item--height2">2</div>
+    <div class="grid-splash-item">3</div>
+    <div class="grid-splash-item">4</div>
+    <div class="grid-splash-item grid-splash-item--width2 grid-splash-item--height2">5</div>
+    <div class="grid-splash-item grid-splash-item--width2">6</div>
+    <div class="grid-splash-item grid-splash-item--height2">7</div>
+    <div class="grid-splash-item">8</div>
+    <div class="grid-splash-item">9</div>
+    <div class="grid-splash-item grid-splash-item--width2">10</div>
+    <div class="grid-splash-item">11</div>
+    <div class="grid-splash-item">12</div>
+  </div>
+
+  <p class="edit-demo">
+      <a href="http://codepen.io/desandro/pen/ClgeH">Edit this demo on CodePen</a>
+  </p>
+</div>
+
+<h2 id="layout-mode-options">Layout mode options</h2>
+
+<p>Layout modes can have their own separate options. These are set in a corresponding object within the options.</p>
+
+<pre><code class="js"><span class="keyword">var</span> <span class="jquery_var">$grid</span> = $(<span class="string">&apos;.grid&apos;</span>).isotope({
+  <span class="comment">// main isotope options</span>
+  itemSelector: <span class="string">&apos;.grid-item&apos;</span>,
+  <span class="comment">// set layoutMode</span>
+  layoutMode: <span class="string">&apos;cellsByRow&apos;</span>,
+  <span class="comment">// options for cellsByRow layout mode</span>
+  cellsByRow: {
+    columnWidth: <span class="number">200</span>,
+    rowHeight: <span class="number">150</span>
+  },
+  <span class="comment">// options for masonry layout mode</span>
+  masonry: {
+    columnWidth: <span class="string">&apos;.grid-sizer&apos;</span>
+  }
+})
+</code></pre>
+
+
+<h2 id="horizontal-layouts">Horizontal layouts</h2>
+
+<p>Horizontal layout modes (masonryHorizontal, fitColumns, cellsByColumn, and horiz) need a container that has a height value. Be sure that your CSS has height set.</p>
+
+<pre><code class="css"><span class="selector-id">#container</span> {
+  <span class="comment">/* either of these will work for horizontal Isotope layouts */</span>
+  <span class="attribute">height</span>: <span class="number">80%</span>;
+  <span class="attribute">height</span>: <span class="number">480px</span>;
+}
+</code></pre>
+
+
+<h2 id="included-layout-modes">Included layout modes</h2>
+
+<p><code>masonry</code>, <code>fitRows</code>, and <code>vertical</code> are included in Isotope by default. All other layout modes need to installed separately.</p>
+
+
+<h2 id="layout-modes">Layout modes</h2>
+
+
+<h3 id="masonry">masonry</h3>
+
+<p>The default layout mode. Items are arranged in a vertically cascading grid.</p>
+
+<p><a href="layout-modes/masonry.html">See masonry layout mode</a>.</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+<pre><code class="js">masonry: {
+  columnWidth: <span class="number">50</span>
+}
+</code></pre>
+  </div>
+  <div class="duo__cell example__demo">
+    <div class="grid grid--counting" data-isotope="{ &quot;masonry&quot;: { &quot;columnWidth&quot;: 50 } }">
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item grid-item--width2 grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+    </div>
+    <p class="edit-demo">
+        <a href="http://codepen.io/desandro/pen/mEinp">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+
+<h3 id="fitrows">fitRows</h3>
+
+<p>Items are arranged into rows. Rows progress vertically. Similar to what you would expect from a layout that uses CSS floats. fitRows works well for items that have the same height.</p>
+
+<p><a href="layout-modes/fitrows.html">See fitRows layout mode</a>.</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+<pre><code class="js">layoutMode: <span class="string">&apos;fitRows&apos;</span>
+</code></pre>
+  </div>
+  <div class="duo__cell example__demo">
+    <div class="grid grid--counting" data-isotope="{ &quot;layoutMode&quot;: &quot;fitRows&quot; }">
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item grid-item--width3"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width3"></div>
+    </div>
+    <p class="edit-demo">
+        <a href="http://codepen.io/desandro/pen/nCskp">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+
+<h3 id="vertical">vertical</h3>
+
+<p>Items are stacked vertically.</p>
+
+<p><a href="layout-modes/vertical.html">See vertical layout mode</a>.</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+<pre><code class="js">layoutMode: <span class="string">&apos;vertical&apos;</span>
+</code></pre>
+  </div>
+  <div class="duo__cell example__demo">
+    <div class="grid grid--counting" data-isotope="{ &quot;layoutMode&quot;: &quot;vertical&quot; }">
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width3"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item grid-item--width2 grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width3"></div>
+    </div>
+    <p class="edit-demo">
+        <a href="http://codepen.io/desandro/pen/oXxepd">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+
+<h3 id="packery">packery</h3>
+
+<p>The <code>packery</code> layout mode uses a bin-packing algorithm. This is a fancy way of saying &#x201C;it fills empty gaps.&#x201D; It works similarly to <code>masonry</code>, except gaps will be filled.</p>
+
+<p><a href="layout-modes/packery.html">See <code>packery</code> layout mode</a>.</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+<pre><code class="js">layoutMode: <span class="string">&apos;packery&apos;</span>
+</code></pre>
+  </div>
+  <div class="duo__cell example__demo">
+    <div class="grid grid--counting" data-isotope="{ &quot;layoutMode&quot;: &quot;packery&quot; }">
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item grid-item--width2 grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+    </div>
+    <p class="edit-demo">
+        <a href="http://codepen.io/desandro/pen/vdwmb">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+
+<h3 id="cellsbyrow">cellsByRow</h3>
+
+<p>A vertical grid layout where items are centered inside each cell. The grid is defined by <code>columnWidth</code> and <code>rowHeight</code> options.</p>
+
+<p><a href="layout-modes/cellsbyrow.html">See cellsByRow layout mode</a>.</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+<pre><code class="js">layoutMode: <span class="string">&apos;cellsByRow&apos;</span>,
+cellsByRow: {
+  columnWidth: <span class="number">110</span>,
+  rowHeight: <span class="number">110</span>
+}
+</code></pre>
+  </div>
+  <div class="duo__cell example__demo">
+    <div class="grid grid--counting" data-isotope="{ &quot;layoutMode&quot;: &quot;cellsByRow&quot;, &quot;cellsByRow&quot;: { &quot;columnWidth&quot;: 110, &quot;rowHeight&quot;: 110 } }">
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item grid-item--width2 grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+    </div>
+
+    <p class="edit-demo">
+        <a href="http://codepen.io/desandro/pen/zFart">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+
+<h3 id="masonryhorizontal">masonryHorizontal</h3>
+
+<p>Horizontal version of masonry. Items are arranged in a horizontally cascading grid.</p>
+
+<p><a href="layout-modes/masonryhorizontal.html">See <code>masonryHorizontal</code> layout mode</a>.</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+<pre><code class="js">layoutMode: <span class="string">&apos;masonryHorizontal&apos;</span>,
+masonryHorizontal: {
+  rowHeight: <span class="number">50</span>
+}
+</code></pre>
+  </div>
+  <div class="duo__cell example__demo">
+    <div class="grid grid--counting grid--horizontal horizontal counting" data-isotope="{ &quot;layoutMode&quot;: &quot;masonryHorizontal&quot;, &quot;masonryHorizontal&quot;: { &quot;rowHeight&quot;: 50 } }">
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item grid-item--width2 grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+    </div>
+    <p class="edit-demo">
+        <a href="http://codepen.io/desandro/pen/oCiAD">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+
+<h3 id="fitcolumns">fitColumns</h3>
+
+<p>Items are arranged into columns. Columns progress horizontally.</p>
+
+<p><code>fitColumns</code> works well with items that have the same width.</p>
+
+<p><a href="layout-modes/fitcolumns.html">See <code>fitColumns</code> layout mode</a>.</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+<pre><code class="js">layoutMode: <span class="string">&apos;fitColumns&apos;</span>
+</code></pre>
+  </div>
+  <div class="duo__cell example__demo">
+    <div class="grid grid--counting grid--horizontal" data-isotope="{ &quot;layoutMode&quot;: &quot;fitColumns&quot; }">
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item grid-item--height3"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height3"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+    </div>
+    <p class="edit-demo">
+        <a href="http://codepen.io/desandro/pen/zEAwi">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+
+<h3 id="cellsbycolumn">cellsByColumn</h3>
+
+<p>A horizontal grid layout where items are centered inside each cell. The grid is defined by <code>columnWidth</code> and <code>rowHeight</code> options.</p>
+
+<p><a href="layout-modes/cellsbycolumn.html">See <code>cellsByColumn</code> layout mode</a>.</p>
+
+<pre><code class="js">layoutMode: <span class="string">&apos;cellsByColumn&apos;</span>,
+cellsByColumn: {
+  columnWidth: <span class="number">110</span>,
+  rowHeight: <span class="number">110</span>
+}
+</code></pre>
+
+<div class="example">
+  <div class="grid grid--counting grid--horizontal" data-isotope="{ &quot;layoutMode&quot;: &quot;cellsByColumn&quot;, &quot;cellsByColumn&quot;: { &quot;columnWidth&quot;: 110, &quot;rowHeight&quot;: 110 } }">
+    <div class="grid-item"></div>
+    <div class="grid-item grid-item--width2"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item grid-item--height2"></div>
+    <div class="grid-item grid-item--width2 grid-item--height2"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item grid-item--height2"></div>
+    <div class="grid-item grid-item--width2"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item grid-item--height2"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item grid-item--width2"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item grid-item--height2"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+  </div>
+  <p class="edit-demo">
+      <a href="http://codepen.io/desandro/pen/qAlEy">Edit this demo on CodePen</a>
+  </p>
+</div>
+
+
+<h3 id="horiz">horiz</h3>
+
+<p>Items are arranged horizontally.</p>
+
+<p><a href="layout-modes/horiz.html">See <code>horiz</code> layout mode</a>.</p>
+
+<pre><code class="js">layoutMode: <span class="string">&apos;horiz&apos;</span>
+</code></pre>
+
+<div class="example">
+  <div class="grid grid--counting grid--horizontal" data-isotope="{ &quot;layoutMode&quot;: &quot;horiz&quot; }">
+    <div class="grid-item"></div>
+    <div class="grid-item grid-item--height2"></div>
+    <div class="grid-item grid-item--width2"></div>
+    <div class="grid-item grid-item--height3"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item grid-item--width2 grid-item--height2"></div>
+    <div class="grid-item grid-item--height3"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item grid-item--height2"></div>
+    <div class="grid-item grid-item--height3"></div>
+  </div>
+  <p class="edit-demo">
+      <a href="http://codepen.io/desandro/pen/uGetl">Edit this demo on CodePen</a>
+  </p>
+</div>
+
+    </div>
+  </div>
+
+  <div class="site-footer">
+  
+    <div class="primary-content">
+  
+      <p class="footer-copy">Follow <a href="https://twitter.com/metafizzyco">@metafizzyco on Twitter for Isotope updates.</a></p>
+  
+    </div>
+  
+    <div class="site-footer__brand">
+      <a class="site-footer__brand__link" href="http://metafizzy.co">
+        <svg class="metafizzy-logo" viewbox="0 0 400 512">
+          <path fill="#333" d="M329.4 15c-25 0-44 15-52 26.4C271 27 251 0 213 0c-39 0-69 30.4-70 69-9 3.6-32 17-38 22-10-5-21-8-33-8-35 0-71 27.4-71 71.6 0 40 34.4 68.4 65.6 69.5 6 10 13 21 22.5 35 0.6 0-38 23.5-38 23.5-15 9.5-31 27-31 56.5 0 38.4 32 66 66 66 12.4 0 24.5-3 35-10l8-5-12 34c-15 46 20 88 62.5 88 28 0 53.4-18 63-45l3.6-10c9.6 -1 19-4 28-9l47.5-29c13-8 23-20 28-35l23.5-67c9.6-27 7-64 1-95 4-8 26-57 26-113 0-79-43-94-70-94z"/>
+          <clippath id="metafizzy-logo__body">
+            <path d="M290.4 84c-1-18 10-34 27.6-40 21-7 43 5 50 26 11 34 4 75-7 112-8-23-37-68-71-98zm31 77.4c-30-45-65-82-104-82-7 0-13-6-13-14 0-7 6.4-13 14-13 22 0.6 36.6 8 37.5 8-5-26-38-45-66-28-18 11-26 33.6-18 53-19 5.4-55 27-68 38.5-14-16-38-20-56-9-21 13-27 40-15 61 10 17 29.6 24 47.6 20 8 15 23 38 45 71l-61 38C46 317 40 342 52 360c13 20 38 23.4 55 13 11.6-7 31-19 31-19 0-2 0-4 -1-5-1-7 4-14 11-15 7-1 14 4 15 11 2.5 15 0 27-1 32 0 0-11 31-20 57-9 28 12.5 53 37 53 15 0 32-9 38-27l31-89c1-4 4-7 8-8 12.6-4 23-14 23-14 5.4-5 14-4 19 1 5 5.4 4.5 14 -1 19 0 0.5-11 10-26 17l-15 43c1 -1 2.6-1 4-2l47.5-29c8-5 14-12 17-21l23.5-67c14-41-3-112-26-147z"/>
+          </clippath>
+          <g clip-path="url(#metafizzy-logo__body)">
+            <path fill="#C25" d="M-65 186l379-238 55 87L-11 273z"/>
+            <path fill="#E62" d="M-11 272l379-238 55 87-379 239z"/>
+            <path fill="#EA0" d="M43 358l379-238 46 73-379 238z"/>
+            <path fill="#19F" d="M89 430l379-238 55 87-379 239z"/>
+          </g>
+          <ellipse transform="rotate(-121.393 260.234 218.053)" fill="#FFF" cx="260" cy="218" rx="32" ry="49"/>
+          <path fill="#333" d="M196.4 196c6.6 11-8 7-19 14-11 6.6-14 21-21 10-7-11-3-25 8-32 11-7 25-3 32 8zM287 140c6.6 11-8 7-19 14s-14 21-21 10-3-25 8-32c11-7 25-3 32 8z"/>
+          <path fill="#333" d="M243 199l17.4-11c5-3 11-1 14 3 2 3 2 7 0 10.5l-6 10c-2 3-4 4.4-8 5l-11 1c-4 0-7-1-9-5-3-5-1-11 3.5-14z"/>
+        </svg>
+        <svg class="metafizzy-wordmark" xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewbox="0 0 1000 300">
+          <path d="M491 121l13-39H480l-3 8c-23-31-63 7-72 41-4 10-12 25-23 25-13 0 0-35 6-56v 0c4-12 11-36 11-36H423c25 0 51 5 71-13l-14-15c-9 8-17 8-27 8h-48l7-23h-25L380 44h-29l-6 21H374l-6 19c-7 22-11 49-30 64-14 10-38 17-53 7 19-8 51-21 51-45 0-13-8-29-28-29-39 0-57 40-57 60 0 25 24 40 49 40 21 0 39-7 54-19 3 9 11 16 24 16 13 0 23-5 30-14 7 10 19 16 33 14 11-1 19-7 25-14 4 8 11 14 25 15L498 157c-21-1-10-26-7-36zM277 132c3-10 13-33 28-29 5 1 6 7 4 12-4 12-20 20-33 26 0-3 0-6 1-8zm166 24c-9 3-14-2-15-11-3-19 25-60 42-33l-4 14c-3 12-12 26-23 30zm-192 33L236 207c-31-18-33-59-24-87 10-31 19-50 19-50l-50 65h-23c 0-18-4-50-8-65L136 115c-13 44-37 119-97 109-18-3-32-16-36-34-4-23 12-45 30-60l13 17c-14 11-29 33-13 50 13 14 31 6 42-5 23-22 30-56 38-86C121 82 135 35 135 35c 0 0 -1-1-1-1-5 9-15 14-25 13-11-1-17-11-14-21 3-10 14-18 25-18 15 0 23 1 34 12 14 13 23 50 26 80L244 21h23l-28 94c-7 23-13 59 12 74zM649 48c-2 6-11 18-24 18-14 0-20-11-17-21 3-8 9-14 17-16-8-9-28-7-38 2-9 8-12 20-15 31l-6 21h65l-29 94h-25l22-73H558s-14 48-22 72c-8 27-34 57-64 59L478 212c16-1 29-25 34-41 4-13 18-58 21-68h-19l7-21H539c4-12 7-24 11-36C559 21 583 1 614 1c28 0 42 21 35 47zm78 35h-82l-6 21H685l-62 56-5 17c39 0 75 9 94-15l-16-14c-11 13-27 9-39 10L721 99l6-17zM999 70c0 38-27 89-102 123-2 6-4 12-5 18-7 24-23 88-86 88-22 0-41-12-41-36 0-26 23-38 36-46 24-14 50-25 76-36l3-9c-4 2-8 3-13 3-13 1-28-4-35-15-10 8-23 14-35 17-22 5-57 0-79 0l5-18 61-55h-46l6-21h82l-6 17-64 58c11 0 22 0 33 0 14-1 31-10 41-26 3-4 16-50 16-50h24l-11 38c-4 13-7 35 8 35 12 0 23-13 26-23l15-50h25l-26 85c72-42 76-101 64-114-5 9-15 16-26 14-11-1-17-11-14-21 3-10 14-18 25-18 34 0 44 27 44 44zM867 206l-15 7c-14 7-30 13-48 25-10 7-23 19-15 32 6 11 24 9 34 5 13-6 26-19 32-32 6-11 9-24 13-37z"/>
+        </svg>
+      </a>
+    </div>
+  
+  </div>
+
+<!-- Looking for isotope.js? Use isotope.pkgd.min.js -->
+<!-- Isotope does NOT require jQuery. But it does make things easier -->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+
+  <script src="js/isotope-docs.min.js"></script>
+
+
+</body>
+</html>

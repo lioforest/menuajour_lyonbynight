@@ -1,0 +1,894 @@
+<!doctype html>
+<html class="export" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="filter &amp; sort magical layouts">
+
+  <title>Isotope &#xB7; Methods</title>
+
+    <!-- Isotope does not require any CSS files -->
+    <link rel="stylesheet" href="css/isotope-docs.css" media="screen">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@metafizzyco">
+  <meta name="twitter:url" content="http://isotope.metafizzy.co/methods.html">
+  <meta name="twitter:title" content="Isotope Methods">
+  <meta name="twitter:description" content="filter &amp; sort magical layouts">
+
+</head>
+<body class="page--methods" data-page="methods">
+
+  <div class="nav">
+    <h1 class="nav__title"><a href=".">Isotope</a></h1>
+  
+    <ol class="site-nav">
+      <li class="site-nav__item site-nav__item--filtering">
+        <a class="site-nav__item__link" href="filtering.html">Filtering</a></li>
+      <li class="site-nav__item site-nav__item--sorting">
+        <a class="site-nav__item__link" href="sorting.html">Sorting</a></li>
+      <li class="site-nav__item site-nav__item--layout ">
+        <a class="site-nav__item__link" href="layout.html">Layout</a>
+      </li>
+      <li class="site-nav__item site-nav__item--layout-modes sub-nav-parent">
+        <a class="site-nav__item__link" href="layout-modes.html">Layout modes</a>
+        <ul class="sub-nav">
+            <li class="sub-nav__item sub-nav__item--masonry">
+              <a class="sub-nav__item__link" href="layout-modes/masonry.html">masonry</a></li>
+            <li class="sub-nav__item sub-nav__item--fitrows">
+              <a class="sub-nav__item__link" href="layout-modes/fitrows.html">fitRows</a></li>
+            <li class="sub-nav__item sub-nav__item--vertical">
+              <a class="sub-nav__item__link" href="layout-modes/vertical.html">vertical</a></li>
+            <li class="sub-nav__item sub-nav__item--packery">
+              <a class="sub-nav__item__link" href="layout-modes/packery.html">packery</a></li>
+            <li class="sub-nav__item sub-nav__item--cellsbyrow">
+              <a class="sub-nav__item__link" href="layout-modes/cellsbyrow.html">cellsByRow</a></li>
+            <li class="sub-nav__item sub-nav__item--masonryhorizontal">
+              <a class="sub-nav__item__link" href="layout-modes/masonryhorizontal.html">masonryHorizontal</a></li>
+            <li class="sub-nav__item sub-nav__item--fitcolumns">
+              <a class="sub-nav__item__link" href="layout-modes/fitcolumns.html">fitColumns</a></li>
+            <li class="sub-nav__item sub-nav__item--cellsbycolumn">
+              <a class="sub-nav__item__link" href="layout-modes/cellsbycolumn.html">cellsByColumn</a></li>
+            <li class="sub-nav__item sub-nav__item--horiz">
+              <a class="sub-nav__item__link" href="layout-modes/horiz.html">horiz</a></li>
+        </ul>
+      </li>
+      <li class="site-nav__item site-nav__item--options">
+        <a class="site-nav__item__link" href="options.html">Options</a></li>
+      <li class="site-nav__item site-nav__item--methods">
+        <a class="site-nav__item__link" href="methods.html">Methods</a></li>
+      <li class="site-nav__item site-nav__item--events">
+        <a class="site-nav__item__link" href="events.html">Events</a></li>
+      <li class="site-nav__item site-nav__item--extras">
+        <a class="site-nav__item__link" href="extras.html">Extras</a></li>
+      <li class="site-nav__item site-nav__item--license">
+        <a class="site-nav__item__link" href="license.html">License</a></li>
+      <li class="site-nav__item site-nav__item--faq">
+        <a class="site-nav__item__link" href="faq.html">FAQ</a></li>
+    </ol>
+  
+    <ul class="page-nav" data-js-module="page-nav">
+<li class="page-nav__item page-nav__item--h2"><a href="#arranging-and-layout">Arranging and layout</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#arrange-isotope">arrange / .isotope()</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#layout">layout</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#layoutitems">layoutItems</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#updatesortdata">updateSortData</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#shuffle">shuffle</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#stamp">stamp</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#unstamp">unstamp</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#hideitemelements">hideItemElements</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#revealitemelements">revealItemElements</a></li>
+<li class="page-nav__item page-nav__item--h2"><a href="#adding-and-removing-items">Adding and removing items</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#appended">appended</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#prepended">prepended</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#insert">insert</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#additems">addItems</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#remove">remove</a></li>
+<li class="page-nav__item page-nav__item--h2"><a href="#utilities">Utilities</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#reloaditems">reloadItems</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#destroy">destroy</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#getitemelements">getItemElements</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#getfiltereditemelements">getFilteredItemElements</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#jquery-fn-data-isotope">jQuery.fn.data(&apos;isotope&apos;)</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#isotope-data">Isotope.data</a></li>
+</ul>
+  </div>
+
+
+  <div id="content" class="main">
+    <div class="primary-content">
+        <h1>Methods</h1>
+
+
+<p>Methods are actions done by Isotope instances.</p>
+
+<p>With jQuery, methods follow the jQuery UI pattern <code>.isotope( <span class="string">&apos;methodName&apos;</span> <span class="comment">/*, arguments */</span> )</code>.</p>
+
+<pre><code class="js"><span class="jquery_var">$grid</span>.isotope()
+  .append( elem )
+  .isotope( <span class="string">&apos;appended&apos;</span>, elem )
+  .isotope(<span class="string">&apos;layout&apos;</span>);
+</code></pre>
+
+<div class="call-out">
+  <p>jQuery chaining is broken by methods that return values like
+    <a href="#getitemelements"><code>getItemElements</code></a>.</p>
+</div>
+
+<p>Vanilla JavaScript methods look like <code>isotope.methodName( <span class="comment">/* arguments */</span> )</code>. Unlike jQuery methods, they cannot be chained together.</p>
+
+<pre><code class="js"><span class="comment">// vanilla JS</span>
+<span class="keyword">var</span> <span class="isotope_var">iso</span> = <span class="keyword">new</span> <span class="isotope_keyword">Isotope</span>(<span class="string">&apos;.grid&apos;</span>);
+container.appendChild( elem );
+<span class="isotope_var">iso</span>.appended( elem );
+<span class="isotope_var">iso</span>.layout();
+</code></pre>
+
+
+<h2 id="arranging-and-layout">Arranging and layout</h2>
+
+
+<h3 id="arrange-isotope">arrange / .isotope()</h3>
+
+<p>Filters, sorts, and lays out items. <code>arrange</code> is the principle method of Isotope. It is the default method with jQuery <code>.isotope()</code>. Pass in <a href="options.html"><code>options</code></a> to apply filtering and sorting.</p>
+
+<pre><code class="js"><span class="comment">// jQuery</span>
+<span class="jquery_var">$grid</span>.isotope( options )
+<span class="comment">// vanilla JS</span>
+<span class="isotope_var">iso</span>.arrange( options )
+</code></pre>
+
+<p class="variable">
+  <code class="variable__code">options</code>
+  <span class="variable__type">Object</span>
+</p>
+
+<pre><code class="js"><span class="comment">// filter metal, sort by number, and layout</span>
+<span class="jquery_var">$grid</span>.isotope({
+  filter: <span class="string">&apos;.metal&apos;</span>,
+  sortBy: <span class="string">&apos;number&apos;</span>
+});
+<span class="comment">// triggering method without options will</span>
+<span class="comment">// re-apply filtering, sorting, and layout</span>
+<span class="jquery_var">$grid</span>.isotope();
+</code></pre>
+
+<pre><code class="js"><span class="comment">// vanilla JS</span>
+<span class="isotope_var">iso</span>.arrange({
+  filter: <span class="string">&apos;.metal&apos;</span>,
+  sortBy: <span class="string">&apos;number&apos;</span>
+})
+<span class="comment">// re-apply filtering, sorting, and layout</span>
+<span class="isotope_var">iso</span>.arrange();
+</code></pre>
+
+
+<h3 id="layout">layout</h3>
+
+<p>Lays out all item elements. <code>layout</code> is useful when an item has changed size, and all items need to be laid out again. <code>layout</code> does not apply filtering or sorting.</p>
+
+<pre><code class="js"><span class="comment">// jQuery</span>
+<span class="jquery_var">$grid</span>.isotope(<span class="string">&apos;layout&apos;</span>)
+<span class="comment">// vanilla JS</span>
+<span class="isotope_var">iso</span>.layout()
+</code></pre>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+<pre><code class="js"><span class="keyword">var</span> <span class="jquery_var">$grid</span> = $(<span class="string">&apos;.grid&apos;</span>).isotope({
+  masonry: {
+    columnWidth: <span class="number">50</span>
+  }
+});
+<span class="comment">// change size of item by toggling gigante class</span>
+<span class="jquery_var">$grid</span>.on( <span class="string">&apos;click&apos;</span>, <span class="string">&apos;.grid-item&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  $(<span class="keyword">this</span>).toggleClass(<span class="string">&apos;gigante&apos;</span>);
+  <span class="comment">// trigger layout after item size changes</span>
+  <span class="jquery_var">$grid</span>.isotope(<span class="string">&apos;layout&apos;</span>);
+});
+</code></pre>
+  </div>
+  <div class="duo__cell example__demo" data-js-module="layout-demo">
+    <p class="instruction">Click item to toggle size</p>
+  
+    <div class="grid grid--clickable">
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item grid-item--width2 grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+    </div>
+  
+    <p class="edit-demo">
+        <a href="http://codepen.io/desandro/pen/qzhIb">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+
+<h3 id="layoutitems">layoutItems</h3>
+
+<p>Lays out specified items.</p>
+
+<pre><code class="js"><span class="comment">// jQuery</span>
+<span class="jquery_var">$grid</span>.isotope( <span class="string">&apos;layoutItems&apos;</span>, items, isStill )
+<span class="comment">// vanilla JS</span>
+<span class="isotope_var">iso</span>.layoutItems( items, isStill )
+</code></pre>
+
+<p class="variable">
+  <code class="variable__code">items</code>
+  <span class="variable__type"><i>Array</i> of <i>Isotope.Item</i>s</span>
+</p>
+
+<p class="variable">
+  <code class="variable__code">isStill</code>
+  <span class="variable__type"><i>Boolean</i></span>
+  <span class="variable__description">Disables transitions</span>
+</p>
+
+
+<h3 id="updatesortdata">updateSortData</h3>
+
+<p>Updates sort data.</p>
+
+<pre><code class="js"><span class="comment">// jQuery</span>
+<span class="jquery_var">$grid</span>.isotope( <span class="string">&apos;updateSortData&apos;</span>, elements )
+<span class="comment">// vanilla JS</span>
+<span class="isotope_var">iso</span>.updateSortData( elements )
+</code></pre>
+
+<p class="variable">
+  <code class="variable__code">elements</code>
+  <span class="variable__type">
+    <i>Element</i>,
+    <i>jQuery</i> Object,
+    <i>NodeList</i>, or
+    <i>Array</i> of Elements
+  </span>
+  <span class="variable__description">Optional</span>
+</p>
+
+
+<h3 id="shuffle">shuffle</h3>
+
+<p>Shuffles items in a random order.</p>
+
+<pre><code class="js"><span class="comment">// jQuery</span>
+<span class="jquery_var">$grid</span>.isotope(<span class="string">&apos;shuffle&apos;</span>)
+<span class="comment">// vanilla JS</span>
+<span class="isotope_var">iso</span>.shuffle()
+</code></pre>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+<pre><code class="js">$(<span class="string">&apos;.shuffle-button&apos;</span>).on( <span class="string">&apos;click&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  <span class="jquery_var">$grid</span>.isotope(<span class="string">&apos;shuffle&apos;</span>);
+});
+</code></pre>
+  </div>
+  <div class="duo__cell example__demo" data-js-module="shuffle">
+    <button class="button shuffle-button">Shuffle</button>
+    <div class="grid">
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item grid-item--width2 grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+    </div>
+    <p class="edit-demo">
+        <a href="http://codepen.io/desandro/pen/EluFg">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+
+<h3 id="stamp">stamp</h3>
+
+<p>Stamps elements in the layout. Isotope will lay out item elements <em>around</em> stamped elements.</p>
+
+<pre><code class="js"><span class="comment">// jQuery</span>
+<span class="jquery_var">$grid</span>.isotope( <span class="string">&apos;stamp&apos;</span>, elements )
+<span class="comment">// vanilla JS</span>
+<span class="isotope_var">iso</span>.stamp( elements )
+</code></pre>
+
+<p class="variable">
+  <code class="variable__code">elements</code>
+  <span class="variable__type">
+    <i>Element</i>,
+    <i>jQuery</i> Object,
+    <i>NodeList</i>, or
+    <i>Array</i> of Elements
+  </span>
+</p>
+
+<p>Stamping is only supported by some layout modes: <a href="layout-modes/masonry.html">masonry</a>, <a href="layout-modes/packery.html">packery</a> and <a href="layout-modes/masonryhorizontal.html">masonryhorizontal</a>.</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+<pre><code class="js"><span class="keyword">var</span> <span class="jquery_var">$grid</span> = $(<span class="string">&apos;.grid&apos;</span>).isotope({
+  <span class="comment">// specify itemSelector so stamps do get laid out</span>
+  itemSelector: <span class="string">&apos;.grid-item&apos;</span>,
+  masonry: {
+    columnWidth: <span class="number">50</span>
+  }
+});
+<span class="keyword">var</span> $stampElem = $demo.find(<span class="string">&apos;.stamp&apos;</span>);
+<span class="keyword">var</span> isStamped = <span class="literal">false</span>;
+
+$(<span class="string">&apos;.stamp-button&apos;</span>).on( <span class="string">&apos;click&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  <span class="comment">// stamp or unstamp element</span>
+  <span class="keyword">if</span> ( isStamped ) {
+    <span class="jquery_var">$grid</span>.isotope( <span class="string">&apos;unstamp&apos;</span>, $stampElem );
+  } <span class="keyword">else</span> {
+    <span class="jquery_var">$grid</span>.isotope( <span class="string">&apos;stamp&apos;</span>, $stampElem );
+  }
+  <span class="comment">// trigger layout</span>
+  <span class="jquery_var">$grid</span>.isotope(<span class="string">&apos;layout&apos;</span>);
+  <span class="comment">// set flag</span>
+  isStamped = !isStamped;
+});
+</code></pre>
+  </div>
+  <div class="duo__cell example__demo" data-js-module="stamp-methods">
+    <button class="button stamp-button">Toggle stamped</button>
+    <div class="grid grid--has-stamp grid--stamp-methods">
+      <div class="stamp stamp--stamp-methods"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item grid-item--width2 grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+    </div>
+    <p class="edit-demo">
+        <a href="http://codepen.io/desandro/pen/wguvo">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+
+<h3 id="unstamp">unstamp</h3>
+
+<pre><code class="js"><span class="comment">// jQuery</span>
+<span class="jquery_var">$grid</span>.isotope( <span class="string">&apos;unstamp&apos;</span>, elements )
+<span class="comment">// vanilla JS</span>
+<span class="isotope_var">iso</span>.unstamp( elements )
+</code></pre>
+
+<p>Un-stamps elements in the layout, so that Isotope will no longer layout item elements around them. <a href="#stamp">See demo above</a>.</p>
+
+<p class="variable">
+  <code class="variable__code">elements</code>
+  <span class="variable__type">
+    <i>Element</i>,
+    <i>jQuery</i> Object,
+    <i>NodeList</i>, or
+    <i>Array</i> of Elements
+  </span>
+</p>
+
+
+<h3 id="hideitemelements">hideItemElements</h3>
+
+<p>Hide items.</p>
+
+<pre><code class="js"><span class="comment">// jQuery</span>
+<span class="jquery_var">$grid</span>.isotope( <span class="string">&apos;hideItemElements&apos;</span>, elements )
+<span class="comment">// vanilla JS</span>
+<span class="isotope_var">iso</span>.hideItemElements( elements )
+</code></pre>
+
+<p class="variable">
+  <code class="variable__code">elements</code>
+  <span class="variable__type">
+    <i>Element</i>,
+    <i>jQuery</i> Object,
+    <i>NodeList</i>, or
+    <i>Array</i> of Elements
+  </span>
+</p>
+
+
+<h3 id="revealitemelements">revealItemElements</h3>
+
+<p>Reveals hidden items.</p>
+
+<pre><code class="js"><span class="comment">// jQuery</span>
+<span class="jquery_var">$grid</span>.isotope( <span class="string">&apos;revealItemElements&apos;</span>, elements )
+<span class="comment">// vanilla JS</span>
+<span class="isotope_var">iso</span>.revealItemElements( elements )
+</code></pre>
+
+<p class="variable">
+  <code class="variable__code">elements</code>
+  <span class="variable__type">
+    <i>Element</i>,
+    <i>jQuery</i> Object,
+    <i>NodeList</i>, or
+    <i>Array</i> of Elements
+  </span>
+</p>
+
+
+<h2 id="adding-and-removing-items">Adding and removing items</h2>
+
+
+<h3 id="appended">appended</h3>
+
+<pre><code class="js"><span class="comment">// jQuery</span>
+<span class="jquery_var">$grid</span>.isotope( <span class="string">&apos;appended&apos;</span>, elements )
+<span class="comment">// vanilla JS</span>
+<span class="isotope_var">iso</span>.appended( elements )
+</code></pre>
+
+<p>Adds and lays out newly appended item elements to the end of the layout.</p>
+
+<p class="variable">
+  <code class="variable__code">elements</code>
+  <span class="variable__type">
+    <i>Element</i>,
+    <i>jQuery</i> Object,
+    <i>NodeList</i>, or
+    <i>Array</i> of Elements
+  </span>
+</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+<pre><code class="js">$(<span class="string">&apos;.append-button&apos;</span>).on( <span class="string">&apos;click&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  <span class="comment">// create new item elements</span>
+  <span class="keyword">var</span> $items = $(<span class="string">&apos;&lt;div class=&quot;grid-item&quot;&gt;...&lt;/div&gt;&apos;</span>);
+  <span class="comment">// append items to grid</span>
+  <span class="jquery_var">$grid</span>.append( $items )
+    <span class="comment">// add and lay out newly appended items</span>
+    .isotope( <span class="string">&apos;appended&apos;</span>, $items );
+});
+</code></pre>
+  </div>
+  <div class="duo__cell example__demo" data-js-module="appended">
+    <button class="button append-button">Append items</button>
+    <div class="grid">
+      <div class="grid-item grid-item--width3"></div>
+      <div class="grid-item grid-item--height3"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+    </div>
+    <p class="edit-demo">
+        <a href="http://codepen.io/desandro/pen/ECKiw">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+
+<h3 id="prepended">prepended</h3>
+
+<p>Adds and lays out newly prepended item elements at the beginning of layout.</p>
+
+<pre><code class="js"><span class="comment">// jQuery</span>
+<span class="isotope_var">iso</span>.prepended( elements )
+<span class="comment">// vanilla JS</span>
+<span class="jquery_var">$grid</span>.isotope( <span class="string">&apos;prepended&apos;</span>, elements )
+</code></pre>
+
+<p class="variable">
+  <code class="variable__code">elements</code>
+  <span class="variable__type">
+    <i>Element</i>,
+    <i>jQuery</i> Object,
+    <i>NodeList</i>, or
+    <i>Array</i> of Elements
+  </span>
+</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+<pre><code class="js">$(<span class="string">&apos;.prepend-button&apos;</span>).on( <span class="string">&apos;click&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  <span class="comment">// create new item elements</span>
+  <span class="keyword">var</span> $items = $(<span class="string">&apos;&lt;div class=&quot;grid-item&quot;&gt;...&lt;/div&gt;&apos;</span>);
+  <span class="comment">// prepend items to grid</span>
+  <span class="jquery_var">$grid</span>.prepend( $items )
+    <span class="comment">// add and lay out newly prepended items</span>
+    .isotope( <span class="string">&apos;prepended&apos;</span>, $items );
+});
+</code></pre>
+  </div>
+  <div class="duo__cell example__demo" data-js-module="prepended">
+    <button class="button prepend-button">Prepend items</button>
+    <div class="grid">
+      <div class="grid-item grid-item--width3"></div>
+      <div class="grid-item grid-item--height3"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+    </div>
+    <p class="edit-demo">
+        <a href="http://codepen.io/desandro/pen/fuwdk">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+
+<h3 id="insert">insert</h3>
+
+<pre><code class="js"><span class="comment">// jQuery</span>
+<span class="jquery_var">$grid</span>.isotope( <span class="string">&apos;insert&apos;</span>, elements )
+<span class="comment">// vanilla JS</span>
+<span class="isotope_var">iso</span>.insert( elements )
+</code></pre>
+
+<p>Appends elements into container element, adds elements as items, and arranges items with filtering and sorting.</p>
+
+<p class="variable">
+  <code class="variable__code">elements</code>
+  <span class="variable__type">
+    <i>Element</i>,
+    <i>jQuery</i> Object,
+    <i>NodeList</i>, or
+    <i>Array</i> of Elements
+  </span>
+</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+<pre><code class="js"><span class="keyword">var</span> <span class="jquery_var">$grid</span> = $(<span class="string">&apos;grid&apos;</span>).isotope({
+  masonry: {
+    columnWidth: <span class="number">50</span>
+  },
+  <span class="comment">// filter items with odd numbers</span>
+  filter: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="keyword">var</span> number = $( <span class="keyword">this</span> ).find(<span class="string">&apos;.number&apos;</span>).text();
+    <span class="keyword">return</span> <span class="built_in">parseInt</span>( number, <span class="number">10</span> ) % <span class="number">2</span>;
+  },
+  <span class="comment">// sort by number</span>
+  sortBy: <span class="string">&apos;number&apos;</span>,
+  getSortData: {
+    <span class="string">&apos;number&apos;</span>: <span class="string">&apos;.number parseInt&apos;</span>
+  }
+});
+
+$(<span class="string">&apos;.insert-button&apos;</span>).on( <span class="string">&apos;click&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  <span class="comment">// create new item elements</span>
+  <span class="keyword">var</span> elems = [];
+  <span class="keyword">for</span> ( <span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++ ) {
+    <span class="keyword">var</span> $elem = $(<span class="string">&apos;&lt;div class=&quot;grid-item&quot; /&gt;&apos;</span>);
+    <span class="comment">// set number</span>
+    <span class="keyword">var</span> num = <span class="built_in">Math</span>.floor( <span class="built_in">Math</span>.random() * <span class="number">100</span> );
+    $elem.append( <span class="string">&apos;&lt;p class=&quot;number&quot;&gt;&apos;</span> + num + <span class="string">&apos;&lt;/p&gt;&apos;</span> );
+    elems.push( $elem[<span class="number">0</span>] );
+  }
+  <span class="comment">// insert new elements</span>
+  <span class="jquery_var">$grid</span>.isotope( <span class="string">&apos;insert&apos;</span>, elems );
+});
+</code></pre>
+  </div>
+  <div class="duo__cell example__demo" data-js-module="insert">
+    <button class="button insert-button">Insert items</button>
+    <div class="grid">
+      <div class="grid-item grid-item--width3"><p class="number">59</p></div>
+      <div class="grid-item grid-item--height3"><p class="number">41</p></div>
+      <div class="grid-item grid-item--width2"><p class="number">93</p></div>
+      <div class="grid-item"><p class="number">5</p></div>
+      <div class="grid-item grid-item--height2"><p class="number">17</p></div>
+    </div>
+    <p class="edit-demo">
+        <a href="http://codepen.io/desandro/pen/byqcz">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+
+<h3 id="additems">addItems</h3>
+
+<pre><code class="js"><span class="comment">// jQuery</span>
+<span class="jquery_var">$grid</span>.isotope( <span class="string">&apos;addItems&apos;</span>, elements )
+<span class="comment">// vanilla JS</span>
+<span class="isotope_var">iso</span>.addItems( elements )
+</code></pre>
+
+<p>Adds item elements to the Isotope instance. <code>addItems</code> does not lay out items like <a href="#appended"><code>appended</code></a>, <a href="#prepended"><code>prepended</code></a>, or <a href="#insert"><code>insert</code></a>.</p>
+
+<p class="variable">
+  <code class="variable__code">elements</code>
+  <span class="variable__type">
+    <i>Element</i>,
+    <i>jQuery</i> Object,
+    <i>NodeList</i>, or
+    <i>Array</i> of Elements
+  </span>
+</p>
+
+
+<h3 id="remove">remove</h3>
+
+<pre><code class="js"><span class="comment">// jQuery</span>
+<span class="jquery_var">$grid</span>.isotope( <span class="string">&apos;remove&apos;</span>, elements )
+<span class="comment">// vanilla JS</span>
+<span class="isotope_var">iso</span>.remove( elements )
+</code></pre>
+
+<p>Removes elements from the Isotope instance and DOM.</p>
+
+<p class="variable">
+  <code class="variable__code">elements</code>
+  <span class="variable__type">
+    <i>Element</i>,
+    <i>jQuery</i> Object,
+    <i>NodeList</i>, or
+    <i>Array</i> of Elements
+  </span>
+</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+<pre><code class="js"><span class="jquery_var">$grid</span>.on( <span class="string">&apos;click&apos;</span>, <span class="string">&apos;.grid-item&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  <span class="comment">// remove clicked element</span>
+  <span class="jquery_var">$grid</span>.isotope( <span class="string">&apos;remove&apos;</span>, <span class="keyword">this</span> )
+    <span class="comment">// layout remaining item elements</span>
+    .isotope(<span class="string">&apos;layout&apos;</span>);
+});
+</code></pre>
+  </div>
+  <div class="duo__cell example__demo" data-js-module="remove">
+    <p class="instruction">Click items to remove</p>
+    <div class="grid grid--clickable">
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item grid-item--width2 grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+    </div>
+    <p class="edit-demo">
+        <a href="http://codepen.io/desandro/pen/fHkwt">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+
+<h2 id="utilities">Utilities</h2>
+
+
+<h3 id="reloaditems">reloadItems</h3>
+
+<p>Recollects all item elements.</p>
+
+<p>For frameworks like Angular and React, <code>reloadItems</code> may be useful to apply changes to the DOM to Isotope.</p>
+
+<pre><code class="js"><span class="comment">// jQuery</span>
+<span class="jquery_var">$grid</span>.isotope(<span class="string">&apos;reloadItems&apos;</span>)
+<span class="comment">// vanilla JS</span>
+<span class="isotope_var">iso</span>.reloadItems()
+</code></pre>
+
+
+<h3 id="destroy">destroy</h3>
+
+<p>Removes the Isotope functionality completely. <code>destroy</code> will return the element back to its pre-initialized state.</p>
+
+<pre><code class="js"><span class="comment">// jQuery</span>
+<span class="jquery_var">$grid</span>.isotope(<span class="string">&apos;destroy&apos;</span>)
+<span class="comment">// vanilla JS</span>
+<span class="isotope_var">iso</span>.destroy()
+</code></pre>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+<pre><code class="js"><span class="keyword">var</span> isoOptions = {
+  masonry: {
+    columnWidth: <span class="number">50</span>
+  }
+};
+<span class="comment">// initialize Isotope</span>
+<span class="keyword">var</span> <span class="jquery_var">$grid</span> = $(<span class="string">&apos;.grid&apos;</span>).isotope( isoOptions );
+<span class="keyword">var</span> isActive = <span class="literal">true</span>;
+
+$(<span class="string">&apos;.toggle-button&apos;</span>).on( <span class="string">&apos;click&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  <span class="keyword">if</span> ( isActive ) {
+    <span class="jquery_var">$grid</span>.isotope(<span class="string">&apos;destroy&apos;</span>); <span class="comment">// destroy</span>
+  } <span class="keyword">else</span> {
+    <span class="jquery_var">$grid</span>.isotope( isoOptions ); <span class="comment">// re-initialize</span>
+  }
+  <span class="comment">// set flag</span>
+  isActive = !isActive;
+});
+</code></pre>
+  </div>
+  <div class="duo__cell example__demo" data-js-module="destroy">
+    <button class="button toggle-button">Toggle Isotope</button>
+    <div class="grid">
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item grid-item--width2 grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--width2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item grid-item--height2"></div>
+      <div class="grid-item"></div>
+      <div class="grid-item"></div>
+    </div>
+    <p class="edit-demo">
+        <a href="http://codepen.io/desandro/pen/pcjgk">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+
+<h3 id="getitemelements">getItemElements</h3>
+
+<p>Returns an array of all item elements in the Isotope instance.</p>
+
+<pre><code class="js"><span class="comment">// jQuery</span>
+<span class="keyword">var</span> elems = <span class="jquery_var">$grid</span>.isotope(<span class="string">&apos;getItemElements&apos;</span>)
+<span class="comment">// vanilla JS</span>
+<span class="keyword">var</span> elems = <span class="isotope_var">iso</span>.getItemElements()
+</code></pre>
+
+<p class="variable">
+  <code class="variable__code">elems</code>
+  <span class="variable__type"><i>Array</i> of <i>Element</i>s</span>
+</p>
+
+
+<h3 id="getfiltereditemelements">getFilteredItemElements</h3>
+
+<p>Returns an array of filtered item elements in current sorted order.</p>
+
+<pre><code class="js"><span class="comment">// jQuery</span>
+<span class="keyword">var</span> elems = <span class="jquery_var">$grid</span>.isotope(<span class="string">&apos;getFilteredItemElements&apos;</span>)
+<span class="comment">// vanilla JS</span>
+<span class="keyword">var</span> elems = <span class="isotope_var">iso</span>.getFilteredItemElements()
+</code></pre>
+
+<p class="variable">
+  <code class="variable__code">elems</code>
+  <span class="variable__type"><i>Array</i> of <i>Element</i>s</span>
+</p>
+
+
+<h3 id="jquery-fn-data-isotope">jQuery.fn.data(&apos;isotope&apos;)</h3>
+
+<p>Get the Isotope instance from a jQuery object. Isotope instances are useful to access Isotope properties.</p>
+
+<pre><code class="js"><span class="keyword">var</span> <span class="isotope_var">iso</span> = $(<span class="string">&apos;.grid&apos;</span>).data(<span class="string">&apos;isotope&apos;</span>)
+<span class="comment">// access Isotope properties</span>
+<span class="built_in">console</span>.log( <span class="isotope_var">iso</span>.filteredItems.length + <span class="string">&apos; filtered items&apos;</span>  )
+</code></pre>
+
+
+<h3 id="isotope-data">Isotope.data</h3>
+
+<p>Get the Isotope instance via its element. <code>Isotope.data()</code> is useful for getting the Isotope instance in JavaScript, after it has been initalized in HTML.</p>
+
+<pre><code class="js"><span class="keyword">var</span> <span class="isotope_var">iso</span> = <span class="isotope_keyword">Isotope</span>.data( element )
+</code></pre>
+
+<p class="variable">
+  <code class="variable__code">element</code>
+  <span class="variable__type"><i>Element</i> or Selector <i>String</i></span>
+</p>
+
+<p class="variable">
+  <code class="variable__code">iso</code>
+  <span class="variable__type"><i>Isotope</i></span>
+</p>
+
+<pre><code class="html"><span class="comment">&lt;!-- init Isotope in HTML --&gt;</span>
+<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid&quot;</span> <span class="attr">data-isotope</span>=<span class="string">&apos;{...}&apos;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+
+<pre><code class="js"><span class="comment">// jQuery</span>
+<span class="comment">// pass in the element, $element[0], not the jQuery object</span>
+<span class="keyword">var</span> <span class="isotope_var">iso</span> = <span class="isotope_keyword">Isotope</span>.data( $(<span class="string">&apos;.grid&apos;</span>)[<span class="number">0</span>] )
+
+<span class="comment">// vanilla JS</span>
+<span class="comment">// using an element</span>
+<span class="keyword">var</span> grid = <span class="built_in">document</span>.querySelector(<span class="string">&apos;.grid&apos;</span>)
+<span class="keyword">var</span> <span class="isotope_var">iso</span> = <span class="isotope_keyword">Isotope</span>.data( grid )
+<span class="comment">// using a selector string</span>
+<span class="keyword">var</span> <span class="isotope_var">iso</span> = <span class="isotope_keyword">Isotope</span>.data(<span class="string">&apos;.grid&apos;</span>)
+</code></pre>
+
+    </div>
+  </div>
+
+  <div class="site-footer">
+  
+    <div class="primary-content">
+  
+      <p class="footer-copy">Follow <a href="https://twitter.com/metafizzyco">@metafizzyco on Twitter for Isotope updates.</a></p>
+  
+    </div>
+  
+    <div class="site-footer__brand">
+      <a class="site-footer__brand__link" href="http://metafizzy.co">
+        <svg class="metafizzy-logo" viewbox="0 0 400 512">
+          <path fill="#333" d="M329.4 15c-25 0-44 15-52 26.4C271 27 251 0 213 0c-39 0-69 30.4-70 69-9 3.6-32 17-38 22-10-5-21-8-33-8-35 0-71 27.4-71 71.6 0 40 34.4 68.4 65.6 69.5 6 10 13 21 22.5 35 0.6 0-38 23.5-38 23.5-15 9.5-31 27-31 56.5 0 38.4 32 66 66 66 12.4 0 24.5-3 35-10l8-5-12 34c-15 46 20 88 62.5 88 28 0 53.4-18 63-45l3.6-10c9.6 -1 19-4 28-9l47.5-29c13-8 23-20 28-35l23.5-67c9.6-27 7-64 1-95 4-8 26-57 26-113 0-79-43-94-70-94z"/>
+          <clippath id="metafizzy-logo__body">
+            <path d="M290.4 84c-1-18 10-34 27.6-40 21-7 43 5 50 26 11 34 4 75-7 112-8-23-37-68-71-98zm31 77.4c-30-45-65-82-104-82-7 0-13-6-13-14 0-7 6.4-13 14-13 22 0.6 36.6 8 37.5 8-5-26-38-45-66-28-18 11-26 33.6-18 53-19 5.4-55 27-68 38.5-14-16-38-20-56-9-21 13-27 40-15 61 10 17 29.6 24 47.6 20 8 15 23 38 45 71l-61 38C46 317 40 342 52 360c13 20 38 23.4 55 13 11.6-7 31-19 31-19 0-2 0-4 -1-5-1-7 4-14 11-15 7-1 14 4 15 11 2.5 15 0 27-1 32 0 0-11 31-20 57-9 28 12.5 53 37 53 15 0 32-9 38-27l31-89c1-4 4-7 8-8 12.6-4 23-14 23-14 5.4-5 14-4 19 1 5 5.4 4.5 14 -1 19 0 0.5-11 10-26 17l-15 43c1 -1 2.6-1 4-2l47.5-29c8-5 14-12 17-21l23.5-67c14-41-3-112-26-147z"/>
+          </clippath>
+          <g clip-path="url(#metafizzy-logo__body)">
+            <path fill="#C25" d="M-65 186l379-238 55 87L-11 273z"/>
+            <path fill="#E62" d="M-11 272l379-238 55 87-379 239z"/>
+            <path fill="#EA0" d="M43 358l379-238 46 73-379 238z"/>
+            <path fill="#19F" d="M89 430l379-238 55 87-379 239z"/>
+          </g>
+          <ellipse transform="rotate(-121.393 260.234 218.053)" fill="#FFF" cx="260" cy="218" rx="32" ry="49"/>
+          <path fill="#333" d="M196.4 196c6.6 11-8 7-19 14-11 6.6-14 21-21 10-7-11-3-25 8-32 11-7 25-3 32 8zM287 140c6.6 11-8 7-19 14s-14 21-21 10-3-25 8-32c11-7 25-3 32 8z"/>
+          <path fill="#333" d="M243 199l17.4-11c5-3 11-1 14 3 2 3 2 7 0 10.5l-6 10c-2 3-4 4.4-8 5l-11 1c-4 0-7-1-9-5-3-5-1-11 3.5-14z"/>
+        </svg>
+        <svg class="metafizzy-wordmark" xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewbox="0 0 1000 300">
+          <path d="M491 121l13-39H480l-3 8c-23-31-63 7-72 41-4 10-12 25-23 25-13 0 0-35 6-56v 0c4-12 11-36 11-36H423c25 0 51 5 71-13l-14-15c-9 8-17 8-27 8h-48l7-23h-25L380 44h-29l-6 21H374l-6 19c-7 22-11 49-30 64-14 10-38 17-53 7 19-8 51-21 51-45 0-13-8-29-28-29-39 0-57 40-57 60 0 25 24 40 49 40 21 0 39-7 54-19 3 9 11 16 24 16 13 0 23-5 30-14 7 10 19 16 33 14 11-1 19-7 25-14 4 8 11 14 25 15L498 157c-21-1-10-26-7-36zM277 132c3-10 13-33 28-29 5 1 6 7 4 12-4 12-20 20-33 26 0-3 0-6 1-8zm166 24c-9 3-14-2-15-11-3-19 25-60 42-33l-4 14c-3 12-12 26-23 30zm-192 33L236 207c-31-18-33-59-24-87 10-31 19-50 19-50l-50 65h-23c 0-18-4-50-8-65L136 115c-13 44-37 119-97 109-18-3-32-16-36-34-4-23 12-45 30-60l13 17c-14 11-29 33-13 50 13 14 31 6 42-5 23-22 30-56 38-86C121 82 135 35 135 35c 0 0 -1-1-1-1-5 9-15 14-25 13-11-1-17-11-14-21 3-10 14-18 25-18 15 0 23 1 34 12 14 13 23 50 26 80L244 21h23l-28 94c-7 23-13 59 12 74zM649 48c-2 6-11 18-24 18-14 0-20-11-17-21 3-8 9-14 17-16-8-9-28-7-38 2-9 8-12 20-15 31l-6 21h65l-29 94h-25l22-73H558s-14 48-22 72c-8 27-34 57-64 59L478 212c16-1 29-25 34-41 4-13 18-58 21-68h-19l7-21H539c4-12 7-24 11-36C559 21 583 1 614 1c28 0 42 21 35 47zm78 35h-82l-6 21H685l-62 56-5 17c39 0 75 9 94-15l-16-14c-11 13-27 9-39 10L721 99l6-17zM999 70c0 38-27 89-102 123-2 6-4 12-5 18-7 24-23 88-86 88-22 0-41-12-41-36 0-26 23-38 36-46 24-14 50-25 76-36l3-9c-4 2-8 3-13 3-13 1-28-4-35-15-10 8-23 14-35 17-22 5-57 0-79 0l5-18 61-55h-46l6-21h82l-6 17-64 58c11 0 22 0 33 0 14-1 31-10 41-26 3-4 16-50 16-50h24l-11 38c-4 13-7 35 8 35 12 0 23-13 26-23l15-50h25l-26 85c72-42 76-101 64-114-5 9-15 16-26 14-11-1-17-11-14-21 3-10 14-18 25-18 34 0 44 27 44 44zM867 206l-15 7c-14 7-30 13-48 25-10 7-23 19-15 32 6 11 24 9 34 5 13-6 26-19 32-32 6-11 9-24 13-37z"/>
+        </svg>
+      </a>
+    </div>
+  
+  </div>
+
+<!-- Looking for isotope.js? Use isotope.pkgd.min.js -->
+<!-- Isotope does NOT require jQuery. But it does make things easier -->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+
+  <script src="js/isotope-docs.min.js"></script>
+
+
+</body>
+</html>

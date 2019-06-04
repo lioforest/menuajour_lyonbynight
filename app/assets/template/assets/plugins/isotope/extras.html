@@ -1,0 +1,748 @@
+<!doctype html>
+<html class="export" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="filter &amp; sort magical layouts">
+
+  <title>Isotope &#xB7; Extras</title>
+
+    <!-- Isotope does not require any CSS files -->
+    <link rel="stylesheet" href="css/isotope-docs.css" media="screen">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@metafizzyco">
+  <meta name="twitter:url" content="http://isotope.metafizzy.co/extras.html">
+  <meta name="twitter:title" content="Isotope Extras">
+  <meta name="twitter:description" content="filter &amp; sort magical layouts">
+
+</head>
+<body class="page--extras" data-page="extras">
+
+  <div class="nav">
+    <h1 class="nav__title"><a href=".">Isotope</a></h1>
+  
+    <ol class="site-nav">
+      <li class="site-nav__item site-nav__item--filtering">
+        <a class="site-nav__item__link" href="filtering.html">Filtering</a></li>
+      <li class="site-nav__item site-nav__item--sorting">
+        <a class="site-nav__item__link" href="sorting.html">Sorting</a></li>
+      <li class="site-nav__item site-nav__item--layout ">
+        <a class="site-nav__item__link" href="layout.html">Layout</a>
+      </li>
+      <li class="site-nav__item site-nav__item--layout-modes sub-nav-parent">
+        <a class="site-nav__item__link" href="layout-modes.html">Layout modes</a>
+        <ul class="sub-nav">
+            <li class="sub-nav__item sub-nav__item--masonry">
+              <a class="sub-nav__item__link" href="layout-modes/masonry.html">masonry</a></li>
+            <li class="sub-nav__item sub-nav__item--fitrows">
+              <a class="sub-nav__item__link" href="layout-modes/fitrows.html">fitRows</a></li>
+            <li class="sub-nav__item sub-nav__item--vertical">
+              <a class="sub-nav__item__link" href="layout-modes/vertical.html">vertical</a></li>
+            <li class="sub-nav__item sub-nav__item--packery">
+              <a class="sub-nav__item__link" href="layout-modes/packery.html">packery</a></li>
+            <li class="sub-nav__item sub-nav__item--cellsbyrow">
+              <a class="sub-nav__item__link" href="layout-modes/cellsbyrow.html">cellsByRow</a></li>
+            <li class="sub-nav__item sub-nav__item--masonryhorizontal">
+              <a class="sub-nav__item__link" href="layout-modes/masonryhorizontal.html">masonryHorizontal</a></li>
+            <li class="sub-nav__item sub-nav__item--fitcolumns">
+              <a class="sub-nav__item__link" href="layout-modes/fitcolumns.html">fitColumns</a></li>
+            <li class="sub-nav__item sub-nav__item--cellsbycolumn">
+              <a class="sub-nav__item__link" href="layout-modes/cellsbycolumn.html">cellsByColumn</a></li>
+            <li class="sub-nav__item sub-nav__item--horiz">
+              <a class="sub-nav__item__link" href="layout-modes/horiz.html">horiz</a></li>
+        </ul>
+      </li>
+      <li class="site-nav__item site-nav__item--options">
+        <a class="site-nav__item__link" href="options.html">Options</a></li>
+      <li class="site-nav__item site-nav__item--methods">
+        <a class="site-nav__item__link" href="methods.html">Methods</a></li>
+      <li class="site-nav__item site-nav__item--events">
+        <a class="site-nav__item__link" href="events.html">Events</a></li>
+      <li class="site-nav__item site-nav__item--extras">
+        <a class="site-nav__item__link" href="extras.html">Extras</a></li>
+      <li class="site-nav__item site-nav__item--license">
+        <a class="site-nav__item__link" href="license.html">License</a></li>
+      <li class="site-nav__item site-nav__item--faq">
+        <a class="site-nav__item__link" href="faq.html">FAQ</a></li>
+    </ol>
+  
+    <ul class="page-nav" data-js-module="page-nav">
+<li class="page-nav__item page-nav__item--h2"><a href="#extra-examples">Extra examples</a></li>
+<li class="page-nav__item page-nav__item--h2"><a href="#module-loaders">Module loaders</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#requirejs">RequireJS</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#browserify">Browserify</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#webpack">Webpack</a></li>
+<li class="page-nav__item page-nav__item--h2"><a href="#bootstrap">Bootstrap</a></li>
+<li class="page-nav__item page-nav__item--h2"><a href="#animating-item-size">Animating item size</a></li>
+<li class="page-nav__item page-nav__item--h2"><a href="#web-fonts">Web fonts</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#typekit">Typekit</a></li>
+<li class="page-nav__item page-nav__item--h2"><a href="#issues">Issues</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#reduced-test-cases">Reduced test cases</a></li>
+<li class="page-nav__item page-nav__item--h3"><a href="#submitting-issues">Submitting issues</a></li>
+<li class="page-nav__item page-nav__item--h2"><a href="#browser-support">Browser support</a></li>
+<li class="page-nav__item page-nav__item--h2"><a href="#upgrading-from-v2">Upgrading from v2</a></li>
+</ul>
+  </div>
+
+
+  <div id="content" class="main">
+    <div class="primary-content">
+        <h1>Extras</h1>
+
+
+
+<h2 id="extra-examples">Extra examples</h2>
+
+<ul>
+  <li><a href="http://codepen.io/desandro/pen/owAyG/">Combination filters with functions</a></li>
+  <li><a href="http://codepen.io/desandro/pen/JGKyrY">Combination inclusive filters with checkboxes</a> and <a href="http://codepen.io/desandro/pen/GFbAs">Combination inclusive and exclusive filters with selects and checkboxes</a>. Explanation on <a href="https://github.com/metafizzy/isotope/issues/771#issuecomment-50991110">issue #771</a>.</li>
+  <li><a href="http://codepen.io/desandro/pen/MebyMR">Combination filters, inclusive within a group, exclusive outside groups</a></li>
+  <li><a href="http://codepen.io/desandro/pen/zrMXQv">Inclusive combination filters with toggle buttons</a></li>
+  <li><a href="http://codepen.io/desandro/pen/pyxwem/">Updating filter counts on buttons</a></li>
+  <li><a href="http://codepen.io/desandro/pen/Kpvyd">Reveal items on init</a></li>
+  <li><a href="http://codepen.io/desandro/pen/AEslp">Only filter items, no layout</a>. For <a href="https://github.com/metafizzy/isotope/issues/675#issuecomment-40675160">issue #675</a></li>
+  <li><a href="http://codepen.io/desandro/pen/mCdbD">Search and filter buttons</a></li>
+  <li><a href="http://codepen.io/desandro/pen/bsHix">Reveal each image as they load</a></li>
+  <li><a href="http://codepen.io/desandro/pen/vEJbNr">Filtering with toggle on/off buttons</a></li>
+  <li><a href="http://codepen.io/desandro/pen/vErxXj">Filtering with URL hash</a>. View <a href="http://s.codepen.io/desandro/debug/vErxXj#filter=%3Anot(.transition)">debug version</a> to see filter in URL hash.</li>
+  <li><a href="http://codepen.io/desandro/pen/zGZywM">Sorting by selected category</a>. For <a href="https://github.com/metafizzy/isotope/issues/901">issue #901</a></li>
+  <li><a href="http://codepen.io/desandro/pen/dXYBRE">Sort clicked item first</a></li>
+  <li><a href="http://codepen.io/desandro/pen/pbkbBO">Update filtered item count</a></li>
+</ul>
+
+
+<h2 id="module-loaders">Module loaders</h2>
+
+
+<h3 id="requirejs">RequireJS</h3>
+
+<p>Isotope supports <a href="http://requirejs.org">RequireJS</a>.</p>
+
+<p>You can require <a href="isotope.pkgd.js">isotope.pkgd.js</a>.</p>
+
+<pre><code class="js">requirejs( [
+  <span class="string">&apos;path/to/isotope.pkgd.js&apos;</span>,
+], <span class="function"><span class="keyword">function</span>(<span class="params"> Isotope </span>) </span>{
+  <span class="keyword">var</span> <span class="isotope_var">iso</span> = <span class="keyword">new</span> <span class="isotope_keyword">Isotope</span>( <span class="string">&apos;.grid&apos;</span>, {...});
+});
+</code></pre>
+
+<p id="requirejs-layout-modes">Any <a href="layout-modes.html#included-modes">layout mode that&#x2019;s not included</a>, will need to be required separately</p>
+
+<pre><code class="js">requirejs( [
+  <span class="string">&apos;path/to/isotope.pkgd.js&apos;</span>,
+  <span class="string">&apos;path/to/masonry-horizontal.js&apos;</span>
+], <span class="function"><span class="keyword">function</span>(<span class="params"> Isotope </span>) </span>{
+  <span class="keyword">var</span> <span class="isotope_var">iso</span> = <span class="keyword">new</span> <span class="isotope_keyword">Isotope</span>( <span class="string">&apos;.grid&apos;</span>, {
+    layoutMode: <span class="string">&apos;masonryHorizontal&apos;</span>
+  });
+});
+</code></pre>
+
+<p id="requirejs-pkgd-jquery">To use Isotope as a jQuery plugin with RequireJS and isotope.pkgd.js, you need to run jQuery bridget.</p>
+
+
+<pre><code class="js"><span class="comment">// require the require function</span>
+requirejs( [ <span class="string">&apos;require&apos;</span>, <span class="string">&apos;jquery&apos;</span>, <span class="string">&apos;path/to/isotope.pkgd.js&apos;</span> ],
+  <span class="function"><span class="keyword">function</span>(<span class="params"> require, $, Isotope </span>) </span>{
+    <span class="comment">// require jquery-bridget, it&apos;s included in isotope.pkgd.js</span>
+    <span class="built_in">require</span>( [ <span class="string">&apos;jquery-bridget/jquery-bridget&apos;</span> ],
+    <span class="function"><span class="keyword">function</span>(<span class="params"> jQueryBridget </span>) </span>{
+      <span class="comment">// make Isotope a jQuery plugin</span>
+      jQueryBridget( <span class="string">&apos;isotope&apos;</span>, <span class="isotope_keyword">Isotope</span>, $ );
+      <span class="comment">// now you can use $().isotope()</span>
+      $(<span class="string">&apos;.grid&apos;</span>).isotope({...});
+    }
+  );
+});
+</code></pre>
+
+<p id="requirejs-bower">Or, you can manage dependencies with <a href="http://bower.io">Bower</a>. Set <a href="http://requirejs.org/docs/api.html#config-baseUrl">baseUrl</a> to <code>bower_components</code> and set a path config for all your application code.</p>
+
+<pre><code class="js">requirejs.config({
+  baseUrl: <span class="string">&apos;bower_components/&apos;</span>,
+  paths: {
+    app: <span class="string">&apos;../&apos;</span>
+  }
+});
+
+requirejs( [
+  <span class="string">&apos;isotope/js/isotope&apos;</span>,
+  <span class="string">&apos;app/my-component.js&apos;</span>
+], <span class="function"><span class="keyword">function</span>(<span class="params"> Isotope, myComp </span>) </span>{
+  <span class="keyword">var</span> <span class="isotope_var">iso</span> = <span class="keyword">new</span> <span class="isotope_keyword">Isotope</span>( <span class="string">&apos;.grid&apos;</span>, {...});
+});
+</code></pre>
+
+<p id="requirejs-bower-jquery">You can require Bower dependencies and use Isotope as a jQuery plugin with jQuery Bridget.</p>
+
+<pre><code class="js">requirejs.config({
+  baseUrl: <span class="string">&apos;../bower_components&apos;</span>,
+  paths: {
+    jquery: <span class="string">&apos;jquery/jquery&apos;</span>
+  }
+});
+
+requirejs( [
+    <span class="string">&apos;jquery&apos;</span>,
+    <span class="string">&apos;isotope/js/isotope&apos;</span>,
+    <span class="string">&apos;jquery-bridget/jquery-bridget&apos;</span>
+  ],
+  <span class="function"><span class="keyword">function</span>(<span class="params"> $, Isotope, jQueryBridget </span>) </span>{
+    <span class="comment">// make Isotope a jQuery plugin</span>
+    jQueryBridget( <span class="string">&apos;isotope&apos;</span>, <span class="isotope_keyword">Isotope</span>, $ );
+    <span class="comment">// now you can use $().isotope()</span>
+    $(<span class="string">&apos;.grid&apos;</span>).isotope({...});
+});
+</code></pre>
+
+
+<h3 id="browserify">Browserify</h3>
+
+<p>Isotope works with <a href="http://browserify.org">Browserify</a>. <a href="https://www.npmjs.com/package/isotope-layout">Install Isotope with npm</a>.</p>
+
+<pre><code>npm install isotope-layout
+</code></pre>
+
+<pre><code class="js"><span class="keyword">var</span> <span class="isotope_keyword">Isotope</span> = <span class="built_in">require</span>(<span class="string">&apos;isotope-layout&apos;</span>);
+
+<span class="keyword">var</span> <span class="isotope_var">iso</span> = <span class="keyword">new</span> <span class="isotope_keyword">Isotope</span>( <span class="string">&apos;.grid&apos;</span>, {
+  <span class="comment">// options...</span>
+});
+</code></pre>
+
+<p>Install and require <a href="layout-modes.html#included-modes">layout modes that are not included</a>.</p>
+
+<pre><code class="bash">npm install isotope-cells-by-row
+</code></pre>
+
+<pre><code class="js"><span class="keyword">var</span> <span class="isotope_keyword">Isotope</span> = <span class="built_in">require</span>(<span class="string">&apos;isotope-layout&apos;</span>);
+<span class="comment">// add cellsByRow layout mode</span>
+<span class="built_in">require</span>(<span class="string">&apos;isotope-cells-by-row&apos;</span>)
+
+<span class="keyword">var</span> <span class="isotope_var">iso</span> = <span class="keyword">new</span> <span class="isotope_keyword">Isotope</span>( <span class="string">&apos;.grid&apos;</span>, {
+  layoutMode: <span class="string">&apos;cellsByRow&apos;</span>
+});
+</code></pre>
+
+<p id="browserify-jquery">To use Isotope as a jQuery plugin with Browserify, you need to use <a href="https://www.npmjs.com/package/jquery-bridget">jQuery Bridget</a></p>
+
+<pre><code class="bash">npm install jquery
+npm install jquery-bridget
+</code></pre>
+
+<pre><code class="js"><span class="keyword">var</span> $ = <span class="built_in">require</span>(<span class="string">&apos;jquery&apos;</span>);
+<span class="keyword">var</span> jQueryBridget = <span class="built_in">require</span>(<span class="string">&apos;jquery-bridget&apos;</span>);
+<span class="keyword">var</span> <span class="isotope_keyword">Isotope</span> = <span class="built_in">require</span>(<span class="string">&apos;isotope-layout&apos;</span>);
+<span class="comment">// make Isotope a jQuery plugin</span>
+jQueryBridget( <span class="string">&apos;isotope&apos;</span>, <span class="isotope_keyword">Isotope</span>, $ );
+<span class="comment">// now you can use $().isotope()</span>
+$(<span class="string">&apos;.grid&apos;</span>).isotope({
+  <span class="comment">// options...</span>
+});
+</code></pre>
+
+
+<h3 id="webpack">Webpack</h3>
+
+<p>Install Isotope with npm.</p>
+
+<pre><code class="bash">npm install isotope-layout
+</code></pre>
+
+<p>In your config file, <code>webpack.config.js</code>, add these resolve aliases.</p>
+
+<pre><code class="js"><span class="built_in">module</span>.exports = {
+  resolve: {
+    alias: {
+      <span class="string">&apos;masonry&apos;</span>: <span class="string">&apos;masonry-layout&apos;</span>,
+      <span class="string">&apos;isotope&apos;</span>: <span class="string">&apos;isotope-layout&apos;</span>
+    }
+  }
+};
+</code></pre>
+
+<p>(This hack is required because of an issue with how Webpack loads dependencies. <a href="https://github.com/webpack/webpack/issues/883">+1 this issue on GitHub</a> to help get this issue addressed.)</p>
+
+<p>You can then <code>require(<span class="string">&apos;isotope-layout&apos;</span>)</code>.</p>
+
+<pre><code class="js"><span class="comment">// main.js</span>
+<span class="keyword">var</span> <span class="isotope_keyword">Isotope</span> = <span class="built_in">require</span>(<span class="string">&apos;isotope-layout&apos;</span>);
+
+<span class="keyword">var</span> <span class="isotope_var">iso</span> = <span class="keyword">new</span> <span class="isotope_keyword">Isotope</span>( <span class="string">&apos;.grid&apos;</span>, {
+  <span class="comment">// options...</span>
+});
+</code></pre>
+
+<p>Run webpack.</p>
+
+
+<pre><code class="bash">webpack main.js bundle.js
+</code></pre>
+
+<p>Layout modes and jQuery plugin functionality need to be installed separately, similar to <a href="#browserify">using Browserify</a>.</p>
+
+
+<h2 id="bootstrap">Bootstrap</h2>
+
+<p>You can use Isotope layouts with <a href="http://getbootstrap.com/css/#grid">Bootstrap grid system</a>. This example will display a fluid grid of 3 columns, using <code>col-xs-4</code> as <a href="layout-modes/masonry.html#columnwidth"><code>columnWidth</code></a>.</p>
+
+<div class="example">
+  <div class="example__code">
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container-fluid&quot;</span>&gt;</span>
+  <span class="comment">&lt;!-- add extra container element for Masonry --&gt;</span>
+  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid&quot;</span>&gt;</span>
+    <span class="comment">&lt;!-- add sizing element for columnWidth --&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid-sizer col-xs-4&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="comment">&lt;!-- items use Bootstrap .col- classes --&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid-item col-xs-8&quot;</span>&gt;</span>
+      <span class="comment">&lt;!-- wrap item content in its own element --&gt;</span>
+      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid-item-content&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid-item col-xs-4&quot;</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid-item-content&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    ...
+  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+
+<pre><code class="js">$(<span class="string">&apos;.grid&apos;</span>).isotope({
+  itemSelector: <span class="string">&apos;.grid-item&apos;</span>, <span class="comment">// use a separate class for itemSelector, other than .col-</span>
+  percentPosition: <span class="literal">true</span>,
+  masonry: {
+    columnWidth: <span class="string">&apos;.grid-sizer&apos;</span>
+  }
+});
+</code></pre>
+  </div>
+  <div class="example__demo">
+  
+    <div class="bootstrap-3__container-fluid">
+      <div class="grid js-masonry" data-masonry-options="{ &quot;itemSelector&quot;: &quot;.bootstrap-3__grid-item&quot;, &quot;columnWidth&quot;: &quot;.grid-sizer&quot;, &quot;percentPosition&quot;: true }">
+        <div class="grid-sizer bootstrap-3__col-xs-4"></div>
+        <div class="bootstrap-3__grid-item bootstrap-3__col-xs-8">
+          <div class="bootstrap-3__grid-item-content"></div>
+        </div>
+        <div class="bootstrap-3__grid-item bootstrap-3__col-xs-4">
+          <div class="bootstrap-3__grid-item-content"></div>
+        </div>
+        <div class="bootstrap-3__grid-item bootstrap-3__col-xs-4">
+          <div class="bootstrap-3__grid-item-content bootstrap-3__grid-item-content--height2"></div>
+        </div>
+        <div class="bootstrap-3__grid-item bootstrap-3__col-xs-8">
+          <div class="bootstrap-3__grid-item-content"></div>
+        </div>
+        <div class="bootstrap-3__grid-item bootstrap-3__col-xs-4">
+          <div class="bootstrap-3__grid-item-content bootstrap-3__grid-item-content--height2"></div>
+        </div>
+        <div class="bootstrap-3__grid-item bootstrap-3__col-xs-4">
+          <div class="bootstrap-3__grid-item-content"></div>
+        </div>
+        <div class="bootstrap-3__grid-item bootstrap-3__col-xs-4">
+          <div class="bootstrap-3__grid-item-content"></div>
+        </div>
+      </div>
+  
+    </div>
+  
+    <p class="edit-demo">
+        <a href="http://codepen.io/desandro/pen/yeezdp">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+<p>Use multiple <code>.col-</code> classes on item elements to use Bootstrap&#x2019;s grid media queries to responsively change column sizes. This example will use 2, then 3, then 4 columns at different screen sizes.</p>
+
+<div class="example">
+  <div class="example__code">
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container-fluid&quot;</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid&quot;</span>&gt;</span>
+    <span class="comment">&lt;!-- 2 col grid @ xs, 3 col grid @ sm, 4 col grid @ md --&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid-sizer col-xs-6 col-sm-4 col-md-3&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="comment">&lt;!-- 1 col @ xs, 2 col @ sm, 2 col @ md --&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid-item col-xs-6 col-sm-8 col-md-6&quot;</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid-item-content&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="comment">&lt;!-- 1 col @ xs, 1 col @ sm, 1 col @ md --&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid-item col-xs-6 col-sm-4 col-md-3&quot;</span>&gt;</span>
+      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid-item-content&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+    ...
+  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+</code></pre>
+  </div>
+  <div class="example__demo">
+  
+    <div class="bootstrap-3__container-fluid">
+      <div class="grid js-masonry" data-masonry-options="{ &quot;itemSelector&quot;: &quot;.bootstrap-3__grid-item&quot;, &quot;columnWidth&quot;: &quot;.grid-sizer&quot;, &quot;percentPosition&quot;: true }">
+        <div class="grid-sizer bootstrap-3__col-xs-6 bootstrap-3__col-sm-4 bootstrap-3__col-md-3"></div>
+        <div class="bootstrap-3__grid-item bootstrap-3__col-xs-6 bootstrap-3__col-sm-8 bootstrap-3__col-md-6">
+          <div class="bootstrap-3__grid-item-content"></div>
+        </div>
+        <div class="bootstrap-3__grid-item bootstrap-3__col-xs-6 bootstrap-3__col-sm-4 bootstrap-3__col-md-3">
+          <div class="bootstrap-3__grid-item-content"></div>
+        </div>
+        <div class="bootstrap-3__grid-item bootstrap-3__col-xs-6 bootstrap-3__col-sm-4 bootstrap-3__col-md-3">
+          <div class="bootstrap-3__grid-item-content bootstrap-3__grid-item-content--height2"></div>
+        </div>
+        <div class="bootstrap-3__grid-item bootstrap-3__col-xs-6 bootstrap-3__col-sm-8 bootstrap-3__col-md-6">
+          <div class="bootstrap-3__grid-item-content"></div>
+        </div>
+        <div class="bootstrap-3__grid-item bootstrap-3__col-xs-6 bootstrap-3__col-sm-4 bootstrap-3__col-md-3">
+          <div class="bootstrap-3__grid-item-content bootstrap-3__grid-item-content--height2"></div>
+        </div>
+        <div class="bootstrap-3__grid-item bootstrap-3__col-xs-6 bootstrap-3__col-sm-4 bootstrap-3__col-md-3">
+          <div class="bootstrap-3__grid-item-content"></div>
+        </div>
+        <div class="bootstrap-3__grid-item bootstrap-3__col-xs-6 bootstrap-3__col-sm-4 bootstrap-3__col-md-3">
+          <div class="bootstrap-3__grid-item-content"></div>
+        </div>
+      </div>
+  
+    </div>
+  
+    <p class="edit-demo">
+        <a href="http://codepen.io/desandro/pen/addLrQ">Edit this demo on CodePen</a>
+    </p>
+  </div>
+</div>
+
+
+<h2 id="animating-item-size">Animating item size</h2>
+
+<p>You cannot transition or animate the size of an item element <em>and</em> properly lay out. But there is a trick &#x2014; you can animate a child element of the item element.</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+<pre><code class="html"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid&quot;</span>&gt;</span>
+  <span class="comment">&lt;!-- items have grid-item-content child elements --&gt;</span>
+  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid-item&quot;</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;grid-item-content&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+  ...
+</code></pre>
+
+<pre><code class="css"><span class="comment">/* item is invisible, but used for layout
+item-content is visible, and transitions size */</span>
+<span class="selector-class">.grid-item</span>,
+<span class="selector-class">.grid-item-content</span> {
+  <span class="attribute">width</span>: <span class="number">60px</span>;
+  <span class="attribute">height</span>: <span class="number">60px</span>;
+}
+<span class="selector-class">.grid-item-content</span> {
+  <span class="attribute">background</span>: <span class="number">#09D</span>;
+  <span class="attribute">transition</span>: width <span class="number">0.4s</span>, height <span class="number">0.4s</span>;
+}
+
+<span class="comment">/* both item and item content change size */</span>
+<span class="selector-class">.grid-item</span><span class="selector-class">.is-expanded</span>,
+<span class="selector-class">.grid-item</span><span class="selector-class">.is-expanded</span> <span class="selector-class">.grid-item-content</span> {
+  <span class="attribute">width</span>: <span class="number">180px</span>;
+  <span class="attribute">height</span>: <span class="number">120px</span>;
+}
+</code></pre>
+  </div>
+  <div class="duo__cell example__demo" data-js-module="animate-item-size">
+    <p class="instruction">Click to item to toggle size</p>
+    <div class="grid">
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+    </div>
+    <p class="edit-demo">
+        <a href="http://codepen.io/desandro/pen/jnhAi">Edit this demo</a>
+        or <a href="http://codepen.io/desandro/pen/fztmB">vanilla JS demo</a> on CodePen
+    </p>
+  </div>
+</div>
+
+<p>This technique works on items with responsive, percentage widths. Although, it does require a bit more JS. <a href="http://codepen.io/desandro/pen/jGJKL">Check out the example on CodePen</a> to see how it&#x2019;s done.</p>
+
+<div class="duo example">
+  <div class="duo__cell example__code">
+<pre><code class="css"><span class="selector-class">.grid-item</span> {
+  <span class="attribute">width</span>: <span class="number">20%</span>;
+  <span class="attribute">height</span>: <span class="number">60px</span>;
+}
+
+<span class="selector-class">.grid-item-content</span> {
+  <span class="attribute">width</span>:  <span class="number">100%</span>;
+  <span class="attribute">height</span>: <span class="number">100%</span>;
+  <span class="attribute">background</span>: <span class="number">#09D</span>;
+  <span class="attribute">transition</span>: width <span class="number">0.4s</span>, height <span class="number">0.4s</span>;
+}
+<span class="comment">/* item has expanded size */</span>
+<span class="selector-class">.grid-item</span><span class="selector-class">.is-expanded</span> {
+  <span class="attribute">width</span>: <span class="number">60%</span>;
+  <span class="attribute">height</span>: <span class="number">120px</span>;
+}
+</code></pre>
+  </div>
+  <div class="duo__cell example__demo" data-js-module="animate-item-size-responsive">
+    <p class="instruction">Click to item to toggle size</p>
+    <div class="grid grid--animate-item-size-responsive">
+      <div class="grid-sizer"></div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+      <div class="animate-item-size-item">
+        <div class="animate-item-size-item__content"></div>
+      </div>
+    </div>
+    <p class="edit-demo">
+        <a href="http://codepen.io/desandro/pen/utGrv">Edit this demo</a>
+        or <a href="http://codepen.io/desandro/pen/jeLKl">vanilla JS demo</a> on CodePen
+    </p>
+  </div>
+
+</div>
+
+
+<h2 id="web-fonts">Web fonts</h2>
+
+<p>Like images, unloaded web fonts can throw off Isotope. To resolve this, trigger <a href="methods.html#layout"><code>layout</code></a> after fonts have been loaded. Both Typekit and Google WebFont Loader provide font events to control scripts based on how fonts are loaded.</p>
+
+<ul>
+  <li><a href="http://blog.typekit.com/2010/10/18/more-control-with-typekits-font-events/">Typekit font events</a></li>
+  <li><a href="https://developers.google.com/webfonts/docs/webfont_loader#Events">Google WebFont Loader: Events</a></li>
+</ul>
+
+
+<h3 id="typekit">Typekit</h3>
+
+<p>Try the script below when using Isotope on a page with Typekit. This will trigger Isotope when the document is ready and again when fonts have loaded. Be sure to remove Typekit&#x2019;s default script, <code>try{Typekit.load();}catch(e){}</code>.</p>
+
+<pre><code class="js"><span class="keyword">var</span> <span class="jquery_var">$grid</span>;
+
+<span class="function"><span class="keyword">function</span> <span class="title">triggerIsotope</span>(<span class="params"></span>) </span>{
+  <span class="comment">// don&apos;t proceed if $grid has not been selected</span>
+  <span class="keyword">if</span> ( !<span class="jquery_var">$grid</span> ) {
+    <span class="keyword">return</span>;
+  }
+  <span class="comment">// init Isotope</span>
+  <span class="jquery_var">$grid</span>.isotope({
+    <span class="comment">// options</span>
+  });
+}
+<span class="comment">// trigger Isotope on document ready</span>
+$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+  <span class="jquery_var">$grid</span> = $(<span class="string">&apos;.grid&apos;</span>);
+  triggerIsotope();
+});
+<span class="comment">// trigger Isotope when fonts have loaded</span>
+Typekit.load({
+  active: triggerIsotope,
+  inactive: triggerIsotope
+});
+</code></pre>
+
+<pre><code class="js"><span class="comment">// or with vanilla JS</span>
+<span class="keyword">var</span> grid, <span class="isotope_var">iso</span>;
+
+<span class="function"><span class="keyword">function</span> <span class="title">triggerIsotope</span>(<span class="params"></span>) </span>{
+  <span class="comment">// don&apos;t proceed if doc isn&apos;t ready</span>
+  <span class="keyword">if</span> ( !grid ) {
+    <span class="keyword">return</span>;
+  }
+  <span class="comment">// init Isotope</span>
+  <span class="isotope_var">iso</span> = <span class="keyword">new</span> <span class="isotope_keyword">Isotope</span>( grid, {
+    <span class="comment">// options</span>
+  });
+}
+<span class="comment">// initialize Isotope on document ready</span>
+<span class="built_in">document</span>.addEventListener( <span class="string">&apos;DOMContentLoaded&apos;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+  <span class="keyword">var</span> grid = <span class="built_in">document</span>.querySelector(<span class="string">&apos;.grid&apos;</span>);
+  triggerIsotope();
+});
+<span class="comment">// trigger Isotope when fonts have loaded</span>
+Typekit.load({
+  active: triggerIsotope,
+  inactive: triggerIsotope
+});
+</code></pre>
+
+
+<h2 id="issues">Issues</h2>
+
+<h3 id="reduced-test-cases">Reduced test cases</h3>
+
+<p>Creating a reduced test case is the best way to debug problems and report issues. Read <a href="http://css-tricks.com/reduced-test-cases/">CSS Tricks</a> on why they&#x2019;re so great.</p>
+
+<p>Create a reduced test case for Isotope by forking any one of the <a href="http://codepen.io/desandro/tag/isotope-docs">CodePen demos</a> from these docs.</p>
+
+<ul>
+  <li>A reduced test case clearly demonstrates the bug or issue.</li>
+  <li>It contains the bare minimum HTML, CSS, and JavaScript required to demonstrate the bug.</li>
+  <li>A link to your production site is <b>not</b> a reduced test case.</li>
+</ul>
+
+<p>Creating a reduced test case is the best way to get your issue addressed. They help you point out the problem. They help us debug the problem. They help others understand the problem.</p>
+
+
+<h3 id="submitting-issues">Submitting issues</h3>
+
+<p>Report <a href="https://github.com/metafizzy/isotope/issues/">issues on GitHub</a>. Make sure to include a <strong>reduced test case</strong>. Without a reduced test case, your issue may be closed.</p>
+
+
+<h2 id="browser-support">Browser support</h2>
+
+<p>Isotope v3 supports IE10+, Android 4+, Safari for iOS 5+, Firefox 16+, and Chrome 12+.</p>
+
+<p>For IE8+ and Android 2.3 support, try <a href="http://isotope.metafizzy.co/v2">Isotope v2</a>.</p>
+
+
+<h2 id="upgrading-from-v2">Upgrading from v2</h2>
+
+<p>Isotope v3 dropped browser support for IE8, IE9, and Android 2.3. Nearly all options, methods, and code for Isotope v2 is backwards compatibile with Isotope v3.</p>
+
+<ul>
+  <li><a href="options.html#stagger"><code>stagger</code> option</a> added.</li>
+  <li><a href="layout-modes/horiz.html">horizontal layout mode re-named to horiz</a> to avoid conflict with <a href="layout-modes/packery.html#horizontal">horizontal packery option</a>.</li>
+  <li><code>isOptionName</code> options renamed to <code>optionName</code>. Isotope v3 is backwards compatible with the old <code>isOptionName</code> options.
+    <ul>
+      <li><a href="options.html#originleft"><code>isOriginLeft</code> &#x2192; <code>originLeft</code></a></li>
+      <li><a href="options.html#origintop"><code>isOriginTop</code> &#x2192; <code>originTop</code></a></li>
+      <li><a href="options.html#resize"><code>isResizeBound</code> &#x2192; <code>resize</code></a></li>
+      <li><a href="options.html#initlayout"><code>isInitLayout</code> &#x2192; <code>initLayout</code></a></li>
+      <li><a href="layout-modes/masonry.html#fitwidth">masonry <code>isFitWidth</code> &#x2192; <code>fitWidth</code></a></li>
+      <li><a href="layout-modes/packery.html#horizontal">packery <code>isHorizontal</code> &#x2192; <code>horizontal</code></a></li>
+    </ul>
+  </li>
+  <li><a href=".#initialize-in-html">HTML initialization</a> can be done with <code>data-isotope</code>.  Isotope v3 is backwards compatible with previous code: <code>js-isotope</code> class and <code>data-isotope-options</code> attribute.</li>
+  <li>IE8 helper dependencies removed: eventie, get-style-property, doc-ready</li>
+  <li><code>jquery-bridget/jquery.bridget</code> path renamed to <code>jquery-bridget/jquery-bridget</code></li>
+</ul>
+
+<p>See <a href="https://github.com/metafizzy/isotope/releases">Isotope releases on GitHub for detailed version-by-version changelog</a>.</p>
+
+    </div>
+  </div>
+
+  <div class="site-footer">
+  
+    <div class="primary-content">
+  
+      <p class="footer-copy">Follow <a href="https://twitter.com/metafizzyco">@metafizzyco on Twitter for Isotope updates.</a></p>
+  
+    </div>
+  
+    <div class="site-footer__brand">
+      <a class="site-footer__brand__link" href="http://metafizzy.co">
+        <svg class="metafizzy-logo" viewbox="0 0 400 512">
+          <path fill="#333" d="M329.4 15c-25 0-44 15-52 26.4C271 27 251 0 213 0c-39 0-69 30.4-70 69-9 3.6-32 17-38 22-10-5-21-8-33-8-35 0-71 27.4-71 71.6 0 40 34.4 68.4 65.6 69.5 6 10 13 21 22.5 35 0.6 0-38 23.5-38 23.5-15 9.5-31 27-31 56.5 0 38.4 32 66 66 66 12.4 0 24.5-3 35-10l8-5-12 34c-15 46 20 88 62.5 88 28 0 53.4-18 63-45l3.6-10c9.6 -1 19-4 28-9l47.5-29c13-8 23-20 28-35l23.5-67c9.6-27 7-64 1-95 4-8 26-57 26-113 0-79-43-94-70-94z"/>
+          <clippath id="metafizzy-logo__body">
+            <path d="M290.4 84c-1-18 10-34 27.6-40 21-7 43 5 50 26 11 34 4 75-7 112-8-23-37-68-71-98zm31 77.4c-30-45-65-82-104-82-7 0-13-6-13-14 0-7 6.4-13 14-13 22 0.6 36.6 8 37.5 8-5-26-38-45-66-28-18 11-26 33.6-18 53-19 5.4-55 27-68 38.5-14-16-38-20-56-9-21 13-27 40-15 61 10 17 29.6 24 47.6 20 8 15 23 38 45 71l-61 38C46 317 40 342 52 360c13 20 38 23.4 55 13 11.6-7 31-19 31-19 0-2 0-4 -1-5-1-7 4-14 11-15 7-1 14 4 15 11 2.5 15 0 27-1 32 0 0-11 31-20 57-9 28 12.5 53 37 53 15 0 32-9 38-27l31-89c1-4 4-7 8-8 12.6-4 23-14 23-14 5.4-5 14-4 19 1 5 5.4 4.5 14 -1 19 0 0.5-11 10-26 17l-15 43c1 -1 2.6-1 4-2l47.5-29c8-5 14-12 17-21l23.5-67c14-41-3-112-26-147z"/>
+          </clippath>
+          <g clip-path="url(#metafizzy-logo__body)">
+            <path fill="#C25" d="M-65 186l379-238 55 87L-11 273z"/>
+            <path fill="#E62" d="M-11 272l379-238 55 87-379 239z"/>
+            <path fill="#EA0" d="M43 358l379-238 46 73-379 238z"/>
+            <path fill="#19F" d="M89 430l379-238 55 87-379 239z"/>
+          </g>
+          <ellipse transform="rotate(-121.393 260.234 218.053)" fill="#FFF" cx="260" cy="218" rx="32" ry="49"/>
+          <path fill="#333" d="M196.4 196c6.6 11-8 7-19 14-11 6.6-14 21-21 10-7-11-3-25 8-32 11-7 25-3 32 8zM287 140c6.6 11-8 7-19 14s-14 21-21 10-3-25 8-32c11-7 25-3 32 8z"/>
+          <path fill="#333" d="M243 199l17.4-11c5-3 11-1 14 3 2 3 2 7 0 10.5l-6 10c-2 3-4 4.4-8 5l-11 1c-4 0-7-1-9-5-3-5-1-11 3.5-14z"/>
+        </svg>
+        <svg class="metafizzy-wordmark" xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewbox="0 0 1000 300">
+          <path d="M491 121l13-39H480l-3 8c-23-31-63 7-72 41-4 10-12 25-23 25-13 0 0-35 6-56v 0c4-12 11-36 11-36H423c25 0 51 5 71-13l-14-15c-9 8-17 8-27 8h-48l7-23h-25L380 44h-29l-6 21H374l-6 19c-7 22-11 49-30 64-14 10-38 17-53 7 19-8 51-21 51-45 0-13-8-29-28-29-39 0-57 40-57 60 0 25 24 40 49 40 21 0 39-7 54-19 3 9 11 16 24 16 13 0 23-5 30-14 7 10 19 16 33 14 11-1 19-7 25-14 4 8 11 14 25 15L498 157c-21-1-10-26-7-36zM277 132c3-10 13-33 28-29 5 1 6 7 4 12-4 12-20 20-33 26 0-3 0-6 1-8zm166 24c-9 3-14-2-15-11-3-19 25-60 42-33l-4 14c-3 12-12 26-23 30zm-192 33L236 207c-31-18-33-59-24-87 10-31 19-50 19-50l-50 65h-23c 0-18-4-50-8-65L136 115c-13 44-37 119-97 109-18-3-32-16-36-34-4-23 12-45 30-60l13 17c-14 11-29 33-13 50 13 14 31 6 42-5 23-22 30-56 38-86C121 82 135 35 135 35c 0 0 -1-1-1-1-5 9-15 14-25 13-11-1-17-11-14-21 3-10 14-18 25-18 15 0 23 1 34 12 14 13 23 50 26 80L244 21h23l-28 94c-7 23-13 59 12 74zM649 48c-2 6-11 18-24 18-14 0-20-11-17-21 3-8 9-14 17-16-8-9-28-7-38 2-9 8-12 20-15 31l-6 21h65l-29 94h-25l22-73H558s-14 48-22 72c-8 27-34 57-64 59L478 212c16-1 29-25 34-41 4-13 18-58 21-68h-19l7-21H539c4-12 7-24 11-36C559 21 583 1 614 1c28 0 42 21 35 47zm78 35h-82l-6 21H685l-62 56-5 17c39 0 75 9 94-15l-16-14c-11 13-27 9-39 10L721 99l6-17zM999 70c0 38-27 89-102 123-2 6-4 12-5 18-7 24-23 88-86 88-22 0-41-12-41-36 0-26 23-38 36-46 24-14 50-25 76-36l3-9c-4 2-8 3-13 3-13 1-28-4-35-15-10 8-23 14-35 17-22 5-57 0-79 0l5-18 61-55h-46l6-21h82l-6 17-64 58c11 0 22 0 33 0 14-1 31-10 41-26 3-4 16-50 16-50h24l-11 38c-4 13-7 35 8 35 12 0 23-13 26-23l15-50h25l-26 85c72-42 76-101 64-114-5 9-15 16-26 14-11-1-17-11-14-21 3-10 14-18 25-18 34 0 44 27 44 44zM867 206l-15 7c-14 7-30 13-48 25-10 7-23 19-15 32 6 11 24 9 34 5 13-6 26-19 32-32 6-11 9-24 13-37z"/>
+        </svg>
+      </a>
+    </div>
+  
+  </div>
+
+<!-- Looking for isotope.js? Use isotope.pkgd.min.js -->
+<!-- Isotope does NOT require jQuery. But it does make things easier -->
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+
+  <script src="js/isotope-docs.min.js"></script>
+
+
+</body>
+</html>

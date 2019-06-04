@@ -1,0 +1,35 @@
+/**
+ * Forms
+ */
+
+@input-bg: transparent;
+@input-border: #ccc;
+@input-border-focus: @brand-accent;
+@input-color: @brand-accent;
+@input-color-placeholder: @brand-accent;
+@input-border-radius: none;
+@form-group-margin-bottom: 20px;
+
+.form-control {
+    font-size: @font-size-base;
+    letter-spacing: 1px;
+    padding-left: @padding-base-vertical;
+    padding-right: @padding-base-vertical;
+    line-height: @line-height-computed;
+    box-shadow: inset 0 0 0 #fff;
+    option:not(selected) {
+        color: @brand-accent;
+    }
+}
+
+// Mailchimp form
+
+#mc_embed_signup {
+	#mce-error-response, #mce-success-response {
+		display: none;
+	}
+	#mce-hidden-input {
+		position: absolute;
+		left: -5000px;
+	}
+}

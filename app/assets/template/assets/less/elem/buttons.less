@@ -1,0 +1,44 @@
+/**
+ * Buttons
+ */
+
+
+@padding-base-vertical: 12px;
+@padding-base-horizontal: 25px;
+
+.btn {
+    border-radius: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    @media(max-width: @screen-xs-max) {
+        padding: 10px 20px;
+    }
+}
+
+
+/*** Sizes ***/
+
+.btn, .btn-lg {
+    font-size: (@font-size-base - 2px);
+    font-weight: 700;
+    line-height: @line-height-computed;
+    @media(max-width: @screen-xs-max) {
+        font-size: (@font-size-base - 3px);
+    }
+}
+
+
+/*** Contextual classes ***/
+
+.btn-default {
+    background-color: rgba(252,226,155,1);
+    border-color: @brand-primary;
+    color: @brand-accent;
+    transition: all 0.3s ease-out;
+    &:hover, &:active, &:focus, &:active:focus {
+        box-shadow: none;
+        background-color: fade(@brand-primary, 90%);
+        border-color: @brand-primary;
+    }
+}
