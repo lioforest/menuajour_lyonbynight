@@ -1,4 +1,13 @@
 nav.navbar
 {
     height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#navbar_collapse1.navbar-collapse.collapse
+{
+    display: flex !important;
+    justify-content: flex-end;
 }

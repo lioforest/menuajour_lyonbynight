@@ -1,8 +1,39 @@
-<footer>
-    <ul class="socials">
-        <% @socials.each do |social| %>
-        <li><a href="<%= social[:link] %>"><i class="<%= social[:icon] %>"></i></a></li>
-        <% end %>
-    </ul>
-    <ul></ul>
-</footer>
+<!-- section footer -->
+    <footer class="section_footer bg-primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-lg-4">
+            <h3 class="section_footer_heading">Contacts</h3>
+            <p><i class="icon ion-ios-telephone-outline"></i> +33 (0)6 11 95 79 79</p>
+            <p><i class="icon ion-ios-email-outline"></i> thplyonbynight@gmail.com</p>
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <h3 class="section_footer_heading">Suivez-nous</h3>
+            <div class="social">
+              <ul>
+              <% @socials.each do | social |%>
+               <li class="social_icon"><a href="<%= social[:link] %>"><i class="<%= social[:icon] %>"></i></a></li>
+              <% end %>
+              </ul>
+            </div> <!-- .social -->
+          </div>
+          <div class="col-sm-6 col-lg-4">
+            <h3 class="section_footer_heading">Aide</h3>
+            <div id="supports">
+                <% @supports.each do |support| %>
+                <p class="col-6"><a href="<%= support[:route] %>"><%= support[:text] %></a></p>
+                <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <hr />
+            <div class="footer-infos">
+                <p class="footer_info">&copy; 2019 Lyon By Night</p>
+                <p class="footer_info">&#169; 2017 <a href="https://themeforest.net/item/groggery-responsive-bar-restaurant-template/19185544">Groggery</a>. All rights reserved.</p>
+            </div>
+          </div>
+        </div> <!-- .row -->
+      </div> <!-- .container -->
+    </footer>

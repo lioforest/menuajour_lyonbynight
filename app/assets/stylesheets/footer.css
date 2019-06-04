@@ -7,10 +7,15 @@ footer
     align-items: center;
 }
 
+.section_footer
+{
+    padding: 15px 0 !important;
+}
+
 footer ul
 {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     list-style-type: none;
 }
 
@@ -18,4 +23,27 @@ footer ul li a
 {
     color: var(--title);
     margin: auto 5px;
+}
+
+#supports
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#supports .col-6
+{
+    padding-left: 0;
+}
+
+.section_footer hr
+{
+    margin: 5px 0 8px !important;
+} 
+
+.footer-infos
+{
+    display: flex;
+    justify-content: space-between
 }
