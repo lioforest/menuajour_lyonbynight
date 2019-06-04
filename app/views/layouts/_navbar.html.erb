@@ -2,58 +2,58 @@
 
 <!-- navbar -->
 <nav class="navbar navbar-light bg-light fixed-top navbar-expand-md">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse"
-        data-target="#navbar__collapse" aria-expanded="false"> <span class="sr-only">Menu</span>#x2630;</button>
-          <div class="collapse navbar-collapse" id="navbar__collapse1">
-            <ul class="nav navbar-nav ml-auto mr-0 pr-0">
-                <li class="nav-item active">
-                  <a class="nav-link" href="<%= root_path %>">Accueil<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Catalogue</a>
-                </li>
-            </ul>
-        </div>
-        <a class="navbar-brand mx-5" href="<%= root_path %>">Menu A Jour</a>
-        <div class="collapse navbar-collapse" id="navbar__collapse2">
-            <ul class="nav navbar-nav ml-auto">
-                <!-- General links -->
-              <li class="nav-item">
-                <a href="about.html" class="nav-link">Contact</a>
-              </li>
-              <% if user_signed_in? %>
-              <li class="dropdown nav-item"> <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button"
-                  aria-haspopup="true" aria-expanded="false"><%= current_user.email %></a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/mon-profil">Mon profil</a></li>
-                    <li><a class="dropdown-item" href="#">Mes plats</a></li>
-                  <%# unless current_user.is_subscriber %>
-                    <li><a class="dropdown-item" href="#">S'abonner</a></li>
-                  <%# end %>
-                    <li><a class="dropdown-item" href="<%=destroy_user_session_path %>" data-method= "delete">Déconnexion</a></li>
-                  </ul>
-              </li>
-              <% else %>
-              <li class="dropdown nav-item">
-                  <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button"
-                  aria-haspopup="true" aria-expanded="false">
-                      Connexion
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" href="<%=new_user_registration_path%>">S'enregistrer</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="<%= new_user_session_path %>">Se connecter</a>
-                    </li>
-                  </ul>
-              </li>
-              <% end %>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <button type="button" class="navbar-toggler collapsed" data-toggle="collapse"
+    data-target="#navbar__collapse" aria-expanded="false"> <span class="sr-only">Menu</span>#x2630;</button>
+    <div class="collapse navbar-collapse" id="navbar__collapse1">
+      <ul class="nav navbar-nav ml-auto mr-0 pr-0" style="float: right;">
+        <li class="nav-item active">
+          <a class="nav-link" href="<%= root_path %>">Accueil<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Catalogue</a>
+        </li>
+      </ul>
     </div>
-    <!-- /.container -->
+    <a class="navbar-brand mx-5" href="<%= root_path %>">Menu A Jour</a>
+    <div class="collapse navbar-collapse" id="navbar__collapse2">
+      <ul class="nav navbar-nav ml-auto">
+        <!-- General links -->
+        <li class="nav-item">
+          <a href="about.html" class="nav-link">Contact</a>
+        </li>
+        <% if user_signed_in? %>
+        <li class="dropdown nav-item"> <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button"
+          aria-haspopup="true" aria-expanded="false"><%= current_user.email %></a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/mon-profil">Mon profil</a></li>
+            <li><a class="dropdown-item" href="#">Mes plats</a></li>
+            <%# unless current_user.is_subscriber %>
+            <li><a class="dropdown-item" href="#">S'abonner</a></li>
+            <%# end %>
+            <li><a class="dropdown-item" href="<%=destroy_user_session_path %>" data-method= "delete">Déconnexion</a></li>
+          </ul>
+        </li>
+        <% else %>
+          <li class="dropdown nav-item">
+            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button"
+            aria-haspopup="true" aria-expanded="false">
+            Connexion
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="<%=new_user_registration_path%>">S'enregistrer</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="<%= new_user_session_path %>">Se connecter</a>
+              </li>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <!-- /.navbar-collapse -->
+  </div>
+<!-- /.container -->
 </nav>
