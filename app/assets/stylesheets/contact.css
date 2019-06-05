@@ -1,0 +1,23 @@
+.item__contents
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 90px;
+}
+
+.item__content
+{
+    min-width: 45%;
+}
+.section_map-heading .contacts_form__body
+{
+    margin-bottom: 200px !important;
+    background-color: var(--primary) !important;
+}
+
+.form-control::placeholder
+{
+    color: var(--light) !important;
+}
