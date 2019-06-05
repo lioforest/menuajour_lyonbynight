@@ -38,4 +38,52 @@ class StaticController <ApplicationController
       }
     ]
   end
+
+  def contact
+    @title = "Contactez-nous"
+    @contacts = [
+      {
+        title: "E-mail",
+        icon: "ion-ios-email-outline",
+        content: [
+          {
+            link: "mailto: thplyonbynight@gmail.com",
+            name: "thplyonbynight@gmail.com"
+          }
+        ]
+      },
+      {
+        title: "Téléphone",
+        icon: "ion-ios-telephone-outline",
+        content: [
+          {
+            link: "tel:+33 (0)6 11 95 79 79",
+            name: "+33 (0)6 11 95 79 79"
+          }
+        ]
+      },
+      {
+        title: "Réseaux Sociaux",
+        icon: "ion-social-twitter-outline",
+        content: [
+          {
+            link: "http://www.facebook.com/#",
+            name: "Facebook"
+          },
+          {
+            link: "http://www.instagram.com/#",
+            name: "Instagram"
+          },
+          {
+            link: "http://www.twitter.com/#",
+            name: "Twitter"
+          },
+          {
+            link: "http://www.linkedin.com/#",
+            name: "Linkedin"
+          }
+        ]
+      }
+    ]
+  end
 end
