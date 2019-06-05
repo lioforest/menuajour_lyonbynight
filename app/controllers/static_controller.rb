@@ -4,5 +4,6 @@ class StaticController <ApplicationController
   end
 
   def about
+    @title = "A propos de nous"
   end
 end
