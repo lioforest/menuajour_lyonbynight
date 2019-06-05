@@ -37,13 +37,13 @@
             <div class="col-sm-4">
               <div class="team__item">
                 <div class="team__item_photo">
-                <%= image_tag "team_photo_3.jpg",:alt => "lionel", :class => "img-responsive" %>   
+                <%= image_tag "team_photo_1.jpg",:alt => "", :class => "img-responsive" %>   
                 </div>
                 <div class="team__item_name">
-                  <h3>John Doe</h3>
+                  <h3>Lionel</h3>
                 </div>
                 <div class="team__item_overlay">
-                  <p class="team__item_profession">Master chef</p>
+                  <p class="team__item_profession">Porteur de projet</p>
                   <ul class="team__item_social">
                     <li class="social_icon"><a href="#"><i class="icon ion-social-facebook-outline"></i></a></li>
                     <li class="social_icon"><a href="#"><i class="icon ion-social-twitter-outline"></i></a></li>
@@ -55,13 +55,13 @@
             <div class="col-sm-4">
               <div class="team__item">
                 <div class="team__item_photo">
-                  <img class="img-responsive" src="assets/img/team_photo_2.jpg" alt="...">
+                <%= image_tag "team_photo_2.jpg",:alt => "", :class => "img-responsive" %>   
                 </div>
                 <div class="team__item_name">
-                  <h3>Jane Doe</h3>
+                  <h3>Tahina</h3>
                 </div>
                 <div class="team__item_overlay">
-                  <p class="team__item_profession">Chef</p>
+                  <p class="team__item_profession">Chef de projet</p>
                   <ul class="team__item_social">
                     <li class="social_icon"><a href="#"><i class="icon ion-social-facebook-outline"></i></a></li>
                     <li class="social_icon"><a href="#"><i class="icon ion-social-twitter-outline"></i></a></li>
@@ -73,13 +73,13 @@
             <div class="col-sm-4">
               <div class="team__item">
                 <div class="team__item_photo">
-                  <img class="img-responsive" src="assets/img/team_photo_3.jpg" alt="...">
+                <%= image_tag "team_photo_3.jpg",:alt => "", :class => "img-responsive" %>   
                 </div>
                 <div class="team__item_name">
-                  <h3>John Doe</h3>
+                  <h3>Baptiste</h3>
                 </div>
                 <div class="team__item_overlay">
-                  <p class="team__item_profession">Barman</p>
+                  <p class="team__item_profession"></p>
                   <ul class="team__item_social">
                     <li class="social_icon"><a href="#"><i class="icon ion-social-facebook-outline"></i></a></li>
                     <li class="social_icon"><a href="#"><i class="icon ion-social-twitter-outline"></i></a></li>
@@ -87,27 +87,99 @@
                   </ul>
                 </div>
               </div> <!-- .team_item -->
+            </div>
+          </div> <!-- .row -->
+          <br>
+          <div class="row">
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-4">
+              <div class="team__item">
+                <div class="team__item_photo">
+                <%= image_tag "team_photo_1.jpg",:alt => "", :class => "img-responsive" %>   
+                </div>
+                <div class="team__item_name">
+                  <h3>Noël</h3>
+                </div>
+                <div class="team__item_overlay">
+                  <p class="team__item_profession">Database master</p>
+                  <ul class="team__item_social">
+                    <li class="social_icon"><a href="#"><i class="icon ion-social-facebook-outline"></i></a></li>
+                    <li class="social_icon"><a href="#"><i class="icon ion-social-twitter-outline"></i></a></li>
+                    <li class="social_icon"><a href="#"><i class="icon ion-social-instagram-outline"></i></a></li>
+                  </ul>
+                </div>
+              </div> <!-- .team_item -->
+            </div>
+            <div class="col-sm-4">
+              <div class="team__item">
+                <div class="team__item_photo">
+                <%= image_tag "team_photo_2.jpg",:alt => "", :class => "img-responsive" %>   
+                </div>
+                <div class="team__item_name">
+                  <h3>Cédric</h3>
+                </div>
+                <div class="team__item_overlay">
+                  <p class="team__item_profession">Front Master</p>
+                  <ul class="team__item_social">
+                    <li class="social_icon"><a href="#"><i class="icon ion-social-facebook-outline"></i></a></li>
+                    <li class="social_icon"><a href="#"><i class="icon ion-social-twitter-outline"></i></a></li>
+                    <li class="social_icon"><a href="#"><i class="icon ion-social-instagram-outline"></i></a></li>
+                  </ul>
+                </div>
+              </div> <!-- .team_item -->
+            </div>
+          </div> <!-- .row -->
+
+
+        </div> <!-- .container -->
+      </section>
+
+
+      <!-- section review -->
+      <section class="section_review">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <h2 class="section_review_title">En quelques mots...</h2>
+            </div>
+            <div class="col-sm-8">
+              <div id="carousel-review" class="carousel carousel_review slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel-review" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel-review" data-slide-to="1"></li>
+                  <li data-target="#carousel-review" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                  <div class="item active">
+                    <p class="review_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate atque eveniet, aut enim quasi eaque repellendus hic, provident tempora sint nulla totam quo nemo velit labore magnam quaerat molestias ad veritatis voluptatibus nobis molestiae illum!</p>
+                    <h5 class="review_author">&#8722; Franz Kafka &#8722;</h5>
+                  </div>
+                  <div class="item">
+                    <p class="review_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate atque eveniet, aut enim quasi eaque repellendus hic, provident tempora sint nulla totam quo nemo velit labore magnam quaerat molestias ad veritatis voluptatibus nobis molestiae illum!</p>
+                    <h5 class="review_author">&#8722; Ernest Hemingway &#8722;</h5>
+                  </div>
+                  <div class="item">
+                    <p class="review_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate atque eveniet, aut enim quasi eaque repellendus hic, provident tempora sint nulla totam quo nemo velit labore magnam quaerat molestias ad veritatis voluptatibus nobis molestiae illum!</p>
+                    <h5 class="review_author">&#8722; Pablo Picasso &#8722;</h5>
+                  </div>
+
+                  <!-- Controls -->
+                  <a class="left carousel-control" href="#carousel-review" role="button" data-slide="prev">
+                  <%= image_tag "arrow_left.svg",:alt => "Préced." %>   
+
+                  </a>
+                  <a class="right carousel-control" href="#carousel-review" role="button" data-slide="next">
+
+                <%= image_tag "arrow_right.svg",:alt => "Suiv." %>   
+                  </a>
+                </div> <!-- .carousel_inner -->
+              </div>
             </div>
           </div> <!-- .row -->
         </div> <!-- .container -->
       </section>
-
-      <!-- section join -->
-      <section class="section_join">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-8 col-sm-offset-2">
-              <div class="section_join__logo">
-                <i class="ion-ios-people-outline"></i>
-              </div>
-              <h2 class="section_join__title"><span>&#8722; Join the team &#8722;</span></h2>
-              <hr class="section_title_line">
-              <p class="section_join__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, enim. Quo, corporis, veniam. Esse unde vitae magni exercitationem cupiditate quibusdam, placeat dolorem quasi inventore necessitatibus deleniti adipisci corporis cumque alias, minima minus.</p>
-              <div class="text-center">
-                <button type="button" class="btn btn-default">Join now</button>
-              </div>
-            </div>
-          </div> <!-- .row -->
-        </div> <!-- .container -->
-      </section>        
 
