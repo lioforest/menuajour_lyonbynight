@@ -14,7 +14,7 @@
         <div class="row">
           <div class="col-sm-6 col-sm-offset-3">
             <div class="welcome_content">
-              <h1 class="welcome_content_heading">Groggery</h1>
+              <h1 class="welcome_content_heading">Menuajours</h1>
               <p class="welcome_content_subheading">Créateur d'envies</p>
               <ul class="welcome_content_logo">
                 <li><i class="icon ion-ios-minus-empty"></i></li>
@@ -34,34 +34,46 @@
     </section>
 
     <!-- section about -->
-    <section class="section_about" id="section_about">
-      <div class="section_about__row">
-        <div class="about_desc">
-          <div class="about__img">
-            <%= image_tag "menu_edit_icon.png", :alt => "menu_edit_icon.svg", :class => "img-responsive three_icon_landing" %>
+    <section class="mt-4">
+
+        <div class="row">
+          <div class="col-sm-12">
+            <h2 class="section_title">&#8722; Création &#8722;</h2>
+            <hr class="section_title_line">
+            <p class="text-center">En 3 étapes simple, créer un menu rapidement, à votre image.</p>
           </div>
-          <h3 class="about_desc__title">Choisissez<br/> <span style="font-size: 25px;">votre</span> modèle</h3>
-          <p class="about_desc__text">Service ipsum dolor sit amet, consectetur adipisicing elit. Nulla dolore voluptatem, ipsum, totam molestias accusantium explicabo velit aliquid impedit.</p>
         </div>
-      </div> <!-- .section_about__row -->
-      <div class="section_about__row">
-        <div class="about_desc">
-          <div class="about__img">
-            <%= image_tag "edit_icon.png", :alt => "edit_icon.svg", :class => "img-responsive three_icon_landing" %>
+
+      <div class="row d-flex justify-content-around mt-4">
+
+          <div class="col-md-3">
+            <div class="about_img">
+              <%= image_tag "menu_icon.svg", :alt => "menu_icon.svg", :class => "img-responsive about_img" %>
+            </div>
+            <h3 class="about_desc__title">Choisissez<br/> <span style="font-size: 25px;">votre</span> modèle</h3>
+            <p class="about_desc__text">Choisissez parmis nos nombreux modèles celui qui vous convient</p>
           </div>
-          <h3 class="about_desc__title">Editer<br/> <span style="font-size: 25px;">votre</span> menu</h3>
-          <p class="about_desc__text">Roles ipsum dolor sit amet, consectetur adipisicing elit. Nulla dolore voluptatem, ipsum, totam molestias accusantium explicabo velit aliquid impedit.</p>
-        </div>
-      </div> <!-- .section_about__row -->
-      <div class="section_about__row">
-        <div class="about_desc">
-          <div class="about__img">
-            <%= image_tag "print_icon.png", :alt => "print_icon.svg", :class => "img-responsive three_icon_landing" %>
+
+
+          <div class="col-md-3">
+            <div class="about_img">
+              <%= image_tag "edit_icon.svg", :alt => "edit_icon.svg", :class => "img-responsive about_img" %>
+            </div>
+            <h3 class="about_desc__title">Editer<br/> <span style="font-size: 25px;">votre</span> menu</h3>
+            <p class="about_desc__text">Personnaliser votre menu selon vos envies</p>
           </div>
-          <h3 class="about_desc__title">Imprimer<br/> <span style="font-size: 25px;">et</span> partager</h3>
-          <p class="about_desc__text">Blanditiis quidem fugit atque facilis numquam et, minus, iusto pariatur. Laborum commodi consectetur dolor, unde quo nemo molestias provident.</p>
-        </div>
-      </div> <!-- .section_about__row -->
+
+          <div class="col-md-3">
+            <div class="about_img">
+              <%= image_tag "print_icon.svg", :alt => "print_icon.svg", :class => "img-responsive about_img" %>
+            </div>
+            <h3 class="about_desc__title">Imprimer<br/> <span style="font-size: 25px;">et</span> partager</h3>
+            <p class="about_desc__text">Il ne vous reste plus qu'à imprimer le rendu, et/ou à la partager directement sur le web!</p>
+          </div>
+
+        </div> <!-- end row -->
+
+      </div>
     </section>
 
     <!-- section menu -->
