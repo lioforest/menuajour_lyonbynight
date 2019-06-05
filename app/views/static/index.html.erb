@@ -4,26 +4,26 @@
     <a id="back-to-top" href="#section_welcome" class="btn btn-primary back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left">
       <i class="ion-android-arrow-up"></i>
     </a>
-  
+
     <!-- CONTENT
     ================================================== -->
 
     <!-- section welcome -->
-    <section class="section_welcome" id="section_welcome">
-      <div class="container d-flex align-items-center">
+    <section class="section_welcome" id="section_welcome" style="background-color: black;">
+      <div class="container">
         <div class="row">
           <div class="col-sm-6 col-sm-offset-3">
             <div class="welcome_content">
-              <h1 class="welcome_content_heading">Menuajour</h1>
-              <p class="welcome_content_subheading">Créateur d'envie</p>
+              <h1 class="welcome_content_heading">Groggery</h1>
+              <p class="welcome_content_subheading">Créateur d'envies</p>
               <ul class="welcome_content_logo">
                 <li><i class="icon ion-ios-minus-empty"></i></li>
                 <li><i class="icon ion-fork"></i></li>
-                <li><i class="icon ion-wineglass"></i></li>
+                <li><i class="fas fa-book-open"></i></li>
                 <li><i class="icon ion-knife"></i></li>
                 <li><i class="icon ion-ios-minus-empty"></i></li>
               </ul>
-              <h3 class="welcome_content_caption">Créer en quelques minutes votre futur menu</h3>
+              <h3 class="welcome_content_caption">Créer votre futur menu en quelques clicks</h3>
               <div class="welcome_content_btn">
                 <a href="#section_about" class="btn btn-default">Discover</a>
               </div>
@@ -31,49 +31,38 @@
           </div>
         </div> <!-- .row -->
       </div> <!-- .container -->
-      <div class="welcome_bg"></div>
     </section>
 
     <!-- section about -->
     <section class="section_about" id="section_about">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <h2 class="section_title"><span>&#8722; Our story &#8722;</span></h2>
-            <hr class="section_title_line">
-            <p class="section_caption">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus sint est quidem excepturi rem officia fugit quia maxime explicabo nisi numquam, recusandae quisquam iste earum.</p>
+      <div class="section_about__row">
+        <div class="about_desc">
+          <div class="about__img">
+            <%= image_tag "menu_edit_icon.png", :alt => "menu_edit_icon.svg", :class => "img-responsive three_icon_landing" %>
           </div>
-        </div> <!-- .row -->
-      </div> <!-- .container -->
-      <div class="section_about__row">
-        <div class="about__img">
-          <img src="assets/img/about_1.jpg" class="img-responsive" alt="...">
-        </div>
-        <div class="about_desc">
-          <h3 class="about_desc__title">Traditions</h3>
-          <p class="about_desc__text">Service ipsum dolor sit amet, consectetur adipisicing elit. Nulla dolore voluptatem, ipsum, totam molestias accusantium explicabo velit aliquid impedit, reprehenderit libero voluptatum ipsa quae ad! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum atque debitis commodi architecto. Nulla dolore voluptatem. Eum atque debitis commodi architecto. Totam molestias accusantium explicabo velit aliquid impedit.</p>
+          <h3 class="about_desc__title">Choisissez<br/> <span style="font-size: 25px;">votre</span> modèle</h3>
+          <p class="about_desc__text">Service ipsum dolor sit amet, consectetur adipisicing elit. Nulla dolore voluptatem, ipsum, totam molestias accusantium explicabo velit aliquid impedit.</p>
         </div>
       </div> <!-- .section_about__row -->
       <div class="section_about__row">
         <div class="about_desc">
-          <h3 class="about_desc__title">Professional service</h3>
-          <p class="about_desc__text">Roles ipsum dolor sit amet, consectetur adipisicing elit. Nulla dolore voluptatem, ipsum, totam molestias accusantium explicabo velit aliquid impedit, reprehenderit libero voluptatum ipsa quae ad! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum atque debitis commodi architecto. Groggery ipsum dolor sit amet, consectetur adipisicing elit. Soluta modi esse accusantium sit velit cupiditate minima ipsam ex!</p>
-        </div>
-        <div class="about__img">
-          <img src="assets/img/about_2.jpg" class="img-responsive" alt="...">
+          <div class="about__img">
+            <%= image_tag "edit_icon.png", :alt => "edit_icon.svg", :class => "img-responsive three_icon_landing" %>
+          </div>
+          <h3 class="about_desc__title">Editer<br/> <span style="font-size: 25px;">votre</span> menu</h3>
+          <p class="about_desc__text">Roles ipsum dolor sit amet, consectetur adipisicing elit. Nulla dolore voluptatem, ipsum, totam molestias accusantium explicabo velit aliquid impedit.</p>
         </div>
       </div> <!-- .section_about__row -->
       <div class="section_about__row">
-        <div class="about__img">
-          <img src="assets/img/about_3.jpg" class="img-responsive" alt="...">
-        </div>
         <div class="about_desc">
-          <h3 class="about_desc__title">History</h3>
-          <p class="about_desc__text">Blanditiis quidem fugit atque facilis numquam et, minus, iusto pariatur. Laborum commodi consectetur dolor, unde quo nemo molestias provident reprehenderit iure quas ipsam quasi cupiditate, doloribus, consequuntur ea facere dolores impedit dolore blanditiis neque explicabo odio! Labore eveniet sapiente impedit asperiores architecto. Vero quia, quidem aliquam eveniet maiores expedita minima corporis assumenda accusamus at laborum.</p>
+          <div class="about__img">
+            <%= image_tag "print_icon.png", :alt => "print_icon.svg", :class => "img-responsive three_icon_landing" %>
+          </div>
+          <h3 class="about_desc__title">Imprimer<br/> <span style="font-size: 25px;">et</span> partager</h3>
+          <p class="about_desc__text">Blanditiis quidem fugit atque facilis numquam et, minus, iusto pariatur. Laborum commodi consectetur dolor, unde quo nemo molestias provident.</p>
         </div>
       </div> <!-- .section_about__row -->
     </section>
-
 
     <!-- section menu -->
     <section class="section_menu" id="section_menu">
@@ -100,7 +89,7 @@
         <div class="row menu__grid">
           <div class="col-sm-4 menu__item menu_breakfast">
             <div class="menu__item_hover">
-              <img src="assets/img/breakfast_1.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/breakfast_1.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$6.5</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -109,7 +98,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_breakfast">
             <div class="menu__item_hover">
-              <img src="assets/img/breakfast_2.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/breakfast_2.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$10</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -118,7 +107,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_breakfast">
             <div class="menu__item_hover">
-              <img src="assets/img/breakfast_3.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/breakfast_3.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum<span class="price">$8</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -127,7 +116,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_breakfast">
             <div class="menu__item_hover">
-              <img src="assets/img/breakfast_4.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/breakfast_4.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$7.5</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -136,7 +125,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_breakfast">
             <div class="menu__item_hover">
-              <img src="assets/img/breakfast_5.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/breakfast_5.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$5.5</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -145,7 +134,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_breakfast">
             <div class="menu__item_hover">
-              <img src="assets/img/breakfast_6.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/breakfast_6.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$8</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -154,7 +143,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_lunch" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/lunch_1.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/lunch_1.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$15</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -163,7 +152,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_lunch" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/lunch_2.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/lunch_2.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$8.5</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -172,7 +161,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_lunch" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/lunch_3.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/lunch_3.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$13.5</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -181,7 +170,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_lunch" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/lunch_4.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/lunch_4.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$7.8</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -190,7 +179,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_lunch" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/lunch_5.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/lunch_5.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$9.5</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -199,7 +188,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_lunch" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/lunch_6.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/lunch_6.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$12</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -208,7 +197,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_dinner" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/dinner_1.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/dinner_1.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$14</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -217,7 +206,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_dinner" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/dinner_2.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/dinner_2.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$11.5</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -226,7 +215,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_dinner" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/dinner_3.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/dinner_3.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$10.5</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -235,7 +224,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_dinner" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/dinner_4.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/dinner_4.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$13</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -244,7 +233,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_dinner" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/dinner_5.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/dinner_5.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$21</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -253,7 +242,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_dinner" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/dinner_6.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/dinner_6.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$19</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -262,7 +251,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_dinner" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/dinner_7.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/dinner_7.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$17</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -271,7 +260,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_drinks" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/drinks_1.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/drinks_1.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$6</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -280,7 +269,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_drinks" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/drinks_2.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/drinks_2.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$7</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -289,7 +278,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_drinks" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/drinks_3.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/drinks_3.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$4</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -298,7 +287,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_drinks" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/drinks_4.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/drinks_4.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$18</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -307,7 +296,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_drinks" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/drinks_5.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/drinks_5.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$11</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -316,7 +305,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_drinks" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/drinks_6.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/drinks_6.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$12</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -325,7 +314,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_drinks" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/drinks_7.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/drinks_7.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$15</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -334,7 +323,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_desserts" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/desserts_1.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/desserts_1.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$11</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -343,7 +332,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_desserts" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/desserts_2.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/desserts_2.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$10</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -352,7 +341,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_desserts" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/desserts_3.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/desserts_3.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$7.5</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -361,7 +350,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_desserts" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/desserts_4.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/desserts_4.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$8</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -370,7 +359,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_desserts" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/desserts_5.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/desserts_5.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$5</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -379,7 +368,7 @@
           </div>
           <div class="col-sm-4 menu__item menu_desserts" style="display: none;">
             <div class="menu__item_hover">
-              <img src="assets/img/desserts_6.jpg" class="img-responsive" alt="...">
+              <!-- <img src="assets/img/desserts_6.jpg" class="img-responsive" alt="..."> -->
               <div class="menu__item_overlay">
                 <h3>Lorem ipsum <span class="price">$12</span></h3>
                 <p class="overlay_info">Ingredients: Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing.</p>
@@ -389,4 +378,5 @@
         </div> <!-- .row -->
       </div> <!-- .container -->
     </section>
+
 <div>
