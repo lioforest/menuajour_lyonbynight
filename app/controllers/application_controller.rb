@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
 
     @supports = [
       {
-        route: "/about.html",
+        route: "/a-propos",
         text: "A propos de nous"
       },
       {
