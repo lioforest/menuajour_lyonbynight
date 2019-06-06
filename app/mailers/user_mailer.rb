@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-  default from: ENV['MAIL_JET_DEFAULT_FROM']
+  default from: 'thplyonbynight@gmail.com'
 
   def welcome_email(user)
 
