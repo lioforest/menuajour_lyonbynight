@@ -17,7 +17,17 @@
     background-color: var(--primary) !important;
 }
 
-.form-control::placeholder
+.form-control::placeholder, .form-control:not(:focus)
 {
     color: var(--light) !important;
+}
+
+.form-control .form-group label
+{
+    color: var(--light)
+}
+
+#form_message
+{
+    display: none;
 }

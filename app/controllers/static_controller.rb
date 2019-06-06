@@ -86,4 +86,8 @@ class StaticController <ApplicationController
       }
     ]
   end
+
+  def send_contact_email
+    
+  end
 end

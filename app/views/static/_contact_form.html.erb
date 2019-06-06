@@ -2,31 +2,28 @@
 <!-- Alert message -->
 <div class="alert" id="form_message" role="alert"></div>
 <!-- Form -->
-<form id="form_sendemail">
-    <!-- Email -->
-    <div class="form-group">
-        <label for="email" class="sr-only">Email address</label>
-        <input type="email" name="email" class="form-control"
-        id="email" placeholder="Enter your email address"> <span class="form-text"></span>
-    </div>
-    <!-- Name -->
-    <div class="form-group">
-        <label for="name" class="sr-only">Name</label>
-        <input type="text" name="name" class="form-control" id="name"
-        placeholder="Enter your name"> <span class="form-text"></span>
-    </div>
-    <!-- Message -->
-    <div class="form-group">
-        <label for="message" class="sr-only">Message</label>
-        <textarea name="message" class="form-control" id="message"
-        rows="6" placeholder="Enter your message"></textarea> <span class="form-text"></span>
-    </div>
-    <!-- Note -->
-    <div class="form-group">
-        <small class="text-light">
-                * All fields are mandatory.
-        </small>
-    </div>
-    <!-- Submit -->
-    <button type="submit" class="btn btn-secondary">Send Message</button>
-</form>
+
+<%= form_for("/send-contact-email")  do |f| %>
+  <!-- Email -->
+  <div class="form-group">
+    <%= f.email_field :email, class: "form-control", placeholder: "Entrer ici votre adresse email", tabindex: 1, autocomplete: "email", required: true %>
+  </div>
+   <!-- Name -->
+  <div class="form-group">
+    <%= f.text_field :name, class: "form-control", placeholder: "Entrer ici votre nom", tabindex: 2, required: true %>
+  </div>
+  <!-- Message -->
+  <div class="form-group">
+    <%= f.text_area :message, class: "form-control", rows: 6, placeholder: "Entrer votre message", tabindex: 3, required: true %>
+  </div>
+  <!-- Note -->
+  <div class="form-group">
+      <small class="text-light">
+              * Tous les champs sont requis.
+      </small>
+  </div>
+  <!-- Submit -->
+  <div class="actions">
+    <%= f.submit "Envoyer le message", class:'btn btn-secondary', tabindex: 4 %>
+  </div>
+<% end %>
