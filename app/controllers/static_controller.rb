@@ -88,6 +88,7 @@ class StaticController <ApplicationController
   end
 
   def send_contact_email
-    
+    StaticMailer.contact_email(params).deliver_now
+    redirect_to contact_path + "#form"
   end
 end
