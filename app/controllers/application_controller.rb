@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   before_action :get_footer_link
 
   def get_footer_link
+    @email = "thplyonbynight@gmail.com"
+    @phone = "+33 (0)6 11 95 79 79"
     @socials = [
       {
         icon: "fab fa-facebook fa-2x",
@@ -23,11 +25,11 @@ class ApplicationController < ActionController::Base
 
     @supports = [
       {
-        route: "/about.html",
+        route: a_propos_path,
         text: "A propos de nous"
       },
       {
-        route: "#",
+        route: contact_path,
         text: "Nous contacter"
       },
       {
