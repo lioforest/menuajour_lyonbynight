@@ -1,7 +1,7 @@
 <% @title = "Renvoyer les instructions de confirmation"%>
 
 <%= render "shared/header", title: @title %>
-<div class="d-flex flex-column align-items-center mt-5">
+<div class="container d-flex justify-content-center mt-5">
   <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
