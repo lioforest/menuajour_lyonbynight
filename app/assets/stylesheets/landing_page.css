@@ -30,3 +30,15 @@ body > main > div:nth-child(1) > section.mt-4 > div.row.d-flex.justify-content-a
 .about_desc__text{
 	text-align: center;
 }
+
+.icon_banner{
+    width: 15px;
+    max-height: 30px;
+    margin: 5px;
+}
+
+.icon_menu_mini_banner{
+    width: 25px;
+    max-height: 30px;
+    margin: 5px;
+}
