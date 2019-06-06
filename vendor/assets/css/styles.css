@@ -7419,7 +7419,7 @@ Last change:	04/21/2017
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  /*background-color: rgba(0, 0, 0, 0.4);*/
 }
 .section_welcome > .container {
   height: 100%;
@@ -7611,8 +7611,11 @@ Last change:	04/21/2017
 }
 /*** 4. Section: About ***/
 .section_about {
-  padding-top: 80px;
+  padding-top: 10px;
   background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 .section_about .section_title > span {
   z-index: 999;
@@ -7636,9 +7639,10 @@ Last change:	04/21/2017
     letter-spacing: 15px;
   }
 }
-.section_about .section_about__row {
+.section_about {
   display: -webkit-box;
   display: flex;
+  justify-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
           flex-direction: row;
@@ -7646,67 +7650,70 @@ Last change:	04/21/2017
           align-items: center;
 }
 @media (max-width: 991px) {
-  .section_about .section_about__row {
+  .section_about {
     margin-bottom: 50px;
   }
 }
 @media (max-width: 767px) {
-  .section_about .section_about__row {
+  .section_about {
     margin-bottom: 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
             flex-direction: column;
   }
-  .section_about .section_about__row:nth-child(odd) .about__img {
+  .section_about:nth-child(odd) .about__img {
     -webkit-box-ordinal-group: 0;
             order: -1;
   }
 }
-.section_about .section_about__row .about__img,
-.section_about .section_about__row .about_desc {
+
+.section_about .about_desc {
   width: 50%;
+  margin: 10px auto 10px auto;
 }
 @media (max-width: 767px) {
-  .section_about .section_about__row .about__img,
-  .section_about .section_about__row .about_desc {
+  .section_about .about__img,
+  .section_about .about_desc {
     width: 100%;
   }
 }
-.section_about .section_about__row .about_desc {
-  padding: 0 100px;
+.section_about .about_desc {
+
 }
 @media (max-width: 1199px) {
-  .section_about .section_about__row .about_desc {
+  .section_about .about_desc {
     padding: 0 50px;
   }
 }
 @media (max-width: 991px) {
-  .section_about .section_about__row .about_desc {
+  .section_about .about_desc {
     padding: 0 25px;
   }
 }
 @media (max-width: 767px) {
-  .section_about .section_about__row .about_desc {
+  .section_about .about_desc {
     padding: 30px 15px;
   }
 }
-.section_about .section_about__row .about_desc__title {
+.section_about .about_desc__title {
   color: #1b2d2f;
   font-size: 35px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Oregano', cursive;
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 20px;
+  text-align: center;
 }
 @media (max-width: 991px) {
-  .section_about .section_about__row .about_desc__title {
+  .section_about .about_desc__title {
     font-size: 30px;
   }
 }
-.section_about .section_about__row .about_desc__text {
+.section_about .about_desc__text {
   line-height: 1.65;
+  text-align: center;
 }
-.section_about .section_about__row .about_desc__text:first-letter {
+.section_about .about_desc__text:first-letter {
   font-size: 45px;
   font-family: 'Oregano', cursive;
   color: #f1ae2b;
@@ -7871,12 +7878,12 @@ Last change:	04/21/2017
   content: "Menu";
   position: absolute;
   letter-spacing: 15px;
-  top: -75%;
+  top: -40%;
   right: 0;
   bottom: 0;
   left: 0;
   color: #E7E7E7;
-  font-size: 110px;
+  font-size: 80px;
   font-family: 'Raleway', sans-serif;
   letter-spacing: 20px;
   z-index: -999;
