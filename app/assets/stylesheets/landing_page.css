@@ -1,0 +1,44 @@
+#section_about > div > div > h3{
+	text-transform: none;
+}
+
+body > main > div > section:nth-child(3) > div.row > div > h2:before{
+    content: "Création";
+    position: absolute;
+    letter-spacing: 15px;
+    top: -40%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: #E7E7E7;
+    font-size: 80px;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 20px;
+    z-index: -999;
+}
+
+.about_img{
+  max-width: 40%;
+  margin: 10px auto 30px auto;
+  }
+
+body > main > div:nth-child(1) > section.mt-4 > div.row.d-flex.justify-content-around > div > h3{
+	text-transform: none !important;
+	text-align: center;
+}
+
+.about_desc__text{
+	text-align: center;
+}
+
+.icon_banner{
+    width: 15px;
+    max-height: 30px;
+    margin: 5px;
+}
+
+.icon_menu_mini_banner{
+    width: 25px;
+    max-height: 30px;
+    margin: 5px;
+}
