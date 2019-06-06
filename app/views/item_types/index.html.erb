@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+
+    <p>Bienvenue dans votre espace admin pour les items <%= current_user.first_name %> <%=current_user.last_name%>)</p>
+
+  </div>
+
+
+
+  <%@category_types.each do |category_type|%>
+  <div class="row">
+   <%= category_type.name %>
+   <p class="option_delete"> <%= button_to "Supprimer", category_type_path(:id => category_type.id), :method => :delete, class:"btn btn-primary" %></p>
+   <p class="option_delete"> <%= button_to "Editer", edit_category_type_path(:id => category_type.id), :method => :get, class:"btn btn-primary" %></p>
+ </div>
+
+ <tr>
+  <table id="items">
+    <th>Id</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Created at</th>
+    <th>Delete</th>
+    <th>Edit</th>
+  </tr>
+  <% category_type.item_types.each do |item_type| %>
+  <tr>
+    <td><%= item_type.id %></td>
+    <td><%= item_type.name %></td>
+    <td><%= item_type.description %></td>
+    <td><%= item_type.price %></td>
+    <td><%= item_type.created_at %></td>
+    <td class="option_delete"> <%= button_to "Supprimer", item_type_path(:id => item_type.id), :method => :delete, class:"btn btn-primary" %></td>
+    <td class="option_delete"> <%= button_to "Editer", edit_item_type_path(:id => item_type.id), :method => :get, class:"btn btn-primary" %></td>
+  </tr>
+  <% end %>
+  <%end%>
+</table>
+
+</div>
+</div>
