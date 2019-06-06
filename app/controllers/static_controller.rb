@@ -1,6 +1,26 @@
 class StaticController <ApplicationController
   def index
     @title = "Accueil"
+    @steps = [
+      {
+        image: "menu_icon.svg",
+        alt: "un menu",
+        title: ["Choisissez", "votre", "modèle"],
+        message: "Choisissez parmis nos nombreux modèles celui qui vous convient"
+      },
+      {
+        image: "edit_icon.svg",
+        alt: "une page en cours d'édition",
+        title: ["Editer", "votre", "menu"],
+        message: "Personnaliser votre menu selon vos envies"
+      },
+      {
+        image: "print_icon.svg",
+        alt: "une imprimante",
+        title: ["Imprimer", "et", "partager"],
+        message: "Il ne vous reste plus qu'à imprimer le rendu, et/ou à la partager directement sur le web!"
+      }
+    ]
   end
 
   def about
@@ -37,5 +57,58 @@ class StaticController <ApplicationController
         quote: "Je vous assure, React est la solution !"
       }
     ]
+  end
+
+  def contact
+    @title = "Contactez-nous"
+    @contacts = [
+      {
+        title: "E-mail",
+        icon: "ion-ios-email-outline",
+        content: [
+          {
+            link: "mailto: thplyonbynight@gmail.com",
+            name: "thplyonbynight@gmail.com"
+          }
+        ]
+      },
+      {
+        title: "Téléphone",
+        icon: "ion-ios-telephone-outline",
+        content: [
+          {
+            link: "tel:+33 (0)6 11 95 79 79",
+            name: "+33 (0)6 11 95 79 79"
+          }
+        ]
+      },
+      {
+        title: "Réseaux Sociaux",
+        icon: "ion-social-twitter-outline",
+        content: [
+          {
+            link: "http://www.facebook.com/#",
+            name: "Facebook"
+          },
+          {
+            link: "http://www.instagram.com/#",
+            name: "Instagram"
+          },
+          {
+            link: "http://www.twitter.com/#",
+            name: "Twitter"
+          },
+          {
+            link: "http://www.linkedin.com/#",
+            name: "Linkedin"
+          }
+        ]
+      }
+    ]
+  end
+
+  def send_contact_email
+    StaticMailer.contact_email(params).deliver_now
+    redirect_to contact_path + "#form"
   end
 end
