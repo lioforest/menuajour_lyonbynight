@@ -1,6 +1,6 @@
 main
 {
-    margin-top: 120px;
-    min-height: 62vh;
+    margin-top: 100px;
+    min-height: 64vh;
     color: var(--primary);
 }

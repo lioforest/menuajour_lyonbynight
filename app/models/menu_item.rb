@@ -1,8 +1,20 @@
 class MenuItem < ApplicationRecord
-  belongs_to :user
-  has_many :item_category_links
-  has_many :categories, source: :menu_category, class_name: "MenuCategory", through: :item_category_links
+  validates :order, presence: true
 
-  has_many :model_category_links, through: :categories
-  has_many :models, source: :menu_model, class_name: "MenuModel", through: :model_category_links
+  belongs_to :menu_category
+  belongs_to :item_type
+
+
+
+  def name
+    self.item_type.name
+  end
+
+  def description
+    self.item_type.name
+  end
+
+  def price
+    self.item_type.name
+  end
 end

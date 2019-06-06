@@ -21,7 +21,7 @@ footer ul
 
 footer ul li a
 {
-    color: var(--title);
+    color: var(--light);
     margin: auto 5px;
 }
 
