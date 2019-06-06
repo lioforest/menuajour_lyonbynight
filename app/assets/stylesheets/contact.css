@@ -17,7 +17,8 @@
     background-color: var(--primary) !important;
 }
 
-.form-control::placeholder, .form-control:not(:focus)
+.contacts_form__body .form-control:not(:focus),
+.contacts_form__body .form-control::placeholder 
 {
     color: var(--light) !important;
 }

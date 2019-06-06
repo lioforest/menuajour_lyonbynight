@@ -23,9 +23,7 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in", class:'form-control bg-primary' %>
-  </div>
+  <%= render "devise/shared/submit_button", text: "Se connecter", form: f %>
 <% end %>
 
 <%= render "devise/shared/links" %>
