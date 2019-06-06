@@ -1,0 +1,17 @@
+<div class="col-md-4">
+    <div class="section_contacts__item">
+        <!-- Title -->
+        <h3 class="item__title"><%= info[:title] %></h3>
+        <i class="<%= info[:icon] %>"></i>
+        <!-- Content -->
+        <div class="item__contents">
+            <% info[:content].each do |contact|%>
+            <p class="item__content">
+                <a href="<%= contact[:link]%>">
+                    <%= contact[:name] %>
+                </a>
+            </p>
+            <% end %>
+        </div>
+    </div>
+</div>

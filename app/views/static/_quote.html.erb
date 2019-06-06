@@ -1,0 +1,8 @@
+<% if author[:firstname] == "Lionel" %>
+<div class="item active carousel-item">
+<% else %>
+<div class="item carousel-item">
+<% end %>
+    <p class="review_text"><%= author[:quote] %></p>
+    <h5 class="review_author">&#x2212; <%= author[:firstname] %> &#x2212;</h5>
+</div>
