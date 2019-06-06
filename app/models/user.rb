@@ -5,15 +5,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
 
-  has_many :menu_models
-  has_many :menu_items
-  has_many :menu_categories
+  has_many :menus, dependent: :destroy
+  has_many :item_types, dependent: :destroy
+  has_many :category_types, dependent: :destroy
 
 
- private
+  private
 
- def welcome_send
+  def welcome_send
    UserMailer.welcome_email(self).deliver_now
  end
- 
+
 end
