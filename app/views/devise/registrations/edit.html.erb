@@ -33,9 +33,7 @@
     <%= f.password_field :current_password, autocomplete: "current-password", class:'form-control' %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Update", class:'form-control' %>
-  </div>
+  <%= render "devise/shared/submit_button", text: "Modifier", form: f %>
 <% end %>
 
 <h3>Cancel my account</h3>

@@ -1,0 +1,12 @@
+<div class="col-md-3">
+    <div class="about_img">
+        <%= image_tag step[:image], alt: step[:alt], class: "img-responsive about_img" %>
+    </div>
+    <h3 class="about_desc__title">
+        <%= step[:title][0]%><br/>
+        <span style="font-size: 25px;"><%= step[:title][1]%></span>
+        <%= step[:title][2]%></h3>
+    <p class="about_desc__text">
+        <%= step[:message] %>
+    </p>
+</div>

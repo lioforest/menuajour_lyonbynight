@@ -31,6 +31,12 @@ body > main > div:nth-child(1) > section.mt-4 > div.row.d-flex.justify-content-a
 	text-align: center;
 }
 
+.creation-subsection
+{
+    width: 100vw;
+    margin-bottom: 50px;
+}
+
 .icon_banner{
     width: 15px;
     max-height: 30px;

@@ -1,6 +1,26 @@
 class StaticController <ApplicationController
   def index
     @title = "Accueil"
+    @steps = [
+      {
+        image: "menu_icon.svg",
+        alt: "un menu",
+        title: ["Choisissez", "votre", "modèle"],
+        message: "Choisissez parmis nos nombreux modèles celui qui vous convient"
+      },
+      {
+        image: "edit_icon.svg",
+        alt: "une page en cours d'édition",
+        title: ["Editer", "votre", "menu"],
+        message: "Personnaliser votre menu selon vos envies"
+      },
+      {
+        image: "print_icon.svg",
+        alt: "une imprimante",
+        title: ["Imprimer", "et", "partager"],
+        message: "Il ne vous reste plus qu'à imprimer le rendu, et/ou à la partager directement sur le web!"
+      }
+    ]
   end
 
   def about
@@ -85,5 +105,10 @@ class StaticController <ApplicationController
         ]
       }
     ]
+  end
+
+  def send_contact_email
+    StaticMailer.contact_email(params).deliver_now
+    redirect_to contact_path + "#form"
   end
 end
