@@ -14,15 +14,15 @@
    <p class="option_delete"> <%= button_to "Editer", edit_menu_category_path(:id => category.id), :method => :get, class:"btn btn-primary" %></p>
  </div>
 
-
-</tr>
-<tr>
+ <tr>
   <table id="items">
     <th>Id</th>
     <th>Name</th>
     <th>Description</th>
     <th>Price</th>
     <th>Created at</th>
+    <th>Delete</th>
+    <th>Edit</th>
   </tr>
   <% category.items.each do |item| %>
   <tr>
