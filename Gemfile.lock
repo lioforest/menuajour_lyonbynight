@@ -96,8 +96,6 @@ GEM
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
     ffi (1.11.1)
-    font-ionicons-rails (2.0.1.5)
-      railties (>= 3.2, < 6.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     http-cookie (1.0.3)
@@ -262,7 +260,6 @@ DEPENDENCIES
   devise
   dotenv-rails
   faker
-  font-ionicons-rails
   jbuilder (~> 2.5)
   letter_opener
   listen (>= 3.0.5, < 3.2)
