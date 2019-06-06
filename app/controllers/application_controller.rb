@@ -25,11 +25,11 @@ class ApplicationController < ActionController::Base
 
     @supports = [
       {
-        route: "/a-propos",
+        route: a_propos_path,
         text: "A propos de nous"
       },
       {
-        route: "/contact",
+        route: contact_path,
         text: "Nous contacter"
       },
       {
