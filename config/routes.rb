@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'category_types/index'
-  get 'category_types/show'
-  get 'category_types/create'
-  get 'category_types/edit'
-  get 'category_types/update'
-  get 'category_types/destroy'
-  get 'category_types/new'
   root "static#index"
   devise_for :users
   resources :users, only: [:show]

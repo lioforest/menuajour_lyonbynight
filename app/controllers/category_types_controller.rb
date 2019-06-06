@@ -15,6 +15,8 @@ class CategoryTypesController < ApplicationController
   end
 
   def destroy
+    CategoryType.find(params[:id]).destroy
+    redirect_back(fallback_location: root_path)
   end
 
   def new

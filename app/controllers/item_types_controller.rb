@@ -1,25 +1,27 @@
 class ItemTypesController < ApplicationController
-   before_action :authenticate_user!
+ before_action :authenticate_user!
 
-  def index
-    @category_types = current_user.category_types
-  end
+ def index
+  @category_types = current_user.category_types
+end
 
-  def show
-  end
+def show
+end
 
-  def create
-  end
+def create
+end
 
-  def edit
-  end
+def edit
+end
 
-  def update
-  end
+def update
+end
 
-  def destroy
-  end
+def destroy
+  ItemType.find(params[:id]).destroy
+  redirect_back(fallback_location: root_path)
+end
 
-  def new
-  end
+def new
+end
 end
