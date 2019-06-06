@@ -36,7 +36,7 @@
     <!-- section about -->
     <section class="mt-4">
 
-        <div class="row">
+        <div class="row creation-subsection">
           <div class="col-sm-12">
             <h2 class="section_title">&#8722; Création &#8722;</h2>
             <hr class="section_title_line">
@@ -44,33 +44,10 @@
           </div>
         </div>
 
-      <div class="row d-flex justify-content-around mt-4">
-
-          <div class="col-md-3">
-            <div class="about_img">
-              <%= image_tag "menu_icon.svg", :alt => "menu_icon.svg", :class => "img-responsive about_img" %>
-            </div>
-            <h3 class="about_desc__title">Choisissez<br/> <span style="font-size: 25px;">votre</span> modèle</h3>
-            <p class="about_desc__text">Choisissez parmis nos nombreux modèles celui qui vous convient</p>
-          </div>
-
-
-          <div class="col-md-3">
-            <div class="about_img">
-              <%= image_tag "edit_icon.svg", :alt => "edit_icon.svg", :class => "img-responsive about_img" %>
-            </div>
-            <h3 class="about_desc__title">Editer<br/> <span style="font-size: 25px;">votre</span> menu</h3>
-            <p class="about_desc__text">Personnaliser votre menu selon vos envies</p>
-          </div>
-
-          <div class="col-md-3">
-            <div class="about_img">
-              <%= image_tag "print_icon.svg", :alt => "print_icon.svg", :class => "img-responsive about_img" %>
-            </div>
-            <h3 class="about_desc__title">Imprimer<br/> <span style="font-size: 25px;">et</span> partager</h3>
-            <p class="about_desc__text">Il ne vous reste plus qu'à imprimer le rendu, et/ou à la partager directement sur le web!</p>
-          </div>
-
+      <div class="row d-flex justify-content-around mt-4 creation-subsection">
+          <% @steps.each do |step| %>
+          <%= render "step", step: step %>
+          <% end %>
         </div> <!-- end row -->
       </div>
     </section>
