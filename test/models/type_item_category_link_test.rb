@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class MenuModelTest < ActiveSupport::TestCase
+class TypeItemCategoryLinkTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
