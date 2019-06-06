@@ -1,9 +1,8 @@
 class MenuItem < ApplicationRecord
+  validates :order, presence: true
+
   belongs_to :menu_category
   belongs_to :item_type
-
-
-
 
 
 
@@ -11,11 +10,11 @@ class MenuItem < ApplicationRecord
     self.item_type.name
   end
 
-   def description
+  def description
     self.item_type.name
   end
 
-   def price
+  def price
     self.item_type.name
   end
 end

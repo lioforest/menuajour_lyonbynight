@@ -1,4 +1,6 @@
 class MenuCategory < ApplicationRecord
+  validates :order, presence: true
+
   belongs_to :menu
   belongs_to :category_type
 

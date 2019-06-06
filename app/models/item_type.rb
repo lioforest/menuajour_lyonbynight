@@ -1,4 +1,6 @@
 class ItemType < ApplicationRecord
+  validates :name, presence: true
+
   belongs_to :user
 
   has_many :menu_items, dependent: :destroy
