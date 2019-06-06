@@ -1,7 +1,17 @@
 class MenuCategory < ApplicationRecord
-  belongs_to :user
-  has_many :item_category_links
-  has_many :model_category_links
-  has_many :items, source: :menu_item, class_name: "MenuItem", through: :item_category_links
-  has_many :models, source: :menu_model, class_name: "MenuModel", through: :model_category_links
+  validates :order, presence: true
+
+  belongs_to :menu
+  belongs_to :category_type
+
+  has_many :items, source: :menu_items, class_name: "MenuItem", dependent: :destroy
+
+  def name
+    self.category_type.name
+  end
+
+  def add_item(_item_type, _order = 0)
+    MenuItem.create(item_type: _item_type, menu_category: self, order: _order)
+  end
+
 end

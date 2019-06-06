@@ -10,55 +10,66 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_04_063611) do
+ActiveRecord::Schema.define(version: 2019_06_06_102753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "item_category_links", force: :cascade do |t|
-    t.bigint "menu_item_id"
-    t.bigint "menu_category_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["menu_category_id"], name: "index_item_category_links_on_menu_category_id"
-    t.index ["menu_item_id"], name: "index_item_category_links_on_menu_item_id"
-  end
-
-  create_table "menu_categories", force: :cascade do |t|
+  create_table "category_types", force: :cascade do |t|
     t.string "name"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_menu_categories_on_user_id"
+    t.index ["user_id"], name: "index_category_types_on_user_id"
   end
 
-  create_table "menu_items", force: :cascade do |t|
+  create_table "item_types", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.decimal "price"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_menu_items_on_user_id"
+    t.index ["user_id"], name: "index_item_types_on_user_id"
   end
 
-  create_table "menu_models", force: :cascade do |t|
+  create_table "menu_categories", force: :cascade do |t|
+    t.integer "order"
+    t.bigint "menu_id"
+    t.bigint "category_type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_type_id"], name: "index_menu_categories_on_category_type_id"
+    t.index ["menu_id"], name: "index_menu_categories_on_menu_id"
+  end
+
+  create_table "menu_items", force: :cascade do |t|
+    t.integer "order"
+    t.bigint "menu_category_id"
+    t.bigint "item_type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_type_id"], name: "index_menu_items_on_item_type_id"
+    t.index ["menu_category_id"], name: "index_menu_items_on_menu_category_id"
+  end
+
+  create_table "menus", force: :cascade do |t|
     t.string "name"
     t.string "title"
     t.string "subtitle"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_menu_models_on_user_id"
+    t.index ["user_id"], name: "index_menus_on_user_id"
   end
 
-  create_table "model_category_links", force: :cascade do |t|
-    t.bigint "menu_category_id"
-    t.bigint "menu_model_id"
+  create_table "type_item_category_links", force: :cascade do |t|
+    t.bigint "item_type_id"
+    t.bigint "category_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["menu_category_id"], name: "index_model_category_links_on_menu_category_id"
-    t.index ["menu_model_id"], name: "index_model_category_links_on_menu_model_id"
+    t.index ["category_type_id"], name: "index_type_item_category_links_on_category_type_id"
+    t.index ["item_type_id"], name: "index_type_item_category_links_on_item_type_id"
   end
 
   create_table "users", force: :cascade do |t|
