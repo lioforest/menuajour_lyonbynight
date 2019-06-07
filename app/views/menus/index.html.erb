@@ -3,21 +3,31 @@
 <div class="container mt-5">
 
   <%@menu.each do |menu|%>
-  <div class="d-flex flex-row mt-4 mb-5">
+  <div class="card mb-5">
+    <div class="card-body">
 
-    <div class="mr-auto p-2 ">
-      <h4> <%= menu.name %></h4>
-    </div>
+      <p> <%= menu.name %></p>
 
-    <div class="p-2">
-      <div class="option_delete">
-        <%= button_to "Supprimer", user_menu_path(:id => menu.id), :method => :delete, class:"btn btn-primary"%>
-      </div>
-    </div>
+    
+    
+      <div class="row d-flex justify-content-right">
+        <div class="p-2">
+          <div class="option_delete">
+            <%= button_to "Voir", user_menu_path(:id => menu.id), :method => :get, class:"btn btn-primary" %>
+          </div>
+        </div>
 
-    <div class="p-2">
-      <div class="option_delete">
-        <%= button_to "Editer", edit_user_menu_path(:id => menu.id), :method => :get, class:"btn btn-primary" %>
+        <div class="p-2">
+          <div class="option_delete">
+            <%= button_to "Editer", edit_user_menu_path(:id => menu.id), :method => :get, class:"btn btn-outline-secondary" %>
+          </div>
+        </div>
+
+        <div class="p-2">
+          <div class="option_delete">
+            <%= button_to "Supprimer", user_menu_path(:id => menu.id), :method => :delete, class:"btn btn-danger"%>
+          </div>
+        </div>
       </div>
     </div>
 
