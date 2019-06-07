@@ -1,0 +1,17 @@
+.menu_show
+{
+    border: 5px solid var(--primary);
+    padding: 4vw !important;
+    width: 60vw;
+    height: 85vw;
+}
+
+.section_menu .section_title.no-shade::before
+{
+    content: ""
+}
+
+.category-name
+{
+    border-bottom: 2px var(--primary) solid
+}
