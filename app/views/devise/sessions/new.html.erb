@@ -1,7 +1,7 @@
 <% @title = "Se connecter" %>
 
 <%= render "shared/header", title: @title %>
-<div class="d-flex flex-column align-items-center mt-5">
+<div class="container d-flex justify-content-center mt-5">
   <div class="col-md-5">
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
