@@ -1,2 +1,26 @@
-<h1>Menus#index</h1>
-<p>Find me in app/views/menus/index.html.erb</p>
+<%= render "shared/header", title: "Vos Menus" %>
+
+<div class="container mt-5">
+
+  <%@menu.each do |menu|%>
+  <div class="d-flex flex-row mt-4 mb-5">
+
+    <div class="mr-auto p-2 ">
+      <h4> <%= menu.name %></h4>
+    </div>
+
+    <div class="p-2">
+      <div class="option_delete">
+        <%= button_to "Supprimer", user_menu_path(:id => menu.id), :method => :delete, class:"btn btn-primary"%>
+      </div>
+    </div>
+
+    <div class="p-2">
+      <div class="option_delete">
+        <%= button_to "Editer", edit_user_menu_path(:id => menu.id), :method => :get, class:"btn btn-primary" %>
+      </div>
+    </div>
+
+  </div>
+  <%end%>
+</div>
