@@ -3,9 +3,13 @@
   <div class="row">
     <p>Bienvenue dans votre espace admin pour les items <%= current_user.first_name %> <%=current_user.last_name%></p>
   </div>
-
-
-
+  <div class="d-flex flex-row">
+    <%= form_tag("/search", method: "get") do %>
+    <%= label_tag(:q, "Search for:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
+    <% end %>
+  </div>
   <%@category_types.each do |category_type|%>
   <div class="d-flex flex-row">
 
@@ -28,7 +32,7 @@
   </div>
 
   <%if category_type.item_types.length !=0%>
-  <table id="items">
+  <table  class="table table-hover">
     <tr>
       <th class="w-10-vw">Name</th>
       <th class="w-60-vw">Description</th>
