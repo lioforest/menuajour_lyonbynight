@@ -1,5 +1,6 @@
 class MenusController < ApplicationController
   def index
+  	@menu = current_user.menus
   end
 
   def show
