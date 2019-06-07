@@ -4,13 +4,13 @@
 
   <%@menu.each do |menu|%>
   <div class="card mb-5">
-    <div class="card-body">
+    <div class="card-body ml-4 d-flex align-items-center justify-content-between">
 
-      <p> <%= menu.name %></p>
-      <p><em><%= menu.subtitle %> </em></p>
+      <div >
+        <p><strong> <%= menu.name %></strong></p>
+      </div>
     
-    
-      <div class="row d-flex justify-content-right">
+      <div class="d-flex align-items">
         <div class="p-2">
           <div class="option_delete">
             <%= button_to "Voir", user_menu_path(:id => menu.id), :method => :get, class:"btn btn-primary" %>
