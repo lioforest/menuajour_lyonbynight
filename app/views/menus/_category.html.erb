@@ -1,6 +1,7 @@
 <div>
     <h3><span class="category-name "><%= category.name%></span></h3>
     <% category.items.each do | item | %>
+        <% item = item.item_type %>
         <div class="d-flex justify-content-between mb-1">
             <div>
                 <h4 class="mb-0"><%= item.name.capitalize %></h4>
