@@ -38,9 +38,11 @@ end
 
 def move_up
   if !is_first_of_menu?
-    previous_menu_category = get_previous_menu_category
+    previous_menu_category = get_next_menu_category
+    puts "*"*100
+    puts previous_menu_category.id
   end
-  puts previous_menu_category[0].id
+
 end
 
 #***************** Private *********************#
@@ -78,13 +80,23 @@ def is_last_of_menu?
 end
 
 def get_previous_menu_category
+  previous_menu_category = self.menu.categories.first
   MenuCategory.where(menu: self.menu).each {|_menu_category|
-    previous_menu_category = self.menu.categories[0]
     if _menu_category.order < self.order && _menu_category.order > previous_menu_category.order
      previous_menu_category = _menu_category
    end
-   previous_menu_category[0]
  }
+ previous_menu_category
+end
+
+def get_next_menu_category
+  next_menu_category = self.menu.categories.last
+  MenuCategory.where(menu: self.menu).each {|_menu_category|
+    if _menu_category.order > self.order && _menu_category.order < next_menu_category.order
+     next_menu_category = _menu_category
+   end
+ }
+ next_menu_category
 end
 
 #******************* Initializers ************************#
