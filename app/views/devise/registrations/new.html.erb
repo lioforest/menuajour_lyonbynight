@@ -1,7 +1,7 @@
 <% @title = "S'enregistrer" %>
 
 <%= render "shared/header", title: @title %>
-<div class="d-flex flex-column align-items-center mt-5">
+<div class="container d-flex justify-content-center mt-5">
   <div class="col-md-5">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -24,7 +24,7 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'form-control' %>
   </div>
 
-  <%= render "devise/shared/submit_button", text: @title, form: f%>
+  <%= render "devise/shared/submit_button", text: @title, form: f %>
   <% end %>
 
   <%= render "devise/shared/links" %>
