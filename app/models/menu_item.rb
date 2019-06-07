@@ -40,6 +40,17 @@ end
     highest_order
   end
 
+  def get_smallest_order_in_menu_category
+    smallest_order = get_highest_order_in_menu_category
+    MenuItem.where(menu_category: self.menu_category).each {|_menu_item|
+      menu_item_order = _menu_item.order
+      if menu_item_order <= smallest_order
+        smallest_order= menu_item_order
+      end
+    }
+    smallest_order
+  end
+
   #******************* Initializers ************************#
 
   def set_initial_order

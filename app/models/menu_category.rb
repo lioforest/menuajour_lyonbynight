@@ -36,10 +36,11 @@ def add_item_by_name(_item_type_name)
   MenuItem.create(menu_category: self, item_type: ItemType.where(name: _item_type_name)[0], order: 0)
 end
 
-def move_category_up
-  if self.order != get_smallest_order_in_menu
-
+def move_up
+  if !is_first_of_menu?
+    previous_menu_category = get_previous_menu_category
   end
+  puts previous_menu_category[0].id
 end
 
 #***************** Private *********************#
@@ -58,7 +59,7 @@ def get_highest_order_in_menu
 end
 
 def get_smallest_order_in_menu
-  smallest_order = get_highest_category_order_in_menu
+  smallest_order = get_highest_order_in_menu
   MenuCategory.where(menu: self.menu).each {|_menu_category|
     _menu_category_order = _menu_category.order
     if _menu_category_order <= smallest_order
@@ -66,6 +67,24 @@ def get_smallest_order_in_menu
     end
   }
   smallest_order
+end
+
+def is_first_of_menu?
+  self.order == get_smallest_order_in_menu
+end
+
+def is_last_of_menu?
+ self.order == get_highest_order_in_menu
+end
+
+def get_previous_menu_category
+  MenuCategory.where(menu: self.menu).each {|_menu_category|
+    previous_menu_category = self.menu.categories[0]
+    if _menu_category.order < self.order && _menu_category.order > previous_menu_category.order
+     previous_menu_category = _menu_category
+   end
+   previous_menu_category[0]
+ }
 end
 
 #******************* Initializers ************************#
