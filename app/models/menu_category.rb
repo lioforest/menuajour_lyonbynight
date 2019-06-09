@@ -19,7 +19,7 @@ class MenuCategory < ApplicationRecord
 ################################################
 
 #***************** Public *********************#
-
+#Getters
 def name
   self.category_type.name
 end
@@ -28,6 +28,7 @@ def items
  self.menu_items.order(:order)
 end
 
+#Setters
 def add_item(_item_type)
   MenuItem.create(item_type: _item_type, menu_category: self, order: 0)
 end
@@ -36,12 +37,34 @@ def add_item_by_name(_item_type_name)
   MenuItem.create(menu_category: self, item_type: ItemType.where(name: _item_type_name)[0], order: 0)
 end
 
+#movers
 def move_up
   if !is_first_of_menu?
-    previous_menu_category = get_next_menu_category
-    puts "*"*100
-    puts previous_menu_category.id
+    previous_menu_category = get_previous_menu_category
+    previous_order = previous_menu_category.order
+    self_order = self.order
+    previous_menu_category.order = get_highest_order_in_menu + 1
+    previous_menu_category.save
+    self.order = previous_order
+    self.save
+    previous_menu_category.order = self_order
+    previous_menu_category.save
   end
+end
+
+def move_down
+  if !is_last_of_menu?
+    next_menu_category = get_next_menu_category
+    next_order = next_menu_category.order
+    self_order = self.order
+    next_menu_category.order = get_highest_order_in_menu + 1
+    next_menu_category.save
+    self.order = next_order
+    self.save
+    next_menu_category.order = self_order
+    next_menu_category.save
+  end
+
 
 end
 
