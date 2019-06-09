@@ -4,8 +4,6 @@ class MenuCategory < ApplicationRecord
 
   before_validation :set_initial_order, on: :create
 
-
-
   belongs_to :menu
   belongs_to :category_type
 
