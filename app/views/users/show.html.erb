@@ -1,23 +1,26 @@
 <div class="container">
 
-	<div class="d-flex align-items-center align-content-around">
-	
-	<div class="col-md-4 border d-flex justify-content-center">
-		<img style="height: 300px; width: 300px;" src="">
+	<div class="d-flex align-items-center align-content-around mt-5">
+
+		<div class="col-md-8 d-flex flex-column align-items-center justify-content-around">
+			
+			<span><%= @user.first_name%> <%= @user.last_name%></span>
+			<br/>
+			<p><%= @user.email%></p>
+			<br/>
+			<a href="<%= edit_user_registration_path %>" class="btn btn-primary">Edit my personal information</a>
+
+		</div>
+
+		<div class="col-md-4 d-flex flex-column align-items-center justify-content-around">
+
+			<a href="<%= user_menus_path(current_user.id) %>" class="btn btn-primary">Voir mes menus</a>
+			<br/>
+			<a href="#" class="btn btn-primary">Voir mes plats</a>
+			
+		</div>
+
+
 	</div>
-
-
-	<div class="col-md-8 d-flex flex-column align-items-center justify-content-around" style="height: auto;">
-		
-		<span>FirstName LastName</span>
-		<br/>
-		<p>Email</p>
-		<br/>
-		<a href="<%= edit_user_registration_path %>" class="btn btn-primary">Edit my personal information</a>
-
-	</div>
-
-
-</div>
 
 </div>

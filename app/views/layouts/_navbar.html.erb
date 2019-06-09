@@ -27,6 +27,7 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/mon-profil">Mon profil</a></li>
             <li><a class="dropdown-item" href="<%=item_types_path%>">Mes plats</a></li>
+            <li><a class="dropdown-item" href="<%= user_menus_path(current_user.id)%>">Mes menus</a></li>
             <%# unless current_user.is_subscriber %>
             <li><a class="dropdown-item" href="#">S'abonner</a></li>
             <%# end %>
@@ -34,24 +35,24 @@
           </ul>
         </li>
         <% else %>
-          <li class="dropdown nav-item">
-            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button"
-            aria-haspopup="true" aria-expanded="false">
-            Connexion
-            </a>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" href="<%=new_user_registration_path%>">S'enregistrer</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="<%= new_user_session_path %>">Se connecter</a>
-              </li>
-            </ul>
+        <li class="dropdown nav-item">
+          <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button"
+          aria-haspopup="true" aria-expanded="false">
+          Connexion
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" href="<%=new_user_registration_path%>">S'enregistrer</a>
           </li>
-        <% end %>
-      </ul>
-    </div>
-  <!-- /.navbar-collapse -->
+          <li>
+            <a class="dropdown-item" href="<%= new_user_session_path %>">Se connecter</a>
+          </li>
+        </ul>
+      </li>
+      <% end %>
+    </ul>
   </div>
+  <!-- /.navbar-collapse -->
+</div>
 <!-- /.container -->
 </nav>

@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
 
   root "static#index"
-  devise_for :users
-  resources :users, only: [:show]
+
+  devise_for :users, path: "", :path_names => { :sign_in => 'se-connecter', :sign_out => 'se-deconnecter', :sign_up => 's-enregistrer' }
+  scope(path_names: {new: "nouveau", edit: "modifier"}) do
+    resources :users, only: [:show], path: "clients" do
+      resources :menus
+    end
+  end
   resources :category_types
   resources :item_types
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+
+  #Static pages
   get '/a-propos', to: "static#about"
   get '/contact', to: "static#contact"
   get '/mon-profil', to: "users#show"
