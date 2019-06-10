@@ -12,6 +12,16 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'form-control' %>
   </div>
 
+  <div class="form-group">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class:'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class:'form-control' %>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
@@ -39,6 +49,6 @@
 <h3 class="pt-4 pb-3 text-center">&#8722; Fermer mon compte &#8722;</h3>
 <p><%= button_to "Fermer mon compte", registration_path(resource_name), data: { confirm: "En êtes-vous certain ?" }, method: :delete, class:'form-control btn btn-danger' %></p>
 
-<p class="text-center"><%= link_to "Revenir en arrière", :back, class: "btn btn-primary" %></p>
+<%= render "shared/back_button" %>
 </div>
 </div>
