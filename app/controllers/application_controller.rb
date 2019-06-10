@@ -54,7 +54,7 @@ class ApplicationController < ActionController::Base
       if new_sub.save
         flash[:success] = 'Votre paiement a bien été prit en compte'
       else
-        flash[:danger] = 'Suite à un problème, votre paiement n\'a pas été prit en compte'
+        flash[:error] = 'Suite à un problème, votre paiement n\'a pas été prit en compte'
       end
   end
 
