@@ -2,16 +2,22 @@ class MenusController < ApplicationController
 	before_action :authenticate_user!
 
   def index
-  	@menus = current_user.menus
+	@user_in_url = User.find(params[:user_id])
+    if @user_in_url == current_user
+	  	@menus = current_user.menus
+	else
+    	redirect_to(root_path)
+    end
   end
 
   def show
-	user_menus = current_user.menus
-    @menu = user_menus.where(id: params[:id]).first
-    if @menu.nil?
-    	redirect_to(root_path)
+	@user_in_url = User.find(params[:user_id])
+
+    if @user_in_url == current_user
+	    @menu = current_user.menus.where(id: params[:id]).first
+   	    @title 	= @menu.title
 	else
-	    @title 	= @menu.title
+    	redirect_to(root_path)
     end
   end
 
