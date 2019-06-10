@@ -1,11 +1,18 @@
 class MenusController < ApplicationController
+	before_action :authenticate_user!
+
   def index
-  	@menu = current_user.menus
+  	@menus = current_user.menus
   end
 
   def show
-    @menu = get_menu(params[:id])
-    @title = @menu.title
+	user_menus = current_user.menus
+    @menu = user_menus.where(id: params[:id]).first
+    if @menu.nil?
+    	redirect_to(root_path)
+	else
+	    @title 	= @menu.title
+    end
   end
 
   def edit
@@ -19,10 +26,6 @@ class MenusController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
-  private
 
-  def get_menu(id)
-    Menu.find(id)
-  end
   
 end
