@@ -10,10 +10,24 @@ class User < ApplicationRecord
   has_many :category_types, dependent: :destroy
 
 
+
+################################################
+################## Methods #####################
+################################################
+
+#***************** Public *********************#
+
+  def add_category_type(_name)
+    CategoryType.create(name: _name, user: self)
+  end
+
+#***************** Private ********************#
+
   private
 
+#after_create
   def welcome_send
-   UserMailer.welcome_email(self).deliver_now
- end
+    UserMailer.welcome_email(self).deliver_now
+  end
 
 end
