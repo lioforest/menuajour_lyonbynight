@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :charges
+devise_for :admins, path: 'admin', skip: :registrations
 
 
 
