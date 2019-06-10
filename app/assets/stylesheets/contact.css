@@ -17,6 +17,11 @@
     background-color: var(--primary) !important;
 }
 
+#section_contacts
+{
+    background-color: none !important;
+}
+
 .contacts_form__body .form-control:not(:focus),
 .contacts_form__body .form-control::placeholder 
 {
