@@ -6,12 +6,13 @@
 .section_header
 {
   max-height: 20vh;
-  background-image: url(/../../../vendor/assets/img/contacts_bg.jpg) !important;
-  /*background-color: none !important;*/
+  background-image: url(slider_bg2.jpg) !important;
+  background-color: none !important;
 }
 
-.section_header:before 
+.section_header::before
 {
-  /*background-color: none !important;*/
-  background-image: url(/../../../vendor/assets/img/contacts_bg.jpg) !important;
+  max-height: 20vh;
+  background-image: url(slider_bg2.jpg) !important;
+  background-color: none !important;
 }
