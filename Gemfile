@@ -69,3 +69,6 @@ gem 'dotenv-rails'
 gem 'mailjet'
 gem 'letter_opener'
 gem 'rails-erd'
+
+#adding React through Webpacker
+gem 'webpacker', '>= 4.0.x'
