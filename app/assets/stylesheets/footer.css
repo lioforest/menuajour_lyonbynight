@@ -12,6 +12,11 @@ footer
     padding: 15px 0 !important;
 }
 
+.section_footer .section_footer_heading
+{
+    font-size: 25px !important;
+}
+
 footer ul
 {
     display: flex;
@@ -46,4 +51,11 @@ footer ul li a
 {
     display: flex;
     justify-content: space-between
+}
+
+@media (min-width: 1004px) {
+    .section_footer .section_footer_heading
+{
+    font-size: 35px !important;
+}
 }
