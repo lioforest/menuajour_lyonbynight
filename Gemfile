@@ -72,3 +72,4 @@ gem 'rails-erd'
 
 #adding React through Webpacker
 gem 'webpacker', '>= 4.0.x'
+gem 'active_model_serializers', '~> 0.10.0'
