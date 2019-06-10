@@ -8,24 +8,20 @@ class ApplicationController < ActionController::Base
   end
 
   def get_footer_link
-    @email = "thplyonbynight@gmail.com"
+    @email = "contact@menuajour.com"
     @phone = "+33 (0)6 11 95 79 79"
     @socials = [
       {
         icon: "fab fa-facebook fa-2x",
-        link: "http://www.facebook.com/#"
+        link: "https://www.facebook.com/menuajour"
       },
       {
         icon: "fab fa-linkedin fa-2x",
-        link: "http://www.linkedin.com/#"
+        link: "https://www.linkedin.com/company/menuajour/"
       },
       {
         icon: "fab fa-twitter fa-2x",
-        link: "http://wwww.twitter.com/#"
-      },
-      {
-        icon: "fab fa-instagram fa-2x",
-        link: "http://www.instagram.com/#"
+        link: "https://twitter.com/menuajour"
       }
     ]
 
