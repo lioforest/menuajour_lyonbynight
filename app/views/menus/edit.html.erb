@@ -1,31 +1,31 @@
     <%= render "shared/header", title: @menu.title%>
 
-	      <h1>Editer le menu n°: <%= @menu.id%> </h1>
-	      <%= @menu.name%>
-		<br><br>
-	      <%= @menu.title%>
-		<br><br>
-	      <%= @menu.subtitle%>
-		<br><br>
-			<%= @menu %>
-		<%= form_for edit_user_menu_path do |f| %>
-		       <div class ="form_group">
-			        <label> Nom du menu </label>
-			        <%= f.text_field :name, class: 'form-control' %>
-		       </div>
-		       <div class ="form_group">
-			        <label> Le titre du menu :  </label>
-			        <%= f.text_area :title, class: 'form-control' %>
-		        </div>
-		       <div class ="form_group">
-			        <label> Sous-titre du menu :  </label>
-			        <%= f.text_area :subtitle, class: 'form-control' %>
-		        </div>
+<section class="section_menu" id="section_menu">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
 
-		        <br><br>
-		       <div class ="form_group">
-			        <button type="submit" class="btn btn-primary">Valider</button>
-		        </div>
-		<% end%>
+		      	<h1>Editer le menu n°: <%= @menu.id%> </h1>
+		  		<%= form_for edit_user_menu_path do |f| %>
+		       		<div class ="form_group">
+			        	<label> Nom du menu  </label>
+			        	<%= text_area_tag :name, @menu.name, class: 'form-control' %>
+		       		</div>
+		       		<div class ="form_group">
+			        	<label> Le titre du menu :  </label>
+			        	<%= text_area_tag :title, @menu.title, class: 'form-control' %>
+		        	</div>
+		       		<div class ="form_group">
+			        	<label> Sous-titre du menu :  </label>
+			        	<%= text_area_tag :subtitle, @menu.subtitle, class: 'form-control' %>
+		        	</div>
+
+		        	<br><br>
+		       		<div class ="form_group">
+			        	<button type="submit" class="btn btn-primary">Valider</button>
+		        	</div>
+				<% end%>
+			</div>
+		</div>
 	</div>
- </section>
+</section>

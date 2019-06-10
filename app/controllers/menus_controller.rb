@@ -35,7 +35,7 @@ class MenusController < ApplicationController
    		if @menu.update(menu_params)
       		render :edit
 	    else
-    	  render :edit
+      redirect_to(root_path)
     	end
   	end
   end
