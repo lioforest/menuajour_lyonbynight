@@ -29,7 +29,7 @@
             <li><a class="dropdown-item" href="#">Mes plats</a></li>
             <li><a class="dropdown-item" href="<%= user_menus_path(current_user.id)%>">Mes menus</a></li>
             <%# unless current_user.is_subscriber %>
-            <li><a class="dropdown-item" href="#">S'abonner</a></li>
+            <li><a class="dropdown-item" href="<%= new_user_subscription_path(current_user.id)%>">S'abonner</a></li>
             <%# end %>
             <li><a class="dropdown-item" href="<%=destroy_user_session_path %>" data-method= "delete">Déconnexion</a></li>
           </ul>
