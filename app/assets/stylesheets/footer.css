@@ -55,7 +55,7 @@ footer ul li a
 
 @media (min-width: 1004px) {
     .section_footer .section_footer_heading
-{
-    font-size: 35px !important;
-}
+    {
+        font-size: 35px !important;
+    }
 }
