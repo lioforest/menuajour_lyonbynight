@@ -1,2 +1,20 @@
-<h1>Menus#show</h1>
-<p>Find me in app/views/menus/show.html.erb</p>
+<%= render "shared/header", title: @title%>
+
+<!-- section menu -->
+<section class="section_menu" id="section_menu">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 menu_show">
+                <h2 class="section_title no-shade">&#x2212; <%= @title %> &#x2212;</h2>
+                <% if @menu.subtitle %>
+                <h3 class="text-center"><%= @menu.subtitle %></h3>
+                <% end %>
+                <hr class="section_title_line">
+                <% @menu.categories.each do |category|%>
+                <%= render "category", category: category %>
+                <% end %>
+            </div>
+        </div>   
+    </div>
+    <%= render "shared/back_button"%>
+</section>
