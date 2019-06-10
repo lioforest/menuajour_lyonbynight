@@ -18,6 +18,21 @@
     background-color: var(--primary) !important;
 }
 
+.section_map-heading
+{
+    background: none !important;
+}
+
+.section_map-heading::before
+{
+    background: none !important;
+}
+
+.section_map-heading .map__address
+{
+    color: var(--primary) !important;
+}
+
 .contacts_form__body .form-control:not(:focus),
 .contacts_form__body .form-control::placeholder 
 {

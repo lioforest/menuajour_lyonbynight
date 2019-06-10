@@ -4,11 +4,17 @@ Rails.application.routes.draw do
   scope(path_names: {new: "nouveau", edit: "modifier"}) do
     resources :users, only: [:show], path: "clients" do
       resources :menus
+      resources :subscriptions
     end
   end
+
+  resources :charges
+
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/a-propos', to: "static#about"
   get '/contact', to: "static#contact"
-  get '/votre-profil', to: "users#show"
+  get '/mon-profil', to: "users#show"
   post '/contact', to: "static#send_contact_email" 
 end
