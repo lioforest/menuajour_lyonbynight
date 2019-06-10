@@ -25,9 +25,9 @@
         <li class="dropdown nav-item"> <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button"
           aria-haspopup="true" aria-expanded="false"><%= current_user.email %></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/mon-profil">Mon profil</a></li>
-            <li><a class="dropdown-item" href="#">Mes plats</a></li>
-            <li><a class="dropdown-item" href="<%= user_menus_path(current_user.id)%>">Mes menus</a></li>
+            <li><a class="dropdown-item" href="/votre-profil">Votre profil</a></li>
+            <li><a class="dropdown-item" href="#">Vos plats</a></li>
+            <li><a class="dropdown-item" href="<%= user_menus_path(current_user.id)%>">Vos menus</a></li>
             <%# unless current_user.is_subscriber %>
             <li><a class="dropdown-item" href="#">S'abonner</a></li>
             <%# end %>
