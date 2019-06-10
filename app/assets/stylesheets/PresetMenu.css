@@ -1,0 +1,13 @@
+#preset-menus
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.preset-menu
+{
+    flex: 1;
+    margin: 10px;
+    border: var(--primary) solid 2px;
+}

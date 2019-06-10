@@ -40,9 +40,20 @@ class MenusController < ApplicationController
   	end
   end
 
-  def new
+	def new
+		@menus = Menu.where(user_id: current_user.id)
+		@title = "Créer un nouveau menu"
+		
+		respond_to do |format|
+			format.html do
+				@new = Menu.new	
+			end
+			format.json do
+				render json: @menus
+			end
+		end
   end
-  
+
   def destroy
   if helpers.checked_user
   		Menu.find(params[:id]).destroy
