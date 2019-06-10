@@ -53,4 +53,8 @@ class ApplicationController < ActionController::Base
     ]
   end
 
+  def create_subscriber
+    Subscription.create(name: 'Offre 1', price: 100, start_date: Date.today, end_date: (Date.today + 366), user: current_user)
+  end
+
 end

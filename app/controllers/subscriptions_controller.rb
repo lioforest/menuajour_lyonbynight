@@ -8,9 +8,7 @@ class SubscriptionsController < ApplicationController
 		@subscription = Subscription.find_by(user: current_user)
 	end
 
-	def create
-		
-	end
+	#The 'create' action is in the 'application_controller' because its usefull for the 'charges_controller'
 
 	def update
 		

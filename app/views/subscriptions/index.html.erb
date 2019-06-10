@@ -14,8 +14,6 @@
 		</div>
 		<div>Abonné depuis le : <%= @subscription.start_date %></div>
 		<div>Abonné jusqu'au : <%= @subscription.end_date %></div>
-
-		<a href="#" class="btn btn-primary mt-5">Prolonger mon abonnement</a>
 		
 		<%= button_to 'Supprimer mon abonnement', user_subscription_path(current_user.id, @subscription.id), method: 'delete', class:'btn btn-danger'%>
 
