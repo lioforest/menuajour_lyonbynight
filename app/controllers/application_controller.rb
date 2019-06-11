@@ -39,11 +39,11 @@ class ApplicationController < ActionController::Base
         text: "Tarifs"
       },
       {
-        route: "#",
+        route: en_cours_path,
         text: "CGU"
       },
       {
-        route: "#",
+        route: en_cours_path,
         text: "Mentions Légales"
       }
     ]
