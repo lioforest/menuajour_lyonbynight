@@ -6,13 +6,20 @@ Rails.application.routes.draw do
   scope(path_names: {new: "nouveau", edit: "modifier"}) do
     resources :users, only: [:show], path: "clients" do
       resources :menus
+      resources :subscriptions
     end
   end
+
   resources :category_types
   resources :item_types
 
+  resources :charges
 
   #Static pages
+
+
+
+
   get '/a-propos', to: "static#about"
   get '/contact', to: "static#contact"
   get '/mon-profil', to: "users#show"

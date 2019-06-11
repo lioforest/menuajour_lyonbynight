@@ -1,0 +1,18 @@
+.section_header__about .container
+{
+	padding: 5vh !important;
+}
+
+.section_header
+{
+  max-height: 20vh;
+  background-image: url(slider_bg2.jpg) !important;
+  background-color: none !important;
+}
+
+.section_header::before
+{
+  max-height: 20vh;
+  background-image: url(slider_bg2.jpg) !important;
+  background-color: none !important;
+}

@@ -9,6 +9,8 @@ class UserMailer < ApplicationMailer
     #on définit une variable @url qu'on utilisera dans la view d’e-mail
     @url  = root_url
 
+    attachments.inline['slider_bg2.jpg'] = File.read("#{Rails.root}/vendor/assets/img/slider_bg2.jpg")
+
     # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
     mail(to: @user.email, subject: 'Bienvenue chez Menu à Jour !')
   end

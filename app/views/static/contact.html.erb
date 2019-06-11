@@ -1,22 +1,5 @@
 <%= render "shared/header", title: @title %>
-<!-- section contacts -->
-<section class="section_contacts">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 class="section_title">&#x2212; Nos Coordonnées &#x2212;</h2>
-                <hr class="section_title_line">
-            </div>
-        </div>
-        <div class="row">
-            <% @contacts.each do |contact| %>
-            <%= render "contact_item", info: contact %>
-            <% end %>
-        </div>
-        <!-- / .row -->
-    </div>
-    <!-- .container -->
-</section>
+
 <!-- section map-heading -->
 <section class="section_map-heading" id="section_contacts">
     <div class="container">
