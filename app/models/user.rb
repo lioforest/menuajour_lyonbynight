@@ -11,10 +11,24 @@ class User < ApplicationRecord
   has_many :subscriptions, dependent: :destroy
 
 
+
+################################################
+################## Methods #####################
+################################################
+
+#***************** Public *********************#
+
+  def create_new_category_type(_name)
+    CategoryType.create(name: _name, user: self)
+  end
+
+#***************** Private ********************#
+
   private
 
+#after_create
   def welcome_send
-   UserMailer.welcome_email(self).deliver_now
- end
+    UserMailer.welcome_email(self).deliver_now
+  end
 
 end
