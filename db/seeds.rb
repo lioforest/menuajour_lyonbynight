@@ -141,7 +141,7 @@ M4 = Menu.create(name:'PRINTEMPS 2019', title: '', subtitle:'', user: u)
 		M1.categories[4].add_item(itdessert2)
 		M1.categories[4].add_item(itdessert3)
 		M1.categories[4].add_item(itdessert4)
-	s
+	
 
 
 
