@@ -17,11 +17,10 @@ Rails.application.routes.draw do
   resources :charges
 devise_for :admins, path: 'admin', skip: :registrations
 
-<<<<<<< HEAD
+
 namespace :admin do
   resources :menus
   resources :users
-
 end
 
 get 'admin' => 'admin/users#index'
