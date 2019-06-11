@@ -1,8 +1,8 @@
 <div class="container d-flex justify-content-center">
 
-	<div class="col-md-8 d-flex flex-column align-items-center mt-5 mb-5 justify-content-around" style="height: 500px;">
+	<div class="col-md-8 d-flex flex-column align-items-center mt-5 mb-5 justify-content-around border border-primary" style="height: 500px;">
 
-		<h2>Mon offre actuelle</h2>
+		<h2 style="text-decoration: underline; text-decoration-color: #f1ae2b;">Mon offre actuelle</h2>
 
 		<div><%= @subscription.name %></div>
 		<div><%= @subscription.price %>/mois</div>
@@ -12,10 +12,13 @@
 			<p>Avantage 3</p>
 
 		</div>
-		<div>Abonné depuis le : <%= @subscription.start_date %></div>
-		<div>Abonné jusqu'au : <%= @subscription.end_date %></div>
-		
+		<div>
+			<p>Abonné depuis le : <%= @subscription.start_date %></p>
+			<p>Abonné jusqu'au : <%= @subscription.end_date %></p>
+		</div>
+
 		<%= button_to 'Supprimer mon abonnement', user_subscription_path(current_user.id, @subscription.id), method: 'delete', class:'btn btn-danger'%>
+		
 
 	</div>
 	
