@@ -53,4 +53,12 @@ class ApplicationController < ActionController::Base
     Subscription.create(name: 'Offre 1', price: 100, start_date: Date.today, end_date: (Date.today + 366), user: current_user)
   end
 
+layout :set_layout
+
+  private
+
+  def set_layout
+    devise_controller? ? 'admin' : false
+  end
+
 end

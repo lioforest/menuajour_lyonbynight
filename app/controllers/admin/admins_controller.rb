@@ -1,10 +1,7 @@
 class Admin::AdminsController < ApplicationController
+  before_action :authenticate_admin!
+  layout 'admin'
 
-
-def index
-			@admin = current_user
-
-end
 
 
 end

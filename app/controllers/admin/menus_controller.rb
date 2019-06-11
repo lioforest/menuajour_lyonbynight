@@ -1,4 +1,4 @@
-class Admin::MenusController < ApplicationController
+class Admin::MenusController < Admin::AdminsController
   before_action :set_admin_menu, only: [:show, :edit, :update, :destroy]
 
   # GET /admin/menus
@@ -28,7 +28,7 @@ class Admin::MenusController < ApplicationController
 
     respond_to do |format|
       if @admin_menu.save
-        format.html { redirect_to @admin_menu, notice: 'Menu was successfully created.' }
+        format.html { redirect_to [:admin, @admin_menu], notice: 'Menu was successfully created.' }
         format.json { render :show, status: :created, location: @admin_menu }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class Admin::MenusController < ApplicationController
   def update
     respond_to do |format|
       if @admin_menu.update(admin_menu_params)
-        format.html { redirect_to @admin_menu, notice: 'Menu was successfully updated.' }
+        format.html { redirect_to [:admin, @admin_menu], notice: 'Menu was successfully updated.' }
         format.json { render :show, status: :ok, location: @admin_menu }
       else
         format.html { render :edit }

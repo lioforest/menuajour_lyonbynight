@@ -17,7 +17,7 @@ namespace :admin do
 
 end
 
-  get '/admins/index', to: 'admin/admins#index', as: 'admin_index'
+get 'admin' => 'admin/users#index'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -143,7 +143,8 @@ mc = MenuCategory.create(order: '5', menu_id: Menu.first.id , category_type_id: 
 	MenuItem.create(order: '4', menu_category_id: mc.id, item_type_id: itdessert4.id )
 
 
+Admin.create!(email: 'admin@menuajour.com', password: 'azerty')
+
+
 	
-
-
 

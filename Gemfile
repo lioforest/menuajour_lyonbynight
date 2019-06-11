@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
  gem 'bcrypt', '~> 3.1.7'
 
+ 
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -70,3 +72,4 @@ gem 'mailjet'
 gem 'letter_opener'
 gem 'rails-erd'
 gem 'stripe'
+gem 'devise-bootstrap-views'
