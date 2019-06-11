@@ -6,6 +6,7 @@
     <%= csp_meta_tag %>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Donegal+One&display=swap" rel="stylesheet"> 
     <link rel="icon" type="image/svg+xml" href="<%= asset_path('assets/img/menu_icon.svg') %>" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -13,6 +14,7 @@
   <body>
     <%= render "layouts/navbar" %>
     <main>
+      <%= render 'layouts/flash' %>
       <%= yield %>
     </main>
     <%= render "layouts/footer" %>

@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :menus, dependent: :destroy
   has_many :item_types, dependent: :destroy
   has_many :category_types, dependent: :destroy
+  has_many :subscriptions, dependent: :destroy
 
 
   private

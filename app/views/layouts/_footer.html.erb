@@ -2,22 +2,22 @@
     <footer class="section_footer bg-primary">
       <div class="container">
         <div class="row">
-          <div class="col-sm-6 col-lg-4">
+          <div class="col-sm-6 col-md-4 px-3">
             <h3 class="section_footer_heading">Coordonnées</h3>
             <p><i class="icon ion-ios-telephone-outline"></i> <%= @phone %></p>
             <p><i class="icon ion-ios-email-outline"></i> <%= @email %></p>
           </div>
-          <div class="col-sm-6 col-lg-4">
+          <div class="col-sm-6 col-md-4 px-3">
             <h3 class="section_footer_heading">Suivez-nous</h3>
             <div class="social">
               <ul>
               <% @socials.each do | social |%>
-               <li class="social_icon"><a href="<%= social[:link] %>"><i class="<%= social[:icon] %>"></i></a></li>
+               <li class="social_icon pl-0 pr-3"><a href="<%= social[:link] %>" class="ml-0"><i class="<%= social[:icon] %>"></i></a></li>
               <% end %>
               </ul>
             </div> <!-- .social -->
           </div>
-          <div class="col-sm-6 col-lg-4">
+          <div class="col-sm-6 col-md-4 px-3">
             <h3 class="section_footer_heading">Aide</h3>
             <div id="supports">
                 <% @supports.each do |support| %>

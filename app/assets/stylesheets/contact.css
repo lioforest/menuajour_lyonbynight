@@ -11,10 +11,26 @@
 {
     min-width: 45%;
 }
+
 .section_map-heading .contacts_form__body
 {
     margin-bottom: 200px !important;
     background-color: var(--primary) !important;
+}
+
+.section_map-heading
+{
+    background: none !important;
+}
+
+.section_map-heading::before
+{
+    background: none !important;
+}
+
+.section_map-heading .map__address
+{
+    color: var(--primary) !important;
 }
 
 .contacts_form__body .form-control:not(:focus),
