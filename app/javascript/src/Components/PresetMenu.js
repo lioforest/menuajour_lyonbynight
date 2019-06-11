@@ -18,15 +18,15 @@ const PresetMenu = function({menu, adding, index = 0}){
                     (menu_category) => {
                         {console.log("menu-category",menu_category)}
                        {console.log("category-type", menu_category.category_type)}
-                        {console.log("menu-item", menu_category.menu_items[0])}
+                        {console.log("menu-item", menu_category.menu_items)}
                         return (
                             <li key={menu_category.category_type.id}>
                                 {menu_category.category_type.name}
-                                {/*<ul>
+                                <ul>
                                     {menu_category.category_type.items.map(
                                         (item) => console.log(item)
                                     )}
-                                </ul>*/}
+                                </ul>
                             </li>
                         )
                     }

@@ -21,7 +21,7 @@ class MenusController < ApplicationController
   def edit
   if helpers.checked_user
 	  	@menu = Menu.find(params[:id])
-   	    @title 	= @menu.title
+   	  @title 	= @menu.title
 	else
     	redirect_to(root_path)
     end
