@@ -1,11 +1,15 @@
-<div class="container">
+<%= render "shared/header", title: "Paiement accepté" %>
 
-	<div class="col-md-6">
+<div class="container d-flex justify-content-center">
 
-		<h2>Thanks, you paid <strong>$5.00</strong>!</h2>
+	<div class="col-md-6 d-flex flex-column align-items-center">
+
+		<h2>Merci pour votre paiement de <strong>$100.00</strong>!</h2>
 		<br/>
 		<br/>
 		<a class="btn btn-primary" href="<%= user_subscriptions_path(current_user.id) %>">Voir mon abonnement</a>
+		<br/>
+		<br/>
 		<a class="btn btn-primary" href="<%= root_path %>">Retour à la page d'accueil</a>
 
 

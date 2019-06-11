@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   get '/a-propos', to: "static#about"
   get '/contact', to: "static#contact"
+  get '/en-cours', to: "static#in_progress"
   get '/mon-profil', to: "users#show"
   post '/contact', to: "static#send_contact_email"
 
