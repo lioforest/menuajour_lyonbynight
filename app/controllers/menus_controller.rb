@@ -2,6 +2,7 @@ class MenusController < ApplicationController
 	before_action :authenticate_user!
 
   def index
+    @title = "Mes menus"
   if helpers.checked_user
 	  	@menus = current_user.menus
 	else
