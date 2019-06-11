@@ -7,7 +7,7 @@
 	        </div>
 	        <div class="col-md-6">
 		      	<h1>Editer le menu n°: <%= @menu.id%> </h1>
-		  		<%= form_for edit_user_menu_path do |f| %>
+		  		<%= form_for @menu, url: user_menu_path(id: @menu.id), method: :put do |f| %>
 		       		<div class ="form_group">
 			        	<label> Nom du menu  </label>
 			        	<%= text_area_tag :name, @menu.name, class: 'form-control' %>
