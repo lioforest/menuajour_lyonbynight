@@ -11,6 +11,13 @@ Rails.application.routes.draw do
   resources :charges
 devise_for :admins, path: 'admin', skip: :registrations
 
+namespace :admin do
+  resources :menus
+  resources :users
+
+end
+
+  get '/admins/index', to: 'admin/admins#index', as: 'admin_index'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -18,4 +25,6 @@ devise_for :admins, path: 'admin', skip: :registrations
   get '/contact', to: "static#contact"
   get '/mon-profil', to: "users#show"
   post '/contact', to: "static#send_contact_email" 
+
+
 end

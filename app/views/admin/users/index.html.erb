@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Admnistration des utilisateurs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_users.each do |admin_user| %>
+      <tr>
+        <%= admin_user.id %> -- <%= admin_user.email %>
+        <%= link_to 'Afficher', admin_user_path(admin_user) %> -- <%= link_to 'Modifier', edit_admin_user_path(admin_user) %> -- <%= link_to 'Supprimer', admin_user, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Ajouter un utilisateur', new_admin_user_path %>

@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Administatration des menus :</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>   
+  <div class="col-md-2">
+</div>
+  <div class="col-md-4">
+
+    <% @admin_menus.each do |admin_menu| %>
+      <tr>
+        <td><%=admin_menu.user.email%> -- <%=admin_menu.id%> -- <%=admin_menu.name %> -- <%=admin_menu.title %> <%= link_to 'modifier', admin_menu_path(admin_menu.id)%> </td>
+        <br>
+      </tr>
+    <% end %>
+  </div>
+
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Ajouter un menu', new_admin_menu_path %>
+<br>
+<%= link_to 'Retour au menu principal', admins_path %>
