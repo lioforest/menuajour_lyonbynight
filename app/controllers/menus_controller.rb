@@ -32,6 +32,8 @@ class MenusController < ApplicationController
   if helpers.checked_user
 	    @menu = Menu.find(params[:id])  
    		if @menu.update(name: params[:name], title: params[:title], subtitle: params[:subtitle])
+          flash[:success] = 'Votre changement a été enregistré'
+
       		render :edit
 	    else
       redirect_to(root_path)
@@ -45,6 +47,7 @@ class MenusController < ApplicationController
   def destroy
   if helpers.checked_user
   		Menu.find(params[:id]).destroy
+          flash[:success] = 'Votre menu a été supprimé'
     	redirect_back(fallback_location: root_path)
     end
   end
