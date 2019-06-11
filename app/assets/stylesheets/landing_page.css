@@ -21,6 +21,12 @@ body > main > div > section:nth-child(3) > div.row > div > h2:before{
     background-image: url(slider_bg2.jpg) !important;
 }
 
+.section_welcome:before 
+{
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    height: 70vh;
+}
+
 .about_img{
   max-width: 40%;
   margin: 10px auto 30px auto;

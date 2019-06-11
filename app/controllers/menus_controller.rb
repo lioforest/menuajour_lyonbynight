@@ -30,12 +30,13 @@ class MenusController < ApplicationController
 
   def update
   if helpers.checked_user
-	    @menu = Menu.find(params[:id])
-	    menu_params = params.require(:menu).permit(:name,:title,:subtitle)    
-   		if @menu.update(menu_params)
+	    @menu = Menu.find(params[:id])  
+   		if @menu.update(name: params[:name], title: params[:title], subtitle: params[:subtitle])
+          flash[:success] = 'Votre changement a été enregistré'
+
       		render :edit
 	    else
-    	  render :edit
+      redirect_to(root_path)
     	end
   	end
   end
@@ -46,6 +47,7 @@ class MenusController < ApplicationController
   def destroy
   if helpers.checked_user
   		Menu.find(params[:id]).destroy
+          flash[:success] = 'Votre menu a été supprimé'
     	redirect_back(fallback_location: root_path)
     end
   end
