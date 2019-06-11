@@ -1,12 +1,11 @@
   <!--################################################-->
   <!--############### Accordion ######################-->
   <!--################################################-->
-  <div class="container-fluid">
+  <div class="container-fluid px-0">
     <div id="accordion">
       <!--******************* Ajouter une Catégories *******************-->
       <div class="row align-items-end">
         <div class= "col-md-12">
-          <%= form_tag(category_types_path, method: "post") do %>
           <div class="card">
             <div class="table-active" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" data-toggle="tooltip" data-placement="top" title="Cliquer pour créer une nouvelle catégorie">
               <h5 class="mb-0 btn collapsed">
@@ -15,26 +14,11 @@
            </div>
            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
-              <div class="row">
-                <div class="col-md-12">
-                  <%= label_tag "Nom", nil , class: "form-label" %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-11 d-flex justify-content-end align-items-end">
-                  <%= text_field_tag :name, nil, placeholder: "Ex : Nos Salades...", class: "form-control", :required => 'required' %>
-                </div>
-                <div class="col-md-1 d-flex justify-content-end align-items-end">
-                  <%= button_tag type: "submit", class: "btn" do%>
-                  <i class="fas fa-plus fa-2x" data-toggle="tooltip" data-placement="top" title="Créer la catégorie"></i>
-                  <%end%>
-                </div>
-              </div>
+              <%= render "category_types/category_type_form", title: "Ajouter un catégorie", form_method: "POST", route: user_category_types_path(current_user.id) %>
             </div>
           </div>
         </div>
       </div>
-      <% end %>
     </div>
 
     <!--******************* Ajouter un Item *******************-->

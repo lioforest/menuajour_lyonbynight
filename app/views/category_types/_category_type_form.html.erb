@@ -1,0 +1,17 @@
+<div class="row">
+    <%= form_tag route, id: current_user.id, method: form_method do %>
+        <div class="col-md-12">
+            <%= label_tag "Nom", nil , class: "form-label" %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-11 d-flex justify-content-end align-items-end">
+            <%= text_field_tag :name, nil, placeholder: "Ex : Nos Salades...", class: "form-control", :required => 'required' %>
+        </div>
+        <div class="col-md-1 d-flex justify-content-end align-items-end">
+            <%= button_tag type: "submit", class: "btn", remote: true do%>
+            <i class="fas fa-plus fa-2x" data-toggle="tooltip" data-placement="top" title="<% title %>"></i>
+            <%end%>
+        </div>
+    <% end %>
+</div>
