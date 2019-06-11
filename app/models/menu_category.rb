@@ -32,7 +32,15 @@ def add_item(_item_type)
 end
 
 def add_item_by_name(_item_type_name)
-  MenuItem.create(menu_category: self, item_type: ItemType.where(name: _item_type_name)[0], order: 0)
+  MenuItem.create(menu_category: self, item_type: ItemType.where(name: _item_type_name).first, order: 0)
+end
+
+def add_item_by_id(_item_type_id)
+  MenuItem.create(menu_category: self, item_type: ItemType.where(id: _item_type_id).first, order: 0)
+end
+
+def delete_item_by_id(_menu_item_id)
+  self.menu_items.find(_menu_item_id).destroy
 end
 
 #movers

@@ -1,0 +1,29 @@
+<!--Header-->
+<table  class="table table-hover mt-2">
+  <tr>
+    <th class="w-10-vw">Nom</th>
+    <th class="w-60-vw">Description</th>
+    <th class="w-10-vw">Prix</th>
+    <th class="w-10-vw"> </th>
+    <th class="w-10-vw"> </th>
+  </tr>
+  <!--Item Info-->
+  <% category.items.each do |item| %>
+  <tr>
+    <td><%= item.name %></td>
+    <td><%= item.description %></td>
+    <td><%= item.price %> €</td>
+    <td> <%= button_to user_menu_path(id: menu.id, item_id: item.id, action_type: "delete_item"), :method => :put, class:"btn" do%>
+      <i class="fas fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Supprimer l'item"></i>
+      <%end%>
+    </td>
+    <td class="d-flex"> <%= button_to user_menu_path(id: menu.id, item_id: item.id, action_type: "move_item_up"), :method => :put, class:"btn" do%>
+      <i class="fas fa-arrow-up" data-toggle="tooltip" data-placement="top" title="Remonter l'item"></i>
+      <%end%>
+      <%= button_to user_menu_path(id: menu.id, item_id: item.id, action_type: "move_item_down"), :method => :put, class:"btn" do%>
+      <i class="fas fa-arrow-down" data-toggle="tooltip" data-placement="top" title="Redescendre l'item"></i>
+      <%end%>
+    </td>
+  </tr>
+  <%end%>
+</table>

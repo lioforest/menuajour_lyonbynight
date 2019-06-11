@@ -44,6 +44,14 @@ def update
     move_category_down
   when "delete_category"
     delete_category
+  when "delete_item"
+    delete_item
+  when "move_item_up"
+    move_item_up
+  when "move_item_down"
+    move_item_down
+  when "add_item_to_category"
+    add_item_to_category
   else
   end
 end
@@ -99,6 +107,26 @@ end
 
 def delete_category
   @menu.delete_category_by_id(params[:category_id])
+  redirect_back(fallback_location: root_path)
+end
+
+def delete_item
+  @menu.delete_item_by_id(params[:item_id])
+  redirect_back(fallback_location: root_path)
+end
+
+def move_item_up
+  @menu.item_by_id(params[:item_id]).move_up
+  redirect_back(fallback_location: root_path)
+end
+
+def move_item_down
+  @menu.item_by_id(params[:item_id]).move_down
+  redirect_back(fallback_location: root_path)
+end
+
+def add_item_to_category
+  @menu.category_by_id(params[:category_id]).add_item_by_id(params[:item_type_id])
   redirect_back(fallback_location: root_path)
 end
 

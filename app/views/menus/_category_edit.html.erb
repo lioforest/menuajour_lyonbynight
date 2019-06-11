@@ -36,23 +36,23 @@
   <!--****** Unfolding part of accordion-->
   <div id="<%=html_id_for_category%>" class="row collapse" aria-labelledby="headingX" data-parent="#accordion">
     <div class="card-body">
-     <%= form_tag(category_type_path(id: category.id, add_item_type: true), method: "put") do %>
-     <%= label_tag "Ajouter un item à la catégorie", nil , class: "form-label" %>
-     <!--******* START OF row to add item *******-->
-     <div class="row">
-      <div class="col-md-11 d-flex justify-content-end align-items-end">
-        <%= select_tag 'item_type_id', options_from_collection_for_select(current_user.item_types.order(:name), "id", "name_and_price"), class: "form-control"%>
+      <%= form_tag(user_menu_path(id: menu.id, category_id: category.id, action_type: "add_item_to_category"), method: "put") do %>
+      <%= label_tag "Ajouter un item à la catégorie", nil , class: "form-label" %>
+      <!--******* START OF row to add item *******-->
+      <div class="row">
+        <div class="col-md-11 d-flex justify-content-end align-items-end">
+          <%= select_tag 'item_type_id', options_from_collection_for_select(category.category_type.item_types.order(:name), "id", "name_and_price"), class: "form-control"%>
+        </div>
+        <!--********* START OF Button Add Item *******-->
+        <div class="col-md-1 d-flex justify-content-end align-items-end">
+          <%= button_tag type: "submit", class: "btn" do%>
+          <i class="fas fa-plus fa-2x" data-toggle="tooltip" data-placement="top" title="Ajouter l'item"></i>
+          <%end%>
+        </div>
+        <!--********* END OF Button Add Item *******-->
       </div>
-      <!--********* START OF Button Add Item *******-->
-      <div class="col-md-1 d-flex justify-content-end align-items-end">
-        <%= button_tag type: "submit", class: "btn" do%>
-        <i class="fas fa-plus fa-2x" data-toggle="tooltip" data-placement="top" title="Ajouter l'item"></i>
-        <%end%>
-      </div>
-      <!--********* END OF Button Add Item *******-->
+      <!--******* END OF row to add item *******-->
+      <%end%>
     </div>
-    <!--******* END OF row to add item *******-->
-    <%end%>
   </div>
-</div>
 </div>

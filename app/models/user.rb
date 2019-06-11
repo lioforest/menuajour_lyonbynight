@@ -25,6 +25,15 @@ end
 def create_new_menu(_name, _title, _subtitle)
   Menu.create(name: _name, title: _title, subtitle: _subtitle, user: self)
 end
+
+def category_type_by_id(_category_type_id)
+  self.category_types.find(_category_type_id)
+end
+
+def category_type_by_menu_category(_menu_category)
+  _menu_category.category_type
+end
+
 #***************** Private ********************#
 
 private

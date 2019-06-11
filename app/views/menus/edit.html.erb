@@ -11,6 +11,11 @@
     	<%@menu.categories.each do |category|%>
 
     	<%= render "category_edit", category: category, menu: @menu %>
+        <!--******************* Items *******************-->
+        <%if category.items.length != 0%>
 
-    	<%end%>
+        <%= render "item_edit", category: category, menu: @menu %>
+
+        <%end%>
+        <%end%>
     </div>
