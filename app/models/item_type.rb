@@ -14,8 +14,12 @@ class ItemType < ApplicationRecord
 
 #***************** Public *********************#
 
-  def add_category_type(_category_type)
-    self.category_types.append(_category_type)
-  end
+def add_category_type(_category_type)
+  self.category_types.append(_category_type)
+end
+
+def name_and_price
+  "#{self.name} - #{self.price}€"
+end
 
 end

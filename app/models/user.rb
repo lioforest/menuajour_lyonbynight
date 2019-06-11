@@ -18,7 +18,7 @@ class User < ApplicationRecord
 
 #***************** Public *********************#
 
-  def add_category_type(_name)
+  def create_new_category_type(_name)
     CategoryType.create(name: _name, user: self)
   end
 

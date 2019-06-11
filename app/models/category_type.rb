@@ -21,4 +21,8 @@ def add_item_type(_item_type)
   self.item_types.append(_item_type)
 end
 
+def add_item_type_by_id(_item_type_id)
+  self.item_types.append(ItemType.find(_item_type_id))
+end
+
 end

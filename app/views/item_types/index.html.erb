@@ -14,55 +14,15 @@
   <!--################################################-->
 
   <!--******************* Catégories *******************-->
-  <%@category_types.each do |category_type|%>
-  <div class="row">
+  <%@category_types.order(:name).each do |category_type|%>
 
-    <div class="col-md-10 d-flex justify-content-center align-items-end">
-      <h3> <%= category_type.name %></h3>
-    </div>
-
-    <div class="col-md-1 d-flex justify-content-end align-items-end">
-      <%= button_to category_type_path(:id => category_type.id), :method => :delete, class:"btn" do%>
-      <i class="fas fa-trash-alt" style="color: black;"></i>
-      <%end%>
-    </div>
-
-    <div class="col-md-1 d-flex justify-content-end align-items-end">
-      <%= button_to edit_category_type_path(:id => category_type.id), :method => :get, class:"btn" do %>
-      <i class="fas fa-pencil-alt" style="color: black;"></i>
-      <%end%>
-    </div>
-  </div>
+  <%= render "category_type", category_type: category_type %>
 
   <!--******************* Items *******************-->
-  <!--Header-->
   <%if category_type.item_types.length !=0%>
-  <table  class="table table-hover mt-2">
-    <tr>
-      <th class="w-10-vw">Nom</th>
-      <th class="w-60-vw">Description</th>
-      <th class="w-10-vw">Prix</th>
-      <th class="w-10-vw"> </th>
-      <th class="w-10-vw"> </th>
 
-    </tr>
-    <!--Item Info-->
-    <% category_type.item_types.each do |item_type| %>
-    <tr>
-      <td><%= item_type.name %></td>
-      <td><%= item_type.description %></td>
-      <td><%= item_type.price %> €</td>
-      <td> <%= button_to item_type_path(:id => item_type.id), :method => :delete, class:"btn" do%>
-        <i class="fas fa-trash-alt"></i>
-        <%end%>
-      </td>
-      <td> <%= button_to edit_item_type_path(:id => item_type.id), :method => :get, class:"btn" do%>
-        <i class="fas fa-pencil-alt"></i>
-        <%end%>
-      </td>
-    </tr>
-    <%end%>
-  </table>
+  <%= render "item_types", category_type: category_type %>
+
   <%end%>
   <%end%>
 </div>

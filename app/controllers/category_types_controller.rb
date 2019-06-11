@@ -7,7 +7,7 @@ class CategoryTypesController < ApplicationController
 
   def create
     category_name = params[:name]
-    current_user.add_category_type(category_name)
+    current_user.create_new_category_type(category_name)
     redirect_back(fallback_location: root_path)
   end
 
@@ -15,6 +15,15 @@ class CategoryTypesController < ApplicationController
   end
 
   def update
+    category_type_id = params[:id]
+    add_item_type = params[:add_item_type]
+    item_type_id = params[:item_type_id]
+
+    @category_type = CategoryType.find(category_type_id)
+    if add_item_type
+      @category_type.add_item_type_by_id(item_type_id)
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   def destroy
