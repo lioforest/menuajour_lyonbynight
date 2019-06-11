@@ -1,15 +1,17 @@
 <%= render "shared/header", title: "Vos Menus" %>
-
+<%= render "info_header_create" %>
 <div class="container mt-5">
 
   <%@menus.each do |menu|%>
   <div class="card mb-5">
     <div class="card-body ml-4 d-flex align-items-center justify-content-between">
-
-      <div >
-        <p><strong> <%= menu.name %></strong></p>
+      <div>
+        <h5> <strong> <%= menu.name %></strong></h5>
+        <div class="d-flex justify-content-center align-items-center">
+        <p class="mr-1"><em> <%="#{menu.title} "%></em></p>
+        <p class="ml-2"> <%="- #{menu.subtitle}"%></p>
+        </div>
       </div>
-    
       <div class="d-flex align-items">
         <div class="p-2">
           <div class="option_delete">

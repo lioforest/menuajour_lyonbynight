@@ -18,17 +18,20 @@ class User < ApplicationRecord
 
 #***************** Public *********************#
 
-  def create_new_category_type(_name)
-    CategoryType.create(name: _name, user: self)
-  end
+def create_new_category_type(_name)
+  CategoryType.create(name: _name, user: self)
+end
 
+def create_new_menu(_name, _title, _subtitle)
+  Menu.create(name: _name, title: _title, subtitle: _subtitle, user: self)
+end
 #***************** Private ********************#
 
-  private
+private
 
 #after_create
-  def welcome_send
-    UserMailer.welcome_email(self).deliver_now
-  end
+def welcome_send
+  UserMailer.welcome_email(self).deliver_now
+end
 
 end
