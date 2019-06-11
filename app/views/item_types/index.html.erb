@@ -1,61 +1,13 @@
 <%= render "shared/header", title: @title %>
+
+
+<!--################################################-->
+<!--########## Ajout Catégories/Items ##############-->
+<!--################################################-->
+
+<%= render "add_header"%>
+
 <div class="container">
-
-  <!--################################################-->
-  <!--########### Ajouter une catégorie ##############-->
-  <!--################################################-->
-
-  <div class="row align-items-end">
-    <div class= "col-md-11">
-      <%= form_tag(category_types_path, method: "post") do %>
-      <h5> Ajouter une nouvelle catégorie </h5>
-      <%= label_tag "Nom", nil , class: "form-label" %>
-      <%= text_field_tag :name, nil, placeholder: "Ex : Nos Salades...", class: "form-control", :required => 'required' %>
-    </div>
-    <div class="col-md-1 d-flex justify-content-end align-items-end">
-      <%= button_tag type: "submit", class: "btn" do%>
-      <i class="fas fa-plus fa-2x"></i>
-      <%end%>
-      <% end %>
-    </div>
-  </div>
-
-  <!--################################################-->
-  <!--############## Ajouter un item #################-->
-  <!--################################################-->
-
-  <div class="row align-items-end">
-    <div class= "col-md-12">
-      <%= form_tag(item_types_path, method: "post") do %>
-      <h5> Ajouter un nouvel item </h5>
-    </div>
-  </div>
-  <div class="row align-items-end">
-    <div class= "col-md-2">
-      <%= label_tag "Nom", nil , class: "form-label" %>
-      <%= text_field_tag :name, nil, placeholder: "Ex : Steak tartare/Eau pétillante/Expresso...", class: "form-control", :required => 'required' %>
-    </div>
-    <div class= "col-md-7">
-      <%= label_tag "Description", nil , class: "form-label" %>
-      <%= text_field_tag :description, nil, placeholder: "Description", class: "form-control", :required => 'required' %>
-    </div>
-    <div class= "col-md-2">
-      <%= label_tag "Prix en €", nil , class: "form-label" %>
-      <%=number_field_tag 'price', nil, step: 0.1, class: "form-control", :required => 'required'%>
-    </div>
-  </div>
-  <div class="row align-items-end">
-    <div class= "col-md-11">
-      <%= label_tag "Catégorie", nil , class: "form-label" %>
-      <%= select_tag 'category_type_id', options_from_collection_for_select(@category_types, "id", "name"), class: "form-control"%>
-    </div>
-    <div class="col-md-1 d-flex justify-content-end align-items-end">
-      <%= button_tag type: "submit", class: "btn" do%>
-      <i class="fas fa-plus fa-2x"></i>
-      <%end%>
-    </div>
-  </div>
-  <% end %>
 
   <!--################################################-->
   <!--########## Liste Catégories/Items ##############-->
@@ -114,4 +66,5 @@
   <%end%>
   <%end%>
 </div>
-</div>
+
+
