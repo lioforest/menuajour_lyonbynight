@@ -5,10 +5,20 @@
     justify-content: space-between;
 }
 
+#preset-menus > i, .preset-menu i
+{
+    cursor: pointer;
+}
+
+#preset-menus > i
+{
+    align-self: flex-end;
+}
+
 .preset-menu
 {
     flex: 1;
     margin: 10px;
     border: var(--primary) solid 2px;
-    
+    padding:  0 20px;
 }

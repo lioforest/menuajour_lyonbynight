@@ -12,7 +12,7 @@ class MenusController < ApplicationController
   def show
   if helpers.checked_user
 	    @menu = current_user.menus.where(id: params[:id]).first
-   	    @title 	= @menu.title
+			@title 	= @menu.title
 	else
     	redirect_to(root_path)
     end
@@ -42,7 +42,8 @@ class MenusController < ApplicationController
 
 	def new
 		@menus = Menu.where(user_id: current_user.id)
-		@title = "Créer un nouveau menu"
+		@categories = CategoryType.where(user_id: current_user.id)
+		@title = "Créer une nouvelle carte"
 		
 		respond_to do |format|
 			format.html do
