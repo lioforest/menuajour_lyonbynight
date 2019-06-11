@@ -1,5 +1,5 @@
 class ItemType < ApplicationRecord
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 
   belongs_to :user
 
