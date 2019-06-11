@@ -8,4 +8,18 @@ class ItemType < ApplicationRecord
   has_many :type_item_category_links, dependent: :destroy
   has_many :category_types, through: :type_item_category_links
 
+################################################
+################## Methods #####################
+################################################
+
+#***************** Public *********************#
+
+def add_category_type(_category_type)
+  self.category_types.append(_category_type)
+end
+
+def name_and_price
+  "#{self.name} - #{self.price}€"
+end
+
 end
