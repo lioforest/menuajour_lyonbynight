@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root "static#index"
   devise_for :users, path: "", :path_names => { :sign_in => 'se-connecter', :sign_out => 'se-deconnecter', :sign_up => 's-enregistrer' }
   scope(path_names: {new: "nouveau", edit: "modifier"}) do
+    
     resources :users, only: [:show], path: "clients" do
       resources :menus
       resources :subscriptions
