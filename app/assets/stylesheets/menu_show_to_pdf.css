@@ -3,6 +3,11 @@
     background-color: black;
   }
 
+  .page-break { 
+    display: block; 
+    page-break-before: always; 
+  }
+
   .container {
     width: auto;
     margin: 0;
@@ -29,4 +34,5 @@
   body > footer{
     display: none;
   }
+
 }
