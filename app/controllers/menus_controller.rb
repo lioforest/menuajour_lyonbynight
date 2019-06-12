@@ -3,9 +3,9 @@ class MenusController < ApplicationController
 
   def index
     @title = "Mes menus"
-  if helpers.checked_user
-	  	@menus = current_user.menus
-	else
+    if helpers.checked_user
+      @menus = current_user.menus
+    else
     	redirect_to(root_path)
     end
   end
@@ -16,6 +16,18 @@ class MenusController < ApplicationController
      @title 	= @menu.title
    else
      redirect_to(root_path)
+   end
+
+   respond_to do |format|
+     format.html
+     format.pdf do
+       render pdf: "mon_menu",
+       template: "menus/show.html.erb",
+       layout: 'pdf.html.erb',
+       dpi: '300',
+       encoding: 'utf8',
+       page_size: 'A4'
+     end
    end
  end
 
