@@ -19,3 +19,7 @@
         <%end%>
         <%end%>
     </div>
+    <div class="d-flex justify-content-center">
+        <%= button_to "Retour à Mes Menus", user_menus_path, :method => :get, class:"btn btn-primary text-center mx-5 my-5", style:'min-width: 240px;'%>
+        <%= button_to "Voir", user_menu_path(:id => @menu.id), :method => :get, class:"btn btn-primary mx-5 my-5", style:'min-width: 240px;' %>
+    </div>

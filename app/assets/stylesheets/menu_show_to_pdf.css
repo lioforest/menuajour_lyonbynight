@@ -19,7 +19,13 @@
     page-break-before: always;
   }
   
-  #pdf_link {
+  #pdf_link1 {
+    display: none;
+  }
+  #pdf_link2 {
+    display: none;
+  }
+  #pdf_link3 {
     display: none;
   }
 
