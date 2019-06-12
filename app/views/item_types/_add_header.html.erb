@@ -53,12 +53,12 @@
                 <div class= "col-md-11">
                   <!--1st line-->
                   <div class="row align-items-end">
-                    <!--Name-->
+                    <!--Category-->
                     <div class= "col-md-3">
                       <%= label_tag "Catégorie", nil , class: "form-label" %>
                       <%= select_tag 'category_type_id', options_from_collection_for_select(@category_types, "id", "name"), class: "form-control"%>
                     </div>
-                    <!--Description-->
+                    <!--Name-->
                     <div class= "col-md-7">
                       <%= label_tag "Nom", nil , class: "form-label" %>
                       <%= text_field_tag :name, nil, placeholder: "Ex : Salade Lyonnaise/Eau pétillante/Expresso...", class: "form-control", :required => 'required' %>
@@ -69,7 +69,7 @@
                       <%=number_field_tag 'price', nil, step: 0.1, placeholder: "Ex : 5.55", class: "form-control", :required => 'required'%>
                     </div>
                   </div>
-                  <!--2nd line : Category-->
+                  <!--2nd Line : Description-->
                   <div class="row align-items-end">
                     <div class= "col-md-12">
                      <%= label_tag "Description", nil , class: "form-label" %>

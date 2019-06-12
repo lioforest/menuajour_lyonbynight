@@ -25,7 +25,9 @@ def update
 end
 
 def destroy
-  ItemType.find(params[:id]).destroy
+  if params[:item_type_id]
+    ItemType.find(params[:item_type_id]).destroy
+  end
   redirect_back(fallback_location: root_path)
 end
 
