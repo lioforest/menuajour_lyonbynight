@@ -4,12 +4,14 @@
     padding: 4vw !important;
     width: 59.4vw;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .menu_show h2
 {
     font-size: 2.5vw;
-    margin: 1.8vw 0;
+    align-self: center;
 }
 
 .menu_show h3

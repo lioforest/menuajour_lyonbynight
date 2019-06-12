@@ -1,10 +1,12 @@
 class SubscriptionsController < ApplicationController
 
 	def index
+		@title = "Mon abonnement"
 		@subscription = Subscription.find_by(user: current_user)
 	end
 
 	def new
+		@title = "S'abonner"
 		@subscription = Subscription.find_by(user: current_user)
 	end
 

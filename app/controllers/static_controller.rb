@@ -5,20 +5,20 @@ class StaticController <ApplicationController
       {
         image: "menu_icon.svg",
         alt: "un menu",
-        title: ["Choisissez", "votre", "modèle"],
-        message: "Choisissez parmis nos nombreux modèles celui qui vous convient"
+        title: ["Remplissez", "vos", "produits"],
+        message: "Rentrez vos produits en base de donnée"
       },
       {
         image: "edit_icon.svg",
         alt: "une page en cours d'édition",
-        title: ["Editer", "votre", "menu"],
-        message: "Personnaliser votre menu selon vos envies"
+        title: ["Editez", "votre", "menu"],
+        message: "Organisez votre menu selon vos envies"
       },
       {
         image: "print_icon.svg",
         alt: "une imprimante",
-        title: ["Imprimer", "et", "partager"],
-        message: "Il ne vous reste plus qu'à imprimer le rendu, et/ou à la partager directement sur le web!"
+        title: ["Imprimez", "et", "partagez"],
+        message: "Il ne vous reste plus qu'à imprimer le rendu, et/ou à le partager directement sur le web!"
       }
     ]
   end
@@ -36,7 +36,7 @@ class StaticController <ApplicationController
         firstname: "Tahina",
         title: "Chef de projet",
         photo: "team_photo_2.jpg",
-        quote: "Pyjama dans la camion citerne. Tes yeux marrons couleur cochon. Juste eux et nous. La petite vérité perdue."
+        quote: "On aura le temps de se reposer quand on sera mort !"
       },
       {
         firstname: "Baptiste",

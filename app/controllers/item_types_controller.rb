@@ -34,7 +34,9 @@ class ItemTypesController < ApplicationController
   end
 
   def destroy
-    get_item.destroy
+    if params[:item_type_id]
+      ItemType.find(params[:item_type_id]).destroy
+    end
     redirect_back(fallback_location: root_path)
   end
 
