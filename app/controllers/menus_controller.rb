@@ -2,6 +2,7 @@ class MenusController < ApplicationController
 	before_action :authenticate_user!
 
   def index
+    @title = "Mes menus"
   if helpers.checked_user
 	  	@menus = current_user.menus
 	else
@@ -10,46 +11,124 @@ class MenusController < ApplicationController
   end
 
   def show
+    if helpers.checked_user
+     @menu = current_user.menus.where(id: params[:id]).first
+     @title 	= @menu.title
+   else
+     redirect_to(root_path)
+   end
+ end
+
+ def edit
   if helpers.checked_user
-	    @menu = current_user.menus.where(id: params[:id]).first
-   	    @title 	= @menu.title
-	else
-    	redirect_to(root_path)
-    end
-  end
+    @menu = Menu.find(params[:id])
+    @title 	= @menu.title
+  else
+   redirect_to(root_path)
+ end
 
-  def edit
+end
+
+def update
   if helpers.checked_user
-	  	@menu = Menu.find(params[:id])
-   	    @title 	= @menu.title
-	else
-    	redirect_to(root_path)
-    end
+   @menu = Menu.find(params[:id])
+   action_type = params[:action_type]
 
+   case action_type
+   when "update_menu_info"
+    update_menu_info
+  when "add_category"
+    add_category
+  when "move_category_up"
+    move_category_up
+  when "move_category_down"
+    move_category_down
+  when "delete_category"
+    delete_category
+  when "delete_item"
+    delete_item
+  when "move_item_up"
+    move_item_up
+  when "move_item_down"
+    move_item_down
+  when "add_item_to_category"
+    add_item_to_category
+  else
   end
+end
+end
 
-  def update
+def create
+  _name = params[:name]
+  _title = params[:title]
+  _subtitle = params[:subtitle]
+
+  current_user.create_new_menu(_name, _title, _subtitle)
+  redirect_back(fallback_location: root_path)
+end
+
+def destroy
   if helpers.checked_user
-	    @menu = Menu.find(params[:id])  
-   		if @menu.update(name: params[:name], title: params[:title], subtitle: params[:subtitle])
-          flash[:success] = 'Votre changement a été enregistré'
+    Menu.find(params[:id]).destroy
+    flash[:success] = 'Votre menu a été supprimé'
+    redirect_back(fallback_location: root_path)
+  end
+end
 
-      		render :edit
-	    else
-      redirect_to(root_path)
-    	end
-  	end
-  end
+################################################
+################## Methods #####################
+################################################
 
-  def new
+#***************** Private *********************#
+private
+
+def update_menu_info
+  if @menu.update(name: params[:name], title: params[:title], subtitle: params[:subtitle])
+    flash[:success] = 'Votre changement a été enregistré'
+    redirect_back(fallback_location: root_path)
+  else
+    redirect_to(root_path)
   end
-  
-  def destroy
-  if helpers.checked_user
-  		Menu.find(params[:id]).destroy
-          flash[:success] = 'Votre menu a été supprimé'
-    	redirect_back(fallback_location: root_path)
-    end
-  end
+end
+
+def add_category
+  @menu.add_category_by_id(params[:category_type_id])
+  redirect_back(fallback_location: root_path)
+end
+
+def move_category_up
+  @menu.category_by_id(params[:category_id]).move_up
+  redirect_back(fallback_location: root_path)
+end
+
+def move_category_down
+  @menu.category_by_id(params[:category_id]).move_down
+  redirect_back(fallback_location: root_path)
+end
+
+def delete_category
+  @menu.delete_category_by_id(params[:category_id])
+  redirect_back(fallback_location: root_path)
+end
+
+def delete_item
+  @menu.delete_item_by_id(params[:item_id])
+  redirect_back(fallback_location: root_path)
+end
+
+def move_item_up
+  @menu.item_by_id(params[:item_id]).move_up
+  redirect_back(fallback_location: root_path)
+end
+
+def move_item_down
+  @menu.item_by_id(params[:item_id]).move_down
+  redirect_back(fallback_location: root_path)
+end
+
+def add_item_to_category
+  @menu.category_by_id(params[:category_id]).add_item_by_id(params[:item_type_id])
+  redirect_back(fallback_location: root_path)
+end
 
 end

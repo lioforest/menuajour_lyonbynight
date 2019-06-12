@@ -1,0 +1,49 @@
+  <!--################################################-->
+  <!--############### Accordion ######################-->
+  <!--################################################-->
+  <div class="container-fluid">
+    <div id="accordion">
+      <!--******************* Ajouter une Catégories *******************-->
+      <div class="row align-items-end">
+        <div class= "col-md-12 px-0">
+          <%= form_tag(user_menus_path, method: "post") do %>
+          <div class="card">
+            <div class="table-active" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" data-toggle="tooltip" data-placement="top" title="Cliquer pour créer une nouvelle catégorie">
+              <h5 class="mb-0 btn collapsed">
+               Créer un nouveau Menu
+             </h5>
+           </div>
+           <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <%= label_tag "Nom", nil , class: "form-label" %>
+                  <%= text_field_tag :name, nil, placeholder: "Ex : Eté 2018 - Menu Carte...", class: "form-control", :required => 'required' %>
+                </div>
+                <div class="col-md-4">
+                  <%= label_tag "Titre", nil , class: "form-label" %>
+                  <%= text_field_tag :title, nil, placeholder: "Ex : Formule Express/Menu du jour...", class: "form-control", :required => 'required' %>
+                </div>
+                <div class="col-md-4">
+                  <%= label_tag "Sous-titre", nil , class: "form-label" %>
+                  <%= text_field_tag :subtitle, nil, placeholder: "Entrée + Plat ou Plat + Dessert...", class: "form-control", :required => 'required'%>
+                </div>
+                <div class="col-md-1 d-flex justify-content-end align-items-end">
+                  <%= button_tag type: "submit", class: "btn" do%>
+                  <i class="fas fa-plus fa-2x" data-toggle="tooltip" data-placement="top" title="Créer le menu"></i>
+                  <%end%>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--################################################-->
+<!--################ Fin Accordion #################-->
+<!--################################################-->

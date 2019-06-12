@@ -1,0 +1,44 @@
+@media print {
+  body {
+    background-color: black;
+  }
+
+  .page-break { 
+    display: block; 
+    page-break-before: always; 
+  }
+
+  .container {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  
+  #line_items {
+    page-break-before: always;
+  }
+  
+  #pdf_link1 {
+    display: none;
+  }
+  #pdf_link2 {
+    display: none;
+  }
+  #pdf_link3 {
+    display: none;
+  }
+
+  body > main > section.section.section_header.section_header__about{
+    display: none;
+  }
+
+  #section_menu > p{
+    display: none;
+  }
+
+  body > footer{
+    display: none;
+  }
+
+}

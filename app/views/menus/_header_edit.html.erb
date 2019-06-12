@@ -1,0 +1,90 @@
+  <!--################################################-->
+  <!--############### Accordion ######################-->
+  <!--################################################-->
+  <div class="container-fluid">
+    <div id="accordion">
+      <!--******************* Editer le menu *******************-->
+      <div class="row align-items-end">
+        <div class= "col-md-12 px-0">
+          <%= form_tag(user_menu_path(id: menu.id, action_type: "update_menu_info"), method: "put") do %>
+          <div class="card">
+            <div class="table-active" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" data-toggle="tooltip" data-placement="top" title="Cliquer pour créer une nouvelle catégorie">
+              <h5 class="mb-0 btn collapsed">
+               Editer le Menu
+             </h5>
+           </div>
+           <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <%= label_tag "Nom", nil , class: "form-label" %>
+                  <%= text_field_tag :name, menu.name, class: "form-control", :required => 'required' %>
+                </div>
+                <div class="col-md-4">
+                  <%= label_tag "Titre", nil , class: "form-label" %>
+                  <%= text_field_tag :title, menu.title, class: "form-control", :required => 'required' %>
+                </div>
+                <div class="col-md-4">
+                  <%= label_tag "Sous-titre", nil , class: "form-label" %>
+                  <%= text_field_tag :subtitle, menu.subtitle, class: "form-control", :required => 'required'%>
+                </div>
+                <div class="col-md-1 d-flex justify-content-end align-items-end">
+                  <%= button_tag type: "submit", class: "btn" do%>
+                  <i class="fas fa-plus fa-2x" data-toggle="tooltip" data-placement="top" title="Créer le menu"></i>
+                  <%end%>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <!--*******************  END OF Editer le menu *********************-->
+
+    <!--******************* Ajouter une catégorie *******************-->
+
+    <div class="row align-items-end">
+      <div class= "col-md-12 px-0">
+        <%= form_tag(user_menu_path(id: menu.id, action_type: "add_category"), method: "put") do %>
+        <div class="card">
+          <div class="table-active" id="headingOne" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" data-toggle="tooltip" data-placement="top" title="Cliquer pour créer une nouvelle catégorie">
+            <h5 class="mb-0 btn collapsed">
+              Ajouter une catégorie
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <%= label_tag "Nom", nil , class: "form-label" %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-11 d-flex justify-content-end align-items-end">
+                   <%= select_tag 'category_type_id', options_from_collection_for_select(current_user.category_types.order(:name), "id", "name"), class: "form-control"%>
+                </div>
+                <div class="col-md-1 d-flex justify-content-end align-items-end">
+                  <%= button_tag type: "submit", class: "btn" do%>
+                  <i class="fas fa-plus fa-2x" data-toggle="tooltip" data-placement="top" title="Créer la catégorie"></i>
+                  <%end%>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+    <!--******************* END OF Ajouter une catégorie *******************-->
+
+
+    <!--******************* End of accordion and container-fluid *******************-->
+  </div>
+</div>
+
+
+<!--################################################-->
+<!--################ Fin Accordion #################-->
+<!--################################################-->

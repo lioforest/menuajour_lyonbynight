@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
       },
       {
         route: "#",
-        text: "Tarifs"
+        text: "Nos offres"
       },
       {
         route: en_cours_path,
