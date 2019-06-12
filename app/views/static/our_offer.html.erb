@@ -1,0 +1,22 @@
+<%= render "shared/header", title: "Offre" %> 
+
+<div class="container-fluid d-flex justify-content-center">
+
+  <div class="col-md-5 d-flex flex-column align-items-center mt-5 mb-5 p-5 justify-content-around border border-grey shadow">
+
+    <h2 style="text-decoration: underline; text-decoration-color: #f1ae2b;">Offre</h2>
+    <div class="mt-5"><p>Chers amis restaurateurs,</p></div>
+    <div>
+      <p class="text-center">Nous savons combien il peut être difficile de mettre à jour vos menus, de réaliser la mise en page etc. <br/>
+      C'est pourquoi nous vous donnons la possibilité aujourd'hui de remplir votre propre base de donnée de produits (plats, boissons, prix, ingrédients) et ensuite de créer autant de menus que vous le souhaitez.</p>
+	  <p class="text-center">Nous vous proposons de vous abonner afin de profiter pleinement de cette experience.</p>
+	  <p class="text-center">En vous abonnant vous aurez accès au générateur de PDF qui vous permettra de télécharger votre menu et ainsi de l'imprimer directement</p>
+	  <p class="text-center">Plus rapide et économique de de passer par un imprimeur.</p>
+    </div>
+    <div class="mt-5"><p class="text-center"style="font-size: 1.5em;"><strong>100 €/an</strong><br/>
+    <em style="font-size: 0.6em;">(peut importe le nombre de menus que vous créez)</em></div>
+    <p class="text-center my-5"><%= link_to "S'abonner", new_user_registration_path, class: "btn btn-primary" %></p>
+  </div>
+  
+</div>
+<%= render "shared/back_button" %>
