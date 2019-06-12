@@ -12,6 +12,11 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Nos offres</a>
         </li>
+        <% if admin_signed_in? %>
+        <li class="nav-item">
+          <a href="<%= admin_users_path %>" class="nav-link">Espace Admin</a>
+        </li>
+        <% end %>
       </ul>
     </div>
     <!--<a class="navbar-brand mx-5" href="<%= root_path %>">Menu A Jour</a>-->
