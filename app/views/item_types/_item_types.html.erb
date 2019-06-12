@@ -17,26 +17,27 @@
       <td><%= item_type.price %> €</td>
       <td></td>
       <td>
-          <button
-            class="btn"
-            data-toggle="collapse"
-            data-target="#editItem<%= item_type.id%>"
-            aria-expanded="false" aria-controls="collapse-category-<%=item_type.id %>" >
-            <i
-              class="fas fa-pencil-alt"
-              data-toggle="tooltip"
-              data-placement="top"
-              title="Modifier l'item"
-            ></i>
-          </button>
+        <button
+          class="btn edit"
+          id="item<%= item_type.id %>Btn"
+          data-toggle="collapse"
+          data-target="#editItem<%= item_type.id%>"
+          aria-expanded="false"
+          aria-controls="collapse-item-<%=item_type.id %>"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Modifier l'item">
+            <i class="fas fa-pencil-alt"></i>
+        </button>
       </td>
-      <td> <%= button_to item_type_path(:id => item_type.id), :method => :delete, class:"btn" do%>
-        <i class="fas fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Supprimer l'item"></i>
+      <td>
+        <%= button_to item_type_path(:id => item_type.id), :method => :delete, class:"btn delete" do%>
+          <i class="fas fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Supprimer l'item"></i>
         <%end%>
       </td>
     </tr>
     <tr>
-      <%= render "item_types_form" %>
+      <%= render "item_types_form", aria_label: "item#{item_type.id}Btn", id: "editItem#{item_type.id}" %>
     </tr>
     <%end%>
   </tbody>

@@ -1,38 +1,40 @@
-<div class="card-body">
-    <%= form_tag(item_types_path, method: "post") do %>
-        <div class="row align-items-center">
-        <div class= "col-md-11">
-            <!--1st line-->
-            <div class="row align-items-end">
-            <!--Name-->
-            <div class= "col-md-3">
-                <%= label_tag "Catégorie", nil , class: "form-label" %>
-                <%= select_tag 'category_type_id', options_from_collection_for_select(@category_types, "id", "name"), class: "form-control"%>
+<div id="<%= id %>" class="collapse" aria-labelledby="<%= aria_label %>" data-parent="#accordion">
+    <div class="card-body">
+        <%= form_tag(item_types_path, method: "post") do %>
+            <div class="row align-items-center">
+            <div class= "col-md-11">
+                <!--1st line-->
+                <div class="row align-items-end">
+                <!--Name-->
+                <div class= "col-md-3">
+                    <%= label_tag "Catégorie", nil , class: "form-label" %>
+                    <%= select_tag 'category_type_id', options_from_collection_for_select(@category_types, "id", "name"), class: "form-control"%>
+                </div>
+                <!--Description-->
+                <div class= "col-md-7">
+                    <%= label_tag "Nom", nil , class: "form-label" %>
+                    <%= text_field_tag :name, nil, placeholder: "Ex : Salade Lyonnaise/Eau pétillante/Expresso...", class: "form-control", :required => 'required' %>
+                </div>
+                <!--Prix-->
+                <div class= "col-md-2">
+                    <%= label_tag "Prix en €", nil , class: "form-label" %>
+                    <%=number_field_tag 'price', nil, step: 0.1, placeholder: "Ex : 5.55", class: "form-control", :required => 'required'%>
+                </div>
+                </div>
+                <!--2nd line : Category-->
+                <div class="row align-items-end">
+                <div class= "col-md-12">
+                    <%= label_tag "Description", nil , class: "form-label" %>
+                    <%= text_field_tag :description, nil, placeholder: "Description", class: "form-control", :required => 'required' %>
+                </div>
+                </div>
             </div>
-            <!--Description-->
-            <div class= "col-md-7">
-                <%= label_tag "Nom", nil , class: "form-label" %>
-                <%= text_field_tag :name, nil, placeholder: "Ex : Salade Lyonnaise/Eau pétillante/Expresso...", class: "form-control", :required => 'required' %>
+            <!--button add-->
+            <div class="col-md-1 d-flex justify-content-end align-items-start">
+            <%= button_tag type: "submit", class: "btn mt-5" do%>
+            <i class="fas fa-plus fa-2x" data-toggle="tooltip" data-placement="top" title="Créer l'item"></i>
+            <%end%>
             </div>
-            <!--Prix-->
-            <div class= "col-md-2">
-                <%= label_tag "Prix en €", nil , class: "form-label" %>
-                <%=number_field_tag 'price', nil, step: 0.1, placeholder: "Ex : 5.55", class: "form-control", :required => 'required'%>
-            </div>
-            </div>
-            <!--2nd line : Category-->
-            <div class="row align-items-end">
-            <div class= "col-md-12">
-                <%= label_tag "Description", nil , class: "form-label" %>
-                <%= text_field_tag :description, nil, placeholder: "Description", class: "form-control", :required => 'required' %>
-            </div>
-            </div>
-        </div>
-        <!--button add-->
-        <div class="col-md-1 d-flex justify-content-end align-items-start">
-        <%= button_tag type: "submit", class: "btn mt-5" do%>
-        <i class="fas fa-plus fa-2x" data-toggle="tooltip" data-placement="top" title="Créer l'item"></i>
-        <%end%>
-        </div>
-    <% end %>
+        <% end %>
+    </div>
 </div>

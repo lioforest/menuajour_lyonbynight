@@ -2,3 +2,13 @@ main > div.container > table > thead > tr > th
 {
     font-size: 15px;
 }
+
+main > div.container > table > tbody > tr > td > button.edit
+{
+    padding: 0 30px 24px 20px;
+}
+
+main > div.container > table > tbody > tr > td button.delete
+{
+    padding: 0 15px 24px 35px;
+}
