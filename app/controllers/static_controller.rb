@@ -5,7 +5,7 @@ class StaticController <ApplicationController
       {
         image: "menu_icon.svg",
         alt: "un menu",
-        title: ["Remplissez", "vos", "produits"],
+        title: ["Renseignez", "vos", "produits"],
         message: "Rentrez vos produits en base de donnée"
       },
       {
