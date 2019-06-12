@@ -10,34 +10,34 @@
   </thead>
   <!--Item Info-->
   <tbody>
-  <% category_type.item_types.each do |item_type| %>
+    <% category_type.item_types.each do |item_type| %>
     <tr>
       <td><%= item_type.name %></td>
       <td><%= item_type.description %></td>
       <td><%= item_type.price %> €</td>
       <td></td>
       <td>
-          <button
-            class="btn"
-            data-toggle="collapse"
-            data-target="#editItem<%= item_type.id%>"
-            aria-expanded="false" aria-controls="collapse-category-<%=item_type.id %>" >
-            <i
-              class="fas fa-pencil-alt"
-              data-toggle="tooltip"
-              data-placement="top"
-              title="Modifier l'item"
-            ></i>
-          </button>
-      </td>
-      <td> <%= button_to item_type_path(:id => item_type.id), :method => :delete, class:"btn" do%>
-        <i class="fas fa-trash-alt" data-toggle="tooltip" data-placement="top" title="Supprimer l'item"></i>
-        <%end%>
-      </td>
-    </tr>
-    <tr>
-      <%= render "item_types_form" %>
-    </tr>
-    <%end%>
-  </tbody>
+        <button
+        class="btn"
+        data-toggle="collapse"
+        data-target="#editItem<%= item_type.id%>"
+        aria-expanded="false" aria-controls="collapse-category-<%=item_type.id %>" >
+        <i
+        class="fas fa-pencil-alt"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="Modifier l'item"
+        ></i>
+      </button>
+    </td>
+    <td> <%= button_to user_category_type_path(:id => category_type.id, user_id: current_user.id, remove_item_type: true, item_type_id: item_type.id), :method => :put, class:"btn" do%>
+      <i class="fas fa-minus-circle" data-toggle="tooltip" data-placement="top" title="Retirer l'item de la catégorie"></i>
+      <%end%>
+    </td>
+  </tr>
+  <tr>
+    <%= render "item_types_form" %>
+  </tr>
+  <%end%>
+</tbody>
 </table>
