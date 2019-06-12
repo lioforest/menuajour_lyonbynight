@@ -5,7 +5,7 @@
     <div id="accordion">
       <!--******************* Editer le menu *******************-->
       <div class="row align-items-end">
-        <div class= "col-md-12">
+        <div class= "col-md-12 px-0">
           <%= form_tag(user_menu_path(id: menu.id, action_type: "update_menu_info"), method: "put") do %>
           <div class="card">
             <div class="table-active" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" data-toggle="tooltip" data-placement="top" title="Cliquer pour créer une nouvelle catégorie">
@@ -45,7 +45,7 @@
     <!--******************* Ajouter une catégorie *******************-->
 
     <div class="row align-items-end">
-      <div class= "col-md-12">
+      <div class= "col-md-12 px-0">
         <%= form_tag(user_menu_path(id: menu.id, action_type: "add_category"), method: "put") do %>
         <div class="card">
           <div class="table-active" id="headingOne" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" data-toggle="tooltip" data-placement="top" title="Cliquer pour créer une nouvelle catégorie">
