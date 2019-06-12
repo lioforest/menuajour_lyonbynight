@@ -5,7 +5,7 @@ class StaticController <ApplicationController
       {
         image: "menu_icon.svg",
         alt: "un menu",
-        title: ["Remplissez", "vos", "produits"],
+        title: ["Renseignez", "vos", "produits"],
         message: "Rentrez vos produits en base de donnée"
       },
       {
@@ -30,13 +30,13 @@ class StaticController <ApplicationController
         firstname: "Lionel",
         title: "Porteur de projet",
         photo: "team_photo_1.jpg",
-        quote: "J'ai la même définition de l'informatique que Bernard Loiseau a pour la cuisie : \"La Cuisine, c'est l'envers du décor, là où s'activent les hommes et femmes pour le plaisir des autres..."
+        quote: "La Cuisine, c'est l'envers du décor, là où s'activent les hommes et femmes pour le plaisir des autres..."
       },
       {
         firstname: "Tahina",
         title: "Chef de projet",
         photo: "team_photo_2.jpg",
-        quote: "On aura le temps de se reposer quand on sera mort !"
+        quote: "La bonne cuisine est la base du véritable bonheur."
       },
       {
         firstname: "Baptiste",
@@ -54,7 +54,7 @@ class StaticController <ApplicationController
         firstname: "Cédric",
         title: "Frontend master",
         photo: "team_photo_2.jpg",
-        quote: "Je vous assure, React était la solution ! C'est juste la base de données, qui ne pouvait pas être serializier correctement. Sinon l'AJAX, c'est sympa. JS 4 EVA !"
+        quote: "Je vous assure, React était la solution ! C'est juste la base de données, qui ne pouvait pas être serializer correctement. Sinon l'AJAX, c'est sympa. JS 4 EVA !"
       }
     ]
   end

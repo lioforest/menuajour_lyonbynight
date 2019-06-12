@@ -26,8 +26,20 @@ Rails.application.routes.draw do
   get '/contact', to: "static#contact"
   get '/en-cours', to: "static#in_progress"
   get '/mon-profil', to: "users#show"
+  get '/notre_offre', to: "static#our_offer"
   post '/contact', to: "static#send_contact_email"
 
+
   get '/*', to: "static#error_404"
+
+  devise_for :admins, path: 'admin', skip: :registrations
+  
+  namespace :admin do
+    resources :users
+    resources :subscriptions
+
+  end
+
+  get 'admin' => 'admin/users#index'
 
 end

@@ -16,10 +16,8 @@
         </div>   
     </div>
     <div class="d-flex justify-content-around flex-wrap my-5">
-    <%= button_to "Retour à Mes Menus", user_menus_path, :method => :get, class:"btn btn-primary text-center my-2", style:'min-width: 240px;', id:"pdf_link3" %>
-    <%= button_to "Editer", edit_user_menu_path(:id => @menu.id), :method => :get, class:"btn btn-outline-secondary my-2", style:'min-width: 240px;', id:"pdf_link3" %>
-    <%= link_to 'Create PDF document', user_menu_path(:id => @menu.id, :format => :pdf), class:"btn btn-primary my-2", style:'min-width: 240px;', id:"pdf_link3", target:'_blank' %>
-    <%= link_to "Générer le PDF", user_menu_path(:id => @menu.id, :format => "pdf"), class:"btn btn-primary my-2", style:'min-width: 240px;', id:"pdf_link3", target:'_blank' %>
-
+    <%= button_to "Retour à Mes Menus", user_menus_path, :method => :get, class:"btn btn-primary text-center my-2", style:'min-width: 240px;', id:"pdf_link1" %>
+    <%= button_to "Editer", edit_user_menu_path(:id => @menu.id), :method => :get, class:"btn btn-outline-secondary my-2", style:'min-width: 240px;', id:"pdf_link2" %>
+    <%= link_to 'Générer un document PDF', user_menu_path(:id => @menu.id, :format => :pdf), class:"btn btn-primary my-2", style:'min-width: 240px;', id:"pdf_link3", target:'_blank' %>
     </div>
 </section>
