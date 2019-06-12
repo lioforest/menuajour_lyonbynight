@@ -31,8 +31,11 @@ Rails.application.routes.draw do
   get '/*', to: "static#error_404"
 
   devise_for :admins, path: 'admin', skip: :registrations
+  
   namespace :admin do
     resources :users
+    resources :subscriptions
+
   end
 
   get 'admin' => 'admin/users#index'

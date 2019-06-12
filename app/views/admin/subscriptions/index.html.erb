@@ -1,0 +1,59 @@
+<h1>Les abonnements</h1>
+
+<div class="form-group">
+  <%= link_to 'Nouvel abonnement', new_admin_subscription_path, class: 'btn btn-default' %>
+</div>
+
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>id  </th>
+      <th>Abonnement</th>
+      <th>Utilisateur</th>
+      <th>Date de début</th>
+      <th>Date de fin</th>
+      <th>Montant payé</th>
+      <th>Etat de l'abonnememt</th>
+
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_subscriptions.each do |admin_subscription| %>
+      <tr>
+        <td><%= admin_subscription.id %></td>
+        <td><%= admin_subscription.name %></td>
+        <td><%= admin_subscription.user.email %></td>
+        <td><%= admin_subscription.start_date.strftime('%d/%m/%Y') %></td>
+        <td><%= admin_subscription.end_date.strftime('%d/%m/%Y') %></td>
+        <td><%= number_to_currency(
+              admin_subscription.price,
+                        unit: "€",
+                        separator: ",",
+                        delimiter: " ",
+                        format: "%n %u"
+
+              )%></td>
+        <td>        
+            <%  if admin_subscription != nil %>
+              <% if admin_subscription.end_date > Date.today %>
+                Abonnement valide 
+              <% else %>
+                Abonnement terminé 
+              <% end %>
+            <% else %>
+                Jamais abonné 
+            <% end %>
+          </td>
+</td>
+        <td>
+        <td><%= link_to 'Afficher', admin_subscription_path(admin_subscription), class: 'btn btn-default'%> </td>
+        <td><%= link_to 'Modifier', edit_admin_subscription_path(admin_subscription), class: 'btn btn-default'%>  </td>
+        <td><%= link_to 'Supprimer', admin_subscription_path(admin_subscription), method: :delete, data: { confirm: 'Etes vous sûr?' } , class: 'btn btn-danger'%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
