@@ -6,15 +6,15 @@
 <%= form_for("/send-contact-email")  do |f| %>
   <!-- Email -->
   <div class="form-group">
-    <%= f.email_field :email, class: "form-control", placeholder: "Entrer ici votre adresse email", tabindex: 1, autocomplete: "email", required: true %>
+    <%= f.email_field :email, class: "form-control", placeholder: "Entrez ici votre adresse email", tabindex: 1, autocomplete: "email", required: true %>
   </div>
    <!-- Name -->
   <div class="form-group">
-    <%= f.text_field :name, class: "form-control", placeholder: "Entrer ici votre nom", tabindex: 2, required: true %>
+    <%= f.text_field :name, class: "form-control", placeholder: "Entrez ici votre nom", tabindex: 2, required: true %>
   </div>
   <!-- Message -->
   <div class="form-group">
-    <%= f.text_area :message, class: "form-control", rows: 6, placeholder: "Entrer votre message", tabindex: 3, required: true %>
+    <%= f.text_area :message, class: "form-control", rows: 6, placeholder: "Entrez votre message", tabindex: 3, required: true %>
   </div>
   <!-- Note -->
   <div class="form-group">
