@@ -12,8 +12,9 @@
   <tbody>
     <% @admin_users.each do |admin_user| %>
       <tr>
-        <td><%= link_to 'Show', admin_user %></td>
-        <td><%= link_to 'Edit', edit_admin_user_path(admin_user) %></td>
+        <td><%= admin_user.id %> -- <%= admin_user.email %>  --- </td> 
+        <td><%= link_to 'Show', admin_user_path %> -- </td>
+        <td><%= link_to 'Edit', edit_admin_user_path(admin_user) %> -- </td>
         <td><%= link_to 'Destroy', admin_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
