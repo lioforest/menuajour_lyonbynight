@@ -5,6 +5,7 @@ class SubscriptionsController < ApplicationController
 	end
 
 	def new
+		@title = "S'abonner"
 		@subscription = Subscription.find_by(user: current_user)
 	end
 
