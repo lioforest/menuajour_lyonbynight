@@ -29,6 +29,10 @@
    						)%>
 </div>
 
+<div class="form-group">
+  <strong>Email de l'utilisateur associé:</strong> <%= @admin_subscription.user.email %>
+</div>
+
 <%= link_to 'Modifier', edit_admin_subscription_path(@admin_subscription) %> |
 <%= link_to 'Retour', admin_subscriptions_path %>
 
