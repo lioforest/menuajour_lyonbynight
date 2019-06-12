@@ -20,7 +20,6 @@
  *= require static
  *= require landing_page
  *= require menu_show
- *= require menu_show_to_pdf
  *= require app
  *= require charts
  *= require contact

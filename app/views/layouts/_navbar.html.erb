@@ -10,7 +10,7 @@
           <a class="nav-link" href="<%= root_path %>">Accueil<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Nos offres</a>
+          <a class="nav-link" href="<%= notre_offre_path %>">Notre offre</a>
         </li>
         <% if admin_signed_in? %>
         <li class="nav-item">
@@ -20,7 +20,7 @@
       </ul>
     </div>
     <!--<a class="navbar-brand mx-5" href="<%= root_path %>">Menu A Jour</a>-->
-    <%= image_tag "Maj_logo.png", :alt => "logo", :class => "logo" %>
+    <a class="nav-link" href="<%= root_path %>"><%= image_tag "Maj_logo.png", :alt => "logo", :class => "logo" %></a>
     <div class="collapse navbar-collapse" id="navbar__collapse2">
       <ul class="nav navbar-nav ml-auto">
         <!-- General links -->
@@ -35,7 +35,7 @@
             <li><a class="dropdown-item" href="<%=item_types_path%>">Mes plats</a></li>
             <li><a class="dropdown-item" href="<%= user_menus_path(current_user.id)%>">Mes menus</a></li>
             <% if is_subscribed_user? %>
-              <li><a class="dropdown-item" href="<%= user_subscriptions_path(current_user.id)%>">Mon abonnement</a></li>
+              <li><a class="dropdown-item" href="<%= user_subscriptions_path(current_user.id)%>">Mon offre</a></li>
             <% else %>
               <li><a class="dropdown-item" href="<%= new_user_subscription_path(current_user.id)%>">S'abonner</a></li>
             <% end %>
