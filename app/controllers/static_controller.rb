@@ -30,13 +30,13 @@ class StaticController <ApplicationController
         firstname: "Lionel",
         title: "Porteur de projet",
         photo: "team_photo_1.jpg",
-        quote: "Les écorchures entament nos tendons. Que les pièges qu’on actionne cachent sous terre nos vrais et pieux démons. Accueille les peurs sublimées. Ils respirent comme ils mentent."
+        quote: "La Cuisine, c'est l'envers du décor, là où s'activent les hommes et femmes pour le plaisir des autres..."
       },
       {
         firstname: "Tahina",
         title: "Chef de projet",
         photo: "team_photo_2.jpg",
-        quote: "On aura le temps de se reposer quand on sera mort !"
+        quote: "La bonne cuisine est la base du véritable bonheur."
       },
       {
         firstname: "Baptiste",
