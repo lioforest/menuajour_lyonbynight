@@ -29,7 +29,7 @@
   </div>
   <div id="<%=html_id_for_add_item_to_category_type%>" class="row collapse" aria-labelledby="headingX" data-parent="#accordion<%= category_type.id %>">
     <div class="card-body">
-      <%= form_tag user_category_type_path id: category_type.id, add_item_type: true, user_id: current_user.id, method: "put") do %>
+      <%= form_tag user_category_type_path id: category_type.id, add_item_type: true, user_id: current_user.id, method: "put" do %>
       <%= label_tag "Ajouter un item à la catégorie", nil , class: "form-label" %>
       <div class="row">
         <div class="col-md-11 d-flex justify-content-end align-items-end">
@@ -45,6 +45,12 @@
     </div>  
   </div>
   <div id="editCategory<%= category_type.id%>" class="row collapse" aria-labelledby="headingX" data-parent="#accordion<%= category_type.id%>">
-    <%= render "category_types/category_type_form", title: "Modifier la catégorie", form_method: "put", route: "user_category_type_path" %>
+    <%= render "category_types/category_type_form",
+      title: "Modifier la catégorie",
+      form_method: "put",
+      route: user_category_type_path(id: category_type.id, user_id: current_user.id ),
+      category_name: category_type.name, 
+      icon: "fas fa-check"
+    %>
   </div>
 </div>

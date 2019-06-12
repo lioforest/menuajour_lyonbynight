@@ -30,7 +30,7 @@ class StaticController <ApplicationController
         firstname: "Lionel",
         title: "Porteur de projet",
         photo: "team_photo_1.jpg",
-        quote: "Les écorchures entament nos tendons. Que les pièges qu’on actionne cachent sous terre nos vrais et pieux démons. Accueille les peurs sublimées. Ils respirent comme ils mentent."
+        quote: "J'ai la même définition de l'informatique que Bernard Loiseau a pour la cuisie : \"La Cuisine, c'est l'envers du décor, là où s'activent les hommes et femmes pour le plaisir des autres..."
       },
       {
         firstname: "Tahina",
@@ -54,7 +54,7 @@ class StaticController <ApplicationController
         firstname: "Cédric",
         title: "Frontend master",
         photo: "team_photo_2.jpg",
-        quote: "Je vous assure, React est la solution !"
+        quote: "Je vous assure, React était la solution ! C'est juste la base de données, qui ne pouvait pas être serializier correctement. Sinon l'AJAX, c'est sympa. JS 4 EVA !"
       }
     ]
   end

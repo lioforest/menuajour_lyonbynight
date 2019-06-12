@@ -6,11 +6,11 @@
     </div>
     <div class="row">
         <div class="col-md-11 d-flex justify-content-end align-items-end">
-            <%= text_field_tag :name, nil, placeholder: "Ex : Nos Salades...", class: "form-control", :required => 'required' %>
+            <%= text_field_tag :name, category_name, placeholder: "Ex : Nos Salades...", class: "form-control", :required => 'required' %>
         </div>
         <div class="col-md-1 d-flex justify-content-end align-items-end">
             <%= button_tag type: "submit", class: "btn", remote: true do%>
-            <i class="fas fa-plus fa-2x" data-toggle="tooltip" data-placement="top" title="<% title %>"></i>
+            <i class="<%= icon %> fa-2x" data-toggle="tooltip" data-placement="top" title="<% title %>"></i>
             <%end%>
         </div>
     <% end %>
