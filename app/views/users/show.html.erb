@@ -1,28 +1,31 @@
 <%= render "shared/header", title: "Mon profil" %>
 
-<div class="container d-flex flex-column justify-content-center" style="min-height: 70vh;">
+<div class="container d-flex justify-content-center">
 
-	<div class="d-flex align-items-center align-content-around mt-5">
+	<div class="col-md-8 d-flex flex-column align-items-center mt-5 mb-5 p-5 justify-content-around border border-grey shadow">
 
-		<div class="col-md-8 d-flex flex-column align-items-center justify-content-around">
-			
-			<span><%= @user.first_name%> <%= @user.last_name%></span>
-			<br/>
-			<p><%= @user.email%></p>
-			<br/>
-			<a href="<%= edit_user_registration_path %>" class="btn btn-primary">Editer mes informations personnelles</a>
-
+		<h1 style="text-decoration: underline; text-decoration-color: #f1ae2b;"><%= @user.first_name%> <%= @user.last_name%></h1>
+		<%if @user.first_name.length <=0 && @user.last_name.length <=0 %>
+		<h1 style="text-decoration: underline; text-decoration-color: #f1ae2b;"><%= @user.email%></h1>
+		<%else%>
+		<p class="mt-4" style=" text-decoration-color: #f1ae2b;"><strong><%= @user.email%> </strong></p>
+		<%end%>
+		<div class="my-3">
+			<%if is_subscribed_user?%>
+			<p><%="Abonné(e) à #{@user.subscriptions.last.name} jusqu'au #{@user.subscriptions.last.end_date.strftime('%d/%m/%Y')}"%></p>
+			<%else%>
+			<%= button_to "Pas encore abonné(e)... Pour l'instant !", new_user_subscription_path(current_user.id), :method => :get, class:"btn mt-5"%>
+			<%end%>
 		</div>
-
-		<div class="col-md-4 d-flex flex-column align-items-center justify-content-around">
-
-			<a href="<%= user_menus_path(current_user.id) %>" class="btn btn-primary">Voir mes menus</a>
-			<br/>
-			<a href="#" class="btn btn-primary">Voir mes plats</a>
-			
+		<div>
+			<ul>
+				<li><h5><%= button_to "Editer mes informations personnelles", edit_user_registration_path, :method => :get, class:"btn text-primary"%></h5></li>
+				<li><h5><%= button_to "Voir mes menus", user_menus_path(current_user.id), :method => :get, class:"btn text-primary"%></h5></li>
+				<li><h5><%= button_to "Voir mes plats", item_types_path(current_user.id), :method => :get, class:"btn text-primary"%></h5></li>
+				<%if is_subscribed_user?%>
+				<li><h5><%= button_to "Voir mon offre", user_subscriptions_path(current_user.id), :method => :get, class:"btn text-primary"%></h5></li>
+				<%end%>
+			</ul>
 		</div>
-
-
 	</div>
-
 </div>

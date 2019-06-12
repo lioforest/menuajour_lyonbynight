@@ -1,54 +1,58 @@
 <% @title = "Modifier mon profil" %>
 
 <%= render "shared/header", title: @title %>
-<div class="container d-flex justify-content-center mt-5">
-  <div class="col-md-5">
+<div class="container d-flex justify-content-center">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="col-md-8 d-flex flex-column align-items-center mt-5 mb-5 pb-5 justify-content-around border border-grey shadow">
+    <div class="d-flex justify-content-center mt-5">
+      <div class="col-md-8">
+        <h1 class="text-center mb-5" style="text-decoration: underline;text-decoration-color: #f1ae2b;"> Editer mon profil</h1>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="form-group">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'form-control' %>
-  </div>
+        <div class="form-group">
+          <%= f.label :email, "Adresse mail" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'form-control' %>
+        </div>
 
-  <div class="form-group">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class:'form-control' %>
-  </div>
+        <div class="form-group">
+          <%= f.label :first_name, "Prénom" %><br />
+          <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class:'form-control' %>
+        </div>
 
-  <div class="form-group">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class:'form-control' %>
-  </div>
+        <div class="form-group">
+          <%= f.label :last_name, "Nom" %><br />
+          <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class:'form-control' %>
+        </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
 
-  <div class="form-group">
-    <%= f.label :password, "Mot de passe" %> <i>(A laisser vide si vous ne voulez pas le modifier)</i>
-    <% if @minimum_password_length %>
-      <em><%= @minimum_password_length %> caractères minimum</em>
-    <% end %>
-    <%= f.password_field :password, autocomplete: "new-password", class:'form-control' %>
-  </div>
+        <div class="form-group">
+          <%= f.label :password, "Mot de passe" %> <i>(A laisser vide si vous ne voulez pas le modifier)</i>
+          <% if @minimum_password_length %>
+          <em><%= @minimum_password_length %> caractères minimum</em>
+          <% end %>
+          <%= f.password_field :password, autocomplete: "new-password", class:'form-control' %>
+        </div>
 
-  <div class="form-group">
-    <%= f.label :password_confirmation, "Confirmer le mot de passe" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'form-control' %>
-  </div>
+        <div class="form-group">
+          <%= f.label :password_confirmation, "Confirmer le mot de passe" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'form-control' %>
+        </div>
 
-  <div class="form-group">
-    <%= f.label :current_password, "Mot de passe actuel" %> <i>(Nous avons besoin de votre mot de passe actuel pour prendre en compte vos modifications)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password", class:'form-control' %>
-  </div>
+        <div class="form-group">
+          <%= f.label :current_password, "Mot de passe actuel" %> <i>(Nous avons besoin de votre mot de passe actuel pour prendre en compte vos modifications)</i><br />
+          <%= f.password_field :current_password, autocomplete: "current-password", class:'form-control' %>
+        </div>
 
-  <%= render "devise/shared/submit_button", text: "Modifier", form: f %>
-<% end %>
-<h3 class="pt-4 pb-3 text-center">&#8722; Fermer mon compte &#8722;</h3>
-<p><%= button_to "Fermer mon compte", registration_path(resource_name), data: { confirm: "En êtes-vous certain ?" }, method: :delete, class:'form-control btn btn-danger' %></p>
+        <%= render "devise/shared/submit_button", text: "Modifier", form: f %>
+        <% end %>
+        <h3 class="pt-4 pb-3 text-center">&#8722; Fermer mon compte &#8722;</h3>
+        <p><%= button_to "Fermer mon compte", registration_path(resource_name), data: { confirm: "En êtes-vous certain ?" }, method: :delete, class:'form-control btn btn-danger' %></p>
 
-<%= render "shared/back_button" %>
-</div>
-</div>
+        <%= button_to "Retour à mon profil", user_path(current_user.id), :method => :get, class:"btn btn-secondary form-control"%>
+      </div>
+    </div>
+  </div></div>
