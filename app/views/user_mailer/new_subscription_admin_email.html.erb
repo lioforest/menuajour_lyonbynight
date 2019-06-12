@@ -205,7 +205,7 @@
       <!-- Hero Image, Flush : BEGIN -->
       <tr>
         <td style="background-color: #ffffff;">
-          <p style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;" class="g-img"><%= image_tag attachments['slider_bg2.jpg'].url, width: "600px", height: "auto" %></p>
+          <p style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;" class="g-img"> <%= image_tag attachments['slider_bg2.jpg'].url, width: "600px", height: "auto" %> </p>
         </td>
       </tr>
       <!-- Hero Image, Flush : END -->
@@ -216,30 +216,12 @@
           <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
             <tbody><tr>
               <td style="padding: 20px; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
-                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #333333; font-weight: normal;">Bienvenue sur Menu à Jour </h1>
-                <p style="margin: 0 0 10px;">Bonjour, vous venez de vous inscrire sur le site de <a href="<%= root_url%>"> Menu à Jour</a> avec l'adresse <%=@user.email%>.  Ici vous pourrez :</p>
-                <ul style="padding: 0; margin: 0; list-style-type: disc;">
-                  <li style="margin:0 0 10px 20px;" class="list-item-first">Mettre à jour vos menus en quelques clics,</li>
-                  <li style="margin:0 0 10px 20px;">Les mettre en page facilement,</li>
-                  <li style="margin: 0 0 10px 20px;" class="list-item-last">Obtenir un PDF que vous pourrez enregistrer sur votre ordinateur afin de l'imprimer,
-                  </li>
-                  <li style="margin:0 0 10px 20px;">Garder vos anciens menus en mémoire.</li>
-                </ul>
-                <p style="margin: 0 0 10px;">Attention, vous êtes pour l'instant inscrit sur le site, mais pour bénéficier de la totalité de ces fonctionnalités, vous devrez vous abonner.</p>
-                <p style="margin: 0 0 10px;">Nous vous souhaitons une excellente journée, <br/>
-                  Cordialement, <br/><br/>
+                <h1 style="margin: 0 0 10px; font-size: 25px; line-height: 30px; color: #333333; font-weight: normal;"> <%= @current_user.email %> vient de s'abonner.</h1>
+                <p style="margin: 0 0 10px;">Hey sexy, un utilisateur vient de s'abonner !! </p><br/>
+                <p>Cordialement, <br/><br/>
                 Toute l'équipe de Menu à Jour.</p>
               </td>
             </tr>
-            <tr>
-              <td style="padding: 0 20px 20px;">
-                <!-- Button : BEGIN -->
-                <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" style="margin: auto;">
-                  <tbody><tr>
-                    <td class="button-td button-td-primary" style="border-radius: 4px; background: #222222;">
-                      <a class="button-a button-a-primary" href="<%=@url%>" style="background: #f1ae2b; border: 1px solid #f1ae2b; font-family: sans-serif; font-size: 15px; line-height: 15px; text-decoration: none; padding: 13px 17px; color: #ffffff; display: block; border-radius: 4px;">Acceder au site </a>
-                      </td>
-                    </tr>
                   </tbody></table>
                   <!-- Button : END -->
                 </td>
