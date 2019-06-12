@@ -28,7 +28,7 @@ class Admin::UsersController < Admin::AdminController
 
     respond_to do |format|
       if @admin_user.save
-        format.html { redirect_to [:admin, @admin_post], notice: 'User was successfully created.' }
+        format.html { redirect_to [:admin, @admin_user], notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @admin_user }
       else
         format.html { render :new }
@@ -42,7 +42,9 @@ class Admin::UsersController < Admin::AdminController
   def update
     respond_to do |format|
       if @admin_user.update(admin_user_params)
-        format.html { redirect_to [:admin, @admin_post], notice: 'User was successfully updated.' }
+        format.html {
+         redirect_to [:admin, @admin_user], notice:  'User was successfully updated.'
+       }
         format.json { render :show, status: :ok, location: @admin_user }
       else
         format.html { render :edit }
@@ -68,7 +70,8 @@ class Admin::UsersController < Admin::AdminController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+
     def admin_user_params
-      params.fetch(:admin_user, {})
+      params.require(:user).permit(:email, :first_name, :last_name, :password)
     end
 end
