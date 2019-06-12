@@ -35,8 +35,8 @@ class ApplicationController < ActionController::Base
         text: "Nous contacter"
       },
       {
-        route: "#",
-        text: "Nos offres"
+        route: notre_offre_path,
+        text: "Notre offre"
       },
       {
         route: en_cours_path,
