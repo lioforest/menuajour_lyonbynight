@@ -50,7 +50,7 @@ class ApplicationController < ActionController::Base
   end
 
   def create_subscriber
-    new_sub = Subscription.new(name: 'Offre 1', price: 100, start_date: Date.today, end_date: (Date.today + 366), user: current_user)
+    new_sub = Subscription.new(name: 'Offre Impression Illimitée', price: 100, start_date: Date.today, end_date: (Date.today + 366), user: current_user)
       if new_sub.save
         flash[:success] = 'Votre paiement a bien été prit en compte'
       else
