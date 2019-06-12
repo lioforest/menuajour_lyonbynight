@@ -15,7 +15,12 @@
     </div>
     <div class="mt-5"><p class="text-center"style="font-size: 1.5em;"><strong>100 €/an</strong><br/>
     <em style="font-size: 0.6em;">(peut importe le nombre de menus que vous créez)</em></div>
-    <p class="text-center my-5"><%= link_to "S'abonner", new_user_registration_path, class: "btn btn-primary" %></p>
+    <% if user_signed_in? && !is_subscribed_user? %>
+      <p class="text-center my-5"><%= link_to "S'abonner", new_user_subscription_path(current_user.id), class: "btn btn-primary" %></p>
+    <% elsif !user_signed_in? %>
+      <p class="text-center my-5"><%= link_to "S'abonner", new_user_registration_path, class: "btn btn-primary" %></p>
+    <% end %>
+    
   </div>
   
 </div>

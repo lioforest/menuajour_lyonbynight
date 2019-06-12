@@ -30,7 +30,7 @@
             <li><a class="dropdown-item" href="<%=item_types_path%>">Mes plats</a></li>
             <li><a class="dropdown-item" href="<%= user_menus_path(current_user.id)%>">Mes menus</a></li>
             <% if is_subscribed_user? %>
-              <li><a class="dropdown-item" href="<%= user_subscriptions_path(current_user.id)%>">Mon abonnement</a></li>
+              <li><a class="dropdown-item" href="<%= user_subscriptions_path(current_user.id)%>">Mon offre</a></li>
             <% else %>
               <li><a class="dropdown-item" href="<%= new_user_subscription_path(current_user.id)%>">S'abonner</a></li>
             <% end %>
