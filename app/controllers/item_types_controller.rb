@@ -19,6 +19,9 @@ class ItemTypesController < ApplicationController
   end
 
   def edit
+    @id = params[:id]
+    @item = get_item
+
     respond_to do | format |
       format.html {}
       format.js {}
@@ -26,10 +29,13 @@ class ItemTypesController < ApplicationController
   end
 
   def update
-    if get_item.update(name: params[:name])
+    if get_item.update(
+        name: params[:name],
+        description: params[:description],
+        price: params[:price])
       flash[:success] = 'Votre changement a été enregistré'
-
-      render :edit
+      
+      redirect_to item_types_path(params[:id])
     end
   end
 

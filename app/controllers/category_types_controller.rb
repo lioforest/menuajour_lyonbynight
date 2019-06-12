@@ -12,14 +12,13 @@ class CategoryTypesController < ApplicationController
   end
 
   def update
-    add_item_type = params[:add_item_type]
-    item_type_id = params[:item_type_id]
     name = params[:name]
-
     @category_type = get_category
-    if add_item_type
-      @category_type.add_item_type_by_id(item_type_id)
-      redirect_back(fallback_location: root_path)
+
+    if params[:add_item_type]
+      add_item_type
+    elsif params[:remove_item_type]
+      remove_item_type
     elsif name
       @category_type.update(name: name)
       respond_to do | format |
@@ -33,10 +32,23 @@ class CategoryTypesController < ApplicationController
     get_category.destroy
     redirect_back(fallback_location: root_path)
   end
+################################################
+################## Methods #####################
+################################################
 
-  private
+#***************** Private *********************#
+private
 
-  def get_category
-    CategoryType.find(params[:id])
-  end
+def get_category
+  CategoryType.find(params[:id])
+end
+
+def add_item_type
+ @category_type.add_item_type_by_id(params[:item_type_id])
+ redirect_back(fallback_location: root_path)
+end
+def remove_item_type
+  @category_type.remove_item_type_by_id(params[:item_type_id])
+  redirect_back(fallback_location: root_path)
+end
 end
