@@ -28,4 +28,6 @@ Rails.application.routes.draw do
   get '/mon-profil', to: "users#show"
   post '/contact', to: "static#send_contact_email"
 
+  get '/*', to: "static#error_404"
+
 end

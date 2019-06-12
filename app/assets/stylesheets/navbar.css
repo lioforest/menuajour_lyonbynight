@@ -12,3 +12,10 @@ nav.navbar
     display: flex !important;
     justify-content: flex-end;
 }
+
+.logo
+{
+	width: 140px;
+    max-height: 120px;
+    margin: 10px;
+}

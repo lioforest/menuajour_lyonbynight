@@ -2,9 +2,10 @@ class MenusController < ApplicationController
 	before_action :authenticate_user!
 
   def index
-    if helpers.checked_user
-      @menus = current_user.menus
-    else
+    @title = "Mes menus"
+  if helpers.checked_user
+	  	@menus = current_user.menus
+	else
     	redirect_to(root_path)
     end
   end
