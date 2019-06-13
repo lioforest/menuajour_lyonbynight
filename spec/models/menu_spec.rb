@@ -55,12 +55,31 @@ RSpec.describe Menu, type: :model do
 
   context "associations" do
 
+    describe "menu_category" do
+      it "should have_many menu_category" do
+          cat_entree = CategoryType.create(name:'entrée', user: @user)
+          cat_plat_chaud = CategoryType.create(name:'plat chaud', user: @user)
+          menu_categ = @menu.add_category(cat_entree)
+          menu_categ2 = @menu.add_category(cat_plat_chaud)
+
+        expect(@menu.categories.include?(menu_categ)).to eq(true)
+      end
+    end
+
+
   end
 
 
 
   context "public instance methods" do
 
+    describe "add_category_by_id" do
+      it "should create a menu_category" do
+          cat_entree = CategoryType.create(name:'entrée', user: @user)
+          menu_categ = @menu.add_category(cat_entree)
+        expect(@menu.categories.first.name).to eq("entrée")
+      end
+    end
 
   end
 
