@@ -25,6 +25,6 @@ mdp : azerty
 
 ## Database diagram
 
-![alt text](./app/assets/images/erd.pdf?raw=true "DB Diagram")
+![alt text](./app/assets/images/db_diagram.png?raw=true "DB Diagram")
 
 
