@@ -15,4 +15,4 @@ Rails.application.config.assets.paths << Rails.root.join('vendor')
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
 Rails.application.config.assets.precompile << /\.(?:jpg|svg|eot|woff|ttf|otf|png)\z/
-Rails.application.config.assets.precompile << %w( team_photo_2.jpg )
+Rails.application.config.assets.precompile += %w( application.css pdf.css.scss application.js )
