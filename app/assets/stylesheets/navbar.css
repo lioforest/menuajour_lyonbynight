@@ -31,3 +31,11 @@ nav.navbar.transparent::after
     background: transparent !important;
 }
 
+nav.navbar.transparent .nav-link,
+nav.navbar.transparent .nav-link:hover,
+nav.navbar.transparent .nav-link:focus,
+nav.navbar.transparent .nav-link:active
+{
+    color: var(--light);
+    background: transparent;
+}
