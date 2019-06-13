@@ -29,31 +29,31 @@ class StaticController <ApplicationController
       {
         firstname: "Lionel",
         title: "Porteur de projet",
-        photo: "team_photo_1.jpg",
+        photo: "Lionel.png",
         quote: "La Cuisine, c'est l'envers du décor, là où s'activent les hommes et femmes pour le plaisir des autres..."
       },
       {
         firstname: "Tahina",
         title: "Chef de projet",
-        photo: "team_photo_2.jpg",
+        photo: "Tahina.png",
         quote: "La bonne cuisine est la base du véritable bonheur."
       },
       {
         firstname: "Baptiste",
         title: "Intégrateur",
-        photo: "team_photo_3.jpg",
-        quote: "Ce soir le vent, hier tes pleurs. Tu verras, on fera tomber les croix. La nuit je pleure, le jour demain. Un souvenir, tes yeux, on ira bien c'est sûr."
+        photo: "Baptiste.png",
+        quote: "La programmation c'est comme la nourriture, c'est meilleur avec du rouge."
       },
       {
         firstname: "Noël",
         title: "Backend master",
-        photo: "team_photo_1.jpg",
-        quote: "Pour qui sait sourire à la flânerie. Pâles copies pour piètre dévotion. Les coeurs tanguent mais tes mains consolent. Je déterre les deuils, les armes de déraison."
+        photo: "Noel.png",
+        quote: "Ta gueule Tahina !"
       },
       {
         firstname: "Cédric",
         title: "Frontend master",
-        photo: "team_photo_2.jpg",
+        photo: "Cedric.png",
         quote: "Je vous assure, React était la solution ! C'est juste la base de données, qui ne pouvait pas être serializer correctement. Sinon l'AJAX, c'est sympa. JS 4 EVA !"
       }
     ]
