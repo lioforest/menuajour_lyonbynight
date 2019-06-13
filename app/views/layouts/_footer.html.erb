@@ -31,6 +31,9 @@
             <hr />
             <div class="footer-infos">
                 <p class="footer_info"> 2019 Lyon By Night</p>
+                <% unless user_signed_in? %>
+                  <p class="footer_info"> <%= link_to 'admin', new_admin_session_path %></p>
+                <% end %>
             </div>
           </div>
         </div> <!-- .row -->

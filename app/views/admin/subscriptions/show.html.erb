@@ -1,0 +1,38 @@
+<h1>Abonnement n° <%= @admin_subscription.id %></h1>
+
+
+<div class="form-group">
+  <strong>Nom:</strong> <%= @admin_subscription.name %>
+</div>
+
+<div class="form-group">
+  <strong>Appartient à :</strong> <%= @admin_subscription.user.email %>
+</div>
+
+<div class="form-group">
+  <strong>Date de début:</strong> <%= @admin_subscription.start_date.strftime('%d/%m/%Y') %>
+</div>
+
+<div class="form-group">
+  <strong>Date de fin:</strong> <%= @admin_subscription.end_date.strftime('%d/%m/%Y') %>
+</div>
+
+
+<div class="form-group">
+  <strong>Prix:</strong> <%= number_to_currency(
+  						@admin_subscription.price,
+                        unit: "€",
+                        separator: ",",
+                        delimiter: " ",
+                        format: "%n %u"
+
+   						)%>
+</div>
+
+<div class="form-group">
+  <strong>Email de l'utilisateur associé:</strong> <%= @admin_subscription.user.email %>
+</div>
+
+<%= link_to 'Modifier', edit_admin_subscription_path(@admin_subscription) %> |
+<%= link_to 'Retour', admin_subscriptions_path %>
+

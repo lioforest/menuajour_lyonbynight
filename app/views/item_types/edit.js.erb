@@ -1,0 +1,77 @@
+function addInput({
+        type = "text",
+        parentNode = itemElt,
+        value,
+        placeholder="",
+        name = "",
+        selector}) {
+    parentNode.querySelector(selector).innerHTML = `<input type = "${type}" value = "${value}" placeholder = "${placeholder}" name = "${name}" required/>`
+}
+
+function addButton({selector, type, className, icon, title, parentNode = itemElt, onClick = () => {} }) {
+    parentNode.querySelector(selector).innerHTML = `<button type= "${type}" class="btn ${className}" title="${title}" onclick="${onClick}"><i class="${icon}"></i></button>`
+}
+
+function dropModifications(elt, content) {
+    elt.innerHTML = content
+}
+
+function editItem() {
+    const fields = ["name", "description", "price"]
+
+    const values = fields.map(field => itemElt.querySelector(`[name=${field}]`).value)
+    
+    dropModifications(itemElt, oldContent)
+
+    document.getElementById("itemForm").innerHTML = `<%=form_tag(item_type_path(@id), method: "put", id: "editItem", style: "display: none") do %><input type="text" name="name" value="${values[0]}"/><input type="text" name="description" value="${values[1]}"/><input type="number" name="price" value="${values[2]}"/><input type="submit" /><% end %>`
+
+    
+
+
+    document.getElementById("editItem").querySelector("[type=submit").click()
+}
+
+var itemElt = document.getElementById("item<%= @id %>")
+var oldContent = itemElt.innerHTML
+var inputs = [
+    {
+        value: "<%= @item.name %>",
+        placeholder: "Ex : Salade Lyonnaise/Eau pétillante/Expresso...",
+        name: "name",
+        selector: "td:first-of-type"
+    },
+    {
+        value: "<%= @item.description %>",
+        placeholder: "Description",
+        name: "description",
+        selector: "td:nth-of-type(2)"
+    },
+    {
+        value: "<%= @item.price%>",
+        placeholder: "Ex : 5.55",
+        name: "price",
+        type: "number",
+        selector: "td:nth-of-type(3)"
+    },
+]
+var buttons = [
+    {
+        selector: "td:nth-of-type(5)",
+        type: "button",
+        className: "edit",
+        icon: "fas fa-check",
+        title: "Modifier l'item",
+        onClick: "editItem()"
+    },
+    {
+        selector: "td:nth-of-type(6)",
+        type: "button",
+        className: "delete",
+        icon: "fas fa-times-circle",
+        onClick: "dropModifications(itemElt, oldContent)",
+        title: "Abandonner les modifications"
+    }
+]
+
+inputs.map(input => addInput(input))
+buttons.map(button => addButton(button))

@@ -1,0 +1,16 @@
+<div class="form-group">
+  <strong>Email:</strong> <%= @admin_user.email %>
+</div>
+
+<div class="form-group">
+  <strong>Prénom:</strong> <%= @admin_user.first_name %>
+</div>
+
+<div class="form-group">
+  <strong>Nom:</strong> <%= @admin_user.last_name %>
+</div>
+
+Liste des abonnements de cet utilisateur : 
+
+<%= link_to 'Edit', edit_admin_user_path(@admin_user) %> |
+<%= link_to 'Back', admin_users_path %>

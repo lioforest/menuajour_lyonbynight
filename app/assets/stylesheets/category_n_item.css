@@ -1,0 +1,33 @@
+main > div.container > table > thead > tr > th
+{
+    font-size: 15px;
+}
+
+main > div.container > table > tbody > tr > td > button.edit
+{
+    padding: 0 30px 24px 20px;
+}
+
+main > div.container > table > tbody > tr > td > button.edit a,
+main > div.container > table > tbody > tr > td > button.edit a:visited
+
+{
+    color: rgb(145, 154, 161);
+}
+
+main > div.container > table > tbody > tr > td > button.edit a:hover,
+main > div.container > table > tbody > tr > td > button.edit a:focus,
+main > div.container > table > tbody > tr > td > button.edit a:active
+{
+    color: var(--dark)
+}
+
+main > div.container > table > tbody > tr > td button.delete
+{
+    padding: 0 15px 24px 35px;
+}
+
+main > div.container > table > tbody > tr > td > input
+{
+    width: 100%;
+}

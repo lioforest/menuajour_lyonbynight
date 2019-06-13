@@ -12,6 +12,11 @@
         <li class="nav-item">
           <a class="nav-link" href="<%= notre_offre_path %>">Notre offre</a>
         </li>
+        <% if admin_signed_in? %>
+        <li class="nav-item">
+          <a href="<%= admin_users_path %>" class="nav-link">Espace Admin</a>
+        </li>
+        <% end %>
       </ul>
     </div>
     <!--<a class="navbar-brand mx-5" href="<%= root_path %>">Menu A Jour</a>-->
@@ -27,7 +32,7 @@
           aria-haspopup="true" aria-expanded="false"><%= current_user.email %></a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/mon-profil">Mon profil</a></li>
-            <li><a class="dropdown-item" href="<%=item_types_path%>">Mes plats</a></li>
+            <li><a class="dropdown-item" href="<%= item_types_path %>">Mes plats</a></li>
             <li><a class="dropdown-item" href="<%= user_menus_path(current_user.id)%>">Mes menus</a></li>
             <% if is_subscribed_user? %>
               <li><a class="dropdown-item" href="<%= user_subscriptions_path(current_user.id)%>">Mon offre</a></li>
