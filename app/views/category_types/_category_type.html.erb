@@ -24,10 +24,10 @@
       </button>
     </div>
     <div class="col-md-1 d-flex justify-content-end align-items-end">
-        <%= button_to user_category_type_path(:id => category_type.id, user_id: current_user.id), :method => :delete, class:"btn" do%>
+        <%= button_to user_category_type_path(:id => category_type.id, user_id: current_user.id), :method => :delete, data:{confirm: "Etes-vous certain de vouloir supprimer cette catégorie ? (Elle sera également rétirée de tous les menus existants)."} , class:"btn" do%>
         <i class="fas fa-trash-alt" style="color: black;" data-toggle="tooltip" data-placement="top" title="Supprimer la catégorie"></i>
         <%end%>
-    </div> 
+    </div>
   </div>
   <div id="<%=html_id_for_add_item_to_category_type%>" class="row collapse" aria-labelledby="headingX" data-parent="#accordion<%= category_type.id %>">
     <div class="card-body">
@@ -44,6 +44,6 @@
           </div>
         </div>
       <% end %>
-    </div>  
+    </div>
   </div>
 </div>
