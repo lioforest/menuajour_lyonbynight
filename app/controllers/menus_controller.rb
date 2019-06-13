@@ -26,7 +26,8 @@ class MenusController < ApplicationController
        layout: 'pdf.html.erb',
        dpi: '300',
        encoding: 'utf8',
-       page_size: 'A4'
+       page_size: 'A4',
+       show_as_html: params[:debug].present?
      end
    end
  end
