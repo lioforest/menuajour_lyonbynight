@@ -67,3 +67,7 @@ body > main > div:nth-child(1) > section.mt-4 > div.row.d-flex.justify-content-a
 {
     font-family: 'Oregano', cursive !important;
 }
+
+@media (max-width: 576px) {
+    
+}
