@@ -8,10 +8,25 @@
 
 require 'faker'
 
+User.destroy_all
+Subscription.destroy_all
+Admin.destroy_all
+
 #seeding user
+puts "user de base"
 u = User.where(email:'menuajour@yopmail.com')[0]
 if u.nil?
   u = User.create(email:'menuajour@yopmail.com', password:'azerty', first_name: 'Anne', last_name: "O'nymous")
+end
+puts "user aléatoire"
+
+20.times do
+	  u1 = User.create(email:Faker::Internet.email, password:'azerty', first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+end
+puts "Subscription aleatoir"
+
+9.times do
+	sub = Subscription.create(name: "Abonnement 1 an", start_date: Faker::Date.between(300.days.ago, Date.today) , end_date: Faker::Date.forward(days = 365), price: 360 , user: User.all.sample)
 end
 
 CategoryType.destroy_all
