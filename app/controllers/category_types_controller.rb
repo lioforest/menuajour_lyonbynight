@@ -1,36 +1,54 @@
 class CategoryTypesController < ApplicationController
-  def index
-  end
-
-  def show
-  end
-
   def create
     category_name = params[:name]
     current_user.create_new_category_type(category_name)
-    redirect_back(fallback_location: root_path)
-  end
 
-  def edit
+    respond_to do |format|
+      format.html do
+        redirect_back(fallback_location: root_path)
+      end
+      format.js {}
+    end
   end
 
   def update
-    category_type_id = params[:id]
-    add_item_type = params[:add_item_type]
-    item_type_id = params[:item_type_id]
+    name = params[:name]
+    @category_type = get_category
 
-    @category_type = CategoryType.find(category_type_id)
-    if add_item_type
-      @category_type.add_item_type_by_id(item_type_id)
-      redirect_back(fallback_location: root_path)
+    if params[:add_item_type]
+      add_item_type
+    elsif params[:remove_item_type]
+      remove_item_type
+    elsif name
+      @category_type.update(name: name)
+      respond_to do | format |
+        format.html { redirect_back(fallback_location: root_path) }
+        format.js {}
+      end
     end
   end
 
   def destroy
-    CategoryType.find(params[:id]).destroy
+    get_category.destroy
     redirect_back(fallback_location: root_path)
   end
+################################################
+################## Methods #####################
+################################################
 
-  def new
-  end
+#***************** Private *********************#
+private
+
+def get_category
+  CategoryType.find(params[:id])
+end
+
+def add_item_type
+ @category_type.add_item_type_by_id(params[:item_type_id])
+ redirect_back(fallback_location: root_path)
+end
+def remove_item_type
+  @category_type.remove_item_type_by_id(params[:item_type_id])
+  redirect_back(fallback_location: root_path)
+end
 end

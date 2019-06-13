@@ -7,11 +7,11 @@ Rails.application.routes.draw do
 
     resources :users, only: [:show], path: "clients" do
       resources :menus
-      resources :subscriptions
+      resources :subscriptions, path: "abonnement"
+      resources :category_types
     end
   end
 
-  resources :category_types
   resources :item_types
 
 
@@ -32,4 +32,14 @@ Rails.application.routes.draw do
 
   get '/*', to: "static#error_404"
 
+  devise_for :admins, path: 'admin', skip: :registrations
+
+  namespace :admin do
+    resources :users
+    resources :subscriptions
+
+  end
+
+  get 'admin' => 'admin/users#index'
+  get '*path' => redirect('/*')
 end
