@@ -15,7 +15,7 @@
 	  <p class="text-center">En vous abonnant vous aurez accès au générateur de PDF qui vous permettra de télécharger votre menu et ainsi de l'imprimer directement.</p>
 	  <p class="text-center">Plus rapide et économique de de passer par un imprimeur.</p>
     </div>
-    <div class="mt-5"><p class="text-center"style="font-size: 1.5em;"><strong>100 €/an</strong><br/>
+    <div class="mt-5"><p class="text-center"style="font-size: 1.5em;"><strong>360 €/an</strong><br/>
     <em style="font-size: 0.6em;">(peut importe le nombre de menus que vous créez)</em></div>
 		<%= form_tag charges_path, class:'d-flex flex-column' do %>
 		  <article>
@@ -29,7 +29,7 @@
 		  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 		          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
 		          data-description="A month's subscription"
-		          data-amount="10000"
+		          data-amount="36000"
 		          data-locale="auto"
 		          data-currency="eur"></script>
 		<% end %>
