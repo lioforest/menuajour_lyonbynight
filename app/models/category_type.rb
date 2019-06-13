@@ -1,5 +1,6 @@
 class CategoryType < ApplicationRecord
-  validates :name, uniqueness: true, presence: true
+  validates :name, presence: true
+  validate :name_uniqueness_in_user
 
   belongs_to :user
 
@@ -27,6 +28,19 @@ end
 
 def remove_item_type_by_id(_item_type_id)
   self.item_types.delete(ItemType.find(_item_type_id))
+end
+
+#***************** Custom Validators *********************#
+
+def name_uniqueness_in_user
+  category_type_names =[]
+  CategoryType.where(user: self.user).each {|_category_type|
+    category_type_names.append(_category_type.name) if _category_type != self
+  }
+  if category_type_names.include?(self.name)
+    error_message = "CategoryType.name (here #{self.name}) must be unique for one user"
+    errors.add(:name, error_message)
+  end
 end
 
 end
