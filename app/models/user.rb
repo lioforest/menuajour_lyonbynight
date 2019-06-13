@@ -78,6 +78,19 @@ def default_data_user
   cat_boissons.create_new_item_type('Espresso',"",2.00)
   cat_boissons.create_new_item_type('Grand crème',"",2.50)
 
+  menu = self.create_new_menu('Exemple de menu','Menu Carte : 34 €','Entrée + Plat ou Plat + Dessert')
+
+  self.category_types.each do |category_type|
+    menu.add_category(category_type)
+  end
+
+  menu.categories.each do |category|
+    category.category_type.item_types.each do |item_type|
+      category.add_item(item_type)
+    end
+  end
+
+
 end
 
 end
