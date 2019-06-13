@@ -1,0 +1,33 @@
+#section_menu > div.d-flex.justify-content-around.flex-wrap.my-5{
+	display: none;
+}
+.section.section_header.section_header__about{
+	display: none;
+}
+#section_menu > div.container > div > div > h2:before{
+	display: none;
+}
+#section_menu > div.container > div > div > div > div{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify !important;
+  line-height: 1;
+  margin-bottom: 1em;
+}
+#section_menu {
+	padding-top: 20px;
+	padding-bottom: 0px;
+}
+
+#section_menu > div.container > div > div > div > div > div > h4{
+	margin-bottom: 5px;
+}
+
+#section_menu > div.container > div > div > div > h3{
+	margin-bottom: 20px;
+}
+
+#section_menu > div.container > div > div > div > h3 > span{
+	border-bottom: 2px solid;
+}
