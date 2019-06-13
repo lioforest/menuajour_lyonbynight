@@ -17,10 +17,12 @@ Here is the link to the production version on Heroku : https://menuajour.herokua
 
 ## Seeded user : 
 email : menuajour@yopmail.com
+
 mdp : azerty
 
 ## Seeded admin:
 email : admin@menuajour.com
+
 mdp : azerty
 
 ## Database diagram
