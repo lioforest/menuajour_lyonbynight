@@ -14,20 +14,20 @@
 
   <div class="form-group">
     <%= f.label :name, "Nom de l'abonnement" %>
-    <%= f.text_area :name, class: 'form-control' %>
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
 
   <div class="form-group">
     <%= f.label :start_date, "Date de départ" %>
-    <%= f.text_area :start_date, class: 'form-control' %>
+    <%= f.date_field :start_date, class: 'form-control' %>
   </div>
   <div class="form-group">
     <%= f.label :end_date, "Date de fin" %>
-    <%= f.text_area :end_date, class: 'form-control' %>
+    <%= f.date_field :end_date, class: 'form-control' %>
   </div>
   <div class="form-group">
     <%= f.label :price,  "Prix" %>
-    <%= f.text_area :price, class: 'form-control' %>
+    <%= f.number_field :price, class: 'form-control' %>
   </div>
   <div class="form-group">
     <%= f.label :user_id, "utilisateur associé" %>
