@@ -1,96 +1,78 @@
-  <!--################################################-->
-  <!--############### Accordion ######################-->
-  <!--################################################-->
-  <div class="container-fluid">
-    <div id="accordion">
-      <!--******************* Ajouter une Catégorie *******************-->
-      <div class="row align-items-end">
-        <div class= "col-md-12">
-          <%= form_tag(category_types_path, method: "post") do %>
-          <div class="card">
-            <div class="table-active" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" data-toggle="tooltip" data-placement="top" title="Cliquer pour créer une nouvelle catégorie">
-              <h5 class="mb-0 btn collapsed">
-               Créer une nouvelle catégorie
-             </h5>
-           </div>
-           <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+<!--################################################-->
+<!--############### Accordion ######################-->
+<!--################################################-->
+<div class="container-fluid px-0">
+  <div id="accordion">
+    <!--******************* Ajouter une Catégorie *******************-->
+    <div class="row align-items-end mx-0">
+      <div class= "col-md-12 px-0">
+        <div class="card">
+          <div class="table-active" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" data-toggle="tooltip" data-placement="top" title="Cliquer pour créer une nouvelle catégorie">
+            <h5 class="mb-0 btn collapsed">
+              Créer une nouvelle catégorie
+            </h5>
+          </div>
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
-              <div class="row">
-                <div class="col-md-12">
-                  <%= label_tag "Nom", nil , class: "form-label" %>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-11 d-flex justify-content-end align-items-end">
-                  <%= text_field_tag :name, nil, placeholder: "Ex : Nos Salades...", class: "form-control", :required => 'required' %>
-                </div>
-                <div class="col-md-1 d-flex justify-content-end align-items-end">
-                  <%= button_tag type: "submit", class: "btn" do%>
-                  <i class="fas fa-plus fa-2x" data-toggle="tooltip" data-placement="top" title="Créer la catégorie"></i>
-                  <%end%>
-                </div>
-              </div>
+              <%= render "category_types/category_type_form",
+              title: "Ajouter un catégorie",
+              form_method: "POST",
+              route: user_category_types_path(current_user.id), category_name: nil,
+              icon: "fas fa-plus"
+              %>
             </div>
           </div>
         </div>
       </div>
-      <% end %>
     </div>
 
     <!--******************* Ajouter un Item *******************-->
-    <div class="row align-items-center">
-      <div class="col-md-12">
-        <%= form_tag(item_types_path, method: "post") do %>
+    <div class="row align-items-center mx-0">
+      <div class="col-md-12 px-0">
         <div class="card">
           <div class="table-active" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" data-toggle="tooltip" data-placement="top" title="Cliquer pour créer un nouvel item">
             <h5 class="mb-0 btn collapsed">
               Créer un nouvel item
             </h5>
           </div>
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-            <div class="card-body">
-              <div class="row align-items-center">
-                <div class= "col-md-11">
-                  <!--1st line-->
-                  <div class="row align-items-end">
-                    <!--Category-->
-                    <div class= "col-md-3">
-                      <%= label_tag "Catégorie", nil , class: "form-label" %>
-                      <%= select_tag 'category_type_id', options_from_collection_for_select(@category_types, "id", "name"), class: "form-control"%>
-                    </div>
-                    <!--Name-->
-                    <div class= "col-md-7">
-                      <%= label_tag "Nom", nil , class: "form-label" %>
-                      <%= text_field_tag :name, nil, placeholder: "Ex : Salade Lyonnaise/Eau pétillante/Expresso...", class: "form-control", :required => 'required' %>
-                    </div>
-                    <!--Prix-->
-                    <div class= "col-md-2">
-                      <%= label_tag "Prix en €", nil , class: "form-label" %>
-                      <%=number_field_tag 'price', nil, step: 0.1, placeholder: "Ex : 5.55", class: "form-control", :required => 'required'%>
-                    </div>
-                  </div>
-                  <!--2nd Line : Description-->
-                  <div class="row align-items-end">
-                    <div class= "col-md-12">
-                     <%= label_tag "Description", nil , class: "form-label" %>
-                     <%= text_field_tag :description, nil, placeholder: "Description", class: "form-control", :required => 'required' %>
-                   </div>
-                 </div>
-               </div>
-               <!--button add-->
-               <div class="col-md-1 d-flex justify-content-end align-items-start">
-                <%= button_tag type: "submit", class: "btn mt-5" do%>
-                <i class="fas fa-plus fa-2x" data-toggle="tooltip" data-placement="top" title="Créer l'item"></i>
-                <%end%>
+          <%= render "item_types_form", aria_label: "headingTwo", id: "collapseTwo" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--******************* Ajouter un Item *******************-->
+    <div class="row align-items-center mx-0">
+      <div class="col-md-12 px-0">
+        <div class="card">
+          <div class="table-active" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" data-toggle="tooltip" data-placement="top" title="Cliquer pour filtrer les catégories">
+            <h5 class="mb-0 btn collapsed">
+              Filtrer les catégories
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body d-flex justify-content-start flex-wrap">
+              <% @category_types.order(:name).each do | category | %>
+              <div class="categoryFilter">
+                <%= check_box_tag category.name, "accordion#{category.id}", true %>
+                <%= label_tag category.name %>
+              </div>
+              <% end %>
+            </div>
+            <div class="card-body d-flex justify-content-start flex-wrap">
+              <div class="filter">
+                <%= check_box_tag "selectedAll", "all", true %>
+                <%= label_tag "selectedAll", "Tout choisir" %>
+              </div>
+              <div class="filter">
+                <%= check_box_tag "selectedNone", "none", false %>
+                <%= label_tag "selectedNone", "Retirer toutes les catégories" %>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <% end %>
     </div>
   </div>
-</div>
 </div>
 
 <!--################################################-->

@@ -6,7 +6,7 @@
     data-target="#navbar__collapse" aria-expanded="false"> <span class="sr-only">Menu</span>#x2630;</button>
     <div class="collapse navbar-collapse" id="navbar__collapse1">
       <ul class="nav navbar-nav ml-auto mr-0 pr-0" style="float: right;">
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="<%= root_path %>">Accueil<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
@@ -32,7 +32,7 @@
           aria-haspopup="true" aria-expanded="false"><%= current_user.email %></a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/mon-profil">Mon profil</a></li>
-            <li><a class="dropdown-item" href="<%=item_types_path%>">Mes plats</a></li>
+            <li><a class="dropdown-item" href="<%= item_types_path %>">Mes plats</a></li>
             <li><a class="dropdown-item" href="<%= user_menus_path(current_user.id)%>">Mes menus</a></li>
             <% if is_subscribed_user? %>
               <li><a class="dropdown-item" href="<%= user_subscriptions_path(current_user.id)%>">Mon offre</a></li>

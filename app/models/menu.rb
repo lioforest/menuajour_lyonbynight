@@ -1,5 +1,6 @@
 class Menu < ApplicationRecord
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true
+  validate :name_uniqueness_in_user
 
   belongs_to :user
   has_many :menu_categories, dependent: :destroy
@@ -46,6 +47,19 @@ end
 
 def delete_item_by_id(_item_id)
   self.menu_items.find(_item_id).destroy
+end
+
+#***************** Custom Validators *********************#
+
+def name_uniqueness_in_user
+  menu_names =[]
+  Menu.where(user: self.user).each {|_menu|
+    menu_names.append(_menu.name) if _menu != self
+  }
+  if menu_names.include?(self.name)
+    error_message = "Menu.name (here #{self.name}) must be unique for one user"
+    errors.add(:name, error_message)
+  end
 end
 
 end

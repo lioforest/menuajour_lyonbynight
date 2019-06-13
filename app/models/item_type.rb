@@ -1,5 +1,6 @@
 class ItemType < ApplicationRecord
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true
+  validate :name_uniqueness_in_user
 
   belongs_to :user
 
@@ -22,4 +23,16 @@ def name_and_price
   "#{self.name} - #{self.price}€"
 end
 
+#***************** Custom Validators *********************#
+
+def name_uniqueness_in_user
+  item_type_names =[]
+  ItemType.where(user: self.user).each {|_item_type|
+    item_type_names.append(_item_type.name) if _item_type != self
+  }
+  if item_type_names.include?(self.name)
+    error_message = "ItemType.name (here #{self.name}) must be unique for one user"
+    errors.add(:name, error_message)
+  end
+end
 end

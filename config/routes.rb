@@ -7,21 +7,17 @@ Rails.application.routes.draw do
 
     resources :users, only: [:show], path: "clients" do
       resources :menus
-      resources :subscriptions
+      resources :subscriptions, path: "abonnement"
+      resources :category_types
     end
   end
 
-  resources :category_types
   resources :item_types
 
 
   resources :charges
 
   #Static pages
-
-
-
-
   get '/a-propos', to: "static#about"
   get '/contact', to: "static#contact"
   get '/en-cours', to: "static#in_progress"
@@ -29,11 +25,10 @@ Rails.application.routes.draw do
   get '/notre_offre', to: "static#our_offer"
   post '/contact', to: "static#send_contact_email"
 
-
   get '/*', to: "static#error_404"
 
   devise_for :admins, path: 'admin', skip: :registrations
-  
+
   namespace :admin do
     resources :users
     resources :subscriptions
@@ -41,5 +36,5 @@ Rails.application.routes.draw do
   end
 
   get 'admin' => 'admin/users#index'
-
+  get '*path' => redirect('/*')
 end
