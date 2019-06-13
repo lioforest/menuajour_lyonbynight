@@ -28,11 +28,10 @@
       </td>
       <td> 
         <%= button_to user_category_type_path(:id => category_type.id, user_id: current_user.id, remove_item_type: true, item_type_id: item_type.id), :method => :put, class:"btn delete" do%>
-        <i class="fas fa-minus-circle" data-toggle="tooltip" data-placement="top" title="Retirer l'item de la catégorie"></i>
+          <i class="fas fa-minus-circle" data-toggle="tooltip" data-placement="top" title="Retirer l'item de la catégorie"></i>
         <%end%>
       </td>
     </tr>
-    <%= render "item_types_form", aria_label: "item#{item_type.id}Btn", id: "editItem#{item_type.id}" %>
     <%end%>
   </tbody>
 </table>
