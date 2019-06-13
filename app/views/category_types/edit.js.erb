@@ -1,0 +1,8 @@
+function removeModification() {
+    categoryElt.innerHTML = oldContent
+}
+
+var categoryElt = document.querySelector("#accordion<%= params[:id] %> .row")
+var oldContent = categoryElt.innerHTML
+
+categoryElt.innerHTML = `<%= form_tag(user_category_type_path(params[:id], user_id: current_user.id), method: "put", style: "width: 100%") do %><input type="text" name="name" value="<%= @category.name%>" style="font-size: 30px; width: 84.5%"/><button class="btn edit" type="submit" title="Modifier la catégorie" style="color: black"><i class="fas fa-check"></i></button><button class="btn delete" onclick="removeModification()" title="Abandonner les modifications" style="color: black; padding-left: 57px"><i class="fas fa-times-circle"></i></button><% end %>`
