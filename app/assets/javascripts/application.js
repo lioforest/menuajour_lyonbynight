@@ -19,3 +19,4 @@
 //= require assets/plugins/imagesloaded/imagesloaded.pkgd.min
 //= assets/js/custom
 //= assets/js/google_maps
+//= remove-alert
