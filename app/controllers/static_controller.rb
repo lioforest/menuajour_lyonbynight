@@ -54,7 +54,7 @@ class StaticController <ApplicationController
         firstname: "Cédric",
         title: "Frontend master",
         photo: "team_photo_2.jpg",
-        quote: "Je vous assure, React est la solution !"
+        quote: "Je vous assure, React était la solution ! C'est juste la base de données, qui ne pouvait pas être serializer correctement. Sinon l'AJAX, c'est sympa. JS 4 EVA !"
       }
     ]
   end

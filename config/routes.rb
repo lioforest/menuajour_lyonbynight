@@ -7,11 +7,11 @@ Rails.application.routes.draw do
 
     resources :users, only: [:show], path: "clients" do
       resources :menus
-      resources :subscriptions
+      resources :subscriptions, path: "abonnement"
+      resources :category_types
     end
   end
 
-  resources :category_types
   resources :item_types
 
 

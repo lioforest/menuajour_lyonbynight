@@ -25,4 +25,8 @@ def add_item_type_by_id(_item_type_id)
   self.item_types.append(ItemType.find(_item_type_id))
 end
 
+def remove_item_type_by_id(_item_type_id)
+  self.item_types.delete(ItemType.find(_item_type_id))
+end
+
 end
