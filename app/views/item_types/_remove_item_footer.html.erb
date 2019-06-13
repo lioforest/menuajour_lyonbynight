@@ -9,12 +9,12 @@
       <div class="col-md-12 px-0">
         <%= form_tag item_type_path(:id), method: "delete" do %>
         <div class="card border-danger">
-          <div class="table-danger bg-danger" id="headingTwo" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" data-toggle="tooltip" data-placement="top" title="Cliquer pour créer un nouvel item">
+          <div class="table-danger bg-danger" id="headingTwo" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" data-toggle="tooltip" data-placement="top" title="Cliquer pour créer un nouvel item">
             <h5 class="mb-0 btn collapsed text-white">
               Supprimer un item définitivement
             </h5>
           </div>
-          <div id="collapseThree" class="collapse px-1" aria-labelledby="headingThree" data-parent="#accordion">
+          <div id="collapseFour" class="collapse px-1" aria-labelledby="headingFour" data-parent="#accordion">
             <div class="card-body">
               <div class="row align-items-center">
                 <div class= "col-md-11">
@@ -29,7 +29,7 @@
                 </div>
                 <!-- Button delete-->
                 <div class="col-md-1 d-flex justify-content-center align-items-center">
-                  <%= button_tag type: "submit", class: "btn mt-5" do%>
+                  <%= button_tag type: "submit", data: {confirm: "Etes-vous certain de vouloir supprimer cet item? (Il sera également retiré de toutes les catégories et de tous les menus existants)."} , class: "btn mt-5" do%>
                   <i class="fas fa-trash-alt fa-2x text-danger mt-4" data-toggle="tooltip" data-placement="top" title="Créer l'item"></i>
                   <%end%>
                 </div>

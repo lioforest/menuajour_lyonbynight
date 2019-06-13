@@ -62,3 +62,8 @@ body > main > div:nth-child(1) > section.mt-4 > div.row.d-flex.justify-content-a
     max-height: 30px;
     margin: 5px;
 }
+
+.section_welcome > .container > .row [class*="col-"] .welcome_content .welcome_content_heading
+{
+    font-family: 'Oregano', cursive !important;
+}

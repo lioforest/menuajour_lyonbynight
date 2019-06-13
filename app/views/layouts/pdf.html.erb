@@ -1,11 +1,16 @@
+<% if is_subscribed_user? %>
 <!DOCTYPE html>
 <html>
 <head>
-<title>PDF</title>
-  <%= wicked_pdf_stylesheet_link_tag "pdf" %>
-  <%= wicked_pdf_stylesheet_link_tag "styles", media: 'all' %>
+	<title>PDF</title>
+	<%= wicked_pdf_stylesheet_link_tag "pdf" %>
+	<%= wicked_pdf_stylesheet_link_tag "styles", media: 'all' %>
 </head>
-<body>
-    <%= yield %>
+<body class="pdf">
+	<%= yield %>
 </body>
 </html>
+<% else %>
+ <h1>Vous devez être abonné pour acceder à cette page</h1>
+     <%= link_to "S'abonner pour générer un PDF", 'http://localhost:3000/clients/2/abonnement/nouveau', class:"btn btn-primary my-2", style:'min-width: 240px; margin: auto;', id:"pdf_link4", target:'_blank' %>
+<% end %>

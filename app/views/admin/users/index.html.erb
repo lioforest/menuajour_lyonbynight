@@ -1,4 +1,4 @@
-<h1>Vos utilisateurs :</h1>
+<h3>Vous avez actuellement <%= User.all.count %> utilisateurs inscrits :</h3>
 
 <div class="form-group">
   <%= link_to 'Ajouter un utilisateur', new_admin_user_path, class: 'btn btn-default' %>

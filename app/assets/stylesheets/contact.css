@@ -15,7 +15,7 @@
 .section_map-heading .contacts_form__body
 {
     margin-bottom: 200px !important;
-    background-color: var(--primary) !important;
+    background-color: none !important;
 }
 
 .section_map-heading
@@ -36,7 +36,7 @@
 .contacts_form__body .form-control:not(:focus),
 .contacts_form__body .form-control::placeholder 
 {
-    color: var(--light) !important;
+    color: grey !important;
 }
 
 .form-control .form-group label
