@@ -5,6 +5,11 @@ nav.navbar
     top: 0;
     left: 0;
     margin-bottom: 100px;
+    background: var(--light);
+    -webkit-transition: background .5s ease-in;  
+    -moz-transition: background .5s ease-in;  
+    -o-transition: background .5s ease-in;  
+    transition: background .5s ease-in;
 }
 
 #navbar_collapse1.navbar-collapse.collapse
@@ -19,3 +24,10 @@ nav.navbar
     max-height: 120px;
     margin: 10px;
 }
+
+nav.navbar.transparent,
+nav.navbar.transparent::after
+{
+    background: transparent !important;
+}
+
