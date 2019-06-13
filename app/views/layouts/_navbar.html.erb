@@ -31,7 +31,7 @@
         <li class="dropdown nav-item"> <a href="#" class="dropdown-toggle nav-link mx-3" data-toggle="dropdown" role="button"
           aria-haspopup="true" aria-expanded="false"><%= current_user.email %></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/mon-profil">Mon profil</a></li>
+            <li><a class="dropdown-item" href="<%= user_path(current_user.id) %>">Mon profil</a></li>
             <li><a class="dropdown-item" href="<%= item_types_path %>">Mes plats</a></li>
             <li><a class="dropdown-item" href="<%= user_menus_path(current_user.id)%>">Mes menus</a></li>
             <% if is_subscribed_user? %>
