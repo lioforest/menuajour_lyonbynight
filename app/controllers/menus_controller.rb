@@ -21,18 +21,24 @@ class MenusController < ApplicationController
    respond_to do |format|
      format.html
      format.pdf do
+      if is_subscribed_user?
        render pdf: "mon_menu",
        template: "menus/show.html.erb",
        layout: 'pdf.html.erb',
        dpi: '300',
        encoding: 'utf8',
        page_size: 'A4',
-       show_as_html: params[:debug].present?
-     end
-   end
- end
+       show_as_html: params[:debug].present?,
+       disable_external_links: false
+     else
+    flash[:success] = 'Vous devez être abonné pour acceder à cette fonctionnalité'
+    redirect_to new_user_subscription_path(current_user.id)
+    end
+  end
+end
+end
 
- def edit
+def edit
   if helpers.checked_user
     @menu = Menu.find(params[:id])
     @title 	= @menu.title
