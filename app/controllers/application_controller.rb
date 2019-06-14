@@ -27,6 +27,10 @@ class ApplicationController < ActionController::Base
 
     @supports = [
       {
+        route: root_path,
+        text: "Accueil"
+      },
+      {
         route: a_propos_path,
         text: "À propos de nous"
       },
