@@ -42,7 +42,7 @@ nav.navbar.transparent .nav-link:active
 
 /* Tablet and smaller */
 @media (max-width: 991.98px) {
-    .navbar.transparent
+    .navbar
     {
         display: none;
     }
