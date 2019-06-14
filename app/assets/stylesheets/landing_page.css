@@ -99,9 +99,20 @@ body > main > div:nth-child(1) > section.mt-4 > div.row.d-flex.justify-content-a
 
 /* Tablet and smaller */
 @media (max-width: 991.98px) {
+    section.mt-4 div#creation_process.row.creation-subsection div.col-sm-12 h2.section_title
+    {
+        font-size: 5rem
+    }
+
     section.mt-4 div#creation_process.row.creation-subsection div.col-sm-12 p.text-center
     {
         margin: 10px;
+    }
+
+    section.mt-4 div#creation_process.row.creation-subsection div.col-sm-12 p.text-center,
+    section.mt-4 div.row.d-flex.justify-content-around.mt-4.creation-subsection div.col-md-3 p
+    {
+        font-size: 1.5rem
     }
 
     section.mt-4 div.row.d-flex.justify-content-around.mt-4.creation-subsection div.col-md-3
@@ -111,7 +122,7 @@ body > main > div:nth-child(1) > section.mt-4 > div.row.d-flex.justify-content-a
 
     section.mt-4 div.row.d-flex.justify-content-around.mt-4.creation-subsection div.col-md-3 h3
     {
-        font-size: 5rem;
+        font-size: 3rem;
     }
 
     #warning-small-devices
