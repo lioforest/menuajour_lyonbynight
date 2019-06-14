@@ -22,7 +22,6 @@ main > div.container table > tbody > tr > td > button.edit
 
 main > div.container table > tbody > tr > td > button.edit a,
 main > div.container table > tbody > tr > td > button.edit a:visited
-
 {
     color: rgb(145, 154, 161);
 }
@@ -41,4 +40,9 @@ main > div.container table > tbody > tr > td > input
 {
     padding: 10px;
     width: 15vw;
+}
+
+html body main div.container-fluid.px-0 div#accordion div.row.align-items-center.mx-0 div.col-md-12.px-0 div.card div div.card-body form div.row
+{
+    padding-right: -1px
 }
