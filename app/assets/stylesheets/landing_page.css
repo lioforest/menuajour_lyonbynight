@@ -69,14 +69,19 @@ body > main > div:nth-child(1) > section.mt-4 > div.row.d-flex.justify-content-a
     font-family: 'Oregano', cursive !important;
 }
 
+.down-container
+{
+    position: absolute;
+    bottom: 5vh;
+    width: 100%;
+}
+
 .down
 {
-    background-color: #F1AE2B;
     width: 60px;
     height: 60px;
     margin: auto;
     padding: 9px 10px 6px;
-    border-radius: 50%;
 }
 
 .down a,
@@ -84,5 +89,18 @@ body > main > div:nth-child(1) > section.mt-4 > div.row.d-flex.justify-content-a
 .down a:hover,
 .down a:active
 {
-    color: var(--dark);
+    color: #F1AE2B;
+}
+
+#warning-small-devices
+{
+    display: none;
+}
+
+/* Tablet and smaller */
+@media (max-width: 991.98px) {
+    #warning-small-devices
+    {
+        display: block;
+    }
 }

@@ -9,3 +9,11 @@ main.homepage
 {
     margin-top:0;
 }
+
+/* Tablet and smaller */
+@media (max-width: 991.98px) {
+    main
+    {
+        margin-top: 0px;
+    }
+}

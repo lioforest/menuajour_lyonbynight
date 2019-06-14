@@ -31,3 +31,28 @@ body.pdf .section.section_header.section_header__about{
 #section_menu > div.container > div > div > div > h3 > span{
 	border-bottom: 2px solid;
 }
+
+@font-face {
+ font-family: "Oregano";
+ src: url("/assets/fonts/Oregano/Oregano-Italic.ttf") format("ttf"),
+        url("/assets/fonts/Oregano/Oregano-Regular.ttf") format("ttf");
+ font-family: "Raileway";
+ src: url("/assets/fonts/Raileway/Raileway-Black.ttf") format("ttf"),
+        url("/assets/fonts/Raileway/Raileway-BlackItalic.ttf") format("ttf"),
+        url("/assets/fonts/Raileway/Raileway-Bold.ttf") format("ttf"),
+        url("/assets/fonts/Raileway/Raileway-BoldItalic.ttf") format("ttf"),
+        url("/assets/fonts/Raileway/Raileway-ExtraBold.ttf") format("ttf"),
+        url("/assets/fonts/Raileway/Raileway-ExtraBoldItalic.ttf") format("ttf"),
+        url("/assets/fonts/Raileway/Raileway-ExtraLight.ttf") format("ttf"),
+        url("/assets/fonts/Raileway/Raileway-ExtraLightItalic.ttf") format("ttf"),
+        url("/assets/fonts/Raileway/Raileway-Italic.ttf") format("ttf"),
+        url("/assets/fonts/Raileway/Raileway-Light.ttf") format("ttf"),
+        url("/assets/fonts/Raileway/Raileway-LightItalic.ttf") format("ttf"),
+        url("/assets/fonts/Raileway/Raileway-Medium.ttf") format("ttf"),
+        url("/assets/fonts/Raileway/Raileway-MediumItalic.ttf") format("ttf"),
+        url("/assets/fonts/Raileway/Raileway-Regular.ttf") format("ttf"),
+        url("/assets/fonts/Raileway/Raileway-SemiBold.ttf") format("ttf"),
+        url("/assets/fonts/Raileway/Raileway-SemiBoldItalic.ttf") format("ttf"),
+        url("/assets/fonts/Raileway/Raileway-Thin.ttf") format("ttf"),
+        url("/assets/fonts/Raileway/Raileway-ThinItalic.ttf") format("ttf");
+}

@@ -25,6 +25,13 @@ email : admin@menuajour.com
 
 mdp : azerty
 
+## Seeded admin
+url : https://menuajour.herokuapp.com/admin/sign_in
+
+email : admin@menuajour.com
+
+mdp : azerty
+
 ## Database diagram
 
 ![alt text](./app/assets/images/db_diagram.png?raw=true "DB Diagram")
