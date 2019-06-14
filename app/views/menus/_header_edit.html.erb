@@ -8,7 +8,7 @@
         <div class= "col-md-12 px-0">
           <%= form_tag(user_menu_path(id: menu.id, action_type: "update_menu_info"), method: "put") do %>
           <div class="card">
-            <div class="table-active" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" data-toggle="tooltip" data-placement="top" title="Cliquer pour créer une nouvelle catégorie">
+            <div class="table-active" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" data-toggle="tooltip" data-placement="top" title="Cliquer pour modifier les informations de votre menu">
               <h5 class="mb-0 btn collapsed">
                Editer le Menu
              </h5>
@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-md-4">
                   <%= label_tag "Sous-titre", nil , class: "form-label" %>
-                  <%= text_field_tag :subtitle, menu.subtitle, class: "form-control", :required => 'required'%>
+                  <%= text_field_tag :subtitle, menu.subtitle, class: "form-control"%>
                 </div>
                 <div class="col-md-1 d-flex justify-content-end align-items-end">
                   <%= button_tag type: "submit", class: "btn" do%>
