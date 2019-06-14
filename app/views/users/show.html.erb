@@ -21,7 +21,7 @@
 			<ul>
 				<li><h5><%= button_to "Editer mes informations personnelles", edit_user_registration_path, :method => :get, class:"btn text-primary"%></h5></li>
 				<li><h5><%= button_to "Voir mes menus", user_menus_path(current_user.id), :method => :get, class:"btn text-primary"%></h5></li>
-				<li><h5><%= button_to "Voir mes plats", item_types_path(current_user.id), :method => :get, class:"btn text-primary"%></h5></li>
+				<li><h5><%= button_to "Voir mes plats", user_item_types_path(current_user.id), :method => :get, class:"btn text-primary"%></h5></li>
 				<%if is_subscribed_user?%>
 				<li><h5><%= button_to "Voir mon offre", user_subscriptions_path(current_user.id), :method => :get, class:"btn text-primary"%></h5></li>
 				<%end%>

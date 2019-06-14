@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   devise_for :users, path: "", :path_names => { :sign_in => 'se-connecter', :sign_out => 'se-deconnecter', :sign_up => 's-enregistrer' }
   scope(path_names: {new: "nouveau", edit: "modifier"}) do
     resources :users, only: [:show, :update], path: "clients" do
-      resources :menus
+      resources :menus, except: [:new]
       resources :subscriptions, path: "abonnement"
       resources :category_types
+      resources :item_types
     end
   end
 
@@ -18,7 +19,6 @@ Rails.application.routes.draw do
     root :to => "users#index"
   end
 
-  resources :item_types
   resources :charges
 
   #Static pages
