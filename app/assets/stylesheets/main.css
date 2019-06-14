@@ -4,3 +4,8 @@ main
     min-height: 64vh;
     color: var(--primary);
 }
+
+nav.navbar.transparent + main
+{
+    margin-top:0;
+}

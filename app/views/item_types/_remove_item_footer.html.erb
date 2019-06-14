@@ -1,4 +1,9 @@
 <div class="container-fluid">
+  <% if current_user.has_example_item_types? %>
+  <div class="col-md 8 d-flex justify-content-center my-5">
+    <%= button_to "Supprimer les exemples", user_path(id: current_user.id, action_type: "delete_exemple_items"), method: "put", class:"btn btn-danger" %>
+  </div>
+  <%end%>
   <div id="accordion">
     <div class="row align-items-center mt-5">
       <div class="col-md-12 px-0">

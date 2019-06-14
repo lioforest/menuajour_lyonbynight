@@ -7,31 +7,31 @@
     <div class="collapse navbar-collapse" id="navbar__collapse1">
       <ul class="nav navbar-nav ml-auto mr-0 pr-0" style="float: right;">
         <li class="nav-item">
-          <a class="nav-link" href="<%= root_path %>">Accueil<span class="sr-only">(current)</span></a>
+          <a class="nav-link mx-3" href="<%= root_path %>">Accueil<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<%= notre_offre_path %>">Notre offre</a>
+          <a class="nav-link mx-3" href="<%= notre_offre_path %>">Notre offre</a>
         </li>
         <% if admin_signed_in? %>
         <li class="nav-item">
-          <a href="<%= admin_users_path %>" class="nav-link">Espace Admin</a>
+          <a href="<%= admin_users_path %>" class="nav-link mx-3">Espace Admin</a>
         </li>
         <% end %>
       </ul>
     </div>
-    <!--<a class="navbar-brand mx-5" href="<%= root_path %>">Menu A Jour</a>-->
-    <a class="nav-link" href="<%= root_path %>"><%= image_tag "Maj_logo.png", :alt => "logo", :class => "logo" %></a>
+    <!--<a class="navbar-brand mx-3" href="<%= root_path %>">Menu A Jour</a>-->
+    <a class="nav-link mx-3" href="<%= root_path %>"><%= image_tag "Maj_logo.png", :alt => "logo", :class => "logo" %></a>
     <div class="collapse navbar-collapse" id="navbar__collapse2">
       <ul class="nav navbar-nav ml-auto">
         <!-- General links -->
         <li class="nav-item">
-          <a href="<%= contact_path %>" class="nav-link">Contact</a>
+          <a href="<%= contact_path %>" class="nav-link mx-3">Contact</a>
         </li>
         <% if user_signed_in? %>
-        <li class="dropdown nav-item"> <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button"
+        <li class="dropdown nav-item"> <a href="#" class="dropdown-toggle nav-link mx-3" data-toggle="dropdown" role="button"
           aria-haspopup="true" aria-expanded="false"><%= current_user.email %></a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/mon-profil">Mon profil</a></li>
+            <li><a class="dropdown-item" href="<%= user_path(current_user.id) %>">Mon profil</a></li>
             <li><a class="dropdown-item" href="<%= item_types_path %>">Mes plats</a></li>
             <li><a class="dropdown-item" href="<%= user_menus_path(current_user.id)%>">Mes menus</a></li>
             <% if is_subscribed_user? %>
@@ -44,7 +44,7 @@
         </li>
         <% else %>
         <li class="dropdown nav-item">
-          <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" role="button"
+          <a href="#" class="dropdown-toggle nav-link mx-3" data-toggle="dropdown" role="button"
           aria-haspopup="true" aria-expanded="false">
           Connexion
         </a>
