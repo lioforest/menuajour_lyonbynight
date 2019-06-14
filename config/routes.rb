@@ -28,7 +28,6 @@ Rails.application.routes.draw do
   get '/notre_offre', to: "static#our_offer"
   post '/contact', to: "static#send_contact_email"
 
-  get 'admin', to: 'admin/users#index'
 
   #get '*path', to: redirect('/*')
   get '/*', to: "static#error_404"

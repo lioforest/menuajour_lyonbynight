@@ -20,7 +20,7 @@ class SubscriptionsController < ApplicationController
 		@subscription = Subscription.find_by(user: current_user)
 
 		if @subscription.destroy
-			flash[:success] = 'Votre abonnement à bien été supprimé'
+			flash[:success] = 'Votre abonnement a bien été supprimé'
 			redirect_to user_path(current_user)
 		else
 			flash[:error] = 'Suite à un problème, votre abonnement n\'a pas été supprimé'

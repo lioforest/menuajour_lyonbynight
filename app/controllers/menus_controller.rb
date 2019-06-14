@@ -3,6 +3,7 @@ class MenusController < ApplicationController
 
   def index
     @title = "Mes menus"
+    @subtitle = "Créez autant de menus que vous le souhaitez !"
     if helpers.checked_user
       @menus = current_user.menus
     else
@@ -42,6 +43,7 @@ def edit
   if helpers.checked_user
     @menu = Menu.find(params[:id])
     @title 	= @menu.title
+    @subtitle = "Ici vous pouvez modifier votre menu : ajoutez les catégories et les plats que vous avez créés dans votre rubrique \"Mes plats\" !"
   else
    redirect_to(root_path)
  end

@@ -61,5 +61,5 @@ en:
       not_found: "introuvable"
       not_locked: "n'était pas bloqué"
       not_saved:
-        one: "1 erreur empêche cette demande d'être sauvgardée :"
+        one: "1 erreur empêche cette demande d'être sauvegardée :"
         other: "%{count} erreurs empêchent cette demande d'être sauvegardée :"
