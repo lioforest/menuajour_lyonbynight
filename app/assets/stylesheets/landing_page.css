@@ -68,3 +68,21 @@ body > main > div:nth-child(1) > section.mt-4 > div.row.d-flex.justify-content-a
 {
     font-family: 'Oregano', cursive !important;
 }
+
+.down
+{
+    background-color: #F1AE2B;
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    padding: 9px 10px 6px;
+    border-radius: 50%;
+}
+
+.down a,
+.down a:focus,
+.down a:hover,
+.down a:active
+{
+    color: var(--dark);
+}
