@@ -1,6 +1,6 @@
 <%= render "shared/header", title: @title %>
 
-<div class="container d-flex justify-content-center">
+<div class="container d-flex align-items-center justify-content-center">
 
 	<div class="col-md-8 d-flex flex-column align-items-center mt-5 mb-5 justify-content-around border border-grey shadow" style="height: 500px;">
 
@@ -14,4 +14,9 @@
 		</div>
 	</div>
 	
+	
+</div>
+
+<div class="d-flex align-items-center justify-content-center mb-5">
+	<%= link_to "Retour vers mon profil", user_path(current_user.id), class: "btn btn-primary" %>
 </div>
