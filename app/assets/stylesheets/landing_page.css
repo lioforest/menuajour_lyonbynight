@@ -32,6 +32,11 @@ body > main > div > section:nth-child(3) > div.row > div > h2:before{
   background-size: cover;
 }
 
+.welcome_content
+{
+    padding-left: 37px;
+}
+
 .about_img{
   max-width: 40%;
   margin: 10px auto 30px auto;
