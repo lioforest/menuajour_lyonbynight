@@ -1,8 +1,11 @@
 require 'rails_helper'
+  config.include Rails.application.routes.url_helpers
 
 RSpec.describe User, type: :model do
 
   before(:each) do 
+     @url  = root_path
+
       @user = User.create(email:'anneonymous@yopmail.com', password:'azerty', first_name: 'Anne', last_name: "Onymous")
 
   end
