@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-  config.include Rails.application.routes.url_helpers
 
 RSpec.describe Menu, type: :model do
 
+     @url  = 'http://localhost:3000/'
+
   before(:each) do 
-      @url  = root_path
 
       @user = User.create(email:'anneonymous@yopmail.com', password:'azerty', first_name: 'Anne', last_name: "Onymous")
 
