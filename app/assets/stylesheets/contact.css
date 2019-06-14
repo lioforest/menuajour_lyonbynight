@@ -48,3 +48,11 @@
 {
     display: none;
 }
+
+/* Tablet and smaller */
+@media (max-width: 991.98px) {
+    .section_map-heading .contacts_form__body
+    {
+        margin-bottom: 40px !important;
+    }
+}
