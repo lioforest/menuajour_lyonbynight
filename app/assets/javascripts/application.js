@@ -20,3 +20,4 @@
 //= require assets/js/custom
 //= require remove-alert
 //= require homepageNavbar
+//= require winFix
