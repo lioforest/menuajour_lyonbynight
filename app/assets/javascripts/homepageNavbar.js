@@ -10,8 +10,12 @@ function transparent() {
     }
 }
 
-if (/^\/$/.test(window.location.pathname)) {
-    document.querySelector("main").classList.add("homepage");
-    transparent();
-    window.addEventListener("scroll", () => transparent());
+function initializeBanner() {
+    if (/^\/$/.test(window.location.pathname)) {
+        document.querySelector("main").classList.add("homepage");
+        transparent();
+        window.addEventListener("scroll", () => transparent());
+    }
 }
+
+document.querySelector("body").onload = initializeBanner()

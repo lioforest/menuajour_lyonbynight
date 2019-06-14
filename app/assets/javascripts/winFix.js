@@ -5,4 +5,4 @@ function winFix() {
     }
 }
 
-window.onload = winFix()
+document.querySelector("body").onload = winFix()
