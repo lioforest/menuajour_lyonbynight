@@ -18,4 +18,4 @@ function initializeBanner() {
     }
 }
 
-document.querySelector("body").onload = initializeBanner()
+window.addEventListener('load', () => initializeBanner())

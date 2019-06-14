@@ -5,4 +5,4 @@ function winFix() {
     }
 }
 
-document.querySelector("body").onload = winFix()
+window.addEventListener('load', () => winFix())
