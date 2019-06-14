@@ -112,11 +112,14 @@ body > main > div:nth-child(1) > section.mt-4 > div.row.d-flex.justify-content-a
     section.mt-4 div#creation_process.row.creation-subsection div.col-sm-12 p.text-center,
     section.mt-4 div.row.d-flex.justify-content-around.mt-4.creation-subsection div.col-md-3 p
     {
-        font-size: 1.5rem
+        font-size: 1.7rem
     }
 
     section.mt-4 div.row.d-flex.justify-content-around.mt-4.creation-subsection div.col-md-3
     {
+        padding: 0;
+        padding-left: 20px;
+        width: 100vw;
         margin-bottom: 30px;
     }
 
