@@ -77,8 +77,6 @@ body > main > div:nth-child(1) > section.mt-4 > div.row.d-flex.justify-content-a
     margin: auto;
     padding: 9px 10px 6px;
     border-radius: 50%;
-    position: absolute;
-    bottom: 5vh;
 }
 
 .down a,
