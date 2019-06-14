@@ -13,7 +13,7 @@
               <ul>
               <% @socials.each do | social |%>
                <li class="social_icon pl-0 pr-3">
-                <%= link_to social[:link], class: "ml-0" do %>
+                <%= link_to social[:link], class: "ml-0", :target => "_blank"  do %>
                   <i class="<%= social[:icon]%>"></i>
                 <% end %>
                 </li>

@@ -34,7 +34,7 @@
 
 .menu_show .section_title_line
 {
-    margin : 1.1vw 21.5vw;
+    margin : 1.1vw auto;
     width: 7.8vw;
     height: .3vw;
 }
