@@ -29,6 +29,7 @@ body > main > div > section:nth-child(3) > div.row > div > h2:before{
   width: 100%; height: 100%;
   background-image: url(slider_bg2.jpg) !important;
   filter: brightness(70%);
+  background-size: cover;
 }
 
 .about_img{
@@ -66,8 +67,4 @@ body > main > div:nth-child(1) > section.mt-4 > div.row.d-flex.justify-content-a
 .section_welcome > .container > .row [class*="col-"] .welcome_content .welcome_content_heading
 {
     font-family: 'Oregano', cursive !important;
-}
-
-@media (max-width: 576px) {
-    
 }

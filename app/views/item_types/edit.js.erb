@@ -20,12 +20,12 @@ function editItem() {
     const fields = ["name", "description", "price"]
 
     const values = fields.map(field => itemElt.querySelector(`[name=${field}]`).value)
-    
+
     dropModifications(itemElt, oldContent)
 
-    document.getElementById("itemForm").innerHTML = `<%=form_tag(item_type_path(@id), method: "put", id: "editItem", style: "display: none") do %><input type="text" name="name" value="${values[0]}"/><input type="text" name="description" value="${values[1]}"/><input type="number" name="price" value="${values[2]}"/><input type="submit" /><% end %>`
+    document.getElementById("itemForm").innerHTML = `<%=form_tag(user_item_type_path(user_id: current_user.id, id: @id), method: "put", id: "editItem", style: "display: none") do %><input type="text" name="name" value="${values[0]}"/><input type="text" name="description" value="${values[1]}"/><input type="number" name="price" value="${values[2]}"/><input type="submit" /><% end %>`
 
-    
+
 
 
     document.getElementById("editItem").querySelector("[type=submit").click()

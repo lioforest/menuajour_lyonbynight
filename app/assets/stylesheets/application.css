@@ -26,5 +26,6 @@
  *= require footer
  *= require header
  *= require main
+ *= require category_n_item
  */
 

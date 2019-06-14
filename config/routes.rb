@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :menus
       resources :subscriptions, path: "abonnement"
       resources :category_types
+      resources :item_types
     end
   end
 
@@ -18,7 +19,6 @@ Rails.application.routes.draw do
     root :to => "users#index"
   end
 
-  resources :item_types
   resources :charges
 
   #Static pages

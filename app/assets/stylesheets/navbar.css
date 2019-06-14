@@ -39,3 +39,11 @@ nav.navbar.transparent .nav-link:active
     color: var(--light);
     background: transparent;
 }
+
+/* Tablet and smaller */
+@media (max-width: 991.98px) {
+    .navbar.transparent
+    {
+        display: none;
+    }
+}
