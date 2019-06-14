@@ -17,6 +17,6 @@
 //= require assets/plugins/lightbox/dist/js/lightbox.min
 //= require assets/plugins/isotope/isotope.pkgd.min
 //= require assets/plugins/imagesloaded/imagesloaded.pkgd.min
-//= assets/js/custom
-//= assets/js/google_maps
-//= remove-alert
+//= require assets/js/custom
+//= require remove-alert
+//= require homepageNavbar

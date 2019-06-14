@@ -14,14 +14,10 @@
       </button>
     </div>
     <div class="col-md-1 d-flex justify-content-end align-items-end">
-      <button class="btn edit" title="Modifier la catégorie">
-          <a
-            href="<%= edit_user_category_type_path(id: category_type.id, user_id: current_user.id) %>"
-            data-remote="true"
-          >
-            <i class="fas fa-pencil-alt"></i>
-          </a>
-      </button>
+      
+        <%=button_to edit_user_category_type_path(id: category_type.id, user_id: current_user.id), method: :get, class:"btn", remote: true do%>
+        <i class="fas fa-pencil-alt" style="color: black;" data-toggle="tooltip" data-placement="top" title="Modifier la catégorie"></i>
+        <%end%>
     </div>
     <div class="col-md-1 d-flex justify-content-end align-items-end">
         <%= button_to user_category_type_path(:id => category_type.id, user_id: current_user.id), :method => :delete, data:{confirm: "Etes-vous certain de vouloir supprimer cette catégorie ? (Elle sera également retirée de tous les menus existants)."} , class:"btn" do%>

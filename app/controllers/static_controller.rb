@@ -109,6 +109,7 @@ class StaticController <ApplicationController
 
   def send_contact_email
     StaticMailer.contact_email(params).deliver_now
-    redirect_to contact_path + "#form"
+    flash[:success] = 'Votre message a bien été envoyé.'
+    redirect_to contact_path
   end
 end
