@@ -12,10 +12,6 @@
 			<p>Abonné depuis le : <%= @subscription.start_date.strftime("%d/%m/%Y") %></p>
 			<p>Abonné jusqu'au : <%= @subscription.end_date.strftime("%d/%m/%Y") %></p>
 		</div>
-
-		<%= button_to 'Supprimer mon abonnement', user_subscription_path(current_user.id, @subscription.id), method: 'delete', class:'btn btn-danger'%>
-		
-
 	</div>
 	
 </div>

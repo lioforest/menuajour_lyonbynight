@@ -1,9 +1,6 @@
 class ChargesController < ApplicationController
 	after_action :create_subscriber, only: [:create]
 
-	def new
-	end
-
 	def create
 	  # Amount in cents
 	  @amount = 36000
@@ -22,7 +19,7 @@ class ChargesController < ApplicationController
 
 	rescue Stripe::CardError => e
 		flash[:error] = e.message
-		redirect_to new_user_subscription(current_user.id)
+		redirect_to new_user_subscription_path(current_user.id)
 	end
 
 

@@ -8,7 +8,7 @@
                 <!--Name-->
                 <div class= "col-md-3">
                     <%= label_tag "Catégorie", nil , class: "form-label" %>
-                    <%= select_tag 'category_type_id', options_from_collection_for_select(@category_types, "id", "name"), class: "form-control"%>
+                    <%= select_tag 'category_type_id', options_from_collection_for_select(@category_types.order(:name), "id", "name"), class: "form-control"%>
                 </div>
                 <!--Description-->
                 <div class= "col-md-7">
