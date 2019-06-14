@@ -17,21 +17,16 @@
       <td><%= item_type.price %> €</td>
       <td></td>
       <td>
-        <button class="btn edit" title="Modifier l'item">
-            <a
-              href="<%= edit_user_item_type_path(user_id: current_user.id, id: item_type.id) %>"
-              data-remote="true"
-            >
-              <i class="fas fa-pencil-alt"></i>
-            </a>
-        </button>
-      </td>
-      <td>
-        <%= button_to user_category_type_path(:id => category_type.id, user_id: current_user.id, remove_item_type: true, item_type_id: item_type.id), :method => :put, class:"btn delete" do%>
-          <i class="fas fa-minus-circle" data-toggle="tooltip" data-placement="top" title="Retirer l'item de la catégorie"></i>
-        <%end%>
-      </td>
-    </tr>
-    <%end%>
-  </tbody>
+      <%= button_to edit_user_item_type_path(user_id: current_user.id, id: item_type.id), method: :get, remote: true, class:"btn edit" do%>
+      <i class="fas fa-pencil-alt" data-toggle="tooltip" data-placement="top" title="Modifier l'item"></i>
+      <%end%>
+    </td>
+    <td>
+      <%= button_to user_category_type_path(:id => category_type.id, user_id: current_user.id, remove_item_type: true, item_type_id: item_type.id), :method => :put, class:"btn delete" do%>
+      <i class="fas fa-minus-circle" data-toggle="tooltip" data-placement="top" title="Retirer l'item de la catégorie"></i>
+      <%end%>
+    </td>
+  </tr>
+  <%end%>
+</tbody>
 </table>
