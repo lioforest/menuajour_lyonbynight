@@ -24,9 +24,20 @@
                 <li><%= image_tag "dash_icon.svg", :alt => "dash_icon", :class => "icon_banner" %></li>
               </ul>
               <h3 class="welcome_content_caption">Créez et adaptez le menu de votre restaurant <br/> en quelques clics</h3>
-              <div class="welcome_content_btn">
-                <a href="#creation_process" class="btn btn-default mb-4">Découvrir</a>
+              <% if user_signed_in? %>
+                <div class="d-flex align-items-center justify-content-center">
+                <div class="welcome_content_btn mr-5">
+                  <%= link_to "Mes plats", item_types_path, class: "btn btn-default mb-4" %>
+                </div>
+                <div class="welcome_content_btn ml-5">
+                  <%= link_to "Mes menus", user_menus_path(current_user.id), class: "btn btn-default mb-4" %>
+                </div>
               </div>
+              <% elsif %>
+                <div class="welcome_content_btn">
+                  <%= link_to "Notre offre", notre_offre_path, class: "btn btn-default mb-4" %>
+                </div>
+              <% end %>
             </div> <!-- .welcome_content -->
           </div>
         </div> <!-- .row -->
