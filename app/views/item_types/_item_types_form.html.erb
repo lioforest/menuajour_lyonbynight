@@ -1,6 +1,6 @@
 <div id="<%= id %>" class="collapse" aria-labelledby="<%= aria_label %>" data-parent="#accordion">
     <div class="card-body">
-        <%= form_tag(item_types_path, method: "post") do %>
+        <%= form_tag(user_item_types_path(current_user.id), method: "post") do %>
             <div class="row align-items-center">
             <div class= "col-md-11">
                 <!--1st line-->
@@ -8,7 +8,7 @@
                 <!--Name-->
                 <div class= "col-md-3">
                     <%= label_tag "Catégorie", nil , class: "form-label" %>
-                    <%= select_tag 'category_type_id', options_from_collection_for_select(@category_types, "id", "name"), class: "form-control"%>
+                    <%= select_tag 'category_type_id', options_from_collection_for_select(@category_types.order(:name), "id", "name"), class: "form-control"%>
                 </div>
                 <!--Description-->
                 <div class= "col-md-7">
@@ -18,14 +18,14 @@
                 <!--Prix-->
                 <div class= "col-md-2">
                     <%= label_tag "Prix en €", nil , class: "form-label" %>
-                    <%=number_field_tag 'price', nil, step: 0.1, placeholder: "Ex : 5.55", class: "form-control", :required => 'required'%>
+                    <%=number_field_tag 'price', nil, step: 0.01, placeholder: "Ex : 5.55", class: "form-control", :required => 'required'%>
                 </div>
                 </div>
                 <!--2nd line : Category-->
                 <div class="row align-items-end">
                 <div class= "col-md-12">
                     <%= label_tag "Description", nil , class: "form-label" %>
-                    <%= text_field_tag :description, nil, placeholder: "Description", class: "form-control", :required => 'required' %>
+                    <%= text_field_tag :description, nil, placeholder: "Description", class: "form-control"%>
                 </div>
                 </div>
             </div>

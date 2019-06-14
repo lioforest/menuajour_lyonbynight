@@ -10,8 +10,7 @@ function transparent() {
     }
 }
 
-if (window.location.pathname === "/"|| "") {
-    document.querySelector("main").classList.add("homepage")
-    transparent()
-    window.addEventListener("scroll", () => transparent())
-}
+if (/\//.test(window.location.pathname)) { alert("Will you work ?") }
+/*    document.querySelector("main").classList.add("homepage");
+    transparent();
+    window.addEventListener("scroll", () => transparent()); */
