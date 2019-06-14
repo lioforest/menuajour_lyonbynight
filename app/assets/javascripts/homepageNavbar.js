@@ -10,7 +10,7 @@ function transparent() {
     }
 }
 
-if (/\//.test(window.location.pathname)) { alert(Will you work ?) }
+if (/\//.test(window.location.pathname)) { alert("Will you work ?") }
 /*    document.querySelector("main").classList.add("homepage");
     transparent();
     window.addEventListener("scroll", () => transparent()); */
