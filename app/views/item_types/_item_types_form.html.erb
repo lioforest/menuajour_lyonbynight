@@ -1,6 +1,6 @@
 <div id="<%= id %>" class="collapse" aria-labelledby="<%= aria_label %>" data-parent="#accordion">
     <div class="card-body">
-        <%= form_tag(item_types_path, method: "post") do %>
+        <%= form_tag(user_item_types_path(current_user.id), method: "post") do %>
             <div class="row align-items-center">
             <div class= "col-md-11">
                 <!--1st line-->

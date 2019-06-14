@@ -32,7 +32,7 @@
           aria-haspopup="true" aria-expanded="false"><%= current_user.email %></a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="<%= user_path(current_user.id) %>">Mon profil</a></li>
-            <li><a class="dropdown-item" href="<%= item_types_path %>">Mes plats</a></li>
+            <li><a class="dropdown-item" href="<%= user_item_types_path(current_user.id) %>">Mes plats</a></li>
             <li><a class="dropdown-item" href="<%= user_menus_path(current_user.id)%>">Mes menus</a></li>
             <% if is_subscribed_user? %>
               <li><a class="dropdown-item" href="<%= user_subscriptions_path(current_user.id)%>">Mon offre</a></li>

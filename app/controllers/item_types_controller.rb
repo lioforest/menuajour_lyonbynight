@@ -36,7 +36,7 @@ class ItemTypesController < ApplicationController
         price: params[:price])
       flash[:success] = 'Votre changement a été enregistré'
 
-      redirect_to item_types_path(params[:id])
+      redirect_to user_item_types_path(current_user.id, params[:id])
     end
   end
 
