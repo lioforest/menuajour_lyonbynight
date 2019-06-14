@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :users, path: "", :path_names => { :sign_in => 'se-connecter', :sign_out => 'se-deconnecter', :sign_up => 's-enregistrer' }
   scope(path_names: {new: "nouveau", edit: "modifier"}) do
-    resources :users, only: [:show, :update], path: "", path_names: { show: "mon-profil"} do
+    resources :users, only: [:show, :update], path: "clients" do
       resources :menus
       resources :subscriptions, path: "abonnement"
       resources :category_types
@@ -30,6 +30,6 @@ Rails.application.routes.draw do
 
   get 'admin', to: 'admin/users#index'
 
-  get '*path', to: redirect('/*')
+  #get '*path', to: redirect('/*')
   get '/*', to: "static#error_404"
 end
