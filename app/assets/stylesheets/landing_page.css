@@ -69,6 +69,13 @@ body > main > div:nth-child(1) > section.mt-4 > div.row.d-flex.justify-content-a
     font-family: 'Oregano', cursive !important;
 }
 
+.down-container
+{
+    position: absolute;
+    bottom: 5vh;
+    width: 100%;
+}
+
 .down
 {
     background-color: #F1AE2B;
