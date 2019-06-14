@@ -28,7 +28,7 @@ class Admin::SubscriptionsController < Admin::AdminController
 
     respond_to do |format|
       if @admin_subscription.save
-        format.html { redirect_to [:admin, @admin_subscription], notice: 'Subscription was successfully created.' }
+        format.html { redirect_to [:admin, @admin_subscription], notice: 'L\'abonnement a bien été créé !' }
         format.json { render :show, status: :created, location: @admin_subscription }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class Admin::SubscriptionsController < Admin::AdminController
   def update
     respond_to do |format|
       if @admin_subscription.update(admin_subscription_params)
-        format.html { redirect_to [:admin, @admin_subscription], notice: 'Subscription was successfully updated.' }
+        format.html { redirect_to [:admin, @admin_subscription], notice: 'L\'abonnement a bien été mis à jour !' }
         format.json { render :show, status: :ok, location: @admin_subscription }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class Admin::SubscriptionsController < Admin::AdminController
   def destroy
     @admin_subscription.destroy
     respond_to do |format|
-      format.html { redirect_to admin_subscriptions_url, notice: 'Subscription was successfully destroyed.' }
+      format.html { redirect_to admin_subscriptions_url, notice: 'L\'abonnement a bien été créé supprimé.' }
       format.json { head :no_content }
     end
   end

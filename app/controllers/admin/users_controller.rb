@@ -28,7 +28,7 @@ class Admin::UsersController < Admin::AdminController
 
     respond_to do |format|
       if @admin_user.save
-        format.html { redirect_to [:admin, @admin_user], notice: 'User was successfully created.' }
+        format.html { redirect_to [:admin, @admin_user], notice: 'L\'utilisateur a bien été créé !' }
         format.json { render :show, status: :created, location: @admin_user }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class Admin::UsersController < Admin::AdminController
     respond_to do |format|
       if @admin_user.update(admin_user_params)
         format.html {
-         redirect_to [:admin, @admin_user], notice:  'User was successfully updated.'
+         redirect_to [:admin, @admin_user], notice:  'L\'utilisateur a bien été mis à jour !'
        }
         format.json { render :show, status: :ok, location: @admin_user }
       else
@@ -58,7 +58,7 @@ class Admin::UsersController < Admin::AdminController
   def destroy
     @admin_user.destroy
     respond_to do |format|
-      format.html { redirect_to admin_users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to admin_users_url, notice: 'L\'utilisateur a bien été supprimé.' }
       format.json { head :no_content }
     end
   end
