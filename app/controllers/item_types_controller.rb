@@ -7,8 +7,6 @@ class ItemTypesController < ApplicationController
     @subtitle = "Ici vous pouvez créer et gérer vos plats, associés à des catégories (ex : entrées, boissons...).\n Une fois cela fait, vous n'aurez plus qu'à les utiliser pour générer autant de menus que vous souhaitez via la rubrique \"Mes Menus\" !"
   end
 
-  def show
-  end
 
   def create
     item_name = params[:name]
@@ -45,9 +43,6 @@ class ItemTypesController < ApplicationController
       ItemType.find(params[:item_type_id]).destroy
     end
     redirect_back(fallback_location: root_path)
-  end
-
-  def new
   end
 
   private
