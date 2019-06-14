@@ -10,7 +10,7 @@ function transparent() {
     }
 }
 
-if (window.location.pathname === "/"|| "") {
+if (window.location.pathname === ("/" || "")) {
     document.querySelector("main").classList.add("homepage")
     transparent()
     window.addEventListener("scroll", () => transparent())
