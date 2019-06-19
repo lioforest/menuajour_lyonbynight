@@ -1,0 +1,32 @@
+<!--Header-->
+<table  class="table table-hover mt-2">
+  <thead>
+    <tr>
+      <th class="w-10-vw">Nom</th>
+      <th class="w-60-vw">Description</th>
+      <th class="w-10-vw">Prix</th>
+      <th class="w-30-vw" colspan= "3"></th>
+    </tr>
+  </thead>
+  <!--Item Info-->
+  <tbody>
+    <% category_type.item_types.order(:name).each do |item_type| %>
+    <tr id="item<%= item_type.id %>">
+      <td><%= item_type.name %></td>
+      <td><%= item_type.description %></td>
+      <td><%= item_type.price %> €</td>
+      <td></td>
+      <td>
+      <%= button_to edit_user_item_type_path(user_id: current_user.id, id: item_type.id), method: :get, remote: true, class:"btn edit" do%>
+      <i class="fas fa-pencil-alt" data-toggle="tooltip" data-placement="top" title="Modifier l'item"></i>
+      <%end%>
+    </td>
+    <td>
+      <%= button_to user_category_type_path(:id => category_type.id, user_id: current_user.id, remove_item_type: true, item_type_id: item_type.id), :method => :put, class:"btn delete" do%>
+      <i class="fas fa-minus-circle" data-toggle="tooltip" data-placement="top" title="Retirer l'item de la catégorie"></i>
+      <%end%>
+    </td>
+  </tr>
+  <%end%>
+</tbody>
+</table>

@@ -1,31 +1,26 @@
-    <%= render "shared/header", title: @menu.title%>
+    <%= render "shared/header_with_subtitle", title: @menu.title, subtitle: @subtitle%>
+    <%= render "header_edit", menu: @menu %>
 
-	      <h1>Editer le menu n°: <%= @menu.id%> </h1>
-	      <%= @menu.name%>
-		<br><br>
-	      <%= @menu.title%>
-		<br><br>
-	      <%= @menu.subtitle%>
-		<br><br>
-			<%= @menu %>
-		<%= form_for edit_user_menu_path do |f| %>
-		       <div class ="form_group">
-			        <label> Nom du menu </label>
-			        <%= f.text_field :name, class: 'form-control' %>
-		       </div>
-		       <div class ="form_group">
-			        <label> Le titre du menu :  </label>
-			        <%= f.text_area :title, class: 'form-control' %>
-		        </div>
-		       <div class ="form_group">
-			        <label> Sous-titre du menu :  </label>
-			        <%= f.text_area :subtitle, class: 'form-control' %>
-		        </div>
 
-		        <br><br>
-		       <div class ="form_group">
-			        <button type="submit" class="btn btn-primary">Valider</button>
-		        </div>
-		<% end%>
-	</div>
- </section>
+    <div class="container">
+    	<!--################################################-->
+    	<!--########## Liste Catégories/Items ##############-->
+    	<!--################################################-->
+
+    	<!--******************* Catégories *******************-->
+    	<%@menu.categories.each do |category|%>
+
+    	<%= render "category_edit", category: category, menu: @menu %>
+        <!--******************* Items *******************-->
+        <%if category.items.length != 0%>
+
+        <%= render "item_edit", category: category, menu: @menu %>
+
+        <%end%>
+        <%end%>
+    </div>
+    <div class="d-flex justify-content-center">
+        <%= button_to "Retour à Mes Menus", user_menus_path, :method => :get, class:"btn btn-primary text-center mx-5 my-5", style:'min-width: 240px;'%>
+        <%= button_to "Mes Plats", user_item_types_path(current_user.id), :method => :get, class:"btn btn-outline-secondary text-center mx-5 my-5", style:'min-width: 240px; color: grey'%>
+        <%= button_to "Voir", user_menu_path(:id => @menu.id), :method => :get, class:"btn btn-primary mx-5 my-5", style:'min-width: 240px;' %>
+    </div>

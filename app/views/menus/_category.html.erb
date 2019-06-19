@@ -1,13 +1,13 @@
 <div>
-    <h3><span class="category-name "><%= category.name%></span></h3>
+    <h3><span class="category-name "><%= category.name.upcase%></span></h3>
     <% category.items.each do | item | %>
         <% item = item.item_type %>
         <div class="d-flex justify-content-between mb-1">
             <div>
-                <h4 class="mb-0"><%= item.name.capitalize %></h4>
+                <h4 class="mb-0"><%= item.name.upcase %></h4>
                 <p><%= item.description.capitalize %></p>
             </div>
-            <div class="d-flex justify-content-end align-items-begin">
+            <div class="d-flex justify-content-end">
                 <h4>
                     <%= number_to_currency(
                         item.price,

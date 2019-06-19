@@ -64,11 +64,13 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'table_print'
 gem 'faker'
-gem 'stripe'
 gem 'dotenv-rails'
 gem 'mailjet'
 gem 'letter_opener'
 gem 'rails-erd'
+gem 'stripe'
+gem 'wicked_pdf', '~> 1.1'
+gem 'wkhtmltopdf-binary'
 
 #adding React through Webpacker
 gem 'webpacker', '>= 4.0.x'

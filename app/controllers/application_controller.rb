@@ -27,30 +27,49 @@ class ApplicationController < ActionController::Base
 
     @supports = [
       {
+        route: root_path,
+        text: "Accueil"
+      },
+      {
         route: a_propos_path,
-        text: "A propos de nous"
+        text: "À propos de nous"
       },
       {
         route: contact_path,
         text: "Nous contacter"
       },
       {
-        route: "#",
-        text: "Tarifs"
+        route: notre_offre_path,
+        text: "Notre offre"
       },
       {
-        route: "#",
+        route: en_cours_path,
         text: "CGU"
       },
       {
-        route: "#",
+        route: en_cours_path,
         text: "Mentions Légales"
       }
     ]
   end
 
   def create_subscriber
-    Subscription.create(name: 'Offre 1', price: 100, start_date: Date.today, end_date: (Date.today + 366), user: current_user)
+    new_sub = Subscription.new(name: 'Offre Impression Illimitée', price: 360, start_date: Date.today, end_date: (Date.today + 366), user: current_user)
+      if new_sub.save
+        flash[:success] = 'Votre paiement a bien été prit en compte'
+      else
+        flash[:error] = 'Suite à un problème, votre paiement n\'a pas été prit en compte'
+      end
+  end
+
+  def is_subscribed_user?
+
+    if current_user.subscriptions.last != nil
+      if current_user.subscriptions.last.end_date > Date.today
+        return true
+      end
+  end
+    
   end
 
 end

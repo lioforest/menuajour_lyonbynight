@@ -1,0 +1,42 @@
+<h3>Vous avez actuellement <%= User.all.count %> utilisateurs inscrits :</h3>
+
+<div class="form-group">
+  <%= link_to 'Ajouter un utilisateur', new_admin_user_path, class: 'btn btn-default' %>
+</div>
+
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Email</th>
+      <th>Etat abonnement</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_users.each do |admin_user| %>
+      <tr>
+        <td><%= admin_user.id %></td> 
+        <td><%= admin_user.email %></td> 
+        <td>        
+            <%  if admin_user.subscriptions.last != nil %>
+              <% if admin_user.subscriptions.last.end_date > Date.today %>
+                Abonnement valide 
+              <% else %>
+                Abonnement terminé 
+              <% end %>
+            <% else %>
+                Jamais abonné 
+            <% end %>
+          </td>
+        <td><%= link_to 'Afficher', admin_user_path(admin_user), class: 'btn btn-default'%> </td>
+        <td><%= link_to 'Modifier', edit_admin_user_path(admin_user), class: 'btn btn-default'%>  </td>
+        <td><%= link_to 'Supprimer', admin_user_path(admin_user), method: :delete, data: { confirm: 'Etes vous sûr?' } , class: 'btn btn-danger'%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

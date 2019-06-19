@@ -19,4 +19,13 @@
  *= require navbar
  *= require static
  *= require landing_page
+ *= require menu_show
+ *= require app
+ *= require charts
+ *= require contact
+ *= require footer
+ *= require header
+ *= require main
+ *= require category_n_item
  */
+

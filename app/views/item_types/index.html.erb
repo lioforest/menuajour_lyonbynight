@@ -1,0 +1,37 @@
+<%= render "shared/header_with_subtitle", title: @title, subtitle: @subtitle %>
+
+
+<!--################################################-->
+<!--########## Adding Categories/Items ##############-->
+<!--################################################-->
+
+<%= render "add_header"%>
+
+<div class="container mb-5">
+  <div id="itemForm"></div>
+
+  <!--################################################-->
+  <!--########## List of Categories/Items ##############-->
+  <!--################################################-->
+    <!--******************* Catégories *******************-->
+    <%@category_types.order(:name).each do |category_type|%>
+    <div class="categoryElt">
+      <%= render "category_types/category_type", category_type: category_type %>
+
+      <!--******************* Items *******************-->
+      <%if category_type.item_types.length !=0%>
+
+      <%= render "item_types", category_type: category_type %>
+
+      <%end%>
+    </div>
+    <%end%>
+  </div>
+</div>
+
+<div class="d-flex align-items-center justify-content-center">
+<%= button_to "Mes Menus", user_menus_path(current_user.id), :method => :get, class:"btn btn-primary text-center mt-5 mb-2", style:'min-width: 240px;'%>
+</div>
+
+<%= render "remove_item_footer"%>
+

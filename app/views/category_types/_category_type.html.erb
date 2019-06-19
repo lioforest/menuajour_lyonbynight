@@ -1,0 +1,45 @@
+<% html_id_for_add_item_to_category_type = "category_type-#{category_type.id}"%>
+<div id="accordion<%= category_type.id %>">
+  <div class="row">
+    <div class="col-md-1 d-flex justify-content-start align-items-end">
+    </div>
+    <div class="col-md-8 d-flex justify-content-center align-items-center" >
+      <div class="row">
+          <h3> <%= category_type.name %></h3>
+      </div>
+    </div>
+    <div class="col-md-1 d-flex justify-content-end align-items-end">
+      <button class="btn" data-toggle="collapse" data-target="#<%=html_id_for_add_item_to_category_type%>" aria-expanded="false" aria-controls="collapse-<%=html_id_for_add_item_to_category_type%>">
+            <i class="fas fa-plus-circle" style="color: black;" data-toggle="tooltip" data-placement="top" title="Ajouter un item à la catégorie"></i>
+      </button>
+    </div>
+    <div class="col-md-1 d-flex justify-content-end align-items-end">
+      
+        <%=button_to edit_user_category_type_path(id: category_type.id, user_id: current_user.id), method: :get, class:"btn", remote: true do%>
+        <i class="fas fa-pencil-alt" style="color: black;" data-toggle="tooltip" data-placement="top" title="Modifier la catégorie"></i>
+        <%end%>
+    </div>
+    <div class="col-md-1 d-flex justify-content-end align-items-end">
+        <%= button_to user_category_type_path(:id => category_type.id, user_id: current_user.id), :method => :delete, data:{confirm: "Etes-vous certain de vouloir supprimer cette catégorie ? (Elle sera également retirée de tous les menus existants)."} , class:"btn" do%>
+        <i class="fas fa-trash-alt" style="color: black;" data-toggle="tooltip" data-placement="top" title="Supprimer la catégorie"></i>
+        <%end%>
+    </div>
+  </div>
+  <div id="<%=html_id_for_add_item_to_category_type%>" class="row collapse" aria-labelledby="headingX" data-parent="#accordion<%= category_type.id %>">
+    <div class="card-body">
+      <%= form_tag user_category_type_path(category_type.id, user_id: current_user.id), method: "put" do %>
+        <%= label_tag "Ajouter un item à la catégorie", nil , class: "form-label" %>
+        <div class="row">
+          <div class="col-md-11 d-flex justify-content-end align-items-end">
+            <%= select_tag 'item_type_id', options_from_collection_for_select(current_user.item_types.order(:name), "id", "name_and_price"), class: "form-control"%>
+          </div>
+          <div class="col-md-1 d-flex justify-content-end align-items-end">
+              <%= button_tag type: "submit", class: "btn", add_item_type: "true" do %>
+                <i class="fas fa-plus fa-2x" data-toggle="tooltip" data-placement="top" title="Ajouter l'item"></i>
+              <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

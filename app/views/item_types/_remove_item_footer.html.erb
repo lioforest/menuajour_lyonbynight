@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <% if current_user.has_example_item_types? %>
+  <div class="col-md 8 d-flex justify-content-center my-5">
+    <%= button_to "Supprimer les exemples", user_path(id: current_user.id, action_type: "delete_exemple_items"), method: "put", class:"btn btn-danger" %>
+  </div>
+  <%end%>
+  <div id="accordion">
+    <div class="row align-items-center mt-5">
+      <div class="col-md-12 px-0">
+        <%= form_tag user_item_type_path(user_id: current_user.id, id: :item_type_id), method: "delete" do %>
+        <div class="card border-danger">
+          <div class="table-danger bg-danger" id="headingTwo" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" data-toggle="tooltip" data-placement="top" title="Cliquer pour supprimer un item">
+            <h5 class="mb-0 btn collapsed text-white">
+              Supprimer un item définitivement
+            </h5>
+          </div>
+          <div id="collapseFour" class="collapse px-1" aria-labelledby="headingFour" data-parent="#accordion">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <div class= "col-md-11">
+                  <!--2nd line : Category-->
+                  <div class="row align-items-end">
+                    <div class= "col-md-12">
+                      <%= label_tag "Item à supprimer", nil , class: "form-label" %>
+                      <p>(Attention, cet item sera supprimé définitivement de toutes les catégories. Vous ne pourrez pas revenir en arrière).</p>
+                      <%= select_tag :item_type_id, options_from_collection_for_select(current_user.item_types.order(:name), "id", "name_and_price"), class: "form-control"%>
+                    </div>
+                  </div>
+                </div>
+                <!-- Button delete-->
+                <div class="col-md-1 d-flex justify-content-center align-items-center">
+                  <%= button_tag type: "submit", data: {confirm: "Etes-vous certain de vouloir supprimer cet item? (Il sera également retiré de toutes les catégories et de tous les menus existants)."} , class: "btn mt-5" do%>
+                  <i class="fas fa-trash-alt fa-2x text-danger mt-4" data-toggle="tooltip" data-placement="top" title="Créer l'item"></i>
+                  <%end%>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

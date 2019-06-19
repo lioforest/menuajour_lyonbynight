@@ -23,7 +23,7 @@ def description
 end
 
 def price
-  self.item_type.name
+  self.item_type.price
 end
 
 #movers

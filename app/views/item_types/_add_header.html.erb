@@ -1,0 +1,81 @@
+<!--################################################-->
+<!--############### Accordion ######################-->
+<!--################################################-->
+<div class="container-fluid px-0">
+  <div id="accordion">
+    <!--******************* Add a category *******************-->
+    <div class="row align-items-end mx-0">
+      <div class= "col-md-12 px-0">
+        <div class="card">
+          <div class="table-active" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" data-toggle="tooltip" data-placement="top" title="Cliquer pour créer une nouvelle catégorie">
+            <h5 class="mb-0 btn collapsed">
+              Créer une nouvelle catégorie
+            </h5>
+          </div>
+          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              <%= render "category_types/category_type_form",
+              title: "Ajouter un catégorie",
+              form_method: "POST",
+              route: user_category_types_path(current_user.id), category_name: nil,
+              icon: "fas fa-plus"
+              %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--******************* Add an Item *******************-->
+    <div class="row align-items-center mx-0">
+      <div class="col-md-12 px-0">
+        <div class="card">
+          <div class="table-active" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" data-toggle="tooltip" data-placement="top" title="Cliquer pour créer un nouvel item">
+            <h5 class="mb-0 btn collapsed">
+              Créer un nouvel item
+            </h5>
+          </div>
+          <%= render "item_types_form", aria_label: "headingTwo", id: "collapseTwo" %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--******************* Filter the categories *******************-->
+    <div class="row align-items-center mx-0">
+      <div class="col-md-12 px-0">
+        <div class="card">
+          <div class="table-active" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" data-toggle="tooltip" data-placement="top" title="Cliquer pour filtrer les catégories">
+            <h5 class="mb-0 btn collapsed">
+              Filtrer les catégories
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body d-flex justify-content-start flex-wrap">
+              <% @category_types.order(:name).each do | category | %>
+              <div class="categoryFilter">
+                <%= check_box_tag category.name, "accordion#{category.id}", true %>
+                <%= label_tag category.name %>
+              </div>
+              <% end %>
+            </div>
+            <div class="card-body d-flex justify-content-start flex-wrap">
+              <div class="filter">
+                <%= check_box_tag "selectedAll", "all", true %>
+                <%= label_tag "selectedAll", "Tout choisir" %>
+              </div>
+              <div class="filter">
+                <%= check_box_tag "selectedNone", "none", false %>
+                <%= label_tag "selectedNone", "Retirer toutes les catégories" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--################################################-->
+<!--################ end of Accordion #################-->
+<!--################################################-->

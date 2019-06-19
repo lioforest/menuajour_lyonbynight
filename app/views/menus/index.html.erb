@@ -1,15 +1,18 @@
-<%= render "shared/header", title: "Vos Menus" %>
+<%= render "shared/header_with_subtitle", title: @title, subtitle: @subtitle %>
+<%= render "info_header_create" %>
 
 <div class="container mt-5">
 
   <%@menus.each do |menu|%>
   <div class="card mb-5">
     <div class="card-body ml-4 d-flex align-items-center justify-content-between">
-
-      <div >
-        <p><strong> <%= menu.name %></strong></p>
+      <div>
+        <h5> <strong> <%= menu.name %></strong></h5>
+        <div class="d-flex justify-content-center align-items-center">
+        <p class="mr-1"><em> <%="#{menu.title} "%></em></p>
+        <p class="ml-2"> <%="- #{menu.subtitle}"%></p>
+        </div>
       </div>
-    
       <div class="d-flex align-items">
         <div class="p-2">
           <div class="option_delete">
@@ -25,7 +28,7 @@
 
         <div class="p-2">
           <div class="option_delete">
-            <%= button_to "Supprimer", user_menu_path(:id => menu.id), :method => :delete, class:"btn btn-danger"%>
+            <%= button_to "Supprimer", user_menu_path(:id => menu.id), :method => :delete, data: {confirm: "Attention, êtes-vous sûr de vouloir supprimer ce menu?"}, class:"btn btn-danger"%>
           </div>
         </div>
       </div>
@@ -33,5 +36,7 @@
 
   </div>
   <%end%>
-  <%= render "shared/back_button"%>
+  <div class="d-flex align-items-center justify-content-center">
+  <%= button_to "Mes Plats", user_item_types_path(current_user.id), :method => :get, class:"btn btn-primary text-center mx-5 my-5", style:'min-width: 240px;'%>
+  </div>
 </div>

@@ -1,0 +1,16 @@
+.w-10-vw {
+  width: 10vw;
+}
+.w-60-vw {
+  width: 60vw;
+}
+
+#items th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+}
+
+#items tr:hover {background-color: #ddd;
+    padding-top: 90px;
+}

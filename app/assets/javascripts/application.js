@@ -10,11 +10,16 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require homepageNavbar
+//= require winFix
+//= require remove-alert
 //= require rails-ujs
 //= require activestorage
 //= require_tree .
+//= require filter
 //= require assets/plugins/lightbox/dist/js/lightbox.min
 //= require assets/plugins/isotope/isotope.pkgd.min
 //= require assets/plugins/imagesloaded/imagesloaded.pkgd.min
-//= assets/js/custom
-//= assets/js/google_maps
+//= require assets/js/custom
+
+

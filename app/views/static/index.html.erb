@@ -1,18 +1,12 @@
 <div data-spy="scroll" data-target=".navbar" data-offset="70">
-    <!-- TO THE TOP BUTTON
-    ================================================== -->
-    <a id="back-to-top" href="#section_welcome" class="btn btn-primary back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left">
-      <i class="ion-android-arrow-up"></i>
-    </a>
-
     <!-- CONTENT
     ==================================================== -->
 
     <!-- section welcome -->
-    <section class="section_welcome" id="section_welcome" style="background-color: black;">
+    <section class="section_welcome" id="section_welcome">
       <div class="container">
         <div class="row">
-          <div class="col-sm-6 col-sm-offset-3">
+          <div class="col-sm-10 col-sm-offset-3">
             <div class="welcome_content">
               <h1 class="welcome_content_heading">Menu à jour</h1>
               <p class="welcome_content_subheading">Créateur d'envies</p>
@@ -23,11 +17,25 @@
                 <li><%= image_tag "knife_mini_icon.svg", :alt => "knife_mini_icon", :class => "img-responsive icon_banner" %></li>
                 <li><%= image_tag "dash_icon.svg", :alt => "dash_icon", :class => "icon_banner" %></li>
               </ul>
-              <h3 class="welcome_content_caption">Créer votre futur menu en quelques clicks</h3>
-              <div class="welcome_content_btn">
-                <a href="#section_about" class="btn btn-default">Discover</a>
+              <h3 class="welcome_content_caption">Créez et adaptez le menu de votre restaurant <br/> en quelques clics</h3>
+              <% if user_signed_in? %>
+                <div class="d-flex align-items-center justify-content-center">
+                <div class="welcome_content_btn mr-5">
+                  <%= link_to "Mes plats", user_item_types_path(current_user.id), class: "btn btn-default mb-4" %>
+                </div>
+                <div class="welcome_content_btn ml-5">
+                  <%= link_to "Mes menus", user_menus_path(current_user.id), class: "btn btn-default mb-4" %>
+                </div>
               </div>
+              <% elsif %>
+                <div class="welcome_content_btn">
+                  <%= link_to "Notre offre", notre_offre_path, class: "btn btn-default mb-4" %>
+                </div>
+              <% end %>
             </div> <!-- .welcome_content -->
+            <div class="down-container">
+              <div class="down"><a href="#creation_process"><i class="fas fa-chevron-down fa-3x"></i></a></div>
+            </div>
           </div>
         </div> <!-- .row -->
       </div> <!-- .container -->
@@ -36,11 +44,11 @@
     <!-- section about -->
     <section class="mt-4">
 
-        <div class="row creation-subsection">
+        <div class="row creation-subsection" id="creation_process">
           <div class="col-sm-12">
             <h2 class="section_title">&#8722; Création &#8722;</h2>
             <hr class="section_title_line">
-            <p class="text-center">En 3 étapes simple, créer un menu rapidement, à votre image.</p>
+            <p class="text-center">En 3 étapes simples, créez un menu rapidement, à votre image.</p>
           </div>
         </div>
 
@@ -51,4 +59,5 @@
         </div> <!-- end row -->
       </div>
     </section>
+    <section id="warning-small-devices">Pour profiter de nos services, consulter notre site sur un ordinateur.</section>
 

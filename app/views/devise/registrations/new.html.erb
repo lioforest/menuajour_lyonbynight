@@ -7,8 +7,18 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="form-group">
-    <%= f.label :email %><br />
+    <%= f.label :email, "Adresse mail" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :first_name, "Prénom" %><small> (Non obligatoire)</small><br />
+    <%= f.text_field :first_name, autofocus: true, class:'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :last_name, "Nom" %><small> (Non obligatoire)</small><br />
+    <%= f.text_field :last_name, autofocus: true, class:'form-control' %>
   </div>
 
   <div class="form-group">

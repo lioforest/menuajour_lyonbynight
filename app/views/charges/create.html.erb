@@ -1,14 +1,23 @@
-<div class="container">
+<% @title = "Paiement accepté" %>
 
-	<div class="col-md-6">
+<%= render "shared/header", title: @title %>
 
-		<h2>Thanks, you paid <strong>$5.00</strong>!</h2>
+<div class="container d-flex justify-content-center mb-5">
+
+	<div class="col-md-6 d-flex flex-column align-items-center">
+      <div class="mt-5">
+		<p>Merci pour votre paiement de <strong>360€</strong>!</p>
+		<p>Félicitations, vous bénéficiez désormais de notre offre. Vous pouvez maintenant générer et télécharger les versions PDF de vos menus.</p>
+		<br/>
+		<p>Cordialement,</p>
+		<p>Toutes l'équipe de Menu à jour.</p>
 		<br/>
 		<br/>
-		<a class="btn btn-primary" href="<%= user_subscriptions_path(current_user.id) %>">Voir mon abonnement</a>
-		<a class="btn btn-primary" href="<%= root_path %>">Retour à la page d'accueil</a>
-
-
+		<br/>
+	  </div>
+	    <%= link_to "Voir mon abonnement", user_subscriptions_path(current_user.id), class: 'btn btn-primary'%>
+		<br/>
+		<%= link_to "Retour à la page d'accueil", root_path, class: 'btn btn-outline-secondary'%>
 	</div>
 
 </div>

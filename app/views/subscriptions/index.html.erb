@@ -1,22 +1,22 @@
-<div class="container d-flex justify-content-center">
+<%= render "shared/header", title: @title %>
 
-	<div class="col-md-8 d-flex flex-column align-items-center mt-5 mb-5 justify-content-around" style="height: 500px;">
+<div class="container d-flex align-items-center justify-content-center">
 
-		<h2>Mon offre actuelle</h2>
+	<div class="col-md-8 d-flex flex-column align-items-center mt-5 mb-5 justify-content-around border border-grey shadow" style="height: 500px;">
 
-		<div><%= @subscription.name %></div>
-		<div><%= @subscription.price %>/mois</div>
+		<h2 style="text-decoration: underline; text-decoration-color: #f1ae2b;">Mon offre actuelle</h2>
+
+		<div><strong style="font-size: 1.2em;"><%= @subscription.name %></strong></div>
+		<div><%= @subscription.price %>€/an</div>
 		<div>
-			<p>Avantage 1</p>
-			<p>Avantage 2</p>
-			<p>Avantage 3</p>
-
+			<p>Abonné depuis le : <%= @subscription.start_date.strftime("%d/%m/%Y") %></p>
+			<p>Abonné jusqu'au : <%= @subscription.end_date.strftime("%d/%m/%Y") %></p>
 		</div>
-		<div>Abonné depuis le : <%= @subscription.start_date %></div>
-		<div>Abonné jusqu'au : <%= @subscription.end_date %></div>
-		
-		<%= button_to 'Supprimer mon abonnement', user_subscription_path(current_user.id, @subscription.id), method: 'delete', class:'btn btn-danger'%>
-
 	</div>
 	
+	
+</div>
+
+<div class="d-flex align-items-center justify-content-center mb-5">
+	<%= link_to "Retour vers mon profil", user_path(current_user.id), class: "btn btn-primary" %>
 </div>

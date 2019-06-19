@@ -5,10 +5,45 @@ nav.navbar
     top: 0;
     left: 0;
     margin-bottom: 100px;
+    background: var(--light);
+    -webkit-transition: background .5s ease-in;  
+    -moz-transition: background .5s ease-in;  
+    -o-transition: background .5s ease-in;  
+    transition: background .5s ease-in;
 }
 
 #navbar_collapse1.navbar-collapse.collapse
 {
     display: flex !important;
     justify-content: flex-end;
+}
+
+.logo
+{
+	width: 140px;
+    max-height: 120px;
+    margin: 10px;
+}
+
+nav.navbar.transparent,
+nav.navbar.transparent::after
+{
+    background: transparent !important;
+}
+
+nav.navbar.transparent .nav-link,
+nav.navbar.transparent .nav-link:hover,
+nav.navbar.transparent .nav-link:focus,
+nav.navbar.transparent .nav-link:active
+{
+    color: var(--light);
+    background: transparent;
+}
+
+/* Tablet and smaller */
+@media (max-width: 991.98px) {
+    .navbar
+    {
+        display: none;
+    }
 }

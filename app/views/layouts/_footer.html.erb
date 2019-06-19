@@ -4,15 +4,19 @@
         <div class="row">
           <div class="col-sm-6 col-md-4 px-3">
             <h3 class="section_footer_heading">Coordonnées</h3>
-            <p><i class="icon ion-ios-telephone-outline"></i> <%= @phone %></p>
-            <p><i class="icon ion-ios-email-outline"></i> <%= @email %></p>
+            <p><%= image_tag "phone_icon.svg", :alt => "phone_icon", :class => "icon_banner" %> <%= @phone %></p>
+            <p><%= image_tag "email_icon.svg", :alt => "email_icon", :class => "icon_banner" %> <%= @email %></p>
           </div>
           <div class="col-sm-6 col-md-4 px-3">
             <h3 class="section_footer_heading">Suivez-nous</h3>
             <div class="social">
               <ul>
               <% @socials.each do | social |%>
-               <li class="social_icon pl-0 pr-3"><a href="<%= social[:link] %>" class="ml-0"><i class="<%= social[:icon] %>"></i></a></li>
+               <li class="social_icon pl-0 pr-3">
+                <%= link_to social[:link], class: "ml-0", :target => "_blank"  do %>
+                  <i class="<%= social[:icon]%>"></i>
+                <% end %>
+                </li>
               <% end %>
               </ul>
             </div> <!-- .social -->
@@ -21,7 +25,11 @@
             <h3 class="section_footer_heading">Aide</h3>
             <div id="supports">
                 <% @supports.each do |support| %>
-                <p class="col-6"><a href="<%= support[:route] %>"><%= support[:text] %></a></p>
+                <p class="col-6">
+                  <%= link_to support[:route], class: "ml-0" do %>
+                    <%= support[:text] %>
+                  <% end %>
+                </p>
                 <% end %>
             </div>
           </div>
@@ -30,7 +38,7 @@
           <div class="col-sm-12">
             <hr />
             <div class="footer-infos">
-                <p class="footer_info"> 2019 Lyon By Night</p>
+              <p class="footer_info"> 2019 Lyon By Night</p>
             </div>
           </div>
         </div> <!-- .row -->
