@@ -2,8 +2,5 @@ class MenuItemSerializer < ActiveModel::Serializer
   attributes :id, :order, :menu_category, :item_type
 
   belongs_to :menu_category, serializer: MenuCategorySerializer
-  belongs_to :item_type, serializer: ItemTypeSerializer do
-    foreign_key: item_type_id
-  end
-
+  belongs_to :item_type, serializer: ItemTypeSerializer, foreign_key: :item_type_id
 end

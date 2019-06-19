@@ -82,13 +82,15 @@ def new
   @menus = Menu.where(user_id: current_user.id)
   @categories = CategoryType.where(user_id: current_user.id)
   @title = "Créer une nouvelle carte"
+
+  @user = User.find(params[:user_id])
   
   respond_to do |format|
     format.html do
       @new = Menu.new	
     end
     format.json do
-      render json: @menus
+      render json: @user
     end
   end
 end

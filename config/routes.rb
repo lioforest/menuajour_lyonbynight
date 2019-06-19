@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users, path: "", :path_names => { :sign_in => 'se-connecter', :sign_out => 'se-deconnecter', :sign_up => 's-enregistrer' }
   scope(path_names: {new: "nouveau", edit: "modifier"}) do
     resources :users, only: [:show, :update], path: "clients" do
-      resources :menus, except: [:new]
+      resources :menus#, except: [:new]
       resources :subscriptions, only: [:index, :new, :destroy], path: "abonnement"
       resources :category_types, only: [:create, :update, :edit, :destroy]
       resources :item_types, except:[:new, :show]
