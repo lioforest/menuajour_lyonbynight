@@ -27,6 +27,6 @@ Rails.application.routes.draw do
   get '/en-cours', to: "static#in_progress"
   get '/notre_offre', to: "static#our_offer"
   post '/contact', to: "static#send_contact_email"
-  #get '*path', to: redirect('/*')
+  get '*path', to: redirect('/*')
   get '/*path', to: "static#error_404"
 end

@@ -3,7 +3,7 @@ class MenusController < ApplicationController
 
   def index
     @title = "Mes menus"
-    @subtitle = "Créez autant de menus que vous le souhaitez !"
+    @subtitle = ["Créez autant de menus que vous le souhaitez !"]
     if helpers.checked_user
       @menus = current_user.menus
     else

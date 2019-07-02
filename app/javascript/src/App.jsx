@@ -2,6 +2,11 @@ import React, {Component} from 'react'
 
 import {fetchUser} from './APIs/user'
 
+import TypeSelector from './Components/TypeSelector'
+import ItemManagement from './Components/ItemManagement'
+import CategoryManagement from './Components/CategoryManagement'
+import MenuManagement from './Components/MenuManagement'
+
 export default class App extends Component {
     constructor () {
         super()
@@ -11,14 +16,46 @@ export default class App extends Component {
             menus: [],
             categories: [],
             items: [],
+            currentPage: "item",
             //aLaCarte are the menus displayed on the Menu Page
-            aLaCarte: []
+            aLaCarte: [],
         }
 
-        this.addToPage = this.addToPage.bind(this)
+        this.setPage = this.setPage.bind(this)
+        this.toItemPage = this.toItemPage.bind(this)
+        this.toCategoryPage = this.toCategoryPage.bind(this)
+        this.toMenuPage = this.toMenuPage.bind(this)
+        //this.addToPage = this.addToPage.bind(this)
     }
 
-    addToPage = async (menu) => {
+    //Functions to select the displayed page
+    setPage = function(target) {
+        this.setState({currentPage: target})
+        this.setActiveBtn(`${target}Btn`)
+    }
+
+    toItemPage = function() {
+        this.setPage("item")
+    }
+
+    toCategoryPage = function() {
+        this.setPage("category")
+    }
+
+    toMenuPage = function() {
+        this.setPage("menu")
+    }
+
+    setActiveBtn = function(id) {
+        document.querySelectorAll(`#SelectorNav button:not(#${id})`).forEach(
+            button => button.classList.remove("activeZone")
+        )
+        console.log(id)
+        document.getElementById(id).classList.add("activeZone")
+
+    }
+
+    /*addToPage = async (menu) => {
         let {aLaCarte} = this.state
         aLaCarte = [...aLaCarte, menu]
         this.setState({aLaCarte: aLaCarte})
@@ -26,7 +63,7 @@ export default class App extends Component {
 
     addMenu = function() {
         alert("Nouveau menu crée")
-    }
+    }*/
 
     refreshMenus = async () => {
         const user = await fetchUser()
@@ -38,9 +75,10 @@ export default class App extends Component {
     
     componentDidMount = async () => {
         await this.refreshMenus();
+        this.setActiveBtn(`${this.state.currentPage}Btn`)
     };
 
-    getCategory = (id) => {
+    /*getCategory = (id) => {
         return this.getEntity(this.state.categories, id)
     }
 
@@ -59,14 +97,46 @@ export default class App extends Component {
         )
 
         return searchedEntity
-    }
+    }*/
 
     render() {
-        const {user,menus, categories, items} = this.state
+        const {user, menus, categories, items, currentPage} = this.state
+        const buttons = [
+            {
+                text: "Mes plats",
+                selector: this.toItemPage,
+                id: "itemBtn" 
+            },
+            {
+                text: "Mes catégories",
+                selector: this.toCategoryPage,
+                id: "categoryBtn"
+            },
+            {
+                text: "Mes menus",
+                selector: this.toMenuPage,
+                id: "menuBtn"
+            },
+        ]
+        
+        let mainZone = <section></section>
+        switch(currentPage) {
+            case "item":
+                mainZone = <ItemManagement objects={items} />
+                break
+            case "category":
+                mainZone = <CategoryManagement objects={categories} sub={items} />
+                break
+            case "menu":
+                mainZone = <MenuManagement objects={menus} sub={categories} />
+                break
+        }
 
         return (
             <div>
-                <section>
+                <TypeSelector buttons={buttons} />
+                {mainZone}
+                {/*<section>
                         <h2 className = "text-center">
                             {user.first_name + " " + user.last_name}
                         </h2>
@@ -145,7 +215,7 @@ export default class App extends Component {
                                 </ul>
                             </div>
                         </div>
-                </section>
+                </section>*/}
             </div>
         )
     }

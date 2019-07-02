@@ -8,7 +8,9 @@
         <h1 class="section__heading section_header__heading text-center text-white">
          <%= title %>
         </h1>
-        <p class="text-white px-5 text-center" style="text-shadow: 1px 1px 5px var(--dark);"><%=subtitle%></p>
+        <% subtitle.each do |text| %>
+        <p class="text-white px-5 text-center" style="text-shadow: 1px 1px 5px var(--dark);"><%=text%></p>
+        <% end %>
         </div>
       </div>
     </div>

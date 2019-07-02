@@ -8,6 +8,10 @@
 <%= render "add_header"%>
 
 <div class="container mb-5">
+    <div id="app-container"></div>
+</div>
+
+<%= javascript_pack_tag 'application' %>
   <div id="itemForm"></div>
 
   <!--################################################-->
@@ -27,10 +31,6 @@
     </div>
     <%end%>
   </div>
-</div>
-
-<div class="d-flex align-items-center justify-content-center">
-<%= button_to "Mes Menus", user_menus_path(current_user.id), :method => :get, class:"btn btn-primary text-center mt-5 mb-2", style:'min-width: 240px;'%>
 </div>
 
 <%= render "remove_item_footer"%>

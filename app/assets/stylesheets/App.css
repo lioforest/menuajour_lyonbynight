@@ -1,0 +1,5 @@
+.activeZone
+{
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important 
+}

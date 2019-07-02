@@ -3,8 +3,17 @@ class ItemTypesController < ApplicationController
 
   def index
     @category_types = current_user.category_types
+    @user = current_user
     @title = "Mes plats"
-    @subtitle = "Ici vous pouvez créer et gérer vos plats, associés à des catégories (ex : entrées, boissons...).\n Une fois cela fait, vous n'aurez plus qu'à les utiliser pour générer autant de menus que vous souhaitez via la rubrique \"Mes Menus\" !"
+    @subtitle = ["Ici vous pouvez créer et gérer vos plats, vos catégories (ex : entrées, boissons...), ainsi que vos menus.", "Une fois cela fait, vous n'aurez plus qu'à les utiliser pour générer autant de pages de menu que vous souhaitez via la rubrique \"Mes Menus\" !"]
+
+    respond_to do |format|
+      format.html do
+      end
+      format.json do
+        render json: @user
+      end
+    end
   end
 
 
