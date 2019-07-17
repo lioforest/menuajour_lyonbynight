@@ -6,9 +6,9 @@ nav.navbar
     left: 0;
     margin-bottom: 100px;
     background: var(--light);
-    -webkit-transition: background .5s ease-in;  
-    -moz-transition: background .5s ease-in;  
-    -o-transition: background .5s ease-in;  
+    -webkit-transition: background .5s ease-in;
+    -moz-transition: background .5s ease-in;
+    -o-transition: background .5s ease-in;
     transition: background .5s ease-in;
 }
 
@@ -20,7 +20,7 @@ nav.navbar
 
 .logo
 {
-	width: 140px;
+	width: 120px;
     max-height: 120px;
     margin: 10px;
 }
