@@ -7,31 +7,8 @@
 
 <%= render "add_header"%>
 
-<div class="container mb-5">
+<div class="container-fluid mb-5">
     <div id="app-container"></div>
 </div>
 
 <%= javascript_pack_tag 'application' %>
-  <div id="itemForm"></div>
-
-  <!--################################################-->
-  <!--########## List of Categories/Items ##############-->
-  <!--################################################-->
-    <!--******************* Catégories *******************-->
-    <%@category_types.order(:name).each do |category_type|%>
-    <div class="categoryElt">
-      <%= render "category_types/category_type", category_type: category_type %>
-
-      <!--******************* Items *******************-->
-      <%if category_type.item_types.length !=0%>
-
-      <%= render "item_types", category_type: category_type %>
-
-      <%end%>
-    </div>
-    <%end%>
-  </div>
-</div>
-
-<%= render "remove_item_footer"%>
-

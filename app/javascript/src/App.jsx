@@ -50,7 +50,6 @@ export default class App extends Component {
         document.querySelectorAll(`#SelectorNav button:not(#${id})`).forEach(
             button => button.classList.remove("activeZone")
         )
-        console.log(id)
         document.getElementById(id).classList.add("activeZone")
 
     }

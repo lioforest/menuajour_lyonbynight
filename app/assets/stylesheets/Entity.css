@@ -1,0 +1,76 @@
+div.container-fluid.mb-5
+{
+    padding: 0;
+}
+
+div.entity.jumbotron
+{
+    margin: 30px;
+    padding: 30px;
+    background-color: var(--primary);
+}
+
+div.entity.jumbotron,
+div.entity.jumbotron tr.entity > td > button > i
+{
+    color: var(--light);
+}
+
+div.entity.jumbotron input
+{
+    color: var(--primary);
+    height: 28px;
+}
+
+table.entityManager
+{
+    padding-left: 0;
+    width: 100%;
+}
+
+table.entityManager > thead {border-bottom: 2px solid rgb(221, 221,221)}
+table.entityManager > tfoot {border-top: 2px solid rgb(221, 221,221)}
+
+h4.form-label,
+tr.entity > th
+{
+    font-family: 'Oregano', cursive;
+    font-weight: bold;
+}
+
+h4.form-label,
+tr.entity > td,
+tr.entity > th
+{
+    padding: 10px;
+}
+
+h4.form-label
+{
+    text-align: center;
+}
+
+tr.entity > th
+{
+    font-size: 15px;
+}
+
+tr.entity > td > button > i
+{
+    color: black;
+}
+
+tr.entity > td > input
+{
+    width: 100%
+}
+
+th.majorCol
+{
+    width: 41%
+}
+
+th.minorCol
+{
+    width: 6%
+}
