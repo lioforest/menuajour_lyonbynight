@@ -3,3 +3,65 @@
     background-color: var(--primary) !important;
     border-color: var(--primary) !important 
 }
+
+.no-scroll
+{
+    height: 100%;
+    overflow: hidden;
+}
+
+.popup-fade
+{
+    width : 100vw;
+    height : 100vh;
+    background-color : rgba(0,0,0,.5);
+    position : fixed;
+    top : 0;
+    left : 0;
+    z-index : 2000;
+}
+
+.popup
+{
+    margin : 25vh auto;
+    background-color: var(--light);
+    border-radius: 10px;
+    padding: 20px;
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start
+}
+
+.popup-label,
+.popup-field
+{
+    padding: 10px;
+    font-size: 2rem;
+}
+
+.popup-label
+{
+    font-weight: bold;
+    font-family: "Oregano", cursive;
+    width: 25%;
+}
+
+.popup-field
+{
+    width: 75%;
+}
+
+.popup-buttons
+{
+    width: 100%;
+    display: flex;
+    justify-content: center
+}
+
+.popup-buttons > button
+{
+    margin: 10px
+}

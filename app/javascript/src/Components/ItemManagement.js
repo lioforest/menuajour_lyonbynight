@@ -4,7 +4,7 @@ import NewItem from "./NewItem"
 import Item from "./Item"
 import ItemTableHeader from "./ItemTableHeader"
 
-const ItemManagement = function({objects}) {
+const ItemManagement = function({objects, edit}) {
     return (
         <section>
             <NewItem />
@@ -17,7 +17,11 @@ const ItemManagement = function({objects}) {
                         .sort((a, b) =>
                             (a.name.toUpperCase() < b.name.toUpperCase())? -1 : 1 )
                         .map(
-                            object => <Item key={object.id} item={object} />
+                            object => <Item
+                                key={object.id}
+                                item={object}
+                                edit={edit}
+                            />
                         )
                 }
                 </tbody>

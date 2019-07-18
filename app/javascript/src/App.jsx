@@ -25,7 +25,12 @@ export default class App extends Component {
         this.toItemPage = this.toItemPage.bind(this)
         this.toCategoryPage = this.toCategoryPage.bind(this)
         this.toMenuPage = this.toMenuPage.bind(this)
+        this.editItem = this.editItem.bind(this)
+        this.updateItem = this.updateItem.bind(this)
+        this.popupBtn = this.popupBtn.bind(this)
         //this.addToPage = this.addToPage.bind(this)
+        this.getEntity = this.getEntity.bind(this)
+        this.getItem = this.getItem.bind(this)
     }
 
     //Functions to select the displayed page
@@ -64,6 +69,134 @@ export default class App extends Component {
         alert("Nouveau menu crée")
     }*/
 
+    createFade = function() {
+        const fade = document.createElement("div")
+        
+        fade.classList.add("popup-fade")
+
+        document.body.classList.add("no-scroll")
+        document.body.appendChild(fade)
+        return fade
+    }
+
+    closePopup = function(e) {
+        e.preventDefault()
+        document.body.removeChild(document.querySelector("div.popup-fade"))
+        document.body.classList.remove("no-scroll")
+    }
+
+    updateItem = function(e) {
+        this.closePopup(e)
+        const {items, user} = this.state
+        const newData = e.target.parentNode.parentNode
+        const registredItem = this.getItem(parseInt(newData[3].value))
+        const oldData = registredItem.entity
+        
+        oldData.name = newData[0].value
+        oldData.description = newData[1].value
+        oldData.price = newData[2].value
+        
+        items[registredItem.index] = oldData
+        user.items = items
+        this.setState({ items, user })
+    }
+
+    popupBtn = function() {
+        const buttons = [
+            {
+                text: "Mettre à jour",
+                onClick: (e) => this.updateItem(e)
+            },
+            {
+                text: "Annuler",
+                onClick: (e) => this.closePopup(e)
+            }
+        ]
+        const div = document.createElement("div")
+        div.classList.add("popup-buttons")
+
+        buttons.forEach(button => {
+            const element = document.createElement("button")
+            element.innerText = button.text
+            element.onclick = button.onClick
+            element.classList.add("btn", "btn-outline-info")
+
+            div.appendChild(element)
+        })
+
+        return div
+    }
+
+    editItem = function(object) {
+        const fade = this.createFade()
+        const form = document.createElement("form")
+        
+        form.action = "#"
+        form.method = "post"
+        form.classList.add("popup")
+
+        const inputs = [
+            {
+                name: "name",
+                label: "Nom",
+                type: "text",
+                required: true,
+                focused: true
+            },
+            {
+                name: "description",
+                label: "Description",
+                type: "text",
+                required: false,
+                focused: false
+            },
+            {
+                name: "price",
+                label: "Prix en €uros",
+                type: "number",
+                step: ".1",
+                required: true,
+                focused: false
+            },
+            {
+                name: "id",
+                label: "",
+                type: "hidden",
+                required: true,
+                focused: false
+            }
+        ]
+
+        inputs.forEach(input => {
+            const div = document.createElement("div")
+            div.style.width = "100%"
+
+            if (input.label !== "") {
+                const label = document.createElement("label")
+                label.htmlFor = input.name
+                label.innerText = input.label + " :"
+                label.classList.add("popup-label")
+                div.appendChild(label)
+            }
+
+            const field = document.createElement("input")
+            field.type = input.type
+            if (field.type === "number") { field.step = input.step }
+            field.value = object[input.name]
+            field.required = input.required
+            field.name = input.name
+            field.autofocus = input.focused 
+            field.classList.add("popup-field")
+            div.appendChild(field)
+
+            form.appendChild(div)
+        })
+
+        form.appendChild(this.popupBtn())
+
+        fade.appendChild(form)      
+    }
+
     refreshMenus = async () => {
         const user = await fetchUser()
         const menus = user.menus
@@ -79,27 +212,27 @@ export default class App extends Component {
 
     /*getCategory = (id) => {
         return this.getEntity(this.state.categories, id)
-    }
+    }*/
 
-    getItem = (id) => {
+    getItem = function(id) {
         return this.getEntity(this.state.items, id)
     }
 
-    getEntity = (entitities, id) => {
+    getEntity = function(entitities, id) {
         let searchedEntity = {}
         entitities.forEach(
-            entity => {
+            (entity, index) => {
                 if (entity.id === id) {
-                    searchedEntity = entity
+                    searchedEntity = {entity, index}
                 }
             }
         )
 
         return searchedEntity
-    }*/
+    }
 
     render() {
-        const {user, menus, categories, items, currentPage} = this.state
+        const {menus, categories, items, currentPage} = this.state
         const buttons = [
             {
                 text: "Mes plats",
@@ -121,7 +254,7 @@ export default class App extends Component {
         let mainZone = <section></section>
         switch(currentPage) {
             case "item":
-                mainZone = <ItemManagement objects={items} />
+                mainZone = <ItemManagement objects={items} edit={this.editItem}/>
                 break
             case "category":
                 mainZone = <CategoryManagement objects={categories} sub={items} />
