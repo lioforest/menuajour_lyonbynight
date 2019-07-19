@@ -4,7 +4,7 @@ import SelectorBtn from "./SelectorBtn"
 
 const TypeSelector = function({buttons}) {
     return (
-        <nav id="SelectorNav" className="d-flex align-items-center justify-content-around">
+        <nav className="SelectorNav d-flex align-items-center justify-content-around">
             {buttons.map(
                 (button, index) =>
                 <SelectorBtn

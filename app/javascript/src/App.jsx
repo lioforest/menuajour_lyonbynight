@@ -54,10 +54,11 @@ export default class App extends Component {
     }
 
     setActiveBtn = function(id) {
-        document.querySelectorAll(`#SelectorNav button:not(#${id})`).forEach(
+        document.querySelectorAll(`.SelectorNav button:not(.${id})`).forEach(
             button => button.classList.remove("activeZone")
         )
-        document.getElementById(id).classList.add("activeZone")
+        document.querySelectorAll(`.SelectorNav button.${id}`)
+            .forEach( btn => btn.classList.add("activeZone"))
 
     }
 
@@ -329,6 +330,7 @@ export default class App extends Component {
             <div>
                 <TypeSelector buttons={buttons} />
                 {mainZone}
+                <TypeSelector buttons={buttons} />
                 {/*<section>
                         <h2 className = "text-center">
                             {user.first_name + " " + user.last_name}
