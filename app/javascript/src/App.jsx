@@ -25,8 +25,10 @@ export default class App extends Component {
         this.toItemPage = this.toItemPage.bind(this)
         this.toCategoryPage = this.toCategoryPage.bind(this)
         this.toMenuPage = this.toMenuPage.bind(this)
+        this.createItem = this.createItem.bind(this)
         this.editItem = this.editItem.bind(this)
         this.updateItem = this.updateItem.bind(this)
+        this.deleteItem = this.deleteItem.bind(this)
         this.popupBtn = this.popupBtn.bind(this)
         //this.addToPage = this.addToPage.bind(this)
         this.getEntity = this.getEntity.bind(this)
@@ -85,11 +87,56 @@ export default class App extends Component {
         document.body.classList.remove("no-scroll")
     }
 
+    createItem= function(e) {
+        const formRow = e.target.parentNode.parentNode.parentNode
+        const cells = formRow.cells
+        const log = document.getElementById("log")
+        log.innerText = ""
+
+        if (formRow.parentNode.parentNode.parentNode.checkValidity()) { 
+            [...cells].forEach(cell => cell.childNodes[0].classList.remove("invalid")) 
+            const datas = [...cells].map(cell => cell.childNodes[0].value)
+            const {user, items} = this.state
+
+            const newItem = {
+                name: datas[0],
+                description: datas[1],
+                price: datas[2],
+                user: {
+                    email: user.email,
+                    first_name: user.first_name,
+                    id: user.id,
+                    last_name: user.last_name
+                },
+                id: `local${Math.floor(Math.random()*1000)}`
+            }
+
+            items.push(newItem)
+            user.items = items
+            this.setState({user, items})
+
+            document.querySelector("tr.entity td.minorCol button.btn[type=reset]").click()
+
+            log.style.display = "none"
+        } else {
+            [...cells].forEach(cell => {
+                if (!cell.childNodes[0].checkValidity()) {
+                    cell.childNodes[0].classList.add("invalid")
+                } else {
+                    cell.childNodes[0].classList.remove("invalid")
+                }
+            })
+
+            log.style.display = "flex"
+            log.innerText = "Certains champs sont invalides"
+        }
+    }
+
     updateItem = function(e) {
         this.closePopup(e)
         const {items, user} = this.state
         const newData = e.target.parentNode.parentNode
-        const registredItem = this.getItem(parseInt(newData[3].value))
+        const registredItem = this.getItem(newData[3].value)
         const oldData = registredItem.entity
         
         oldData.name = newData[0].value
@@ -99,6 +146,16 @@ export default class App extends Component {
         items[registredItem.index] = oldData
         user.items = items
         this.setState({ items, user })
+    }
+
+    deleteItem = function(object) {
+        if (confirm(`Voulez-vous vraiment supprimer "${object.name}" ?\n(Cette operation est irreversible.)`)) {
+            const {items, user} = this.state
+            const newList = items.filter(item => item.id !== object.id)
+            
+            user.items = newList
+            this.setState({user, items: newList})
+        }
     }
 
     popupBtn = function() {
@@ -154,7 +211,7 @@ export default class App extends Component {
                 name: "price",
                 label: "Prix en €uros",
                 type: "number",
-                step: ".1",
+                step: ".01",
                 required: true,
                 focused: false
             },
@@ -222,7 +279,7 @@ export default class App extends Component {
         let searchedEntity = {}
         entitities.forEach(
             (entity, index) => {
-                if (entity.id === id) {
+                if (entity.id == id) {
                     searchedEntity = {entity, index}
                 }
             }
@@ -254,7 +311,11 @@ export default class App extends Component {
         let mainZone = <section></section>
         switch(currentPage) {
             case "item":
-                mainZone = <ItemManagement objects={items} edit={this.editItem}/>
+                mainZone = <ItemManagement
+                    objects={items}
+                    createItem={this.createItem}
+                    editItem={this.editItem}
+                    deleteItem={this.deleteItem} />
                 break
             case "category":
                 mainZone = <CategoryManagement objects={categories} sub={items} />

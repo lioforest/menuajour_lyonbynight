@@ -40,7 +40,8 @@ tr.entity > th
 
 h4.form-label,
 tr.entity > td,
-tr.entity > th
+tr.entity > th,
+#log
 {
     padding: 10px;
 }
@@ -73,4 +74,20 @@ th.majorCol
 th.minorCol
 {
     width: 6%
+}
+
+input.invalid,
+#log
+{
+    border: rgb(255, 0, 0) solid 1px;
+    background-color: rgb(243, 146, 146);
+}
+
+#log
+{
+    color: var(--primary);
+    font-weight: bold;
+    display: none;
+    width: 100%;
+    align-items: center;
 }

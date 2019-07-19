@@ -4,10 +4,10 @@ import NewItem from "./NewItem"
 import Item from "./Item"
 import ItemTableHeader from "./ItemTableHeader"
 
-const ItemManagement = function({objects, edit}) {
+const ItemManagement = function({objects, createItem, editItem, deleteItem}) {
     return (
         <section>
-            <NewItem />
+            <NewItem createItem={createItem}/>
             <table className="entityManager">
                 <thead><ItemTableHeader /></thead>
                 <tfoot><ItemTableHeader /></tfoot>
@@ -20,7 +20,8 @@ const ItemManagement = function({objects, edit}) {
                             object => <Item
                                 key={object.id}
                                 item={object}
-                                edit={edit}
+                                editItem={editItem}
+                                deleteItem={ deleteItem }
                             />
                         )
                 }

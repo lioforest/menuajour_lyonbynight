@@ -1,8 +1,9 @@
 import React from "react"
 
 import ItemTableHeader from "./ItemTableHeader";
+import { create } from "domain";
 
-const NewItem = function(props) {
+const NewItem = function({createItem}) {
     return (
         <div className="jumbotron entity">
             <h4 className="form-label">Créer un nouvel item</h4>
@@ -18,10 +19,10 @@ const NewItem = function(props) {
                                 <input type="text" placeholder="Description" name="description" tabIndex="2"/>
                             </td>
                             <td className="minorCol">
-                                <input type="number" step=".01" placeholder="Ex : 5.55" required tabIndex="3"/>
+                                <input type="number" min="0" step=".01" placeholder="Ex : 5.55" required tabIndex="3" name="price" />
                             </td>
                             <td className="minorCol">
-                                <button type="submit" className="btn" tabIndex="4">
+                                <button type="button" className="btn" tabIndex="4" onClick={ e => createItem(e)}>
                                     <i className="fas fa-plus fa-2x" title="Créer l'item"></i>
                                 </button>
                             </td>
@@ -33,6 +34,7 @@ const NewItem = function(props) {
                         </tr>
                     </tbody>
                 </table>
+                <div id="log"></div>
             </form>
         </div>
     )
